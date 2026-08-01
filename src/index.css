@@ -41,8 +41,9 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 
 body {
   margin: 0;
@@ -90,4 +91,23 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+html.scrolling::-webkit-scrollbar-thumb {
+  background: rgba(27, 48, 34, 0.4);
+  /* your --accent-bg green, semi-transparent */
 }

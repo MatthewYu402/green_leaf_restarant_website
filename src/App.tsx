@@ -1,7 +1,28 @@
+import { useEffect } from 'react'
 import './App.css'
 import Navbar from './Navbar'
 
 function App() {
+  {/* Scrollbar Logic */}
+  useEffect(() => {
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+
+    const handleScroll = () => {
+      document.documentElement.classList.add('scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.documentElement.classList.remove('scrolling');
+      }, 1000);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, []);
+
   return (
     <>
       <div className="bg-image"></div>
