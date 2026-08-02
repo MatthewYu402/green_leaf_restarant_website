@@ -2,23 +2,48 @@
   font-family: var(--heading);
   font-weight: 600;
   font-size: 24px;
+  transition: color 0.4s ease;
 }
 
 .navbar {
   position: fixed;
   top: 20px;
-  left: 0;
-  width: 100%;
+  left: 20px;
+  right: 20px;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
   color: var(--text);
-  padding: 0px 32px;
+  padding: 12px 32px;
   z-index: 10;
 
   animation: fadeDown 1.25s ease-in-out;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 8px;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
+.navbar.scrolled {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+/* Text flips to dark once navbar has its light scrolled background */
+/*
+.navbar.scrolled a,
+.navbar.scrolled .logo {
+  /*color: var(--text-dark);
+}
+
+.navbar.scrolled a:visited {
+  color: var(--text-dark);
+}
+*/
 .navbar ul {
   list-style: none;
   display: flex;
@@ -33,6 +58,7 @@
   padding-bottom: 2px;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  transition: color 0.4s ease;
 }
 
 .navbar a:visited {
@@ -93,8 +119,10 @@
 
 .cell-num:hover {
   cursor: pointer;
-  background-color: var(--border); /* Shifts background to gold */
-  border-color: var(--accent);     /* Shifts border to lighter gold (#C5A059) */
+  background-color: var(--border);
+  /* Shifts background to gold */
+  border-color: var(--accent);
+  /* Shifts border to lighter gold (#C5A059) */
   transform: scale(1.05);
 }
 
@@ -109,4 +137,3 @@
     transform: translateY(0%);
   }
 }
-

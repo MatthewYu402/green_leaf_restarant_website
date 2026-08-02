@@ -27,7 +27,7 @@ function App() {
     };
   }, []);
 
-  {/* */ }
+  {/* Scroll Transition Logic*/ }
 
   useEffect(() => {
     const scrollContainer = document.getElementById('root');
@@ -100,6 +100,28 @@ function App() {
     return () => {
       scrollContainer.removeEventListener('wheel', handleWheel);
     };
+  }, []);
+
+  useEffect(() => {
+    const scrollContainer = document.getElementById('root');
+    const navbar = document.querySelector('.navbar');
+    if (!scrollContainer || !navbar) return;
+    
+    const heroHeight = window.innerHeight; // one viewport. matches hero length
+
+    const handleNavbarStyle = () => {
+      if (scrollContainer.scrollTop > heroHeight * 0.8) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+
+    scrollContainer.addEventListener('scroll',  handleNavbarStyle);
+
+    return () => {
+      scrollContainer.removeEventListener('scroll', handleNavbarStyle)
+    }
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 .signature-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: var(--text-dark);
 }
@@ -25,5 +25,5 @@
 }
 
 .square-sushi-img {
-  width: 50%;
+  width: 75%;
 }
