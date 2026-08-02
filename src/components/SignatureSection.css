@@ -1,0 +1,29 @@
+.signature-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-dark);
+}
+
+.signature-section h2 {
+  color: var(--text-signature);
+  font-size: 24px;
+}
+
+.signature-section h1 {
+  color: var(--text-dark);
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.signature-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.square-sushi-img {
+  width: 50%;
+}
