@@ -1,0 +1,34 @@
+.sushi-type-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 24px;
+  box-sizing: border-box;
+  max-width: 600px;
+}
+
+.sushi-type-title {
+  color: var(--text-dark);
+  font-family: var(--heading);
+  font-weight: normal;
+  margin: 0;
+}
+
+.sushi-type-options .divider-line {
+  display: block;
+  flex: 0 0 auto;
+  height: 1px;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--accent);
+  border: none;
+}
+
+.roll-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}

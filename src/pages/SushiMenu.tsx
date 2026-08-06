@@ -1,5 +1,7 @@
 import './SushiMenu.css'
 import specialImage from "../assets/square-sushi.png"
+import flowerIcon from "../assets/flower-icon.svg"
+import SushiTypeOptions from '../components/SushiTypeOptions';
 
 export default function SushiMenu() {
   return(
@@ -10,7 +12,7 @@ export default function SushiMenu() {
         <div className="special-feature-left">
           <h4 className="special-feature-title">Special Feature</h4>
           <h2>20th Year Anniversary Roll</h2>
-          <p>A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Topped with fried tempura flakes, yum yum sauce, and thinly sliced japaleno. </p>
+          <p className="special-feature-description">A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Topped with fried tempura flakes, yum yum sauce, and thinly sliced japaleno. </p>
           <span className="divider-line"></span>
           <p>$16</p>
         </div>
@@ -18,6 +20,18 @@ export default function SushiMenu() {
           <img className = "twenty-year-roll" src={specialImage}></img>
         </div>
       </div>
+      <div className="divider">
+        <img className="flower-icon" src={flowerIcon}></img>
+      </div>
+      <div className="sushi-options-1">
+        <SushiTypeOptions
+          title="Signature Rolls"
+          rolls={[
+            { name: "Ginger Roll", description: "Spicy tuna, salmon skin topped with salmon and fish roe", price: "$14.95" }
+          ]}
+        />
+      </div>
+      
     </div>
   );
 }

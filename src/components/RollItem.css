@@ -1,0 +1,56 @@
+.roll-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.roll-item-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  gap: 16px;
+}
+
+.roll-item-name {
+  font-size: 20px;
+  font-weight: normal;
+  font-family: var(--heading);
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.roll-item-price {
+  font-size: 18px;
+  font-weight: normal;
+  font-family: var(--heading);
+  white-space: nowrap; /* prevents price from wrapping to second line */
+}
+
+.roll-item-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  gap: 16px;
+}
+
+.roll-item-description {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin: 0;
+  flex: 1;
+}
+
+.roll-item-pieces {
+  font-size: 16px;
+  color: var(--text-dark);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
