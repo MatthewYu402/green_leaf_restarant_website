@@ -10,6 +10,7 @@
 
 .sushi-type-title {
   color: var(--text-dark);
+  font-size: 32px;
   font-family: var(--heading);
   font-weight: normal;
   margin: 0;
