@@ -1,0 +1,51 @@
+.lunch-special-page {
+  padding: 140px 80px 80px;
+  /* top padding clears the solid navbar height */
+  min-height: 100svh;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  animation: fadeDown 0.5s ease-in-out;
+}
+
+.lunch-special-page h1 {
+  color: var(--accent-bg);
+  font-weight: 700;
+}
+
+.lunch-special-page p {
+  font-weight: 500;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  max-width: 160px;
+  background-color: var(--border);
+}
+
+.leaf-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

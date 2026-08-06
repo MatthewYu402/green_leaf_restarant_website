@@ -1,16 +1,19 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Sushi Menu', href: '/sushi'},
-  { label: 'Dinner Specials', href: '/dinner_special' },
+  { label: 'Sushi Menu', href: '/sushi' },
+  { label: 'Lunch Specials', href: '/lunch_specials' },
   { label: 'About Us', href: '/about' },
 ];
 
 export default function Navbar() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isHome ? 'navbar-floating' : 'navbar-solid'}`}>
       <div className="logo">Green Leaf</div>
       <ul>
         {navLinks.map((link) => (

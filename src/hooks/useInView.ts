@@ -8,14 +8,16 @@ export function useInView(threshold = 0.15) {
     const element = ref.current;
     if (!element) return;
 
+    const scrollRoot = document.getElementById('root');
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(element); // stop watching - locks it "visible" forever
+          observer.unobserve(element);
         }
       },
-      { threshold }
+      { root: scrollRoot, threshold }
     );
 
     observer.observe(element);
@@ -23,5 +25,5 @@ export function useInView(threshold = 0.15) {
     return () => observer.disconnect();
   }, [threshold]);
 
-  return { ref, isVisible};
+  return { ref, isVisible };
 }

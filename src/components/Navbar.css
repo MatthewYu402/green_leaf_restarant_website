@@ -7,43 +7,58 @@
 
 .navbar {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  color: var(--text);
-  padding: 12px 32px;
+  padding: 16px 32px;
   z-index: 10;
-
-  animation: fadeDown 1.25s ease-in-out;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 8px;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  transition: background 0.4s ease, box-shadow 0.4s ease, top 0.3s ease, left 0.3s ease, right 0.3s ease, border-radius 0.3s ease;
 }
 
-.navbar.scrolled {
+/* HOME — floating pill over the hero, transparent until scrolled */
+.navbar-floating {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+  animation: fadeDown 1.25s ease-in-out;
+}
+
+.navbar-floating.scrolled {
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
 }
 
-/* Text flips to dark once navbar has its light scrolled background */
-/*
-.navbar.scrolled a,
-.navbar.scrolled .logo {
-  /*color: var(--text-dark);
+.navbar-floating a,
+.navbar-floating .logo {
+  color: var(--text);
 }
 
-.navbar.scrolled a:visited {
-  color: var(--text-dark);
+
+/* ALL OTHER PAGES — solid, full-width, always-on bar */
+.navbar-solid {
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  background: var(--nav-bg);
+  box-shadow: var(--shadow);
 }
-*/
+
+.navbar-solid a,
+.navbar-solid .logo {
+  color: var(--text);
+}
+
+.navbar-solid a:visited {
+  color: var(--text);
+}
+
 .navbar ul {
   list-style: none;
   display: flex;
@@ -53,16 +68,11 @@
 }
 
 .navbar a {
-  color: var(--text);
   position: relative;
   padding-bottom: 2px;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   transition: color 0.4s ease;
-}
-
-.navbar a:visited {
-  color: var(--text);
 }
 
 .navbar a:focus {
@@ -80,7 +90,6 @@
   font-size: 18px;
 }
 
-/* Create the baseline underline hidden by default */
 .navbar a::after {
   content: '';
   position: absolute;
@@ -90,21 +99,16 @@
   left: 0;
   background-color: var(--accent);
   transform: scaleX(0);
-  /* Shrinks the line to nothing */
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
-  /* Handles the animation smoothness */
 }
 
-/* Animate the scale to 100% on hover and active status */
 .navbar a:hover::after,
 .navbar a.active::after {
   transform: scaleX(1);
-  /* Expands the line to full width */
   transform-origin: bottom left;
 }
 
-/* Button for Phone Number*/
 .cell-num {
   padding: 8px 16px;
   border: 2px solid var(--border);
@@ -120,9 +124,7 @@
 .cell-num:hover {
   cursor: pointer;
   background-color: var(--border);
-  /* Shifts background to gold */
   border-color: var(--accent);
-  /* Shifts border to lighter gold (#C5A059) */
   transform: scale(1.05);
 }
 
