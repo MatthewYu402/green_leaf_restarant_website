@@ -10,6 +10,7 @@ import MainMenu from './pages/MainMenu';
 // Components
 import PageHeader from './components/layout/PageHeader';
 import ScrollToTop from './components/ScrollTopTop';
+import DinnerSpecials from './pages/DinnerSpecials';
 
 function App() {
   {/* Scrollbar fade — global, applies on every page */ }
@@ -42,6 +43,7 @@ function App() {
         <Route path="/menu" element={<MainMenu />}/>
         <Route path="/sushi" element={<SushiMenu />} />
         <Route path="/lunch_specials" element={<LunchSpecials />} />
+        <Route path="/dinner_specials" element={<DinnerSpecials />} />
       </Routes>
     </>
   );

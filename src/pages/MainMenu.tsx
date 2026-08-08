@@ -33,7 +33,7 @@ export default function MainMenu() {
           name="Soups & Salads"
           url={SoupImage}
           menu_items={[
-            { name: "Miso Soup", price: "$2.95", description: "", },
+            { name: "Miso Soup", price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions", },
             { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "", },
             { name: "Hot and Sour Soup", price: "$4.95", description: "", },
             { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "", },
