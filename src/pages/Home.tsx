@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SignatureSection from '../components/SignatureSection';
+import DailySpecials from "../components/DailySpecials"
 import './Home.css';
 
 export default function Home() {
@@ -99,6 +100,7 @@ export default function Home() {
         </div>
       </div>
       <SignatureSection />
+      <DailySpecials />
     </>
   );
 }

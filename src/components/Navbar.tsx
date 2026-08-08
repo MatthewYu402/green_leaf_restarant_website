@@ -3,8 +3,10 @@ import './Navbar.css';
 
 const navLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Menu', href: '/menu'},
   { label: 'Sushi Menu', href: '/sushi' },
   { label: 'Lunch Specials', href: '/lunch_specials' },
+  { label: 'Dinner Specials', href: '/dinner_specials' },
   { label: 'About Us', href: '/about' },
 ];
 
@@ -27,7 +29,7 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <button className="cell-num">Call (410)-771-0030</button>
+      <button className="cell-num">Call to Reserve</button>
     </nav>
   );
 }

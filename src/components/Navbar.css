@@ -8,7 +8,15 @@
 .navbar {
   position: fixed;
   display: flex;
-  align-items: center;
+  align-items: center;.navbar-solid {
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      animation: fadeDown 0.5s ease-in-out;
+    }
   justify-content: space-between;
   box-sizing: border-box;
   padding: 16px 32px;
@@ -27,6 +35,7 @@
   animation: fadeDown 1.25s ease-in-out;
 }
 
+
 .navbar-floating.scrolled {
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
@@ -40,14 +49,14 @@
 }
 
 
-/* ALL OTHER PAGES — solid, full-width, always-on bar */
 .navbar-solid {
   top: 0;
   left: 0;
   right: 0;
   border-radius: 0;
-  background: var(--nav-bg);
-  box-shadow: var(--shadow);
+  background: transparent;
+  box-shadow: none;
+  animation: fadeDown 0.5s ease-in-out;
 }
 
 .navbar-solid a,
@@ -85,7 +94,7 @@
 }
 
 .navbar a.active {
-  color: var(--accent);
+  color: var(--text-highlight);
   font-weight: 600;
   font-size: 18px;
 }
@@ -97,7 +106,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--accent);
+  background-color: var(--text-highlight);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;

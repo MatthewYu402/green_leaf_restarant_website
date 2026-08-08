@@ -6,8 +6,8 @@ import SushiTypeOptions from '../components/SushiTypeOptions';
 export default function SushiMenu() {
   return(
     <div className="sushi-menu-page">
-      <h1>Sushi Menu</h1>
-      <p>A curated selection, prepared with precision and care.</p>
+      <h1 className="sushi-menu-heading">Sushi Menu</h1>
+      <p className="sushi-menu-subheading">A curated selection, prepared with precision and care.</p>
       <div className="special-feature">
         <div className="special-feature-left">
           <h4 className="special-feature-title">Special Feature</h4>
@@ -53,26 +53,26 @@ export default function SushiMenu() {
         <SushiTypeOptions
           title="Anniversary Rolls"
           rolls={[
-            { name: "1st Year", description: "Old Bay crabmeat and avocado, fried shrimp tempura style", price: "$14.95" },
-            { name: "2nd Year", description: "Spicy yellowtail topped with avocado and tuna", price: "$14.95" },
+            { name: "1st Year", description: "Old Bay crabmeat and avocado, fried shrimp tempura style", price: "$14.95", pieces: 8 },
+            { name: "2nd Year", description: "Spicy yellowtail topped with avocado and tuna", price: "$14.95", pieces: 8 },
             { name: "3rd Year", description: "Fusion-style spicy tuna roll paired with tuna, calamari salad, cucumber, and seaweed salad", price: "$14.95" },
-            { name: "4th Year", description: "Spicy tuna, avocado, and crabmeat topped with tuna", price: "$14.95" },
-            { name: "5th Year", description: "Spicy tuna and crabmear, topped with white tuna, salmon, tuna, avocado, and tempura flakes", price: "$14.95" },
-            { name: "6th Year", description: "Spicy salmon and avocado, topped with fresh salmon, cream cheese, and tempura flakes", price: "$14.95" },
-            { name: "7th Year", description: "Spicy tuna and salmon, topped with spicy crabmeat and scallop", price: "$14.95" },
-            { name: "8th Year", description: "Spicy tuna, topped with avocado and spicy salmon", price: "$14.95" },
-            { name: "9th Year", description: "Shimp tempura and asparagus, topped with spicy yellowtail and black crispy rice", price: "$14.95" },
-            { name: "10th Year", description: "Yellowtail, salmon and spicy tuna, topped with salmon, mango, and spicy sauce", price: "$14.95" },
-            { name: "11th Year", description: "Shrimp tempura topped with white tuna, jalapeno, and spicy sauce", price: "$14.95" },
-            { name: "12th Year", description: "Crabmeat, spicy tuna, and crispy flakes inside, topped with avocado, spicy yellowtail, and jalapeno", price: "$14.95" },
-            { name: "13th Year", description: "Spicy salmon and avocado, topped with pepper seared tuna", price: "$14.95" },
-            { name: "14th Year", description: "Spicy salmon and black crispy rice, topped with yellowtail and avocado", price: "$14.95" },
-            { name: "15th Year", description: "Spicy salmon and crispy rice, topped with salmon and avocado with spicy sauce", price: "$14.95" },
-            { name: "16th Year", description: "Spicy yellowtail and crispy rice, topped with salmon, avocado, and spicy sauce", price: "$14.95" },
-            { name: "17th Year", description: "Spicy salmon and avocado, topped with white tuna, spicy salmon, and roe", price: "$14.95" },
-            { name: "18th Year", description: "Shrimp tempuram crabstick, and avocado, topped with spicy tuna and spicy sauce", price: "$14.95" },
-            { name: "19th Year", description: "Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce", price: "$14.95" },
-            { name: "20th Year", description: "Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce", price: "$14.95" },
+            { name: "4th Year", description: "Spicy tuna, avocado, and crabmeat topped with tuna", price: "$14.95", pieces: 8 },
+            { name: "5th Year", description: "Spicy tuna and crabmear, topped with white tuna, salmon, tuna, avocado, and tempura flakes", price: "$14.95", pieces: 8 },
+            { name: "6th Year", description: "Spicy salmon and avocado, topped with fresh salmon, cream cheese, and tempura flakes", price: "$14.95", pieces: 8 },
+            { name: "7th Year", description: "Spicy tuna and salmon, topped with spicy crabmeat and scallop", price: "$14.95", pieces: 8 },
+            { name: "8th Year", description: "Spicy tuna, topped with avocado and spicy salmon", price: "$14.95", pieces: 8 },
+            { name: "9th Year", description: "Shimp tempura and asparagus, topped with spicy yellowtail and black crispy rice", price: "$14.95", pieces: 8 },
+            { name: "10th Year", description: "Yellowtail, salmon and spicy tuna, topped with salmon, mango, and spicy sauce", price: "$14.95", pieces: 8 },
+            { name: "11th Year", description: "Shrimp tempura topped with white tuna, jalapeno, and spicy sauce", price: "$14.95", pieces: 8 },
+            { name: "12th Year", description: "Crabmeat, spicy tuna, and crispy flakes inside, topped with avocado, spicy yellowtail, and jalapeno", price: "$14.95", pieces: 8 },
+            { name: "13th Year", description: "Spicy salmon and avocado, topped with pepper seared tuna", price: "$14.95", pieces: 8 },
+            { name: "14th Year", description: "Spicy salmon and black crispy rice, topped with yellowtail and avocado", price: "$14.95", pieces: 8 },
+            { name: "15th Year", description: "Spicy salmon and crispy rice, topped with salmon and avocado with spicy sauce", price: "$14.95", pieces: 8 },
+            { name: "16th Year", description: "Spicy yellowtail and crispy rice, topped with salmon, avocado, and spicy sauce", price: "$14.95", pieces: 8 },
+            { name: "17th Year", description: "Spicy salmon and avocado, topped with white tuna, spicy salmon, and roe", price: "$14.95", pieces: 8 },
+            { name: "18th Year", description: "Shrimp tempuram crabstick, and avocado, topped with spicy tuna and spicy sauce", price: "$14.95", pieces: 8 },
+            { name: "19th Year", description: "Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce", price: "$14.95", pieces: 8 },
+            { name: "20th Year", description: "Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce", price: "$14.95", pieces: 8 },
             
           ]}
         />

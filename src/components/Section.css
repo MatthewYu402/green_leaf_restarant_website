@@ -1,8 +1,4 @@
 .section {
-
-}
-
-.section {
   height: 100svh;
   flex-shrink: 0;
   display: flex;

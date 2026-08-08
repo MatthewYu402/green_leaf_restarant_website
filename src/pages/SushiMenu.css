@@ -1,16 +1,21 @@
 .sushi-menu-page {
-  padding: 120px 80px 80px;
+  padding: 0 80px 80px;
   /* top padding clears the solid navbar height */
   min-height: 100svh;
   box-sizing: border-box;
   text-align: center;
   color: black;
-  animation: fadeDown 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.sushi-menu-page h1 {
-  color: var(--accent-bg);
+.sushi-menu-heading  {
+  color: var(--text-dark);
   font-weight: 700;
+}
+
+.sushi-menu-subheading {
+  color: var(--text-dark);
+  font-weight: normal;
 }
 
 .special-feature-description {
@@ -97,14 +102,12 @@
   justify-content: center;
 }
 
-@keyframes fadeDown {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-1%);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0%);
   }
 }

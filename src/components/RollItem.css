@@ -6,6 +6,8 @@
   gap: 8px;
   width: 100%;
   box-sizing: border-box;
+  border-bottom: 2px solid #E2E3E1;
+  padding-bottom: 8px;
 }
 
 .roll-item-header {
@@ -27,6 +29,7 @@
 
 .roll-item-price {
   font-size: 18px;
+  color: var(--text-dark);
   font-weight: normal;
   font-family: var(--heading);
   white-space: nowrap; /* prevents price from wrapping to second line */
