@@ -1,4 +1,4 @@
-.sushi-type-options {
+.menu-options {
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   max-width: 600px;
 }
 
-.sushi-type-title {
+.menu-options-title {
   color: var(--text-dark);
   font-size: 32px;
   font-family: var(--heading);
@@ -17,7 +17,7 @@
   margin: 0;
 }
 
-.sushi-type-options .divider-line {
+.menu-options .divider-line {
   display: block;
   flex: 0 0 auto;
   height: 1px;
@@ -27,7 +27,7 @@
   border: none;
 }
 
-.roll-list {
+.item-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -1,16 +1,22 @@
-.roll-item {
+.menu-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   gap: 8px;
   width: 100%;
+  max-width: 600px;
   box-sizing: border-box;
-  border-bottom: 2px solid #E2E3E1;
-  padding-bottom: 8px;
+  border-bottom: 1px solid #E0E0E0;   /* NEW */
+  padding-bottom: 16px;               /* NEW */
 }
 
-.roll-item-header {
+.menu-item:last-child {   /* NEW rule */
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.menu-item-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,23 +25,23 @@
   gap: 16px;
 }
 
-.roll-item-name {
-  font-size: 24px;
+.menu-item-name {
+  font-size: 20px;
   font-weight: normal;
   font-family: var(--heading);
   color: var(--text-dark);
   margin: 0;
 }
 
-.roll-item-price {
-  font-size: 18px;
+.menu-item-price {
   color: var(--text-dark);
+  font-size: 18px;
   font-weight: normal;
   font-family: var(--heading);
-  white-space: nowrap; /* prevents price from wrapping to second line */
+  white-space: nowrap;
 }
 
-.roll-item-details {
+.menu-item-details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -44,14 +50,14 @@
   gap: 16px;
 }
 
-.roll-item-description {
+.menu-item-description {
   font-size: 16px;
   color: var(--text-dark);
   margin: 0;
   flex: 1;
 }
 
-.roll-item-pieces {
+.menu-item-pieces {
   font-size: 16px;
   color: var(--text-dark);
   white-space: nowrap;

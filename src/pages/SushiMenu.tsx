@@ -1,13 +1,11 @@
 import './SushiMenu.css'
 import specialImage from "../assets/square-sushi.png"
 import flowerIcon from "../assets/flower-icon.svg"
-import SushiTypeOptions from '../components/SushiTypeOptions';
+import MenuOptions from '../components/menu/MenuOptions';
 
 export default function SushiMenu() {
-  return(
+  return (
     <div className="sushi-menu-page">
-      <h1 className="sushi-menu-heading">Sushi Menu</h1>
-      <p className="sushi-menu-subheading">A curated selection, prepared with precision and care.</p>
       <div className="special-feature">
         <div className="special-feature-left">
           <h4 className="special-feature-title">Special Feature</h4>
@@ -17,16 +15,16 @@ export default function SushiMenu() {
           <p>$16</p>
         </div>
         <div className="special-feature-right">
-          <img className = "twenty-year-roll" src={specialImage}></img>
+          <img className="twenty-year-roll" src={specialImage}></img>
         </div>
       </div>
       <div className="divider">
         <img className="flower-icon" src={flowerIcon}></img>
       </div>
       <div className="sushi-options-1">
-        <SushiTypeOptions
+        <MenuOptions
           title="Specialty Rolls"
-          rolls={[
+          menu_items={[
             { name: "Peggy", description: "Crabmeat, avocado, and tempura flakes with tuna and wasabi mirin sauce", price: "$14.95" },
             { name: "Esther", description: "Salmon and avocado, topped with spicy tuna and tempura flakes", price: "$14.95" },
             { name: "Matthew", description: "Salmon, crab stick, topped with avocado, spicy yellowtail and tempura flakes", price: "$14.95" },
@@ -50,9 +48,9 @@ export default function SushiMenu() {
             { name: "Garden", description: "Tempura sweet potato and yellow radish, topped with avocado", price: "$8.95" },
           ]}
         />
-        <SushiTypeOptions
+        <MenuOptions
           title="Anniversary Rolls"
-          rolls={[
+          menu_items={[
             { name: "1st Year", description: "Old Bay crabmeat and avocado, fried shrimp tempura style", price: "$14.95", pieces: 8 },
             { name: "2nd Year", description: "Spicy yellowtail topped with avocado and tuna", price: "$14.95", pieces: 8 },
             { name: "3rd Year", description: "Fusion-style spicy tuna roll paired with tuna, calamari salad, cucumber, and seaweed salad", price: "$14.95" },
@@ -73,11 +71,11 @@ export default function SushiMenu() {
             { name: "18th Year", description: "Shrimp tempuram crabstick, and avocado, topped with spicy tuna and spicy sauce", price: "$14.95", pieces: 8 },
             { name: "19th Year", description: "Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce", price: "$14.95", pieces: 8 },
             { name: "20th Year", description: "Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce", price: "$14.95", pieces: 8 },
-            
+
           ]}
         />
       </div>
-      
+
     </div>
   );
 }

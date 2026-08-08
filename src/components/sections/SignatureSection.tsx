@@ -1,7 +1,7 @@
-import Section from './Section'
+import Section from '../shared/Section'
 import './SignatureSection.css'
 
-import signatureImage from '../assets/square-sushi.png'
+import signatureImage from '../../assets/square-sushi.png'
 
 export default function SignatureSection() {
   return(
