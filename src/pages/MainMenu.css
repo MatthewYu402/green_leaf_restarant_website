@@ -1,7 +1,392 @@
+.main-menu-page {
+  margin-inline: 40px;
+}
+
 .apps-soups-salads {
   margin-top: 80px;
+  max-width: 1700px;
+  /* bounds the whole row so it doesn't stretch edge-to-edge on huge screens */
+  margin: 80px auto 0;
+  /* center the row itself */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* top-align cards in case they end up different heights */
+  justify-content: center;
+  gap: 40px;
+}
+
+.apps-soups-salads .menu-category {
+  flex: 1 1 0;
+  /* KEY FIX: grow equally to fill the row instead of staying at intrinsic/max-width */
+  max-width: none;
+  /* removes the 600px cap for this context only */
+  width: auto;
+}
+
+.apps-soups-salads .menu-options {
+  max-width: none;
+  width: 100%;
+}
+
+.apps-soups-salads .item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  /* explicit, matching this project's habit of not relying on implicit defaults */
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+/* Menu Items Styling*/
+.apps-soups-salads .menu-item-name {
+  font-size: 16px;
+}
+
+.apps-soups-salads .menu-item-price {
+  font-size: 16px;
+}
+
+.apps-soups-salads .menu-item-description {
+  font-size: 14px;
+}
+
+
+/* */
+.sushi-sashimi {
+  width: 100%;
+  max-width: 900px;
+  /* shrinks + caps the overall container */
+  margin: 40px auto;
+  /* centers it, adds top/bottom spacing */
+  background-color: var(--accent-bg);
+  padding: 60px 40px;
+  /* spacing on ALL sides now, not just left/right */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.sushi-sashimi-header {
+  color: var(--text-highlight);
+  text-align: center;
+  font-size: 48px;
+  margin: 0 0 8px;
+}
+
+.sushi-sashimi p {
+  color: var(--text);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 0 32px;
+}
+
+.menu-sushi-sashimi-options {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* ---- Scoped overrides for MenuOptions/MenuItem, this section only ---- */
+
+
+/* Grill/Kitchen */
+.grill-kitchen-wrapper {
+  max-width: 1700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.grill-title {
+  color: var(--text-dark);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.grill-kitchen {
+  display: flex;
+  max-width: 1700px;
+  flex-direction: row;
+  margin: 20px auto 0;
+  align-items: stretch;
+  justify-content: center;
+  gap: 80px;
+}
+
+.grill-kitchen .menu-options {
+  flex: 1 1 420px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.grill-kitchen .item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  /* explicit, matching this project's habit of not relying on implicit defaults */
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+/* Seafood Options */
+.seafood-options .menu-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.seafood-options .menu-item-group--full {
+  grid-column: 1 / -1;
+  /* spans both columns = the full "1 1 1 1 1 1" row */
+}
+
+.seafood-options .menu-item-group--half {
+  grid-column: span 1;
+  /* each takes exactly one column = "2 2 2" / "3 3 3" */
+}
+
+.seafood-options .menu-item-group--full .item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+.seafood-options .menu-item-group--half .item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+
+.sushi-sashimi .menu-options {
+  flex: 1 1 380px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+/* Sushi */
+
+.sushi-sashimi .menu-options-title {
+  color: var(--text-gold);
+  font-size: 28px;
+}
+
+.sushi-sashimi .divider-line {
+  max-width: 180px;
+}
+
+.sushi-sashimi .item-list {
+  align-items: center;
+  gap: 0px
+}
+
+.sushi-sashimi .menu-item {
+  max-width: 280px;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  border-bottom: none;
+  /* kills the divider line */
+  padding-bottom: 0;
+}
+
+.sushi-sashimi .menu-item-header {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.sushi-sashimi .menu-item-name {
+  font-size: 24px;
+  color: var(--text);
+}
+
+.sushi-sashimi .menu-item-price {
+  font-size: 18px;
+  color: var(--text-highlight);
+}
+
+.sushi-sashimi .menu-item-details {
+  flex-direction: column;
+  /* stacks description/pieces instead of side-by-side */
+  align-items: center;
+  gap: 2px;
+}
+
+.sushi-sashimi .menu-item-description {
+  font-size: 16px;
+  color: var(--text);
+}
+
+.sushi-sashimi .menu-item-pieces {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Noodles Fried Rice, and Vegetarian*/
+.noodles-vegetarian {
+  display: flex;
+  max-width: 1700px;
+  flex-direction: row;
+  margin: 80px auto 0;
+  align-items: stretch;
+  justify-content: center;
+  gap: 80px;
+}
+
+.noodles-vegetarian .menu-options {
+  flex: 1 1 420px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.noodles-vegetarian .item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  /* explicit, matching this project's habit of not relying on implicit defaults */
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+/* Teriyaki & Tempura */
+.teriyaki-tempura {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: var(--accent-bg);
+  padding: 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.teriyaki-tempura-header {
+  color: var(--text-highlight);
+  text-align: center;
+  font-size: 48px;
+  margin: 0 0 8px;
+}
+
+.teriyaki-tempura p {
+  color: var(--text);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 0 32px;
+}
+
+.menu-teriyaki-tempura-options {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* Scoped MenuOptions/MenuItem overrides, this section only */
+.teriyaki-tempura .menu-options {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.teriyaki-tempura .menu-options-title:empty {
+  display: none;
+  /* title="" is passed intentionally, don't leave dead space */
+}
+
+.teriyaki-options .menu-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.teriyaki-options .menu-item-group--half {
+  grid-column: span 1;
+}
+
+.teriyaki-options .menu-options-subheading {
+  color: var(--text-highlight);
+  font-size: 24px;
+  text-align: left;
+  margin: 0 0 16px;
+}
+
+.teriyaki-options .item-list {
+  align-items: flex-start;
+  text-align: left;
+  gap: 8px;
+}
+
+.teriyaki-options .menu-item {
+  align-items: flex-start;
+  text-align: left;
+  max-width: 100%;
+  border-bottom: none;
+  padding-bottom: 0;
+  gap: 4px;
+}
+
+.teriyaki-options .menu-item-header {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.teriyaki-options .menu-item-name {
+  color: var(--text);
+  font-size: 20px;
+}
+
+.teriyaki-options .menu-item-price {
+  color: var(--text-highlight);
+  font-size: 18px;
+}
+
+.teriyaki-options .menu-item-details {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.teriyaki-options .menu-item-description {
+  display: none;
+}
+
+
+
+@media (max-width: 1450px) {
+  .apps-soups-salads .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1135px) {
+  .noodles-vegetarian .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 }

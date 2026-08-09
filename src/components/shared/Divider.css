@@ -1,0 +1,22 @@
+/* src/components/shared/Divider.css */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.divider__line {
+  flex: 1 1 auto;
+  height: var(--divider-thickness, 1px);
+  max-width: var(--divider-line-width, 100%);
+  background-color: var(--text-gold);
+  border: none;
+}
+
+.divider__icon {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}

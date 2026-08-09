@@ -27,7 +27,7 @@
 
 .menu-item-name {
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 500;
   font-family: var(--heading);
   color: var(--text-dark);
   margin: 0;
