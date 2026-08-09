@@ -1,0 +1,56 @@
+.special-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  text-align: left;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+.special-item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.special-item-id {
+  flex-shrink: 0;
+  background-color: var(--accent-bg);
+  color: var(--text-highlight);
+  font-family: var(--heading);
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.special-item-name {
+  font-family: var(--heading);
+  font-weight: normal;
+  font-size: 18px;
+  color: var(--text-dark);
+  margin: 0;
+  text-align: left;
+}
+
+.special-item-price {
+  font-family: var(--heading);
+  font-size: 16px;
+  color: var(--accent);
+  margin-left: auto;
+  /* pushes price to the far right of the row */
+  white-space: nowrap;
+  /* keeps "$10.25" from breaking mid-line if space is tight */
+  flex-shrink: 0;
+}
+
+.special-item-description {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin: 0;
+  text-align: left;
+}

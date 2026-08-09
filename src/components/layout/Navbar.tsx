@@ -5,8 +5,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Menu', href: '/menu'},
   { label: 'Sushi Menu', href: '/sushi' },
-  { label: 'Lunch Specials', href: '/lunch_specials' },
-  { label: 'Dinner Specials', href: '/dinner_specials' },
+  { label: 'Specials', href: '/specials' },
   { label: 'About Us', href: '/about' },
 ];
 

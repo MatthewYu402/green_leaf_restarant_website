@@ -4,13 +4,12 @@ import './App.css';
 // Pages
 import Home from './pages/Home';
 import SushiMenu from './pages/SushiMenu';
-import LunchSpecials from './pages/LunchSpecials';
 import MainMenu from './pages/MainMenu';
 
 // Components
 import PageHeader from './components/layout/PageHeader';
 import ScrollToTop from './components/ScrollTopTop';
-import DinnerSpecials from './pages/DinnerSpecials';
+import Specials from './pages/Specials';
 
 function App() {
   {/* Scrollbar fade — global, applies on every page */ }
@@ -42,8 +41,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<MainMenu />}/>
         <Route path="/sushi" element={<SushiMenu />} />
-        <Route path="/lunch_specials" element={<LunchSpecials />} />
-        <Route path="/dinner_specials" element={<DinnerSpecials />} />
+        <Route path="/specials" element={<Specials />} />
       </Routes>
     </>
   );

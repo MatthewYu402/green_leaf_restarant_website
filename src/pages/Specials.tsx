@@ -1,0 +1,58 @@
+import './Specials.css'
+import appleIcon from "../assets/apple-icon.svg";
+import leafIcon from "../assets/leaf-icon.svg";
+import Divider from "../components/shared/Divider";
+import SpecialItemGrid from '../components/menu/SpecialItemGrid';
+import MenuCategory from '../components/menu/MenuCategory';
+
+//TODO: Change Image
+import FillerImage from '../assets/square-sushi.png';
+
+export default function LunchSpecials() {
+  return (
+    <div className="lunch-special-page">
+      <h1>Seasonal Selections</h1>
+      <p>Check out our curated specials, where a balance of tradition and fusion meet.</p>
+
+      <Divider iconUrl={appleIcon} iconAlt="leaf" lineWidth='500px' />
+
+      <div className='lunch-special-section'>
+        <h3>Midday Muse</h3>
+        <p>A REFINED SELECTION OF LUNCH FEATURES, AVAILABLE DAILY UNTIL 3:00 PM.</p>
+      </div>
+
+      <div className="lunch-maki-bento-row">
+        <div className="lunch-maki-column">
+          <h4 className="lunch-maki-title">Lunch Maki Specials</h4>
+          <p className="lunch-maki-note">*Served with traditional miso soup. No substitutions</p>
+          <SpecialItemGrid
+            items={[
+              { id: "L1", name: "California Roll and Eel Avocado Roll", price: "$10.25", description: "" },
+              { id: "L2", name: "Spicy Tuna Roll and California Roll", price: "$10.25", description: "" },
+              { id: "L3", name: " Salmon Roll and California Roll", price: "$10.25", description: "" },
+              { id: "L4", name: "Tuna Roll and California Roll", price: "$10.25", description: "" },
+              { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.25", description: "" },
+              { id: "L6", name: "Two California Rolls", price: "$10.25", description: "" },
+              { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$10.25", description: "" },
+              { id: "L8", name: "Sashimi Special (Chef's Choice)", price: "$10.25", description: "" },
+            ]}
+          />
+        </div>
+
+        <MenuCategory
+          name="Featured Bento Boxes"
+          url={FillerImage}
+          className="featured-bento-category"
+          menu_items={[
+            { name: "Shrimp Tempura and California Roll", price: "$10.95", description: "" },
+            { name: "Chicken Teriyaki and California Roll", price: "$10.95", description: "" },
+            { name: "Crispy Sesame Chicken and California Roll", price: "$10.95", description: "" },
+            { name: "Vegetable Tempura and California Roll", price: "$10.95", description: "" }
+          ]}
+        />
+      </div>
+
+      <Divider iconUrl={leafIcon} iconAlt="leaf" lineWidth='500px' />
+    </div>
+  );
+}

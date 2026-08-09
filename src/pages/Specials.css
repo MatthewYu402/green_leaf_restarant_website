@@ -1,0 +1,82 @@
+.lunch-special-page h1 {
+  color: var(--accent-bg);
+}
+
+.lunch-special-page p {
+  color: var(--accent-bg);
+}
+
+.lunch-special-section h3 {
+  color: var(--text-dark);
+  font-family: var(--heading);
+  font-size: 40px;
+}
+
+.lunch-maki-bento-row {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* makes both columns match height */
+  gap: 60px;
+}
+
+.lunch-maki-column {
+  flex: 1 1 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lunch-maki-title {
+  margin: 0;
+  font-family: var(--heading);
+  font-size: 32px;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+.lunch-maki-note {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-dark);
+  text-align: left;
+  font-style: italic;
+}
+
+/* Right column: Featured Bento Boxes card, matched to the left column's height/width share */
+.featured-bento-category {
+  flex: 1 1 0;
+  max-width: none;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--accent-bg);
+  border: none;
+  /* the gold card border reads oddly against a solid green fill */
+}
+
+.featured-bento-category .menu-options {
+  max-width: none;
+  width: 100%;
+  flex: 1;
+  padding: 24px;
+}
+
+.featured-bento-category .menu-options-title {
+  color: var(--text-highlight);
+}
+
+.featured-bento-category .menu-item-name {
+  color: var(--text);
+}
+
+.featured-bento-category .menu-item-price {
+  color: var(--text-highlight);
+}
+
+.featured-bento-category .menu-item-description {
+  color: var(--text);
+}

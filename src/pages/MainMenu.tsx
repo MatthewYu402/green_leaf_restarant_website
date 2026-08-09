@@ -5,6 +5,7 @@ import Divider from "../components/shared/Divider";
 import goldLeaf from "../assets/gold-leaf.svg";
 import noodleIcon from "../assets/noodle-icon.svg"
 import waveIcon from "../assets/wave-icon.svg"
+import drinkIcon from "../assets/drink-icon.svg"
 
 // Images
 import AppImage from "../assets/Apps.jpg";
@@ -54,11 +55,8 @@ export default function MainMenu() {
           ]}
         />
       </div>
-      <Divider 
-        iconUrl={goldLeaf}
-        iconAlt="gold leaf icon"
-        thickness="2px"
-      />
+
+      <Divider iconUrl={goldLeaf} iconAlt="gold leaf icon" thickness="2px" />
 
       <div className="grill-kitchen-wrapper">
         <h2 className="grill-title">From The Grill & Kitchen</h2>
@@ -116,11 +114,7 @@ export default function MainMenu() {
         </div>
       </div>
 
-      <Divider
-        iconUrl={waveIcon}
-        iconAlt="wave icon"
-        thickness="2px"
-      />
+      <Divider iconUrl={waveIcon} iconAlt="wave icon" thickness="2px" />
 
       <div className='sushi-sashimi'>
         <h2 className='sushi-sashimi-header'>Sushi & Sashimi</h2>
@@ -145,11 +139,9 @@ export default function MainMenu() {
           />
         </div>
       </div>
-      <Divider
-        iconUrl={noodleIcon}
-        iconAlt="noodle-icon"
-        thickness="2px"
-      />
+
+      <Divider iconUrl={noodleIcon} iconAlt="noodle-icon" thickness="2px" />
+
       <div className="noodles-vegetarian">
         <MenuOptions
           title="Noodles & Fried Rice"
@@ -179,11 +171,7 @@ export default function MainMenu() {
         />
       </div>
 
-      <Divider
-        iconUrl={goldLeaf}
-        iconAlt="tempura-icon"
-        thickness="2px"
-      />
+      <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" />
 
       <div className="teriyaki-tempura">
         <h2 className="teriyaki-tempura-header">Teriyaki & Tempura</h2>
@@ -215,6 +203,49 @@ export default function MainMenu() {
             ]}
           />
         </div>
+      </div>
+
+      <Divider iconUrl={drinkIcon} iconAlt="tempura-icon" thickness="2px" />
+
+      <div className="deserts-drinks">
+        <MenuCategory
+          name="Drinks"
+          url={AppImage}
+          className="beveraged-category"
+          groups={[
+            {
+              subheading: "Cold",
+              layout: "half",
+              items: [
+                { name: "Iced Tea", price: "$2.00", description: "" },
+                { name: "Mineral Water", price: "$2.00", description: "" },
+                { name: "Soft Drinks", price: "$2.00", description: "Coke, Diet Coke, Sprite, and Ginger Ale" },
+                { name: "Japanese Marble Soda", price: "$3.95", description: "" },
+                { name: "Strawberry Ice Tea", price: "$3.95", description: "" },
+                { name: "Mango Iced Tea", price: "$3.95", description: "" },
+              ],
+            },
+            {
+              subheading:"Hot",
+              layout: "half",
+              items: [
+                { name: "Jasmine Tea", price: "$2.00", description: ""},
+                { name: "Japanese Green Tea", price: "$2.00", description: "" },
+              ],
+            },
+          ]}
+        />
+        <MenuCategory
+          name="Desserts"
+          url={SoupImage}
+          menu_items={[
+            { name: "Fried Banana with Ice Cream", price: "$2.95", description: "", },
+            { name: "Mango Rice Pudding", price: "$5.50", description: "Sticky rice with mixed nuts and fresh mango", },
+            { name: "Premium Ice Cream", price: "$4.95", description: "Red bean, green tea, or french vanilla", },
+            { name: "Mini Sugar Donuts", price: "$5.95", description: "Fried soft buns tossed in sugar", pieces: 6},
+            { name: "Tempura Fried Cheesecake", price: "$3.95", description: "", },
+          ]}
+        />
       </div>
 
     </div>
