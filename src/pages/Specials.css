@@ -1,15 +1,38 @@
-.lunch-special-page h1 {
-  color: var(--accent-bg);
+.specials-page {
+  margin-inline: 40px;
+  padding-bottom: 80px;
 }
 
-.lunch-special-page p {
+.specials-title {
+  text-align: center;
+  font-family: var(--heading);
   color: var(--accent-bg);
+  margin: 80px 0 32px;
+  font-size: 64px;
 }
 
-.lunch-special-section h3 {
+.specials-intro {
+  text-align: center;
+  color: var(--accent-bg);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 40px;
+}
+
+.lunch-section-title {
   color: var(--text-dark);
   font-family: var(--heading);
-  font-size: 40px;
+  font-size: 56px;
+  font-weight: normal;
+  margin: 0 0 8px;
+}
+
+.lunch-section-subtitle {
+  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 24px 0px 0px;
 }
 
 .lunch-maki-bento-row {
@@ -18,7 +41,6 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  /* makes both columns match height */
   gap: 60px;
 }
 
@@ -46,7 +68,6 @@
   font-style: italic;
 }
 
-/* Right column: Featured Bento Boxes card, matched to the left column's height/width share */
 .featured-bento-category {
   flex: 1 1 0;
   max-width: none;
@@ -55,7 +76,11 @@
   flex-direction: column;
   background-color: var(--accent-bg);
   border: none;
-  /* the gold card border reads oddly against a solid green fill */
+}
+
+.featured-bento-category .category-image {
+  height: 160px;
+  /* was inherited 250px from MenuCategory.css */
 }
 
 .featured-bento-category .menu-options {
@@ -79,4 +104,13 @@
 
 .featured-bento-category .menu-item-description {
   color: var(--text);
+}
+
+/* Neutralizes Section's home-page-specific full-height/snap behavior;
+   keeps only the fade-in-on-scroll animation */
+.reveal-block {
+  height: auto;
+  flex-shrink: initial;
+  scroll-snap-align: none;
+  justify-content: initial;
 }

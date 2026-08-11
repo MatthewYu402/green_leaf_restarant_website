@@ -1,0 +1,106 @@
+.dinner-section {
+  margin-inline: 40px;
+  padding-bottom: 80px;
+}
+
+.dinner-section-title {
+  text-align: center;
+  font-family: var(--heading);
+  color: var(--text-dark);
+  margin: 40px 0 8px;
+}
+
+.dinner-section-subtitle {
+  text-align: center;
+  color: var(--accent-bg);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin: 32px 0 40px;
+}
+
+.dinner-chef-special {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: var(--accent-bg);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.dinner-chef-special-image {
+  flex: 0 0 45%;
+  width: 45%;
+  object-fit: cover;
+}
+
+.dinner-chef-special-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 40px 48px;
+  box-sizing: border-box;
+}
+
+.dinner-chef-special-icon {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.dinner-chef-special-label {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dinner-chef-special-name {
+  color: var(--text);
+  font-family: var(--heading);
+  font-weight: normal;
+  font-size: 32px;
+  margin: 0 0 16px;
+  max-width: 80%;
+}
+
+.dinner-chef-special-description {
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--accent);
+}
+
+.dinner-chef-special-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.dinner-chef-special-price {
+  color: var(--accent);
+  font-family: var(--heading);
+  font-size: 24px;
+}
+
+.dinner-specials-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}

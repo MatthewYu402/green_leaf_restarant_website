@@ -3,7 +3,7 @@ import './SpecialItemGrid.css'
 import SpecialItem from './SpecialItem'
 
 interface SpecialItemData {
-  id: string;
+  id?: string;
   name: string;
   price: string;
   description: string;

@@ -1,7 +1,7 @@
 import './SpecialItem.css'
 
 interface SpecialItemProps {
-  id: string;
+  id?: string;
   name: string;
   price: string;
   description: string;
@@ -11,7 +11,7 @@ export default function SpecialItem({ id, name, price, description }: SpecialIte
   return (
     <div className="special-item">
       <div className="special-item-header">
-        <span className="special-item-id">{id}</span>
+        {id && <span className="special-item-id">{id}</span>}
         <h3 className="special-item-name">{name}</h3>
         <span className="special-item-price">{price}</span>
       </div>

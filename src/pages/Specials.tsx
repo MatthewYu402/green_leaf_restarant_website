@@ -7,19 +7,25 @@ import MenuCategory from '../components/menu/MenuCategory';
 
 //TODO: Change Image
 import FillerImage from '../assets/square-sushi.png';
+import DinnerSpecials from '../components/menu/DinnerSpecials';
+import Section from '../components/shared/Section';
 
 export default function LunchSpecials() {
   return (
-    <div className="lunch-special-page">
-      <h1>Seasonal Selections</h1>
-      <p>Check out our curated specials, where a balance of tradition and fusion meet.</p>
+    <div className="specials-page">
+      <Section className="reveal-block">
+        <h1 className="specials-title">Seasonal Selections</h1>
+        <p className="specials-intro">Check out our curated specials, where a balance of tradition and fusion meet.</p>
+      </Section>
 
       <Divider iconUrl={appleIcon} iconAlt="leaf" lineWidth='500px' />
 
-      <div className='lunch-special-section'>
-        <h3>Midday Muse</h3>
-        <p>A REFINED SELECTION OF LUNCH FEATURES, AVAILABLE DAILY UNTIL 3:00 PM.</p>
-      </div>
+      <Section className="reveal-block">
+        <div className='lunch-section'>
+          <h3 className="lunch-section-title">Midday Muse</h3>
+          <p className="lunch-section-subtitle">A REFINED SELECTION OF LUNCH FEATURES, AVAILABLE DAILY UNTIL 3:00 PM.</p>
+        </div>
+      
 
       <div className="lunch-maki-bento-row">
         <div className="lunch-maki-column">
@@ -52,7 +58,13 @@ export default function LunchSpecials() {
         />
       </div>
 
+      </Section>
+
       <Divider iconUrl={leafIcon} iconAlt="leaf" lineWidth='500px' />
+      
+      <Section className='reveal-block'>
+        <DinnerSpecials />
+      </Section>
     </div>
   );
 }
