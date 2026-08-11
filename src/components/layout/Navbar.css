@@ -1,5 +1,5 @@
 .logo {
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-weight: 600;
   font-size: 24px;
   transition: color 0.4s ease;
@@ -37,7 +37,7 @@
 
 
 .navbar-floating.scrolled {
-  background: var(--nav-bg);
+  background: var(--button-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
@@ -45,7 +45,7 @@
 
 .navbar-floating a,
 .navbar-floating .logo {
-  color: var(--text);
+  color: var(--text-white);
 }
 
 
@@ -61,11 +61,11 @@
 
 .navbar-solid a,
 .navbar-solid .logo {
-  color: var(--text);
+  color: var(--text-white);
 }
 
 .navbar-solid a:visited {
-  color: var(--text);
+  color: var(--text-white);
 }
 
 .navbar ul {
@@ -89,12 +89,12 @@
 }
 
 .navbar a:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--gold-accent);
   outline-offset: 2px;
 }
 
 .navbar a.active {
-  color: var(--text-highlight);
+  color: var(--gold-light);
   font-weight: 600;
   font-size: 18px;
 }
@@ -106,7 +106,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--text-highlight);
+  background-color: var(--gold-light);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
@@ -120,20 +120,20 @@
 
 .cell-num {
   padding: 8px 16px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--gold-border);
   border-radius: 2px;
   font-size: 16px;
   font-family: var(--sans);
   font-weight: 500;
   background-color: var(--accent-bg);
-  color: var(--text);
+  color: var(--text-white);
   transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .cell-num:hover {
   cursor: pointer;
-  background-color: var(--border);
-  border-color: var(--accent);
+  background-color: var(--gold-border);
+  border-color: var(--gold-accent);
   transform: scale(1.05);
 }
 

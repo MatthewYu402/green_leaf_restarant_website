@@ -39,8 +39,8 @@
 .special-feature-title {
   width: fit-content;
   padding: 8px 12px;
-  color: var(--text);
-  background: var(--text-signature);
+  color: var(--text-white);
+  background: var(--gold-dark);
   border-radius: 4px;
 }
 
@@ -71,7 +71,7 @@
   /* don't grow, don't shrink, use natural size */
   height: 1px;
   max-width: 600px;
-  background-color: var(--accent);
+  background-color: var(--gold-accent);
   border: none;
 }
 
@@ -89,7 +89,6 @@
 }
 
 .flower-icon {
-  color: red;
   width: 24px;
   height: 24px;
   flex-shrink: 0;

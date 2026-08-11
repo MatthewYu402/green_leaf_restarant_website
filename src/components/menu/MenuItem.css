@@ -7,7 +7,7 @@
   width: 100%;
   max-width: 600px;
   box-sizing: border-box;
-  border-bottom: 1px solid #E0E0E0;   /* NEW */
+  border-bottom: 1px solid var(--gray-div);   /* NEW */
   padding-bottom: 16px;               /* NEW */
 }
 
@@ -28,7 +28,7 @@
 .menu-item-name {
   font-size: 20px;
   font-weight: 500;
-  font-family: var(--heading);
+  font-family: var(--libre);
   color: var(--text-dark);
   margin: 0;
 }
@@ -37,7 +37,7 @@
   color: var(--text-dark);
   font-size: 18px;
   font-weight: normal;
-  font-family: var(--heading);
+  font-family: var(--libre);
   white-space: nowrap;
 }
 

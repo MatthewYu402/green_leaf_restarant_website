@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 // Pages
-import Home from './pages/Home';
-import SushiMenu from './pages/SushiMenu';
-import MainMenu from './pages/MainMenu';
+import Home from './pages/HomePage';
+import SushiMenu from './pages/SushiMenuPage';
+import MainMenu from './pages/MainMenuPage';
 
 // Components
 import PageHeader from './components/layout/PageHeader';
 import ScrollToTop from './components/ScrollTopTop';
-import Specials from './pages/Specials';
+import Specials from './pages/SpecialsPage';
 
 function App() {
   {/* Scrollbar fade — global, applies on every page */ }

@@ -4,8 +4,8 @@
   gap: 6px;
   padding: 15px;
   text-align: left;
-  background-color: var(--bg);
-  border: 1px solid var(--border);
+  background-color: var(--white);
+  border: 1px solid var(--gold-border);
   border-radius: 8px;
   box-shadow: var(--shadow);
   box-sizing: border-box;
@@ -20,16 +20,16 @@
 
 .special-item-id {
   flex-shrink: 0;
-  background-color: var(--accent-bg);
-  color: var(--text-highlight);
-  font-family: var(--heading);
+  background-color: var(--green-dark);
+  color: var(--gold-light);
+  font-family: var(--libre);
   font-size: 12px;
   padding: 2px 8px;
   border-radius: 4px;
 }
 
 .special-item-name {
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-weight: normal;
   font-size: 18px;
   color: var(--text-dark);
@@ -38,9 +38,9 @@
 }
 
 .special-item-price {
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-size: 16px;
-  color: var(--accent);
+  color: var(--gold-accent);
   margin-left: auto;
   /* pushes price to the far right of the row */
   white-space: nowrap;

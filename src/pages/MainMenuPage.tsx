@@ -1,4 +1,4 @@
-import "./MainMenu.css"
+import "./MainMenuPage.css"
 import MenuCategory from "../components/menu/MenuCategory";
 import MenuOptions from "../components/menu/MenuOptions";
 import Divider from "../components/shared/Divider";

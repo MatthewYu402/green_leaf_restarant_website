@@ -12,7 +12,7 @@
 .menu-options-title {
   color: var(--text-dark);
   font-size: 32px;
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-weight: 600;
   margin: 0;
 }
@@ -24,8 +24,6 @@
   gap: 32px;
   width: 100%;
 }
-
-
 
 .menu-item-group {
   display: flex;
@@ -42,9 +40,9 @@
 }
 
 .menu-options-subheading {
-  color: var(--accent);
+  color: var(--gold-accent);
   font-size: 18px;
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-weight: normal;
   margin: 0 0 8px;
 }

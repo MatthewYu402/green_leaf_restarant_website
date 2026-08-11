@@ -1,4 +1,4 @@
-import './SushiMenu.css'
+import './SushiMenuPage.css'
 import specialImage from "../assets/square-sushi.png"
 import flowerIcon from "../assets/flower-icon.svg"
 import MenuOptions from '../components/menu/MenuOptions';

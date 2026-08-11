@@ -1,25 +1,30 @@
 :root {
-  --text: #F9F9F7;
-  --text-dark: #000000;
-  --text-signature: #775A19;
-  --text-highlight: #FFDEA5;
-  --text-h: #F9F9F7;
-  --text-gold: #E9C176;
-  --bg: #fff;
+  /* Color-descriptive names*/
+  --cream: #F9F9F7;
+  --black: #000000;
+  --gold-dark: #775A19;
+  --gold-light: #FFDEA5;
+  --gold-medium: #E9C176;
+  --white: #fff;
   --offwhite: #F4F4F2;
-  --border: #937230;
-  --border-gray: #AAABAA;
-  --code-bg: #f4f3ec;
-  --accent: #C5A059;
-  --accent-bg: #1B3022;
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --gold-border: #937230;
+  --gray: #AAABAA;
+  --gray-div: #E0E0E0;
+  --gold-accent: #C5A059;
+  --green-dark: #1B3022;
+  --green-nav: rgba(6, 27, 14, 0.99);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-  --nav-bg: rgba(6, 27, 14, 0.99);
+      rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
+  /* Aliases */
+  --text-white: var(--cream);
+  --text-dark: var(--black);
+  --header-green: var(--green-dark);
+  --button-bg: var(--green-nav);
+
+  /* Text fonts */
   --sans: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: 'Libre Caslon Text', Georgia, serif;
+  --libre: 'Libre Caslon Text', Georgia, serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);

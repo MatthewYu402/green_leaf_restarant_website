@@ -1,4 +1,4 @@
-import './Specials.css'
+import './SpecialsPage.css'
 import appleIcon from "../assets/apple-icon.svg";
 import leafIcon from "../assets/leaf-icon.svg";
 import Divider from "../components/shared/Divider";

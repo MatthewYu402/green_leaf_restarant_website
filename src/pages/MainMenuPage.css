@@ -59,7 +59,7 @@
   /* shrinks + caps the overall container */
   margin: 40px auto;
   /* centers it, adds top/bottom spacing */
-  background-color: var(--accent-bg);
+  background-color: var(--green-dark);
   padding: 60px 40px;
   /* spacing on ALL sides now, not just left/right */
   box-sizing: border-box;
@@ -70,14 +70,14 @@
 }
 
 .sushi-sashimi-header {
-  color: var(--text-highlight);
+  color: var(--gold-light);
   text-align: center;
   font-size: 48px;
   margin: 0 0 8px;
 }
 
 .sushi-sashimi p {
-  color: var(--text);
+  color: var(--text-white);
   text-align: center;
   max-width: 700px;
   margin: 0 0 32px;
@@ -212,12 +212,12 @@
 
 .sushi-sashimi .menu-item-name {
   font-size: 24px;
-  color: var(--text);
+  color: var(--text-white);
 }
 
 .sushi-sashimi .menu-item-price {
   font-size: 18px;
-  color: var(--text-highlight);
+  color: var(--gold-light);
 }
 
 .sushi-sashimi .menu-item-details {
@@ -229,12 +229,12 @@
 
 .sushi-sashimi .menu-item-description {
   font-size: 16px;
-  color: var(--text);
+  color: var(--text-white);
 }
 
 .sushi-sashimi .menu-item-pieces {
   font-size: 13px;
-  color: var(--text);
+  color: var(--text-white);
 }
 
 /* Noodles Fried Rice, and Vegetarian*/
@@ -271,7 +271,7 @@
   width: 100%;
   max-width: 900px;
   margin: 40px auto;
-  background-color: var(--accent-bg);
+  background-color: var(--green-dark);
   padding: 60px 40px;
   box-sizing: border-box;
   display: flex;
@@ -281,14 +281,14 @@
 }
 
 .teriyaki-tempura-header {
-  color: var(--text-highlight);
+  color: var(--gold-light);
   text-align: center;
   font-size: 48px;
   margin: 0 0 8px;
 }
 
 .teriyaki-tempura p {
-  color: var(--text);
+  color: var(--text-white);
   text-align: center;
   max-width: 700px;
   margin: 0 0 32px;
@@ -326,7 +326,7 @@
 }
 
 .teriyaki-options .menu-options-subheading {
-  color: var(--text-highlight);
+  color: var(--gold-light);
   font-size: 24px;
   text-align: left;
   margin: 0 0 16px;
@@ -354,12 +354,12 @@
 }
 
 .teriyaki-options .menu-item-name {
-  color: var(--text);
+  color: var(--text-white);
   font-size: 20px;
 }
 
 .teriyaki-options .menu-item-price {
-  color: var(--text-highlight);
+  color: var(--gold-light);
   font-size: 18px;
 }
 
@@ -385,7 +385,7 @@
 }
 
 .beveraged-category .menu-options-subheading {
-  color: var(--text-gold);
+  color: var(--gold-medium);
   font-size: 18px;
   margin: 0 0 12px;
 }
@@ -423,9 +423,6 @@
   padding-bottom: 8px;
 }
   
-
-
-
 
 @media (max-width: 1450px) {
   .apps-soups-salads .item-list {

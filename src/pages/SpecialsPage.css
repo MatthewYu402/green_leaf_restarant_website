@@ -5,15 +5,15 @@
 
 .specials-title {
   text-align: center;
-  font-family: var(--heading);
-  color: var(--accent-bg);
+  font-family: var(--libre);
+  color: var(--green-dark);
   margin: 80px 0 32px;
   font-size: 64px;
 }
 
 .specials-intro {
   text-align: center;
-  color: var(--accent-bg);
+  color: var(--green-dark);
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 40px;
@@ -21,7 +21,7 @@
 
 .lunch-section-title {
   color: var(--text-dark);
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-size: 56px;
   font-weight: normal;
   margin: 0 0 8px;
@@ -54,7 +54,7 @@
 
 .lunch-maki-title {
   margin: 0;
-  font-family: var(--heading);
+  font-family: var(--libre);
   font-size: 32px;
   color: var(--text-dark);
   text-align: left;
@@ -74,7 +74,7 @@
   width: auto;
   display: flex;
   flex-direction: column;
-  background-color: var(--accent-bg);
+  background-color: var(--green-dark);
   border: none;
 }
 
@@ -91,19 +91,19 @@
 }
 
 .featured-bento-category .menu-options-title {
-  color: var(--text-highlight);
+  color: var(--gold-light);
 }
 
 .featured-bento-category .menu-item-name {
-  color: var(--text);
+  color: var(--text-white);
 }
 
 .featured-bento-category .menu-item-price {
-  color: var(--text-highlight);
+  color: var(--gold-light);
 }
 
 .featured-bento-category .menu-item-description {
-  color: var(--text);
+  color: var(--text-white);
 }
 
 /* Neutralizes Section's home-page-specific full-height/snap behavior;

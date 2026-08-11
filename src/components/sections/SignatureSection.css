@@ -11,12 +11,12 @@
 }
 
 .signature-section h2 {
-  color: var(--text-signature);
+  color: var(--gold-dark);
   font-size: 24px;
 }
 
 .signature-section h1 {
-  color: var(--accent-bg);
+  color: var(--green-dark);
   font-size: 36px;
   font-weight: 700;
 }
