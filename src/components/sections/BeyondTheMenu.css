@@ -1,0 +1,55 @@
+.beyond-menu {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.beyond-menu-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 40px;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.beyond-menu-subtitle {
+  color: var(--text-dark);
+  font-size: 18px;
+  margin: 0 0 40px;
+}
+
+.beyond-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.beyond-menu-card {
+  background-color: var(--offwhite);
+  border-radius: 12px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.beyond-menu-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.beyond-menu-card-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 24px;
+  color: var(--green-dark);
+  margin: 0;
+}
+
+.beyond-menu-card-description {
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}

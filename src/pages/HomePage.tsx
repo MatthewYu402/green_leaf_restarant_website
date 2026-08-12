@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
-import SignatureSection from '../components/sections/SignatureSection'
-import DailySpecials from "../components/sections/DailySpecials"
+import SignatureSection from '../components/sections/SignatureSection';
 import './HomePage.css';
+import BeyondTheMenu from '../components/sections/BeyondTheMenu';
+import StoryTeaser from '../components/sections/StoryTeaser';
+import PeekInside from '../components/sections/PeekInside';
 
 export default function Home() {
   {/* Navbar style swap (floating -> scrolled) based on scroll past hero */ }
@@ -107,7 +109,9 @@ export default function Home() {
         </div>
       </div>
       <SignatureSection />
-      <DailySpecials />
+      <BeyondTheMenu />
+      <StoryTeaser />
+      <PeekInside />
     </>
   );
 }

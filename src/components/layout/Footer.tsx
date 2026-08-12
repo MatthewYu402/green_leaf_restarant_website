@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="site-footer-content">
         <div className="site-footer-brand">
           <h2 className="site-footer-name">Green Leaf Sushi</h2>
-          <p className="site-footer-tagline">© 2026 Green Leaf Sushi. A family-run sanctuary.</p>
+          <p className="site-footer-tagline">© 2026 Green Leaf Sushi. A family-run restaurant.</p>
         </div>
 
         <nav className="site-footer-links">

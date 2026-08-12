@@ -1,0 +1,50 @@
+.peek-inside {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.peek-inside-header {
+  width: 75%;
+  margin: 0 auto 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.peek-inside-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 32px;
+  color: var(--text-dark);
+  margin: 0 0 4px;
+}
+
+.peek-inside-subtitle {
+  color: var(--gold-dark);
+  text-align: left;
+  font-size: 16px;
+  margin: 0;
+}
+
+.peek-inside-see-more {
+  color: var(--green-dark);
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.peek-inside-see-more:hover {
+  color: var(--gold-accent);
+}
+
+.peek-inside-see-more:visited {
+  color: var(--green-dark);
+}
+
+.peek-inside-gallery {
+  height: 320px;
+  /* placeholder height so layout doesn't collapse while empty */
+  background-color: var(--offwhite);
+  border-radius: 12px;
+}
