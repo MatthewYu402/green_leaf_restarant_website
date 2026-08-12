@@ -69,3 +69,7 @@
 .gallery-carousel-arrow:hover {
   background-color: var(--offwhite);
 }
+
+.gallery-carousel-track--no-transition {
+  transition: none;
+}

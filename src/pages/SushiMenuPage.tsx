@@ -1,5 +1,5 @@
 import './SushiMenuPage.css'
-import specialImage from "../assets/square-sushi.png"
+import specialImage from "../assets/twenty-year-roll.jpg"
 import flowerIcon from "../assets/flower-icon.svg"
 
 // Components

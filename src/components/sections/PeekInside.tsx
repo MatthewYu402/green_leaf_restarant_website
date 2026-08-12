@@ -4,8 +4,8 @@ import GalleryCarousel from '../shared/GalleryCarousel'
 import { Link } from 'react-router-dom'
 
 // TODO: replace with real photos
-import GalleryImage1 from '../../assets/square-sushi.png'
-import GalleryImage2 from '../../assets/square-sushi.png'
+import GalleryImage1 from '../../assets/chris.jpeg'
+import GalleryImage2 from '../../assets/new-year.jpeg'
 import GalleryImage3 from '../../assets/square-sushi.png'
 import GalleryImage4 from '../../assets/square-sushi.png'
 import GalleryImage5 from '../../assets/square-sushi.png'

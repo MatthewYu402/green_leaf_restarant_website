@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './GalleryCarousel.css';
 
 interface CarouselImage {
@@ -8,13 +8,18 @@ interface CarouselImage {
 
 interface GalleryCarouselProps {
   images: CarouselImage[];
-  slideWidthRatio?: number;   // fraction of container width each slide takes, default 0.6
+  slideWidthRatio?: number;
 }
+
+const CLONE_COUNT = 2;
 
 export default function GalleryCarousel({ images, slideWidthRatio = 0.6 }: GalleryCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
+  const count = images.length;
+
+  const [trackPosition, setTrackPosition] = useState(CLONE_COUNT);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -26,25 +31,44 @@ export default function GalleryCarousel({ images, slideWidthRatio = 0.6 }: Galle
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!transitionEnabled) {
+      const raf = requestAnimationFrame(() => setTransitionEnabled(true));
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [transitionEnabled]);
+
   const gap = 24;
   const slideWidth = containerWidth * slideWidthRatio;
-  const count = images.length;
 
-  const goTo = useCallback((i: number) => {
-    setIndex(((i % count) + count) % count);
-  }, [count]);
+  const goNext = () => {
+    setTransitionEnabled(true);
+    setTrackPosition((p) => p + 1);
+  };
 
-  const goPrev = () => goTo(index - 1);
-  const goNext = () => goTo(index + 1);
+  const goPrev = () => {
+    setTransitionEnabled(true);
+    setTrackPosition((p) => p - 1);
+  };
 
-  // Build an extended track: [last clone, ...real images, first clone]
-  // so there is always a genuine neighbor slide to peek at on both sides,
-  // even at index 0 or the final index.
-  const extended = [images[count - 1], ...images, images[0]];
-  const extendedIndex = index + 1;   // +1 to account for the prepended clone
+  const handleTransitionEnd = () => {
+    if (trackPosition === CLONE_COUNT - 1) {
+      setTransitionEnabled(false);
+      setTrackPosition(CLONE_COUNT + count - 1);
+    } else if (trackPosition === CLONE_COUNT + count) {
+      setTransitionEnabled(false);
+      setTrackPosition(CLONE_COUNT);
+    }
+  };
+
+  const extended = [
+    ...images.slice(count - CLONE_COUNT),
+    ...images,
+    ...images.slice(0, CLONE_COUNT),
+  ];
 
   const offset = containerWidth
-    ? (containerWidth - slideWidth) / 2 - extendedIndex * (slideWidth + gap)
+    ? (containerWidth - slideWidth) / 2 - trackPosition * (slideWidth + gap)
     : 0;
 
   return (
@@ -55,18 +79,21 @@ export default function GalleryCarousel({ images, slideWidthRatio = 0.6 }: Galle
 
       <div className="gallery-carousel-viewport">
         <div
-          className="gallery-carousel-track"
+          className={`gallery-carousel-track ${transitionEnabled ? '' : 'gallery-carousel-track--no-transition'}`}
           style={{ transform: `translateX(${offset}px)`, gap: `${gap}px` }}
+          onTransitionEnd={handleTransitionEnd}
         >
           {extended.map((image, i) => {
-            const realIndex = i - 1;   // maps back to the true index, clones excluded from this
-            const isActive = realIndex === index;
+            const isActive = i === trackPosition;
             return (
               <div
                 key={`${image.src}-${i}`}
                 className={`gallery-carousel-slide ${isActive ? 'gallery-carousel-slide--active' : ''}`}
                 style={{ width: slideWidth ? `${slideWidth}px` : `${slideWidthRatio * 100}%` }}
-                onClick={() => goTo(realIndex)}
+                onClick={() => {
+                  if (i < trackPosition) goPrev();
+                  else if (i > trackPosition) goNext();
+                }}
               >
                 <img src={image.src} alt={image.alt ?? ''} className="gallery-carousel-image" />
               </div>
