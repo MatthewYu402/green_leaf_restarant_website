@@ -3,11 +3,13 @@ import MenuCategory from "../components/menu/MenuCategory";
 import MenuOptions from "../components/menu/MenuOptions";
 import Divider from "../components/shared/Divider";
 import Section from "../components/shared/Section";
+import FeaturedMenuSection from "../components/menu/FeaturedMenuSection";
 
 
 // Images
 import AppImage from "../assets/Apps.jpg";
 import SoupImage from "../assets/soups.jpg"
+import SquareSushi from "../assets/square-sushi.png"
 import goldLeaf from "../assets/gold-leaf.svg";
 import noodleIcon from "../assets/noodle-icon.svg"
 import waveIcon from "../assets/wave-icon.svg"
@@ -17,48 +19,63 @@ import forkKnifeIcon from "../assets/gold-fork-knife.svg"
 export default function MainMenu() {
   return (
     <div className="main-menu-page">
-      <Section className='reveal-block-slide'>
-        <div className="apps-soups-salads">
-          <MenuCategory
-            name="Appetizers"
-            url={AppImage}
-            menu_items={[
-              { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinich wrap", pieces: 4 },
-              { name: "Edamame", price: "$5.50", description: "TODO", },
-              { name: "Shumai", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)" },
-              { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "TODO", pieces: 3 },
-              { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
-              { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
-              { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
-              { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teryaki sauce", pieces: 3 },
-              { name: "Fried Calamari", price: "$9.95", description: "TODO" },
-              { name: "Crispy Wonton", price: "5.95", description: "Cream cheese with crab meat", pieces: 3 },
-              { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
-              { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
-              { name: "Summer Roll", price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
-              { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
-            ]}
-          />
-          <MenuCategory
-            name="Soups & Salads"
-            url={SoupImage}
-            menu_items={[
-              { name: "Miso Soup", price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions", },
-              { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "TODO", },
-              { name: "Hot and Sour Soup", price: "$4.95", description: "TODO", },
-              { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "TODO", },
-              { name: "Egg Drop Soup", price: "$3.95", description: "TODO", },
-              { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing", },
-              { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "TODO", },
-              { name: "Seaweed Salad", price: "$5.95", description: "TODO", },
-              { name: "California Style Salad", price: "$6.95", description: "TODO", },
-              { name: "Sushi Bar Salad", price: "$6.95", description: "TODO", },
-              { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing", },
-              { name: "Baby Octopus Salad", price: "$7.95", description: "TODO", },
-              { name: "Marinated Calamari Salad", price: "$7.95", description: "TODO", },
-            ]}
-          />
-        </div>
+      <Section className="reveal-block-slide">
+        <FeaturedMenuSection
+          title="Appetizers"
+          image={AppImage}
+          imageAlt="Signature appetizer spread"
+          badge="Chef's Selection"
+          featuredTitle="Signature Starters"
+          featuredDescription="Experience a curated assortment of our finest appetizers, perfect for sharing and awakening the palate."
+          featuredItems={[
+            { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
+            { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
+            { name: "Summer Roll", price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
+            { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
+          ]}
+          items={[
+            { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
+            { name: "Shumai", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)" },
+            { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "TODO" },
+            { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
+            { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
+            { name: "Fried Calamari", price: "$9.95", description: "TODO" },
+            { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
+            { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
+            { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
+            { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
+            { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
+          ]}
+        />
+      </Section>
+
+      <Section className="reveal-block-slide">
+        <FeaturedMenuSection
+          className="soups-salads-section"
+          title="Soups & Salads"
+          image={SoupImage}
+          imageAlt="Soups and salads selection"
+          badge="Chef's Selection"
+          featuredTitle="Comforting Classics"
+          featuredDescription="Warm broths and crisp, fresh salads — traditional favorites made to balance and complement any meal."
+          featuredItems={[
+            { name: "Miso Soup", price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
+            { name: "Egg Drop Soup", price: "$3.95", description: "TODO" },
+            { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
+            { name: "Seaweed Salad", price: "$5.95", description: "TODO" },
+          ]}
+          items={[
+            { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "TODO" },
+            { name: "Hot and Sour Soup", price: "$4.95", description: "TODO" },
+            { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "TODO" },
+            { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "TODO" },
+            { name: "California Style Salad", price: "$6.95", description: "TODO" },
+            { name: "Sushi Bar Salad", price: "$6.95", description: "TODO" },
+            { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
+            { name: "Baby Octopus Salad", price: "$7.95", description: "TODO" },
+            { name: "Marinated Calamari Salad", price: "$7.95", description: "TODO" },
+          ]}
+        />
       </Section>
 
       <Section className="reveal-block-fade">
@@ -128,27 +145,30 @@ export default function MainMenu() {
       </Section>
 
       <Section className="reveal-block-slide">
-        <div className='sushi-sashimi'>
-          <h2 className='sushi-sashimi-header'>Sushi & Sashimi</h2>
-          <p>Sourced daily, expertly prepared. Served a la carte (2 pieces per order) or as chef's selection</p>
-          <div className='menu-sushi-sashimi-options'>
-            <MenuOptions
-              title="Donburi & Una-jyu"
-              menu_items={[
-                { name: "Tekka Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh tuna" },
-                { name: "Salmon Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh salmon" },
-                { name: "Chirashi Don", price: "$20.95", description: "Bowl of seasoned rice with assorted raw fish" },
-                { name: "Una-jyu", price: "$20.95", description: "Broiled fresh water eel with special sauce over rice" },
-              ]}
-            />
-            <MenuOptions
-              title="Sushi & Sashimi"
-              menu_items={[
-                { name: "Sushi Deluxe", price: "$20.95", description: "TODO" },
-                { name: "Sashimi Deluxe", price: "$24.95", description: "TODO" },
-                { name: "Sushi Boat", price: "$59.95", description: "TODO" },
-              ]}
-            />
+        <div className="sushi-sashimi">
+          <img src={SquareSushi} className="sushi-sashimi-image" alt="Fresh sushi and sashimi selection" />
+          <div className="sushi-sashimi-content">
+            <h2 className="sushi-sashimi-header">Sushi & Sashimi</h2>
+            <p className="sushi-sashimi-description">Sourced daily, expertly prepared. Served a la carte (2 pieces per order) or as chef's selection</p>
+            <div className="menu-sushi-sashimi-options">
+              <MenuOptions
+                title="Donburi & Una-jyu"
+                menu_items={[
+                  { name: "Tekka Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh tuna" },
+                  { name: "Salmon Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh salmon" },
+                  { name: "Chirashi Don", price: "$20.95", description: "Bowl of seasoned rice with assorted raw fish" },
+                  { name: "Una-jyu", price: "$20.95", description: "Broiled fresh water eel with special sauce over rice" },
+                ]}
+              />
+              <MenuOptions
+                title="Sushi & Sashimi"
+                menu_items={[
+                  { name: "Sushi Deluxe", price: "$20.95", description: "TODO" },
+                  { name: "Sashimi Deluxe", price: "$24.95", description: "TODO" },
+                  { name: "Sushi Boat", price: "$59.95", description: "TODO" },
+                ]}
+              />
+            </div>
           </div>
         </div>
       </Section>
