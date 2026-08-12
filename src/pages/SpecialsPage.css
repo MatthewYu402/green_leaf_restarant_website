@@ -87,6 +87,7 @@
   width: 100%;
   flex: 1;
   padding: 24px;
+  gap: 16px;
 }
 
 .featured-bento-category .menu-options-title {

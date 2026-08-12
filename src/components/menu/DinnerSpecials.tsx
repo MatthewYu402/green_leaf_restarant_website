@@ -41,7 +41,7 @@ export default function DinnerSpecials() {
         items={[
           { name: "Chicken Lettuce Wrap", price: "$11.95", description: "TODO" },
           { name: "Thai Basil Chicken", price: "$15.95", description: "TODO" },
-          { name: "Triple Delight", price: "$18.95", description: "TODO" },
+          { name: "Triple Delight", price: "$18.95", description: "Stir-fry of shrimp, chicken, beef, and vegetables" },
           { name: "Thai Basil Shrimp", price: "$17.95", description: "TODO" },
           { name: "Thai Basil Beef", price: "$17.95", description: "TODO" },
           { name: "Beef and Shrimp", price: "$18.95", description: "Stir-fry with tomato and spring onions" },

@@ -24,6 +24,7 @@
   color: var(--gold-light);
   font-family: var(--libre);
   font-size: 12px;
+  font-weight: 600;
   padding: 2px 8px;
   border-radius: 4px;
 }

@@ -38,7 +38,7 @@ export default function Specials() {
             items={[
               { id: "L1", name: "California Roll and Eel Avocado Roll", price: "$10.25", description: "" },
               { id: "L2", name: "Spicy Tuna Roll and California Roll", price: "$10.25", description: "" },
-              { id: "L3", name: " Salmon Roll and California Roll", price: "$10.25", description: "" },
+              { id: "L3", name: "Salmon Roll and California Roll", price: "$10.25", description: "" },
               { id: "L4", name: "Tuna Roll and California Roll", price: "$10.25", description: "" },
               { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.25", description: "" },
               { id: "L6", name: "Two California Rolls", price: "$10.25", description: "" },
@@ -52,11 +52,12 @@ export default function Specials() {
           name="Featured Bento Boxes"
           url={FillerImage}
           className="featured-bento-category"
+          note="*Served with white rice and miso soup. No substitutions"
           menu_items={[
-            { name: "Shrimp Tempura and California Roll", price: "$10.95", description: "" },
-            { name: "Chicken Teriyaki and California Roll", price: "$10.95", description: "" },
-            { name: "Crispy Sesame Chicken and California Roll", price: "$10.95", description: "" },
-            { name: "Vegetable Tempura and California Roll", price: "$10.95", description: "" }
+            { id: "L9", name: "Shrimp Tempura and California Roll", price: "$10.95", description: "" },
+            { id: "L10", name: "Chicken Teriyaki and California Roll", price: "$10.95", description: "" },
+            { id: "L11", name: "Crispy Sesame Chicken and California Roll", price: "$10.95", description: "" },
+            { id: "L12", name: "Vegetable Tempura and California Roll", price: "$10.95", description: "" }
           ]}
         />
       </div>

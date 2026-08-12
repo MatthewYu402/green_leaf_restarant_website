@@ -3,6 +3,7 @@ import './MenuCategory.css'
 import MenuOptions from './MenuOptions';
 
 interface MenuItemData {
+  id?: string;
   name: string;
   description: string;
   price: string;
@@ -17,22 +18,19 @@ interface MenuItemGroup {
 
 interface MenuCategoryProps {
   name: string;
-  menu_items?: MenuItemData[];   // now optional, since groups can be used instead
-  groups?: MenuItemGroup[];      
+  note?: string;   // NEW
+  menu_items?: MenuItemData[];
+  groups?: MenuItemGroup[];
   url?: string;
-  className?: string;            
+  className?: string;
 }
 
-export default function MenuCategory({ name, menu_items, groups, url, className = "" }: MenuCategoryProps) {
+export default function MenuCategory({ name, note, menu_items, groups, url, className = "" }: MenuCategoryProps) {
   return (
     <div className={`menu-category ${className}`.trim()}>
       {url && <img src={url} className="category-image" alt={name} />}
       <div>
-        <MenuOptions
-          title={name}
-          menu_items={menu_items}
-          groups={groups}
-        />
+        <MenuOptions title={name} note={note} menu_items={menu_items} groups={groups} />
       </div>
     </div>
   );

@@ -25,12 +25,26 @@
   gap: 16px;
 }
 
+.menu-item-id {
+  flex-shrink: 0;
+  background-color: var(--gold-light);
+  color: var(--green-dark);
+  font-family: var(--libre);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: -8px;
+  /* tightens the gap before the name */
+}
+
 .menu-item-name {
   font-size: 20px;
   font-weight: 500;
   font-family: var(--libre);
   color: var(--text-dark);
   margin: 0;
+  flex: 1;
 }
 
 .menu-item-price {

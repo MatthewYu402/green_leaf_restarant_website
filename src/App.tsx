@@ -11,6 +11,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import PageHeader from './components/layout/PageHeader';
 import ScrollToTop from './components/ScrollTopTop';
 import Specials from './pages/SpecialsPage';
+import Footer from './components/layout/Footer';
 
 function App() {
   {/* Scrollbar fade — global, applies on every page */ }
@@ -45,6 +46,7 @@ function App() {
         <Route path="/specials" element={<Specials />} />
         <Route path="/about" element={<AboutUsPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

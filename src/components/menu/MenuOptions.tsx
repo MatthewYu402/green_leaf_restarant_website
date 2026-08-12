@@ -3,6 +3,7 @@ import "./MenuOptions.css"
 import MenuItem from "./MenuItem"
 
 interface MenuItemData {
+  id?: string;
   name: string;
   description: string;
   price: string;
@@ -17,17 +18,19 @@ interface MenuItemGroup {
 
 interface MenuOptionsProps {
   title: string;
+  note?: string;   // NEW
   menu_items?: MenuItemData[];
   groups?: MenuItemGroup[];
-  className?: string;   // new — lets pages scope overrides without hacks
+  className?: string;
 }
 
-export default function MenuOptions({ title, menu_items, groups, className = "" }: MenuOptionsProps) {
+export default function MenuOptions({ title, note, menu_items, groups, className = "" }: MenuOptionsProps) {
   const renderGroups: MenuItemGroup[] = groups ?? (menu_items ? [{ items: menu_items }] : []);
 
   return (
     <div className={`menu-options ${className}`.trim()}>
       <h2 className="menu-options-title">{title}</h2>
+      {note && <p className="menu-options-note">{note}</p>}
       <div className="menu-groups">
         {renderGroups.map((group, i) => (
           <div
