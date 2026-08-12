@@ -12,5 +12,27 @@
 
 .section-visible {
   opacity: 1;
+}
+
+/* Shared structural override for non-home pages: no full-viewport height, no snap */
+.section.reveal-block-slide,
+.section.reveal-block-fade {
+  height: auto;
+  flex-shrink: initial;
+  scroll-snap-align: none;
+  justify-content: initial;
+}
+
+/* Slide variant: fades in while rising up — the current default look */
+.section.reveal-block-slide {
+  transform: translateY(24px);
+}
+
+.section.reveal-block-slide.section-visible {
   transform: translateY(0);
+}
+
+/* Fade variant: opacity only, no vertical movement — for dividers/small accents */
+.section.reveal-block-fade {
+  transform: none;
 }

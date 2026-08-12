@@ -1,26 +1,29 @@
 import './SpecialsPage.css'
 import appleIcon from "../assets/apple-icon.svg";
 import leafIcon from "../assets/leaf-icon.svg";
+import FillerImage from '../assets/square-sushi.png';
+
+// Components
 import Divider from "../components/shared/Divider";
 import SpecialItemGrid from '../components/menu/SpecialItemGrid';
 import MenuCategory from '../components/menu/MenuCategory';
-
-//TODO: Change Image
-import FillerImage from '../assets/square-sushi.png';
 import DinnerSpecials from '../components/menu/DinnerSpecials';
 import Section from '../components/shared/Section';
 
-export default function LunchSpecials() {
+export default function Specials() {
   return (
     <div className="specials-page">
-      <Section className="reveal-block">
+      <Section className="reveal-block-slide">
         <h1 className="specials-title">Seasonal Selections</h1>
         <p className="specials-intro">Check out our curated specials, where a balance of tradition and fusion meet.</p>
       </Section>
 
-      <Divider iconUrl={appleIcon} iconAlt="leaf" lineWidth='500px' />
+      <Section className='reveal-block-fade'>
+        <Divider iconUrl={appleIcon} iconAlt="leaf" lineWidth='500px' />
+      </Section>
+      
 
-      <Section className="reveal-block">
+      <Section className="reveal-block-slide">
         <div className='lunch-section'>
           <h3 className="lunch-section-title">Midday Muse</h3>
           <p className="lunch-section-subtitle">A REFINED SELECTION OF LUNCH FEATURES, AVAILABLE DAILY UNTIL 3:00 PM.</p>
@@ -60,9 +63,11 @@ export default function LunchSpecials() {
 
       </Section>
 
-      <Divider iconUrl={leafIcon} iconAlt="leaf" lineWidth='500px' />
+      <Section className='reveal-block-fade'>
+        <Divider iconUrl={leafIcon} iconAlt="leaf" lineWidth='500px' />
+      </Section>
       
-      <Section className='reveal-block'>
+      <Section className='reveal-block-slide'>
         <DinnerSpecials />
       </Section>
     </div>

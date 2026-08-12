@@ -94,12 +94,47 @@
   flex-shrink: 0;
 }
 
-.sushi-options-1 {
+.sushi-rolls-row {
+  max-width: 1700px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  align-items: stretch;
   justify-content: center;
+  gap: 40px;
 }
+
+.sushi-rolls-row .menu-category {
+  flex: 1 1 0;
+  max-width: none;
+  width: auto;
+}
+
+.sushi-rolls-row .menu-options {
+  max-width: none;
+  width: 100%;
+}
+
+.sushi-rolls-row .menu-options-title {
+  text-align: left;
+  font-size: 28px;
+}
+
+.sushi-rolls-row .item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+.sushi-rolls-row .menu-item {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  /* rough floor so very short items don't look collapsed */
+}
+
 
 @keyframes fadeIn {
   from {
