@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/HomePage';
 import SushiMenu from './pages/SushiMenuPage';
 import MainMenu from './pages/MainMenuPage';
+import AboutUsPage from './pages/AboutUsPage';
 
 // Components
 import PageHeader from './components/layout/PageHeader';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/menu" element={<MainMenu />}/>
         <Route path="/sushi" element={<SushiMenu />} />
         <Route path="/specials" element={<Specials />} />
+        <Route path="/about" element={<AboutUsPage />} />
       </Routes>
     </>
   );

@@ -1,0 +1,284 @@
+.about-page {
+  padding-bottom: 80px;
+}
+
+/* Hero */
+.about-hero {
+  position: relative;
+  max-width: 1700px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.about-hero-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+  padding: 24px;
+}
+
+.about-hero-title {
+  color: var(--white);
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 56px;
+  margin: 0 0 12px;
+}
+
+.about-hero-subtitle {
+  color: var(--offwhite);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Family Sanctuary */
+.about-story {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 60px;
+}
+
+.about-story-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-story-title {
+  font-family: var(--libre);
+  font-weight: 600;
+  font-size: 40px;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.about-story-paragraph {
+  color: var(--text-dark);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-story-button {
+  align-self: flex-start;
+  margin-top: 8px;
+  background-color: var(--green-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.about-story-button:hover {
+  opacity: 0.9;
+}
+
+.about-story-image {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Gallery */
+.about-gallery {
+  max-width: 1700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-gallery-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.about-gallery-subtitle {
+  color: var(--gray);
+  font-size: 15px;
+  margin: 0 0 32px;
+}
+
+.about-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.about-gallery-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.about-gallery-item:hover .about-gallery-photo {
+  transform: scale(1.05);
+}
+
+.about-gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(27, 48, 34, 0.9), rgba(27, 48, 34, 0));
+  color: var(--gold-light);
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Join Our Table */
+.about-join {
+  max-width: 1200px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.about-join-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin: 0 0 32px;
+}
+
+.about-join-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.about-info-card {
+  flex: 1;
+  background-color: var(--offwhite);
+  border-radius: 12px;
+  padding: 32px;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-info-card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.about-info-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.about-info-card-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 24px;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.about-info-line {
+  color: var(--text-dark);
+  font-size: 16px;
+  margin: 0;
+}
+
+.about-map-embed {
+  margin-top: 8px;
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--gray-div);
+}
+
+.about-hours-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+.about-holiday-hours {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-div);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-holiday-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 18px;
+  color: var(--text-dark);
+  margin: 0 0 4px;
+}
+
+.about-holiday-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.about-holiday-name {
+  color: var(--text-dark);
+}
+
+.about-holiday-status {
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.about-holiday-status--open {
+  color: var(--green-dark);
+  background-color: var(--gold-light);
+}
+
+.about-holiday-status--closed {
+  color: var(--gray);
+  background-color: var(--gray-div);
+}
