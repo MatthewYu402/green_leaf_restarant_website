@@ -1,9 +1,14 @@
 import './DinnerSpecials.css'
+
+// Components
 import SpecialItemGrid from './SpecialItemGrid';
 
-// TODO: Replace with real chef's special photo
-import ChefSpecialImage from '../../assets/square-sushi.png';
+// Icons
 import forkKnifeIcon from '../../assets/fork-knife-icon.svg';
+
+// Images
+// TODO: Replace with real chef's special photo
+import ChefSpecialImage from '@/assets/images/square-sushi.png';
 
 export default function DinnerSpecials() {
   return (

@@ -1,15 +1,18 @@
 import './PeekInside.css'
-import Section from '../shared/Section'
-import GalleryCarousel from '../shared/GalleryCarousel'
 import { Link } from 'react-router-dom'
 
+// Components
+import Section from '../shared/Section'
+import GalleryCarousel from '../shared/GalleryCarousel'
+
+// Images
 // TODO: replace with real photos
-import GalleryImage1 from '../../assets/chris.jpeg'
-import GalleryImage2 from '../../assets/new-year.jpeg'
-import GalleryImage3 from '../../assets/square-sushi.png'
-import GalleryImage4 from '../../assets/square-sushi.png'
-import GalleryImage5 from '../../assets/square-sushi.png'
-import GalleryImage6 from '../../assets/square-sushi.png'
+import GalleryImage1 from '@/assets/images/chris.jpeg'
+import GalleryImage2 from '@/assets/images/new-year.jpeg'
+import GalleryImage3 from '@/assets/images/square-sushi.png'
+import GalleryImage4 from '@/assets/images/square-sushi.png'
+import GalleryImage5 from '@/assets/images/square-sushi.png'
+import GalleryImage6 from '@/assets/images/square-sushi.png'
 
 const GALLERY_IMAGES = [
   { src: GalleryImage1, alt: "Anniversary celebration" },

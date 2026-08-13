@@ -1,7 +1,9 @@
+import './PageHeader.css'
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+// Components
 import Navbar from "./Navbar";
-import './PageHeader.css'
 
 const MENU_ROUTES = ['/menu', '/sushi'];
 

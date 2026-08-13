@@ -1,7 +1,10 @@
-import Section from '../shared/Section'
 import './SignatureSection.css'
 
-import signatureImage from '../../assets/twenty-year-roll.jpg'
+// Components
+import Section from '../shared/Section'
+
+// Images
+import signatureImage from '@/assets/images/twenty-year-roll.jpg'
 
 export default function SignatureSection() {
   return (

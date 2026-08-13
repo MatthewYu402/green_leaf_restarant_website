@@ -1,6 +1,10 @@
-import { useEffect } from 'react';
-import SignatureSection from '../components/sections/SignatureSection';
 import './HomePage.css';
+import { useEffect } from 'react';
+
+// Icons
+
+// Components
+import SignatureSection from '../components/sections/SignatureSection';
 import BeyondTheMenu from '../components/sections/BeyondTheMenu';
 import StoryTeaser from '../components/sections/StoryTeaser';
 import PeekInside from '../components/sections/PeekInside';

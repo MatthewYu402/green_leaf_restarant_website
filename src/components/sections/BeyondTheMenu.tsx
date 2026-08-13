@@ -1,7 +1,9 @@
 import './BeyondTheMenu.css'
+
+// Components
 import Section from '../shared/Section'
 
-// TODO: swap for real icons
+// Icons
 import cateringIcon from '../../assets/catering.svg'
 import reservationsIcon from '../../assets/reservation.svg'
 import byobIcon from '../../assets/byob.svg'

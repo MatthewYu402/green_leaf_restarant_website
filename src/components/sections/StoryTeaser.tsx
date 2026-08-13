@@ -1,9 +1,12 @@
 import './StoryTeaser.css'
-import Section from '../shared/Section'
 import { Link } from 'react-router-dom'
 
+// Components
+import Section from '../shared/Section'
+
+// Images
 // TODO: replace with real photo
-import FamilyImage from '../../assets/square-sushi.png'
+import FamilyImage from '@/assets/images/square-sushi.png'
 
 export default function StoryTeaser() {
   return (

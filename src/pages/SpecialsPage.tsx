@@ -1,7 +1,11 @@
 import './SpecialsPage.css'
+
+// Icons
 import appleIcon from "../assets/apple-icon.svg";
 import leafIcon from "../assets/gold-leaf.svg";
-import FillerImage from '../assets/square-sushi.png';
+
+// Images
+import FillerImage from '@/assets/images/square-sushi.png';
 
 // Components
 import Divider from "../components/shared/Divider";

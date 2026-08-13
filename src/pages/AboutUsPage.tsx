@@ -1,22 +1,25 @@
+import './AboutUsPage.css'
 import { Link } from 'react-router-dom'
 
-import './AboutUsPage.css'
+// Components
 import Section from '../components/shared/Section'
 import Divider from '../components/shared/Divider'
 
-// TODO: Replace with real photography
-import HeroImage from '../assets/square-sushi.png'
-import FamilyImage from '../assets/square-sushi.png'
-import GalleryImage1 from '../assets/square-sushi.png'
-import GalleryImage2 from '../assets/square-sushi.png'
-import GalleryImage3 from '../assets/square-sushi.png'
-import GalleryImage4 from '../assets/square-sushi.png'
-import GalleryImage5 from '../assets/square-sushi.png'
-import GalleryImage6 from '../assets/square-sushi.png'
-
+// Icons
 import mapPinIcon from '../assets/pin.svg'
 import clockIcon from '../assets/clock.svg'
 import diamondIcon from '../assets/diamond.svg'
+
+// Images
+// TODO: Replace with real photography
+import HeroImage from '@/assets/images/square-sushi.png'
+import FamilyImage from '@/assets/images/square-sushi.png'
+import GalleryImage1 from '@/assets/images/square-sushi.png'
+import GalleryImage2 from '@/assets/images/square-sushi.png'
+import GalleryImage3 from '@/assets/images/square-sushi.png'
+import GalleryImage4 from '@/assets/images/square-sushi.png'
+import GalleryImage5 from '@/assets/images/square-sushi.png'
+import GalleryImage6 from '@/assets/images/square-sushi.png'
 
 export default function AboutUsPage() {
   return (

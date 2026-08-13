@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+
 // Pages
 import Home from './pages/HomePage';
 import SushiMenu from './pages/SushiMenuPage';

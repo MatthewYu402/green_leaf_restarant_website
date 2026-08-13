@@ -1,15 +1,13 @@
 import "./MainMenuPage.css"
+
+// Components
 import MenuOptions from "../components/menu/MenuOptions";
 import Divider from "../components/shared/Divider";
 import Section from "../components/shared/Section";
 import FeaturedMenuSection from "../components/menu/FeaturedMenuSection";
 import DrinksDesserts from "../components/menu/DrinksDesserts";
 
-
-// Images
-import AppImage from "../assets/Apps.jpg";
-import SoupImage from "../assets/soups.jpg"
-import SquareSushi from "../assets/square-sushi.png";
+// Icons
 import goldLeaf from "../assets/gold-leaf.svg";
 import noodleIcon from "../assets/noodle-icon.svg";
 import waveIcon from "../assets/wave-icon.svg";
@@ -19,6 +17,11 @@ import teacupBlackIcon from "../assets/hot-icon.svg";
 import dessertIcon from "../assets/dessert-icon.svg";
 import waterDropIcon from "../assets/water-drop-icon.svg";
 import cupIcon from "../assets/hot-cup-icon.svg";
+
+// Images
+import AppImage from "@/assets/images/Apps.jpg";
+import SoupImage from "@/assets/images/soups.jpg"
+import SquareSushi from "@/assets/images/square-sushi.png";
 
 export default function MainMenu() {
   return (
