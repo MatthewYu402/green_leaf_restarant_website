@@ -178,38 +178,38 @@ export default function MainMenu() {
       </Section>
 
       <Section className='reveal-block-slide'>
-        <div className="noodles-vegetarian">
-          <MenuOptions
-            title="Noodles & Fried Rice"
-            menu_items={[
-              { name: "Japanese Pan Noodle", price: "$18.95", description: "Chicken, shrimp, and vegetables" },
-              { name: "Pad Thai", price: "$14.95", description: "Chicken or shrimp" },
-              { name: "Singapore Rice Noodes", price: "$14.95", description: "Chicken or shrimp" },
-              { name: "Yaki Udon Noodes", price: "$14.95", description: "Chicken or shrimp" },
-              { name: "Drunken Noodle", price: "$15.95", description: "Chicken or shrimp" },
-              { name: "Japanese Fried Rice", price: "$13.95", description: "Chicken or shrimp" },
-              { name: "Roasted Pork Fried Rice", price: "$13.95", description: "Pork and vegetables" },
-              { name: "Nabe Yaki Udon Soup", price: "$14.95", description: "Pork and vegetables" },
-              { name: "Lo Mein", price: "$14.95", description: "Chicken, pork, or shrimp" },
-              { name: "Slimming Noodle Soup", price: "$14.95", description: "Rice noodles, white chicken meat, shrimp, and vegetables in home-made miso broth" },
-            ]}
-          />
-          <MenuOptions
-            title="Vegetarian"
-            menu_items={[
-              { name: "Szechuan String Bean", price: "$13.95", description: "" },
-              { name: "Tofu Phad Thai", price: "$13.95", description: "" },
-              { name: "Veggie Pad Thai", price: "$13.95", description: "" },
-              { name: "Singapore Rice Noode", price: "$13.95", description: "" },
-              { name: "Sauteed Mixed Vegetables", price: "$13.95", description: "" },
-              { name: "Crispy Eggplant", price: "$13.95", description: "Comes with sesame sauce" },
-            ]}
-          />
+        <div className="noodles-vegetarian-wrapper">
+          <h2 className="noodles-vegetarian-title">Noodles & Vegetarian</h2>
+          <div className="noodles-vegetarian">
+            <MenuOptions
+              title="Noodles & Fried Rice"
+              menu_items={[
+                { name: "Japanese Pan Noodle", price: "$18.95", description: "Chicken, shrimp, and vegetables" },
+                { name: "Pad Thai", price: "$14.95", description: "Chicken or shrimp" },
+                { name: "Singapore Rice Noodes", price: "$14.95", description: "Chicken or shrimp" },
+                { name: "Yaki Udon Noodes", price: "$14.95", description: "Chicken or shrimp" },
+                { name: "Drunken Noodle", price: "$15.95", description: "Chicken or shrimp" },
+                { name: "Japanese Fried Rice", price: "$13.95", description: "Chicken or shrimp" },
+                { name: "Roasted Pork Fried Rice", price: "$13.95", description: "Pork and vegetables" },
+                { name: "Nabe Yaki Udon Soup", price: "$14.95", description: "Pork and vegetables" },
+                { name: "Lo Mein", price: "$14.95", description: "Chicken, pork, or shrimp" },
+                { name: "Slimming Noodle Soup", price: "$14.95", description: "Rice noodles, white chicken meat, shrimp, and vegetables in home-made miso broth" },
+              ]}
+            />
+            <MenuOptions
+              title="Vegetarian"
+              menu_items={[
+                { name: "Szechuan String Bean", price: "$13.95", description: "" },
+                { name: "Tofu Phad Thai", price: "$13.95", description: "" },
+                { name: "Veggie Pad Thai", price: "$13.95", description: "" },
+                { name: "Singapore Rice Noode", price: "$13.95", description: "" },
+                { name: "Sauteed Mixed Vegetables", price: "$13.95", description: "" },
+                { name: "Crispy Eggplant", price: "$13.95", description: "Comes with sesame sauce" },
+              ]}
+            />
+          </div>
         </div>
       </Section>
-
-
-
 
       <Section className='reveal-block-fade'>
         <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" />

@@ -11,28 +11,35 @@
 
 /* ---- Scoped overrides for MenuOptions/MenuItem, this section only ---- */
 
-
-/* Grill/Kitchen */
+/* Grill & Kitchen */
 .grill-kitchen-wrapper {
   max-width: 1700px;
-  margin: 0 auto;
+  margin: 40px auto 0;
+  padding: 48px 56px;
+  box-sizing: border-box;
+  background-color: var(--offwhite);
+  border-radius: 16px;
   text-align: left;
 }
 
+.grill-kitchen-wrapper .menu-options {
+  gap: 0px;
+}
+
 .grill-title {
-  color: var(--text-dark);
-  font-size: 32px;
+  font-family: var(--libre);
   font-weight: 600;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin: 0 0 24px;
 }
 
 .grill-kitchen {
   display: flex;
-  max-width: 1700px;
   flex-direction: row;
-  margin: 20px auto 0;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
-  gap: 80px;
+  gap: 60px;
 }
 
 .grill-kitchen .menu-options {
@@ -44,37 +51,122 @@
   text-align: left;
 }
 
+.grill-kitchen .menu-options-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 28px;
+  color: var(--text-dark);
+  margin: 0 0 20px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.grill-kitchen .menu-options-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 2px;
+  background-color: var(--gold-medium);
+}
+
 .grill-kitchen .item-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: stretch;
-  /* explicit, matching this project's habit of not relying on implicit defaults */
-  column-gap: 32px;
-  row-gap: 24px;
+  column-gap: 28px;
+  row-gap: 20px;
 }
 
-/* Seafood Options */
+.grill-kitchen .menu-item {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.grill-kitchen .menu-item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.grill-kitchen .menu-item-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold-accent);
+}
+
+.grill-kitchen .menu-item-description {
+  font-size: 16px;
+  color: var(--gray-dark);
+}
+
+/* Seafood */
+.seafood-options .menu-options-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 32px;
+  color: var(--text-dark);
+  margin: 0 0 20px;
+}
+
 .seafood-options .menu-groups {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 28px;
 }
 
 .seafood-options .menu-item-group--full {
   grid-column: 1 / -1;
-  /* spans both columns = the full "1 1 1 1 1 1" row */
 }
 
 .seafood-options .menu-item-group--half {
   grid-column: span 1;
-  /* each takes exactly one column = "2 2 2" / "3 3 3" */
+}
+
+.seafood-options .menu-options-subheading {
+  font-family: var(--libre);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--gold-dark);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-div);
 }
 
 .seafood-options .menu-item-group--full .item-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 32px;
-  row-gap: 24px;
+  column-gap: 28px;
+  row-gap: 20px;
+}
+
+.seafood-options .menu-item-group--half .item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.seafood-options .menu-item {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.seafood-options .menu-item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.seafood-options .menu-item-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold-accent);
+}
+
+.seafood-options .menu-item-description {
+  font-size: 16px;
+  color: var(--gray-dark);
 }
 
 .seafood-options .menu-item-group--half .item-list {
@@ -204,15 +296,31 @@
   font-size: 16px;
 }
 
-/* Noodles Fried Rice, and Vegetarian*/
+/* Noodles & Vegetarian */
+.noodles-vegetarian-wrapper {
+  max-width: 1700px;
+  margin: 40px auto 0;
+  padding: 48px 56px;
+  box-sizing: border-box;
+  background-color: var(--offwhite);
+  border-radius: 16px;
+  text-align: left;
+}
+
+.noodles-vegetarian-title {
+  font-family: var(--libre);
+  font-weight: 600;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin: 0 0 24px;
+}
+
 .noodles-vegetarian {
   display: flex;
-  max-width: 1700px;
   flex-direction: row;
-  margin: 80px auto 0;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
-  gap: 80px;
+  gap: 60px;
 }
 
 .noodles-vegetarian .menu-options {
@@ -221,16 +329,57 @@
   width: 100%;
   padding: 0;
   align-items: flex-start;
-  text-align: center;
+  text-align: left;
+}
+
+.noodles-vegetarian .menu-options-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 28px;
+  color: var(--text-dark);
+  margin: 0 0 20px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.noodles-vegetarian .menu-options-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 2px;
+  background-color: var(--gold-medium);
 }
 
 .noodles-vegetarian .item-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: stretch;
-  /* explicit, matching this project's habit of not relying on implicit defaults */
-  column-gap: 32px;
-  row-gap: 24px;
+  column-gap: 28px;
+  row-gap: 20px;
+}
+
+.noodles-vegetarian .menu-item {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.noodles-vegetarian .menu-item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.noodles-vegetarian .menu-item-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold-accent);
+}
+
+.noodles-vegetarian .menu-item-description {
+  font-size: 16px;
+  color: var(--gray-dark);
 }
 
 /* Teriyaki & Tempura */
