@@ -25,7 +25,7 @@
 }
 
 .drinks-card--dessert {
-  background-color: rgba(27, 48, 34, 0.05);
+  background-color: var(--green-light);
 }
 
 .drinks-card-bg-icon {

@@ -33,7 +33,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/src/assets/Image.svg);
+  background-image: url(/src/assets/images/Image.svg);
   background-size: cover;
   background-position: center;
   z-index: -1;

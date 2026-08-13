@@ -6,9 +6,9 @@ import Section from '../components/shared/Section'
 import Divider from '../components/shared/Divider'
 
 // Icons
-import mapPinIcon from '../assets/pin.svg'
-import clockIcon from '../assets/clock.svg'
-import diamondIcon from '../assets/diamond.svg'
+import mapPinIcon from '@/assets/icons/pin.svg'
+import clockIcon from '@/assets/icons/clock.svg'
+import diamondIcon from '@/assets/icons/diamond.svg'
 
 // Images
 // TODO: Replace with real photography

@@ -37,7 +37,7 @@
 }
 
 .navbar-floating.scrolled {
-  background: url("/src/assets/menu-background.svg");
+  background: url("/src/assets/images/menu-background.svg");
   background-color: var(--green-nav);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

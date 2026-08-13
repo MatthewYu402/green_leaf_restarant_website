@@ -4,9 +4,9 @@ import './BeyondTheMenu.css'
 import Section from '../shared/Section'
 
 // Icons
-import cateringIcon from '../../assets/catering.svg'
-import reservationsIcon from '../../assets/reservation.svg'
-import byobIcon from '../../assets/byob.svg'
+import cateringIcon from '@/assets/icons/catering.svg'
+import reservationsIcon from '@/assets/icons/reservation.svg'
+import byobIcon from '@/assets/icons/byob.svg'
 
 const OFFERINGS = [
   {

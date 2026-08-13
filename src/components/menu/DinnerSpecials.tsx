@@ -4,7 +4,7 @@ import './DinnerSpecials.css'
 import SpecialItemGrid from './SpecialItemGrid';
 
 // Icons
-import forkKnifeIcon from '../../assets/fork-knife-icon.svg';
+import forkKnifeIcon from '@/assets/icons/fork-knife-icon.svg';
 
 // Images
 // TODO: Replace with real chef's special photo

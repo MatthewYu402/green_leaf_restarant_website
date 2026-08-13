@@ -8,15 +8,15 @@ import FeaturedMenuSection from "../components/menu/FeaturedMenuSection";
 import DrinksDesserts from "../components/menu/DrinksDesserts";
 
 // Icons
-import goldLeaf from "../assets/gold-leaf.svg";
-import noodleIcon from "../assets/noodle-icon.svg";
-import waveIcon from "../assets/wave-icon.svg";
-import forkKnifeIcon from "../assets/gold-fork-knife.svg";
-import snowflakeIcon from "../assets/cold-icon.svg";
-import teacupBlackIcon from "../assets/hot-icon.svg";
-import dessertIcon from "../assets/dessert-icon.svg";
-import waterDropIcon from "../assets/water-drop-icon.svg";
-import cupIcon from "../assets/hot-cup-icon.svg";
+import goldLeaf from "@/assets/icons/gold-leaf.svg";
+import noodleIcon from "@/assets/icons/noodle-icon.svg";
+import waveIcon from "@/assets/icons/wave-icon.svg";
+import forkKnifeIcon from "@/assets/icons/gold-fork-knife.svg";
+import snowflakeIcon from "@/assets/icons/cold-icon.svg";
+import teacupBlackIcon from "@/assets/icons/hot-icon.svg";
+import dessertIcon from "@/assets/icons/dessert-icon.svg";
+import waterDropIcon from "@/assets/icons/water-drop-icon.svg";
+import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 
 // Images
 import AppImage from "@/assets/images/Apps.jpg";
@@ -272,7 +272,7 @@ export default function MainMenu() {
             { name: "Japanese Green Tea", price: "$2.00", description: "" },
             { name: "Wine Corking Fee", price: "$3.00", description: "" },
           ]}
-          dessertTitle="Sweet Endings"
+          dessertTitle="Desserts"
           dessertIcon={dessertIcon}
           dessertItems={[
             { name: "Fried Banana with Ice Cream", price: "$5.95", description: "Tempura-fried bananas served with ice cream" },

@@ -1,6 +1,11 @@
 import './SushiMenuPage.css'
+
+// Icons
+import flowerIcon from "@/assets/icons/flower-icon.svg"
+import circleIcon from "@/assets/icons/circle.svg"
+
+// Images
 import specialImage from "@/assets/images/twenty-year-roll.jpg"
-import flowerIcon from "../assets/flower-icon.svg"
 
 // Components
 import SushiRolls from '../components/menu/SushiRolls';
@@ -9,9 +14,6 @@ import Divider from '../components/shared/Divider';
 import NigiriSashimi from '../components/menu/NigiriSashimi';
 import SpecialtyRolls from '../components/menu/SpecialtyRolls';
 import SushiSalads from '../components/menu/SushiSalads';
-
-// Icons
-import circleIcon from "../assets/circle.svg"
 
 export default function SushiMenu() {
   return (

@@ -1,8 +1,8 @@
 import './SpecialsPage.css'
 
 // Icons
-import appleIcon from "../assets/apple-icon.svg";
-import leafIcon from "../assets/gold-leaf.svg";
+import appleIcon from "@/assets/icons/apple-icon.svg";
+import leafIcon from "@/assets/icons/gold-leaf.svg";
 
 // Images
 import FillerImage from '@/assets/images/square-sushi.png';

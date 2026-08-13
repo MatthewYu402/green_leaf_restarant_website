@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   height: 130px;
-  background: url("/src/assets/menu-background.svg");
+  background: url("/src/assets/images/menu-background.svg");
   background-color: var(--green-nav);
   z-index: 5;
   transition: height 0.35s ease;
@@ -14,7 +14,7 @@
 
 .page-header-visual-menu {
   height: 260px;
-  background: url(/src/assets/menu-background.svg);
+  background: url("/src/assets/images/menu-background.svg");
   background-color: var(--green-nav);
   display: flex;
   flex-direction: column;
