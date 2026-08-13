@@ -2,6 +2,7 @@
   padding: 0 80px 80px;
   /* top padding clears the solid navbar height */
   min-height: 100svh;
+  flex-shrink: 0;
   box-sizing: border-box;
   text-align: center;
   color: black;
@@ -133,6 +134,21 @@
   flex-direction: column;
   min-height: 100px;
   /* rough floor so very short items don't look collapsed */
+}
+
+.rolls-section--plain {
+  background: none;
+  padding: 0;
+  max-width: 1700px;
+}
+
+.rolls-section--plain .anniversary-rolls-title {
+  color: var(--text-dark);
+  font-size: 32px;
+}
+
+.specialty-rolls-section.specialty-rolls-section--reversed {
+  flex-direction: row-reverse;
 }
 
 

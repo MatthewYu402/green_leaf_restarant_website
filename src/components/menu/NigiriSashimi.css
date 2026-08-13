@@ -1,0 +1,79 @@
+.nigiri-sashimi-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--green-dark);
+  border-radius: 16px;
+  padding: 48px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.nigiri-sashimi-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 32px;
+  color: var(--gold-light);
+  margin: 0 0 8px;
+}
+
+.nigiri-sashimi-note {
+  color: var(--text-white);
+  font-size: 15px;
+  margin: 0 0 32px;
+}
+
+.nigiri-sashimi-grid {
+  display: grid;
+  gap: 16px;
+  text-align: left;
+}
+
+.nigiri-sashimi-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nigiri-sashimi-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nigiri-sashimi-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.nigiri-sashimi-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.nigiri-sashimi-filling {
+  font-weight: normal;
+  color: var(--gold-light);
+  opacity: 0.85;
+}
+
+.nigiri-sashimi-prices {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold-light);
+  white-space: nowrap;
+}
+
+.nigiri-sashimi-price-divider {
+  color: var(--text-white);
+  opacity: 0.5;
+  font-weight: normal;
+}

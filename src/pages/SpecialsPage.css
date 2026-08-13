@@ -1,6 +1,7 @@
 .specials-page {
   margin-inline: 40px;
   padding-bottom: 80px;
+  flex-shrink: 0;
 }
 
 .specials-title {

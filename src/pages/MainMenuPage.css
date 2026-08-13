@@ -1,5 +1,6 @@
 .main-menu-page {
   margin-inline: 40px;
+  flex-shrink: 0;
 }
 
 .soups-salads-section .featured-menu-top {

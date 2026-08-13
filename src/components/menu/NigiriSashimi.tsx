@@ -1,0 +1,41 @@
+import './NigiriSashimi.css'
+
+interface NigiriSashimiItem {
+  name: string;
+  fillingNote?: string;
+  nigiriPrice: string;
+  sashimiPrice: string;
+}
+
+interface NigiriSashimiProps {
+  title: string;
+  note: string;
+  items: NigiriSashimiItem[];
+  columns?: 2 | 3;
+}
+
+export default function NigiriSashimi({ title, note, items, columns = 3 }: NigiriSashimiProps) {
+  return (
+    <div className="nigiri-sashimi-section">
+      <h2 className="nigiri-sashimi-title">{title}</h2>
+      <p className="nigiri-sashimi-note">{note}</p>
+      <div className={`nigiri-sashimi-grid nigiri-sashimi-grid--${columns}col`}>
+        {items.map((item) => (
+          <div className="nigiri-sashimi-card" key={item.name}>
+            <div className="nigiri-sashimi-card-header">
+              <h3 className="nigiri-sashimi-name">
+                {item.name}
+                {item.fillingNote && <span className="nigiri-sashimi-filling"> ({item.fillingNote})</span>}
+              </h3>
+            </div>
+            <div className="nigiri-sashimi-prices">
+              <span className="nigiri-sashimi-price">{item.nigiriPrice}</span>
+              <span className="nigiri-sashimi-price-divider">/</span>
+              <span className="nigiri-sashimi-price">{item.sashimiPrice}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
