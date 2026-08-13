@@ -1,14 +1,22 @@
 .drinks-desserts-grid {
   max-width: 1500px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.drinks-desserts-column {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
 .drinks-card {
   position: relative;
   background-color: var(--white);
+  border: 2px solid var(--gray-border);
   border-radius: 16px;
   padding: 32px;
   box-sizing: border-box;
@@ -101,7 +109,7 @@
 }
 
 .drink-row-name {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text-dark);
   margin: 0;
@@ -109,15 +117,15 @@
 
 .drink-row-price {
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--gold-accent);
   white-space: nowrap;
 }
 
 .drink-row-description {
-  font-size: 13px;
-  color: var(--gray);
+  font-size: 16px;
+  color: var(--gray-dark);
   margin: 4px 0 0;
 }
 

@@ -1,20 +1,25 @@
 import "./MainMenuPage.css"
-import MenuCategory from "../components/menu/MenuCategory";
 import MenuOptions from "../components/menu/MenuOptions";
 import Divider from "../components/shared/Divider";
 import Section from "../components/shared/Section";
 import FeaturedMenuSection from "../components/menu/FeaturedMenuSection";
+import DrinksDesserts from "../components/menu/DrinksDesserts";
 
 
 // Images
 import AppImage from "../assets/Apps.jpg";
 import SoupImage from "../assets/soups.jpg"
-import SquareSushi from "../assets/square-sushi.png"
+import SquareSushi from "../assets/square-sushi.png";
 import goldLeaf from "../assets/gold-leaf.svg";
-import noodleIcon from "../assets/noodle-icon.svg"
-import waveIcon from "../assets/wave-icon.svg"
-import drinkIcon from "../assets/drink-icon.svg"
-import forkKnifeIcon from "../assets/gold-fork-knife.svg"
+import noodleIcon from "../assets/noodle-icon.svg";
+import waveIcon from "../assets/wave-icon.svg";
+import drinkIcon from "../assets/drink-icon.svg";
+import forkKnifeIcon from "../assets/gold-fork-knife.svg";
+import snowflakeIcon from "../assets/cold-icon.svg";
+import teacupBlackIcon from "../assets/hot-icon.svg";
+import dessertIcon from "../assets/dessert-icon.svg";
+import waterDropIcon from "../assets/water-drop-icon.svg";
+import cupIcon from "../assets/hot-cup-icon.svg";
 
 export default function MainMenu() {
   return (
@@ -227,13 +232,13 @@ export default function MainMenu() {
             title=""
             className="teriyaki-card-options"
             menu_items={[
-              { name: "Chicken Teriyaki", price: "$14.95", description: "TODO" },
-              { name: "Salmon Teriyaki", price: "$19.95", description: "Sweet potato, zucchini, broccoli, and onion in a delicate, crispy batter." },
-              { name: "Steak Teryaki", price: "$24.95", description: "Five piece large tiger shrimp perfectly fried with tempura dipping sauce." },
-              { name: "Chicken Tempura", price: "$14.95", description: "Chicken teriyaki paired with our mixed vegetable and shrimp tempura." },
-              { name: "Shrimp Tempura", price: "$17.95", description: "Prime ribeye teriyaki served with a side of delicate mixed tempura." },
-              { name: "Seafood Tempura", price: "$19.95", description: "Pan-seared salmon teriyaki accompanied by crisp mixed tempura." },
-              { name: "Vegetable Tempura", price: "$13.95", description: "Panko-breaded pork or chicken cutlet, served with tangy katsu sauce." },
+              { name: "Chicken Teriyaki", price: "$14.95", description: "" },
+              { name: "Salmon Teriyaki", price: "$19.95", description: "" },
+              { name: "Steak Teryaki", price: "$24.95", description: "" },
+              { name: "Chicken Tempura", price: "$14.95", description: "" },
+              { name: "Shrimp Tempura", price: "$17.95", description: "" },
+              { name: "Seafood Tempura", price: "$19.95", description: "" },
+              { name: "Vegetable Tempura", price: "$13.95", description: "" },
             ]}
           />
         </div>
@@ -244,50 +249,40 @@ export default function MainMenu() {
         <Divider iconUrl={drinkIcon} iconAlt="tempura-icon" thickness="2px" />
       </Section>
 
-      <Section className='reveal-block-slide'>
-        <div className="deserts-drinks">
-          <MenuCategory
-            name="Drinks"
-            url={AppImage}
-            className="beveraged-category"
-            groups={[
-              {
-                subheading: "Cold",
-                layout: "half",
-                items: [
-                  { name: "Iced Tea", price: "$2.00", description: "" },
-                  { name: "Mineral Water", price: "$2.00", description: "" },
-                  { name: "Soft Drinks", price: "$2.00", description: "Coke, Diet Coke, Sprite, and Ginger Ale" },
-                  { name: "Japanese Marble Soda", price: "$3.95", description: "" },
-                  { name: "Strawberry Ice Tea", price: "$3.95", description: "" },
-                  { name: "Mango Iced Tea", price: "$3.95", description: "" },
-                ],
-              },
-              {
-                subheading: "Hot",
-                layout: "half",
-                items: [
-                  { name: "Jasmine Tea", price: "$2.00", description: "" },
-                  { name: "Japanese Green Tea", price: "$2.00", description: "" },
-                ],
-              },
-            ]}
-          />
-          <MenuCategory
-            name="Desserts"
-            url={SoupImage}
-            menu_items={[
-              { name: "Fried Banana with Ice Cream", price: "$2.95", description: "", },
-              { name: "Mango Rice Pudding", price: "$5.50", description: "Sticky rice with mixed nuts and fresh mango", },
-              { name: "Premium Ice Cream", price: "$4.95", description: "Red bean, green tea, or french vanilla", },
-              { name: "Mini Sugar Donuts", price: "$5.95", description: "Fried soft buns tossed in sugar", pieces: 6 },
-              { name: "Tempura Fried Cheesecake", price: "$3.95", description: "", },
-            ]}
-          />
-        </div>
+      <Section className="reveal-block-slide">
+        <DrinksDesserts
+          coldTitle="Cold Refreshments"
+          coldIcon={snowflakeIcon}
+          coldBgIcon={waterDropIcon}
+          coldItems={[
+            { name: "Mineral Water", price: "$3.95", description: "" },
+            { name: "Iced Tea", price: "$2.00", description: "" },
+            { name: "Japanese Marble Soda", price: "$3.95", description: "" },
+            { name: "Strawberry Iced Tea", price: "$3.95", description: "" },
+            { name: "Mango Iced Tea", price: "$3.95", description: "" },
+            { name: "Soft Drinks", price: "$2.50", description: "Coke, Diet Coke, Sprite, Ginger Ale" },
+          ]}
+          warmTitle="Hot Beverages"
+          warmIcon={teacupBlackIcon}
+          warmBgIcon={cupIcon}
+          warmItems={[
+            { name: "Jasmine Tea", price: "$2.00", description: "" },
+            { name: "Japanese Green Tea", price: "$2.00", description: "" },
+            { name: "Wine Corking Fee", price: "$3.00", description: "" },
+          ]}
+          dessertTitle="Sweet Endings"
+          dessertIcon={dessertIcon}
+          dessertItems={[
+            { name: "Fried Banana with Ice Cream", price: "$5.95", description: "Tempura-fried bananas served with ice cream" },
+            { name: "Mango Rice Pudding", price: "$5.95", description: "Sticky rice with fresh mango and mixed nuts" },
+            { name: "Premium Ice Cream", price: "$4.95", description: "Red bean, green tea, french vanilla" },
+            { name: "Mini Sugar Donuts (6)", price: "$4.95", description: "Fried soft buns tossed in sugar" },
+            { name: "Tempura Fried Cheesecake", price: "$6.25", description: "" },
+          ]}
+          image={SquareSushi}
+          imageAlt=""
+        />
       </Section>
-
-
     </div>
   );
 }
