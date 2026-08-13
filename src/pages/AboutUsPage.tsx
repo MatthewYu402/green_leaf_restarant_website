@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import './AboutUsPage.css'
 import Section from '../components/shared/Section'
 import Divider from '../components/shared/Divider'
@@ -38,7 +40,7 @@ export default function AboutUsPage() {
           <div className="about-story-text">
             <h2 className="about-story-title">A Family Sanctuary</h2>
             <p className="about-story-paragraph">
-              For over 20 years, Green Leaf has become more than a local restaurant: it has
+              For over 20 years, Green Leaf has become more than a local restaurant. It has
               been a hub rooted in the heart of the neighborhood. We are a
               family-owned establishment built on a foundation of respect for tradition and
               a passion for culinary excellence.
@@ -49,7 +51,7 @@ export default function AboutUsPage() {
               connections we've built with our regular customers, who we consider an
               extension of our own family.
             </p>
-            <button className="about-story-button">Explore Our Menu</button>
+            <Link to="/menu" className="about-story-button">Explore Our Menu</Link>
           </div>
           <img src={FamilyImage} className="about-story-image" alt="Chef preparing sushi" />
         </div>

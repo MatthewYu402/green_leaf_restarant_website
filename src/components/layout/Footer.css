@@ -62,25 +62,3 @@
 .site-footer-link:visited {
   color: var(--offwhite);
 }
-
-.site-footer-cta {
-  flex-shrink: 0;
-  align-self: flex-start;
-  background-color: transparent;
-  color: var(--gold-medium);
-  border: 1px solid var(--gold-medium);
-  border-radius: 6px;
-  padding: 10px 24px;
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.site-footer-cta:hover {
-  background-color: var(--gold-medium);
-  color: var(--green-dark);
-}
-
-.site-footer-cta:visited {
-  color: var(--gold-medium);
-}

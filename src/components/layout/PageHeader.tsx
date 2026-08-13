@@ -12,7 +12,7 @@ const PAGE_HEADERS: Record<string, { title: string; subtitle: string }> = {
   },
   '/sushi': {
     title: 'Sushi Menu',
-    subtitle: 'A curated selection, prepared with precision and care',
+    subtitle: 'A curated selection, prepared with precision and care.',
   },
 };
 
@@ -35,7 +35,7 @@ export default function PageHeader() {
 
     scrollContainer.addEventListener('scroll', handleScroll);
     handleScroll();
-    return () => scrollContainer.removeEventListener('scoll', handleScroll);
+    return () => scrollContainer.removeEventListener('scroll', handleScroll);
   }, [location.pathname, isMenuPage]);
 
   return (

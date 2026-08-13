@@ -1,43 +1,44 @@
 .logo {
-  font-family: var(--libre);
-  font-weight: 600;
-  font-size: 24px;
-  transition: color 0.4s ease;
+  width: 200px;
+  height: auto;
+  display: block;
+  justify-self: start;
 }
 
 .navbar {
   position: fixed;
-  display: flex;
-  align-items: center;.navbar-solid {
-      top: 0;
-      left: 0;
-      right: 0;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      animation: fadeDown 0.5s ease-in-out;
-    }
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   box-sizing: border-box;
-  padding: 16px 32px;
+  padding: 0px 32px;
   z-index: 10;
   transition: background 0.4s ease, box-shadow 0.4s ease, top 0.3s ease, left 0.3s ease, right 0.3s ease, border-radius 0.3s ease;
 }
 
+.navbar ul {
+  grid-column: 2;
+  justify-self: center;
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
 /* HOME — floating pill over the hero, transparent until scrolled */
 .navbar-floating {
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  border-radius: 8px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   background: transparent;
   box-shadow: none;
   animation: fadeDown 1.25s ease-in-out;
 }
 
-
 .navbar-floating.scrolled {
-  background: var(--button-bg);
+  background: url("/src/assets/menu-background.svg");
+  background-color: var(--green-nav);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
@@ -47,7 +48,6 @@
 .navbar-floating .logo {
   color: var(--text-white);
 }
-
 
 .navbar-solid {
   top: 0;
@@ -68,15 +68,7 @@
   color: var(--text-white);
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar a {
+.navbar a:not(.cell-num) {
   position: relative;
   padding-bottom: 2px;
   text-decoration: none;
@@ -84,11 +76,11 @@
   transition: color 0.4s ease;
 }
 
-.navbar a:focus {
+.navbar a:not(.cell-num):focus {
   outline: none;
 }
 
-.navbar a:focus-visible {
+.navbar a:not(.cell-num):focus-visible {
   outline: 2px solid var(--gold-accent);
   outline-offset: 2px;
 }
@@ -99,7 +91,7 @@
   font-size: 18px;
 }
 
-.navbar a::after {
+.navbar a:not(.cell-num)::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -112,13 +104,17 @@
   transition: transform 0.3s ease-out;
 }
 
-.navbar a:hover::after,
-.navbar a.active::after {
+.navbar a:not(.cell-num):hover::after,
+.navbar a:not(.cell-num).active::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 .cell-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
   padding: 8px 16px;
   border: 2px solid var(--gold-border);
   border-radius: 2px;
@@ -127,7 +123,12 @@
   font-weight: 500;
   background-color: var(--green-dark);
   color: var(--text-white);
+  text-decoration: none;
   transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.cell-num:visited {
+  color: var(--text-white);
 }
 
 .cell-num:hover {

@@ -11,13 +11,11 @@ export default function Footer() {
         </div>
 
         <nav className="site-footer-links">
-          <Link to="/contact" className="site-footer-link">Contact</Link>
+          <Link to="/about" className="site-footer-link">Contact</Link>
           <Link to="/privacy-policy" className="site-footer-link">Privacy Policy</Link>
           <Link to="/sustainability" className="site-footer-link">Sustainability</Link>
           <Link to="/careers" className="site-footer-link">Careers</Link>
         </nav>
-
-        <Link to="/reservations" className="site-footer-cta">Join Our Table</Link>
       </div>
     </footer>
   );

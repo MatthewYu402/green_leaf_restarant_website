@@ -1,6 +1,9 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
+// Images
+import restaurantLogo from "../../assets/green-leaf-logo.svg";
+
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Menu', href: '/menu'},
@@ -15,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${isHome ? 'navbar-floating' : 'navbar-solid'}`}>
-      <div className="logo">Green Leaf</div>
+      <img src={restaurantLogo} className="logo" />
       <ul>
         {navLinks.map((link) => (
           <li key={link.href}>
@@ -28,7 +31,9 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <button className="cell-num">Call to Reserve</button>
+      <a className="cell-num" href="tel:4107710030">
+        Call to Reserve
+      </a>
     </nav>
   );
 }

@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 130px;
   background: url("/src/assets/menu-background.svg");
   background-color: var(--green-nav);
   z-index: 5;
@@ -25,7 +25,7 @@
 }
 
 .page-header-visual-menu.shrunk {
-  height: 80px;
+  height: 130px;
   padding-bottom: 0;
 }
 
@@ -53,10 +53,13 @@
   font-size: 18px;
   margin: 0;
   max-width: 600px;
+  min-height: 2.6em;
+  display: flex;
+  justify-content: center;
 }
 
 .page-header-spacer {
-  height: 80px;
+  height: 130px;
   flex-shrink: 0;
 }
 

@@ -13,7 +13,6 @@ import SquareSushi from "../assets/square-sushi.png";
 import goldLeaf from "../assets/gold-leaf.svg";
 import noodleIcon from "../assets/noodle-icon.svg";
 import waveIcon from "../assets/wave-icon.svg";
-import drinkIcon from "../assets/drink-icon.svg";
 import forkKnifeIcon from "../assets/gold-fork-knife.svg";
 import snowflakeIcon from "../assets/cold-icon.svg";
 import teacupBlackIcon from "../assets/hot-icon.svg";
@@ -84,7 +83,7 @@ export default function MainMenu() {
       </Section>
 
       <Section className="reveal-block-fade">
-        <Divider iconUrl={goldLeaf} iconAlt="gold leaf icon" thickness="2px" />
+        <Divider iconUrl={goldLeaf} iconAlt="gold leaf icon" thickness="2px" lineWidth="600px"/>
       </Section>
 
       <Section className="reveal-block-slide">
@@ -146,7 +145,7 @@ export default function MainMenu() {
       </Section>
 
       <Section className="reveal-block-fade">
-        <Divider iconUrl={waveIcon} iconAlt="wave icon" thickness="2px" />
+        <Divider iconUrl={waveIcon} iconAlt="wave icon" thickness="2px" lineWidth="600px"/>
       </Section>
 
       <Section className="reveal-block-slide">
@@ -179,7 +178,7 @@ export default function MainMenu() {
       </Section>
 
       <Section className="reveal-block-fade">
-        <Divider iconUrl={noodleIcon} iconAlt="noodle-icon" thickness="2px" />
+        <Divider iconUrl={noodleIcon} iconAlt="noodle-icon" thickness="2px" lineWidth="600px" />
       </Section>
 
       <Section className='reveal-block-slide'>
@@ -217,7 +216,7 @@ export default function MainMenu() {
       </Section>
 
       <Section className='reveal-block-fade'>
-        <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" />
+        <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
 
       </Section>
 
@@ -246,7 +245,7 @@ export default function MainMenu() {
 
 
       <Section className='reveal-block-fade'>
-        <Divider iconUrl={drinkIcon} iconAlt="tempura-icon" thickness="2px" />
+        <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
       </Section>
 
       <Section className="reveal-block-slide">
