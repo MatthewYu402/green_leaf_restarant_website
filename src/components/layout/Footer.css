@@ -62,3 +62,43 @@
 .site-footer-link:visited {
   color: var(--offwhite);
 }
+
+@media (max-width: 1024px) {
+  .site-footer {
+    /* clears the fixed BottomNav + iOS safe area so the dark background
+       itself extends down to meet it, instead of leaving a gap behind it */
+    padding: 40px 24px calc(40px + var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .site-footer-brand {
+    /* un-wraps this box from layout so .site-footer-name and
+       .site-footer-tagline can be reordered independently around
+       .site-footer-links via the `order` values below */
+    display: contents;
+  }
+
+  .site-footer-name {
+    order: 1;
+    font-size: 26px;
+  }
+
+  .site-footer-links {
+    order: 2;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .site-footer-tagline {
+    order: 3;
+    font-size: 12px;
+    opacity: 0.65;
+  }
+}

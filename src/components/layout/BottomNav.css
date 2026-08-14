@@ -1,0 +1,58 @@
+.bottom-nav {
+  display: none;
+  /* shown only under the mobile/tablet breakpoint below */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  /* above page content and page-header-visual (5), below the drawer (18/19) and navbar (20) */
+  background-color: var(--green-nav);
+  box-shadow: rgba(0, 0, 0, 0.15) 0 -4px 12px -2px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  /* clears the iOS home-indicator area */
+  box-sizing: border-box;
+}
+
+.bottom-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: var(--bottom-nav-height, 64px);
+}
+
+.bottom-nav li {
+  flex: 1;
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 100%;
+  color: var(--gray);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s ease;
+}
+
+.bottom-nav a svg {
+  width: 22px;
+  height: 22px;
+}
+
+.bottom-nav a.active {
+  color: var(--gold-light);
+}
+
+@media (max-width: 1024px) {
+  .bottom-nav {
+    display: block;
+  }
+}

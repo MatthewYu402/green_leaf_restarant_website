@@ -92,11 +92,8 @@
 .menu-btn:hover {
   cursor: pointer;
   background-color: var(--gold-border);
-  /* Fills with your green (#1B3022) */
   border-color: var(--gold-border);
-  /* Shifts border to your gold (#937230) */
   transform: scale(1.05);
-  /* Slight grow effect */
 }
 
 /* Animations */
@@ -117,5 +114,58 @@
 
   to {
     opacity: 0;
+  }
+}
+
+/* ============================================================
+   MOBILE HERO — plain text welcome block, no photo. Hidden above
+   the breakpoint; the photo .hero above is hidden below it.
+   ============================================================ */
+.hero-mobile {
+  display: none;
+}
+
+.divider.home-mobile-divider {
+  display: none;
+  /* compounded with .divider — see Navbar's compound-selector note */
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    display: none;
+  }
+
+  .hero-mobile {
+    display: block;
+    margin-top: 20px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: calc(var(--navbar-height-mobile) + 24px) var(--mobile-page-margin) 32px;
+    background-color: var(--cream);
+    text-align: left;
+  }
+
+  .hero-mobile-title {
+    font-family: var(--libre);
+    color: var(--black);
+    font-size: 40px;
+    text-align: center;
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  .hero-mobile-subtitle {
+    color: var(--text-dark);
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .divider.home-mobile-divider {
+    display: flex;
+    padding: 0 var(--mobile-page-margin);
+    box-sizing: border-box;
   }
 }

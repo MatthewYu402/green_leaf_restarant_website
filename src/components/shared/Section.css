@@ -18,7 +18,8 @@
 .section.reveal-block-slide,
 .section.reveal-block-fade {
   height: auto;
-  flex-shrink: initial;
+  flex-shrink: 0;
+  /* was `initial` (resolves to 1, re-enabling shrink) — fixed */
   scroll-snap-align: none;
   justify-content: initial;
 }
@@ -35,4 +36,17 @@
 /* Fade variant: opacity only, no vertical movement — for dividers/small accents */
 .section.reveal-block-fade {
   transform: none;
+}
+
+/* Mobile/tablet: Home's bare <Section> usage (no modifier class) also drops
+   the full-viewport-centerpiece behavior here, matching every other page's
+   reveal-block treatment — there's no room to dedicate a full screen to one
+   section at a time once content needs to fit into a smaller viewport. */
+@media (max-width: 1024px) {
+  .section {
+    height: auto;
+    flex-shrink: 0;
+    scroll-snap-align: none;
+    justify-content: initial;
+  }
 }

@@ -63,7 +63,6 @@
   flex-shrink: 0;
 }
 
-
 .page-header-spacer-menu {
   height: 260px;
   flex-shrink: 0;
@@ -79,7 +78,82 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
+  }
+}
+
+/* ============================================================
+   MOBILE — in-flow header, not fixed. Hidden above the breakpoint;
+   the fixed desktop version above is hidden below it.
+   ============================================================ */
+.page-header-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+
+  .page-header-visual,
+  .page-header-spacer {
+    display: none;
+  }
+
+  .page-header-mobile {
+    display: block;
+    flex-shrink: 0;
+    margin-top: var(--navbar-height-mobile);
+  }
+
+  .page-header-mobile-visual {
+    height: 380px;
+    box-sizing: border-box;
+    padding: 0 var(--mobile-page-margin) 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    background-color: var(--green-dark);
+    /* fallback for routes with no mobileImage, e.g. /menu */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .page-header-mobile-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75));
+  }
+
+  .page-header-mobile-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-header-mobile-text h1 {
+    font-family: var(--libre);
+    color: var(--text-white);
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .page-header-mobile-text p {
+    color: var(--gold-light);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .page-header-mobile-intro {
+    box-sizing: border-box;
+    padding: 24px var(--mobile-page-margin) 0;
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
   }
 }

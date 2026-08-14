@@ -1,33 +1,38 @@
-.gallery-carousel {
+.gallery-carousel-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
   width: 75%;
   margin: 0 auto;
-}
-
-.gallery-carousel-viewport {
-  overflow: hidden;
-  width: 100%;
+  --carousel-slide-width: 60%;
 }
 
 .gallery-carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 calc((100% - var(--carousel-slide-width)) / 2);
+}
+
+.gallery-carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-carousel-slide {
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  width: var(--carousel-slide-width);
   aspect-ratio: 4 / 3;
+  scroll-snap-align: center;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   opacity: 0.35;
   filter: grayscale(50%);
-  transition: opacity 0.5s ease, filter 0.5s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.gallery-carousel-slide--active {
+.gallery-carousel-slide.active {
   opacity: 1;
   filter: none;
 }
@@ -56,6 +61,7 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: var(--shadow);
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 
 .gallery-carousel-arrow--left {
@@ -70,6 +76,44 @@
   background-color: var(--offwhite);
 }
 
-.gallery-carousel-track--no-transition {
-  transition: none;
+.gallery-carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.gallery-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.gallery-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background-color: var(--gray-div);
+  cursor: pointer;
+}
+
+.gallery-carousel-dot.active {
+  background-color: var(--gold-dark);
+}
+
+@media (max-width: 1024px) {
+  .gallery-carousel-wrapper {
+    width: calc(100% - (var(--mobile-page-margin) * 2));
+    --carousel-slide-width: 78%;
+  }
+
+  .gallery-carousel-track {
+    gap: 16px;
+  }
+
+  .gallery-carousel-arrow {
+    display: none;
+    /* swipe + dots remain the primary touch interaction */
+  }
 }

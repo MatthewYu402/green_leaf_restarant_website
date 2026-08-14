@@ -48,3 +48,35 @@
   background-color: var(--offwhite);
   border-radius: 12px;
 }
+
+@media (max-width: 1024px) {
+  .peek-inside {
+    margin-bottom: 48px;
+  }
+
+  .peek-inside-header {
+    width: 100%;
+    padding: 0 var(--mobile-page-margin);
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .peek-inside-title {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .peek-inside-subtitle {
+    display: none;
+    /* not present in the mockup on mobile */
+  }
+
+  .peek-inside-see-more {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+  }
+}
