@@ -90,7 +90,7 @@
 
 .roll-accordion-item-name {
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-dark);
   margin: 0;
@@ -100,14 +100,14 @@
   margin-left: auto;
   font-size: 15px;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--gold-accent);
   white-space: nowrap;
 }
 
 .roll-accordion-item-description {
   margin: 4px 0 0;
-  font-size: 13px;
-  color: var(--gray);
+  font-size: 14px;
+  color: var(--gray-medium);
   line-height: 1.4;
 }
 

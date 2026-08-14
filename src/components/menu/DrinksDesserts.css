@@ -54,10 +54,21 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background-color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.drinks-card-icon-chip--cold {
+  background-color: var(--green-medium);
+}
+
+.drinks-card-icon-chip--warm {
+  background-color: var(--gold-light);
+}
+
+.drinks-card-icon-chip--dessert {
+  background-color: var(--offwhite);
 }
 
 .drinks-card-icon-chip img {

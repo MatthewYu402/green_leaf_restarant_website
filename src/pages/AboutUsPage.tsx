@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Section from '../components/shared/Section'
 import Divider from '../components/shared/Divider'
 import GalleryCarousel from '../components/shared/GalleryCarousel'
+import { useLightbox } from '@/components/shared/Lightbox'
 
 // Icons
 import mapPinIcon from '@/assets/icons/pin.svg'
@@ -33,11 +34,18 @@ const GALLERY_ITEMS = [
 ];
 
 export default function AboutUsPage() {
+  const openLightbox = useLightbox();
+
   return (
     <div className="about-page">
       <Section className="reveal-block-fade">
         <div className="about-hero">
-          <img src={HeroImage} className="about-hero-image" alt="Green Leaf Sushi dining room" />
+          <img
+            src={HeroImage}
+            className="about-hero-image"
+            alt="Green Leaf Sushi dining room"
+            onClick={() => openLightbox(HeroImage, "Green Leaf Sushi dining room")}
+          />
           <div className="about-hero-overlay">
             <h1 className="about-hero-title">Our Legacy</h1>
             <p className="about-hero-subtitle">A sanctuary for authentic Asian flavors and community connection</p>
@@ -67,7 +75,12 @@ export default function AboutUsPage() {
             </p>
             <Link to="/menu" className="about-story-button">Explore Our Menu</Link>
           </div>
-          <img src={FamilyImage} className="about-story-image" alt="Chef preparing sushi" />
+          <img
+            src={FamilyImage}
+            className="about-story-image"
+            alt="Chef preparing sushi"
+            onClick={() => openLightbox(FamilyImage, "Chef preparing sushi")}
+          />
         </div>
       </Section>
 
@@ -86,14 +99,20 @@ export default function AboutUsPage() {
           <div className="about-gallery-grid">
             {GALLERY_ITEMS.map((item, i) => (
               <div className="about-gallery-item" key={i}>
-                <img src={item.img} className="about-gallery-photo" alt={item.caption} />
+                <img
+                  src={item.img}
+                  className="about-gallery-photo"
+                  alt={item.caption}
+                  onClick={() => openLightbox(item.img, item.caption)}
+                />
                 <div className="about-gallery-caption">{item.caption}</div>
               </div>
             ))}
           </div>
 
           {/* Mobile-only — same real photos/captions, carousel presentation.
-              Hidden above the breakpoint (see CSS). */}
+              Hidden above the breakpoint (see CSS). Lightbox already wired
+              into GalleryCarousel itself (tap the centered photo). */}
           <div className="about-gallery-carousel-mobile">
             <GalleryCarousel
               images={GALLERY_ITEMS.map((item) => ({

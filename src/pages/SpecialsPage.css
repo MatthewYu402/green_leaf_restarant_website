@@ -286,6 +286,14 @@
     padding: 14px;
   }
 
+  .maki-specials-mobile-list .special-item-header{
+    flex-direction: column;
+  }
+
+  .maki-specials-mobile-list .special-item-name{
+    font-size: 14px;
+  }
+
   .maki-specials-mobile-list .special-item:last-child {
     border-bottom: none;
   }

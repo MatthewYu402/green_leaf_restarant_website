@@ -9,10 +9,10 @@ import GalleryCarousel from '../shared/GalleryCarousel'
 // TODO: replace with real photos
 import GalleryImage1 from '@/assets/images/chris.jpeg'
 import GalleryImage2 from '@/assets/images/new-year.jpeg'
-import GalleryImage3 from '@/assets/images/square-sushi.png'
-import GalleryImage4 from '@/assets/images/square-sushi.png'
-import GalleryImage5 from '@/assets/images/square-sushi.png'
-import GalleryImage6 from '@/assets/images/square-sushi.png'
+import GalleryImage3 from '@/assets/images/sushi-platter-2.jpg'
+import GalleryImage4 from '@/assets/images/sushi-platter-3.jpg'
+import GalleryImage5 from '@/assets/images/sushi-platter-5.jpg'
+import GalleryImage6 from '@/assets/images/sushi-platter-4.jpg'
 
 const GALLERY_IMAGES = [
   { src: GalleryImage1, alt: "Anniversary celebration" },

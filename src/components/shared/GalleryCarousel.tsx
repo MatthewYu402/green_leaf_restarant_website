@@ -4,7 +4,7 @@ import './GalleryCarousel.css';
 interface CarouselImage {
   src: string;
   alt?: string;
-  description?: string; // optional caption, shown for whichever photo is currently active
+  description?: string;
 }
 
 interface GalleryCarouselProps {
@@ -22,20 +22,48 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
     const track = trackRef.current;
     if (!track) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-            const index = Number((entry.target as HTMLElement).dataset.index);
-            if (!Number.isNaN(index)) setActive(index);
-          }
-        });
-      },
-      { root: track, threshold: [0.6] }
-    );
+    let rafId = 0;
 
-    slideRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
+    // Deterministic, synchronous "closest slide to viewport center" check —
+    // recomputed from live geometry on every scroll event, rather than
+    // relying on IntersectionObserver's threshold-crossing callbacks (which
+    // can land one step behind after a fast desktop scroll-snap settle,
+    // since the browser is free to batch/delay when it checks).
+    const updateActive = () => {
+      const trackRect = track.getBoundingClientRect();
+      const viewportCenter = trackRect.left + trackRect.width / 2;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      slideRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const slideCenter = rect.left + rect.width / 2;
+        const distance = Math.abs(slideCenter - viewportCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = i;
+        }
+      });
+
+      setActive(closestIndex);
+    };
+
+    const handleScroll = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateActive);
+    };
+
+    updateActive(); // correct initial state on mount, before any scrolling happens
+    track.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      track.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, [images.length]);
 
   const scrollToIndex = (index: number) => {
@@ -88,8 +116,6 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
         </button>
       </div>
 
-      {/* Only rendered if this usage's images actually provide descriptions —
-          e.g. Home's PeekInside gallery has none, so this stays absent there. */}
       {activeDescription && (
         <p key={active} className="gallery-carousel-caption">
           {activeDescription}

@@ -526,6 +526,10 @@
 }
   
 
+.main-menu-mobile-lists {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .main-menu-page {
     margin-inline: var(--mobile-page-margin);

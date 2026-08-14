@@ -13,19 +13,16 @@ const OFFERINGS = [
     icon: cateringIcon,
     title: "Catering",
     description: "Elevate your birthdays, office gatherings, and intimate celebrations with our bespoke sushi platters.",
-    cta: "Inquire",
   },
   {
     icon: reservationsIcon,
     title: "Reservations",
     description: "Call ahead to secure your table for a dining room, evening dining experience, and calm dining experience.",
-    cta: "Book Now",
   },
   {
     icon: byobIcon,
     title: "BYOB",
     description: "Bring your favorite pairing. We offer a modest corking fee so you can enjoy the perfect sip with our craft.",
-    cta: "Details",
   },
 ];
 
@@ -40,12 +37,7 @@ export default function BeyondTheMenu() {
             <div className="beyond-menu-card" key={item.title}>
               <img src={item.icon} className="beyond-menu-icon" alt="" />
               <h3 className="beyond-menu-card-title">{item.title}</h3>
-              <p className="beyond-menu-card-description">{item.description}</p>
-              {/* Mobile-only styling for now (hidden on desktop, see CSS) —
-                  none of these three have real routes yet (open item in the
-                  project notes), so it's a styled span, not a link. Swap for
-                  a real <Link>/<a> once there's somewhere for it to go. */}
-              <span className="beyond-menu-card-cta">{item.cta} →</span>
+              <p className="beyond-menu-card-description">{item.description}</p> 
             </div>
           ))}
         </div>

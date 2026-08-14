@@ -49,7 +49,7 @@ export default function DrinksDesserts({
         <div className="drinks-card">
           <img src={coldBgIcon} className="drinks-card-bg-icon" alt="" />
           <div className="drinks-card-header">
-            <span className="drinks-card-icon-chip">
+            <span className="drinks-card-icon-chip drinks-card-icon-chip--cold">
               <img src={coldIcon} alt="" />
             </span>
             <h2 className="drinks-card-title">{coldTitle}</h2>
@@ -62,7 +62,7 @@ export default function DrinksDesserts({
         <div className="drinks-card">
           <img src={warmBgIcon} className="drinks-card-bg-icon" alt="" />
           <div className="drinks-card-header">
-            <span className="drinks-card-icon-chip">
+            <span className="drinks-card-icon-chip drinks-card-icon-chip--warm">
               <img src={warmIcon} alt="" />
             </span>
             <h2 className="drinks-card-title">{warmTitle}</h2>
@@ -81,7 +81,7 @@ export default function DrinksDesserts({
         <div className="drinks-card drinks-card--dessert">
           <img src={dessertBgIcon} className="drinks-card-bg-icon" alt="" />
           <div className="drinks-card-header">
-            <span className="drinks-card-icon-chip">
+            <span className="drinks-card-icon-chip drinks-card-icon-chip--dessert">
               <img src={dessertIcon} alt="" />
             </span>
             <h2 className="drinks-card-title">{dessertTitle}</h2>

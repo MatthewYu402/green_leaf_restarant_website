@@ -9,6 +9,7 @@ import MainMenu from './pages/MainMenuPage';
 import AboutUsPage from './pages/AboutUsPage';
 
 // Components
+import { LightboxProvider } from './components/shared/Lightbox';
 import PageHeader from './components/layout/PageHeader';
 import ScrollToTop from './components/ScrollTopTop';
 import Specials from './pages/SpecialsPage';
@@ -38,16 +39,19 @@ function App() {
 
   return (
     <>
-      <ScrollToTop />
-      <PageHeader />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<MainMenu />}/>
-        <Route path="/sushi" element={<SushiMenu />} />
-        <Route path="/specials" element={<Specials />} />
-        <Route path="/about" element={<AboutUsPage />} />
-      </Routes>
-      <Footer />
+    <LightboxProvider>
+        <ScrollToTop />
+        <PageHeader />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<MainMenu />} />
+          <Route path="/sushi" element={<SushiMenu />} />
+          <Route path="/specials" element={<Specials />} />
+          <Route path="/about" element={<AboutUsPage />} />
+        </Routes>
+        <Footer />
+    </LightboxProvider>
+      
     </>
   );
 }
