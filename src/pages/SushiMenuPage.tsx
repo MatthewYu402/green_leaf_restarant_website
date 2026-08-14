@@ -6,6 +6,8 @@ import circleIcon from "@/assets/icons/circle.svg"
 
 // Images
 import specialImage from "@/assets/images/twenty-year-roll.jpg"
+// TODO: placeholder — swap for real per-roll photos as they become available
+import rollPlaceholderImage from "@/assets/images/square-sushi.png"
 
 // Components
 import SushiRolls from '../components/menu/SushiRolls';
@@ -15,6 +17,7 @@ import NigiriSashimi from '../components/menu/NigiriSashimi';
 import SpecialtyRolls from '../components/menu/SpecialtyRolls';
 import SushiSalads from '../components/menu/SushiSalads';
 import RollAccordion from '../components/menu/RollAccordion';
+import GalleryCarousel from '../components/shared/GalleryCarousel';
 
 const ANNIVERSARY_ROLLS = [
   { name: "1st Year", description: "Old Bay crabmeat and avocado, fried shrimp tempura style", price: "$14.95" },
@@ -38,6 +41,15 @@ const ANNIVERSARY_ROLLS = [
   { name: "19th Year", description: "Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce", price: "$14.95" },
   { name: "20th Year", description: "Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce", price: "$14.95" },
 ];
+
+// Goes through all 20 eventually — for now, only 2 have photos to show.
+// Once more real per-roll photos exist, change .slice(0, 2) to include more
+// (or drop it entirely to show all 20).
+const ANNIVERSARY_CAROUSEL_IMAGES = ANNIVERSARY_ROLLS.slice(0, 2).map((roll) => ({
+  src: rollPlaceholderImage,
+  alt: roll.name,
+  description: `${roll.name} — ${roll.description}`,
+}));
 
 const NAMESAKE_ROLLS = [
   { name: "Peggy", description: "Crabmeat, avocado, and tempura flakes with tuna and wasabi mirin sauce", price: "$14.95" },
@@ -160,12 +172,19 @@ export default function SushiMenu() {
             <h2>20th Year Anniversary Roll</h2>
             <p className="special-feature-description">A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced japaleno. </p>
             <span className="divider-line"></span>
-            <p>$14.95</p>
+            <p>$16</p>
           </div>
           <div className="special-feature-right">
             <img className="twenty-year-roll" src={specialImage}></img>
           </div>
         </div>
+      </Section>
+
+      {/* Mobile-only — sits between the Special Feature and the accordions.
+          Goes through all 20 rolls eventually; only 2 have real photos so far. */}
+      <Section className="reveal-block-slide anniversary-carousel-mobile">
+        <h4 className="anniversary-carousel-mobile-label">A Roll for Every Year</h4>
+        <GalleryCarousel images={ANNIVERSARY_CAROUSEL_IMAGES} />
       </Section>
 
       {/* Desktop/tablet — full section-by-section layout, unchanged. Hidden on mobile (see CSS). */}

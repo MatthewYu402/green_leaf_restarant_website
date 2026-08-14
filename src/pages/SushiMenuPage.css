@@ -207,4 +207,20 @@
     gap: 12px;
     margin-top: 32px;
   }
+  
+  .anniversary-carousel-mobile {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .anniversary-carousel-mobile-label {
+    color: var(--gold-dark);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 16px;
+  }
 }

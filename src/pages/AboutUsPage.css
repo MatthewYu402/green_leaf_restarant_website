@@ -166,6 +166,10 @@
   text-align: left;
 }
 
+.about-gallery-carousel-mobile {
+  display: none;
+}
+
 /* Join Our Table */
 .about-join {
   max-width: 1200px;
@@ -225,6 +229,40 @@
   color: var(--text-dark);
   font-size: 16px;
   margin: 0;
+}
+
+.about-info-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.about-info-cta:hover {
+  background-color: var(--gold-border);
+  transform: scale(1.02);
+}
+
+.about-info-cta:visited {
+  color: var(--white);
+}
+
+.about-info-cta-icon {
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1);
+  /* icon is dark by default — force white to match the button text */
 }
 
 .about-map-embed {
@@ -287,4 +325,94 @@
 .about-holiday-status--closed {
   color: var(--gray);
   background-color: var(--gray-div);
+}
+
+/* ============================================================
+   MOBILE — single column throughout, carousel replaces the grid
+   ============================================================ */
+@media (max-width: 1024px) {
+  .about-page {
+    padding: 0 var(--mobile-page-margin) 48px;
+    box-sizing: border-box;
+  }
+
+  .about-hero {
+    margin-top: calc(var(--navbar-height-mobile) + 24px);
+    border-radius: 12px;
+  }
+
+  .about-hero-image {
+    height: 280px;
+  }
+
+  .about-hero-title {
+    font-size: 32px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 14px;
+  }
+
+  .about-page .divider {
+    margin: 32px 0;
+  }
+
+  .about-story {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-story-image {
+    order: -1;
+    /* photo leads, matching StoryTeaser/SignatureSection on Home */
+    max-width: none;
+    height: 220px;
+  }
+
+  .about-story-title {
+    font-size: 26px;
+  }
+
+  .about-story-paragraph {
+    font-size: 15px;
+  }
+
+  .about-story-button {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  .about-gallery-title {
+    font-size: 24px;
+  }
+
+  .about-gallery-subtitle {
+    font-size: 13px;
+    margin: 0 0 24px;
+  }
+
+  .about-gallery-grid {
+    display: none;
+  }
+
+  .about-gallery-carousel-mobile {
+    display: block;
+  }
+
+  .about-join {
+    margin: 48px auto 0;
+  }
+
+  .about-join-title {
+    font-size: 24px;
+  }
+
+  .about-join-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-info-card {
+    padding: 20px;
+  }
 }

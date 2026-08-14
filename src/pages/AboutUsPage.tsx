@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom'
 // Components
 import Section from '../components/shared/Section'
 import Divider from '../components/shared/Divider'
+import GalleryCarousel from '../components/shared/GalleryCarousel'
 
 // Icons
 import mapPinIcon from '@/assets/icons/pin.svg'
 import clockIcon from '@/assets/icons/clock.svg'
 import diamondIcon from '@/assets/icons/diamond.svg'
+import phoneIcon from '@/assets/icons/reservation.svg'
 
 // Images
 // TODO: Replace with real photography
@@ -20,6 +22,15 @@ import GalleryImage3 from '@/assets/images/square-sushi.png'
 import GalleryImage4 from '@/assets/images/square-sushi.png'
 import GalleryImage5 from '@/assets/images/square-sushi.png'
 import GalleryImage6 from '@/assets/images/square-sushi.png'
+
+const GALLERY_ITEMS = [
+  { img: GalleryImage1, caption: "Anniversary celebration" },
+  { img: GalleryImage2, caption: "Sunday regulars" },
+  { img: GalleryImage3, caption: "Chef's table event" },
+  { img: GalleryImage4, caption: "Community gathering" },
+  { img: GalleryImage5, caption: "Birthday dinner" },
+  { img: GalleryImage6, caption: "Behind the counter" },
+];
 
 export default function AboutUsPage() {
   return (
@@ -70,20 +81,27 @@ export default function AboutUsPage() {
           <p className="about-gallery-subtitle">
             Celebrations, regulars, and everyday moments shared around our table
           </p>
+
+          {/* Desktop/tablet — 3-column hover-zoom grid, unchanged. Hidden on mobile (see CSS). */}
           <div className="about-gallery-grid">
-            {[
-              { img: GalleryImage1, caption: "Anniversary celebration" },
-              { img: GalleryImage2, caption: "Sunday regulars" },
-              { img: GalleryImage3, caption: "Chef's table event" },
-              { img: GalleryImage4, caption: "Community gathering" },
-              { img: GalleryImage5, caption: "Birthday dinner" },
-              { img: GalleryImage6, caption: "Behind the counter" },
-            ].map((item, i) => (
+            {GALLERY_ITEMS.map((item, i) => (
               <div className="about-gallery-item" key={i}>
                 <img src={item.img} className="about-gallery-photo" alt={item.caption} />
                 <div className="about-gallery-caption">{item.caption}</div>
               </div>
             ))}
+          </div>
+
+          {/* Mobile-only — same real photos/captions, carousel presentation.
+              Hidden above the breakpoint (see CSS). */}
+          <div className="about-gallery-carousel-mobile">
+            <GalleryCarousel
+              images={GALLERY_ITEMS.map((item) => ({
+                src: item.img,
+                alt: item.caption,
+                description: item.caption,
+              }))}
+            />
           </div>
         </div>
       </Section>
@@ -99,6 +117,10 @@ export default function AboutUsPage() {
               </div>
               <p className="about-info-line">11313 York Road<br />Hunt Valley, MD 21030</p>
               <p className="about-info-line">(410) 771-0030</p>
+              <a href="tel:4107710030" className="about-info-cta">
+                <img src={phoneIcon} className="about-info-cta-icon" alt="" />
+                Call to Reserve
+              </a>
               <div className="about-map-embed">
                 <iframe
                   title="Green Leaf Sushi location"

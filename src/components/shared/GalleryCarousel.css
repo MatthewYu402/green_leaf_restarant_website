@@ -1,8 +1,13 @@
 .gallery-carousel-wrapper {
-  position: relative;
   width: 75%;
   margin: 0 auto;
   --carousel-slide-width: 60%;
+}
+
+.gallery-carousel-row {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .gallery-carousel-track {
@@ -79,6 +84,26 @@
 .gallery-carousel-arrow:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+.gallery-carousel-caption {
+  margin: 16px 0 0;
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+  animation: gallery-caption-fade-in 0.3s ease;
+}
+
+@keyframes gallery-caption-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .gallery-carousel-dots {
