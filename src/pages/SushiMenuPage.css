@@ -9,7 +9,7 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.sushi-menu-heading  {
+.sushi-menu-heading {
   color: var(--text-dark);
   font-weight: 700;
 }
@@ -159,5 +159,52 @@
 
   to {
     opacity: 1;
+  }
+}
+
+/* ============================================================
+   MOBILE — accordions replace the full section-by-section layout
+   ============================================================ */
+.sushi-menu-mobile-lists {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sushi-menu-page {
+    padding: 0 var(--mobile-page-margin) 48px;
+  }
+
+  .special-feature {
+    flex-direction: column;
+    padding: 24px;
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .special-feature-right {
+    order: -1;
+  }
+
+  .special-feature-left h2 {
+    font-size: 24px;
+  }
+
+  .special-feature-description {
+    font-size: 15px;
+  }
+
+  .twenty-year-roll {
+    height: 200px;
+  }
+
+  .sushi-menu-desktop-lists {
+    display: none;
+  }
+
+  .sushi-menu-mobile-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
   }
 }

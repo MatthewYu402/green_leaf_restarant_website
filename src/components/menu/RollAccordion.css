@@ -1,0 +1,121 @@
+.roll-accordion {
+  background-color: var(--offwhite);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.roll-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.roll-accordion-title {
+  font-family: var(--libre);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.roll-accordion-count {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.roll-accordion-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.roll-accordion.open .roll-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.roll-accordion-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.roll-accordion.open .roll-accordion-body-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.roll-accordion-body {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 20px 20px;
+}
+
+.roll-accordion-item {
+  padding: 14px 0;
+  border-top: 1px solid var(--gray-div);
+}
+
+.roll-accordion-item:first-child {
+  border-top: none;
+}
+
+.roll-accordion-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.roll-accordion-item-name {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.roll-accordion-item-price {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold-accent);
+  white-space: nowrap;
+}
+
+.roll-accordion-item-description {
+  margin: 4px 0 0;
+  font-size: 14px;
+  text-align: left;
+  color: var(--gray-dark);
+  line-height: 1.4;
+}
+
+.roll-accordion-more {
+  display: block;
+  width: 100%;
+  margin: 12px 0 0;
+  padding: 0;
+  background: none;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gray);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.roll-accordion-more:hover {
+  color: var(--gold-dark);
+  text-decoration: underline;
+}

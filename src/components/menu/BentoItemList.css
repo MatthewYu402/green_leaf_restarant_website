@@ -1,0 +1,58 @@
+.bento-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bento-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: var(--white);
+  border: 2px solid var(--gray-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.bento-item-image {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.bento-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  /* lets the description truncate instead of forcing the row wider */
+}
+
+.bento-item-name {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.bento-item-description {
+  font-size: 13px;
+  color: var(--gray);
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bento-item-price {
+  font-family: var(--libre);
+  font-size: 15px;
+  color: var(--gold-accent);
+}

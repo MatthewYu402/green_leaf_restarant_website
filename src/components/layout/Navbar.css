@@ -283,7 +283,6 @@
 
   .navbar .nav-links {
     display: none;
-    /* replaced by the drawer on mobile */
   }
 
   .cell-num {
@@ -299,11 +298,13 @@
     display: inline;
   }
 
-  /* No hero photo behind the mobile Home hero anymore, so the transparent
-     floating state (white text/icons) has nothing dark to sit on top of.
-     Force the solid background at all times on mobile instead of only
-     after scroll. */
-  .navbar-floating {
+  /* Both navbar states relied on something behind them for a backdrop:
+     .navbar-floating (Home) had the hero photo, .navbar-solid (every
+     other page) had the old fixed .page-header-visual. Both of those
+     are gone/hidden on mobile now, so both navbar states need to
+     supply their own solid background here instead. */
+  .navbar-floating,
+  .navbar-solid {
     background-color: var(--green-dark);
     box-shadow: var(--shadow);
   }

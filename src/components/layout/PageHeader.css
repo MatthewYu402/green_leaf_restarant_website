@@ -106,16 +106,18 @@
   }
 
   .page-header-mobile-visual {
-    height: 380px;
+    height: 150px;
     box-sizing: border-box;
-    padding: 0 var(--mobile-page-margin) 32px;
+    padding: 32px var(--mobile-page-margin) 32px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     text-align: center;
-    background-color: var(--green-dark);
+    background: transparent;
     /* fallback for routes with no mobileImage, e.g. /menu */
+    background: url("/src/assets/images/menu-background.svg");
+    background-color: var(--green-nav);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -152,6 +154,7 @@
     padding: 24px var(--mobile-page-margin) 0;
     color: var(--text-dark);
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.6;
     text-align: left;
     margin: 0;

@@ -27,7 +27,7 @@ const PAGE_HEADERS: Record<string, PageHeaderContent> = {
   '/sushi': {
     title: 'Our Sushi',
     subtitle: 'Crafted with precision, served with passion.',
-    intro: "Experience our meticulously curated selection of over 110 pristine sushi items, ranging from our twenty-year legacy Anniversary Rolls to delicately sliced Nigiri and vibrant Sushi Salads.",
+    intro: "Experience our meticulously curated variety of sushi items, ranging from our twenty-year legacy Anniversary Rolls to delicately sliced Nigiri and vibrant Sushi Salads.",
     mobileImage: sushiHeaderImage,
   },
 };
