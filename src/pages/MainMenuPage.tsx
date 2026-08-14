@@ -6,6 +6,7 @@ import Divider from "../components/shared/Divider";
 import Section from "../components/shared/Section";
 import FeaturedMenuSection from "../components/menu/FeaturedMenuSection";
 import DrinksDesserts from "../components/menu/DrinksDesserts";
+import RollAccordion from "../components/menu/RollAccordion";
 
 // Icons
 import goldLeaf from "@/assets/icons/gold-leaf.svg";
@@ -23,268 +24,312 @@ import AppImage from "@/assets/images/Apps.jpg";
 import SoupImage from "@/assets/images/soups.jpg"
 import SquareSushi from "@/assets/images/square-sushi.png";
 
+const APPETIZERS_FEATURED = [
+  { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
+  { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
+  { name: "Summer Roll", price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
+  { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
+];
+
+const APPETIZERS_ITEMS = [
+  { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
+  { name: "Shumai", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)" },
+  { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "TODO" },
+  { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
+  { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
+  { name: "Fried Calamari", price: "$9.95", description: "TODO" },
+  { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
+  { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
+  { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
+  { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
+  { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
+];
+
+const SOUPS_SALADS_FEATURED = [
+  { name: "Miso Soup", price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
+  { name: "Egg Drop Soup", price: "$3.95", description: "TODO" },
+  { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
+  { name: "Seaweed Salad", price: "$5.95", description: "TODO" },
+];
+
+const SOUPS_SALADS_ITEMS = [
+  { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "TODO" },
+  { name: "Hot and Sour Soup", price: "$4.95", description: "TODO" },
+  { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "TODO" },
+  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "TODO" },
+  { name: "California Style Salad", price: "$6.95", description: "TODO" },
+  { name: "Sushi Bar Salad", price: "$6.95", description: "TODO" },
+  { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
+  { name: "Baby Octopus Salad", price: "$7.95", description: "TODO" },
+  { name: "Marinated Calamari Salad", price: "$7.95", description: "TODO" },
+];
+
+const MEAT_ITEMS = [
+  { name: "Honey Sesame Chicken", price: "$14.95", description: "" },
+  { name: "Thai Curry Chicken", price: "$15.95", description: "" },
+  { name: "General Tso's Chicken", price: "$14.95", description: "" },
+  { name: "Orange Chicken", price: "$14.95", description: "" },
+  { name: "Mongolian Beef", price: "$17.95", description: "" },
+  { name: "Beef and Brocolli", price: "$17.95", description: "" },
+  { name: "Chicken and Brocolli", price: "$14.95", description: "" },
+  { name: "Chicken and String Beans", price: "$14.95", description: "" },
+  { name: "Chicken and Mixed Vegetables", price: "$14.95", description: "" },
+  { name: "Fried Tonkatsu", price: "$14.95", description: "Breaded pork loin with special savory sauce" },
+];
+
+const SEAFOOD_GROUPS = [
+  {
+    subheading: "Shared Favorites",
+    layout: "full" as const,
+    items: [
+      { name: "Green Leaf Pasta", price: "$19.95", description: "Shrimp, scallops, and baby bok choy over spinach noodles" },
+      { name: "Crispy Jumbo Shrimp", price: "$18.95", description: "Served with honey sesame" },
+      { name: "Seafood Combo", price: "$19.95", description: "Served in thai curry sauce" },
+      { name: "Pecan Crusted Salmon Filet", price: "$19.95", description: "" },
+      { name: "Grilled Salmon Filet", price: "$19.95", description: "Served with house salad" },
+      { name: "Shrimp with Brocolli", price: "$17.95", description: "" },
+    ],
+  },
+  {
+    subheading: "Lunch Exclusives",
+    layout: "half" as const,
+    items: [
+      { name: "Thai Basil Shrimp", price: "$17.95", description: "" },
+      { name: "Shrimp with String Beans", price: "$11.95", description: "" },
+    ],
+  },
+  {
+    subheading: "Dinner Exclusives",
+    layout: "half" as const,
+    items: [
+      { name: "Pine Nut Fish", price: "$18.95", description: "Crispy cod served with spicy thai sauce" },
+      { name: "Baked cod", price: "$18.95", description: "Served with thai sauce" },
+      { name: "Pineapple Shrimp", price: "$17.95", description: "Served with pineapple slices" },
+    ],
+  },
+];
+const SEAFOOD_ITEMS = SEAFOOD_GROUPS.flatMap((g) => g.items);
+
+const DONBURI_ITEMS = [
+  { name: "Tekka Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh tuna" },
+  { name: "Salmon Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh salmon" },
+  { name: "Chirashi Don", price: "$20.95", description: "Bowl of seasoned rice with assorted raw fish" },
+  { name: "Una-jyu", price: "$20.95", description: "Broiled fresh water eel with special sauce over rice" },
+];
+
+const SUSHI_SASHIMI_ITEMS = [
+  { name: "Sushi Deluxe", price: "$20.95", description: "TODO" },
+  { name: "Sashimi Deluxe", price: "$24.95", description: "TODO" },
+  { name: "Sushi Boat", price: "$59.95", description: "TODO" },
+];
+
+const NOODLES_ITEMS = [
+  { name: "Japanese Pan Noodle", price: "$18.95", description: "Chicken, shrimp, and vegetables" },
+  { name: "Pad Thai", price: "$14.95", description: "Chicken or shrimp" },
+  { name: "Singapore Rice Noodes", price: "$14.95", description: "Chicken or shrimp" },
+  { name: "Yaki Udon Noodes", price: "$14.95", description: "Chicken or shrimp" },
+  { name: "Drunken Noodle", price: "$15.95", description: "Chicken or shrimp" },
+  { name: "Japanese Fried Rice", price: "$13.95", description: "Chicken or shrimp" },
+  { name: "Roasted Pork Fried Rice", price: "$13.95", description: "Pork and vegetables" },
+  { name: "Nabe Yaki Udon Soup", price: "$14.95", description: "Pork and vegetables" },
+  { name: "Lo Mein", price: "$14.95", description: "Chicken, pork, or shrimp" },
+  { name: "Slimming Noodle Soup", price: "$14.95", description: "Rice noodles, white chicken meat, shrimp, and vegetables in home-made miso broth" },
+];
+
+const VEGETARIAN_ITEMS = [
+  { name: "Szechuan String Bean", price: "$13.95", description: "" },
+  { name: "Tofu Phad Thai", price: "$13.95", description: "" },
+  { name: "Veggie Pad Thai", price: "$13.95", description: "" },
+  { name: "Singapore Rice Noode", price: "$13.95", description: "" },
+  { name: "Sauteed Mixed Vegetables", price: "$13.95", description: "" },
+  { name: "Crispy Eggplant", price: "$13.95", description: "Comes with sesame sauce" },
+];
+
+const TERIYAKI_TEMPURA_ITEMS = [
+  { name: "Chicken Teriyaki", price: "$14.95", description: "" },
+  { name: "Salmon Teriyaki", price: "$19.95", description: "" },
+  { name: "Steak Teryaki", price: "$24.95", description: "" },
+  { name: "Chicken Tempura", price: "$14.95", description: "" },
+  { name: "Shrimp Tempura", price: "$17.95", description: "" },
+  { name: "Seafood Tempura", price: "$19.95", description: "" },
+  { name: "Vegetable Tempura", price: "$13.95", description: "" },
+];
+
+const COLD_ITEMS = [
+  { name: "Mineral Water", price: "$3.95", description: "" },
+  { name: "Iced Tea", price: "$2.00", description: "" },
+  { name: "Japanese Marble Soda", price: "$3.95", description: "" },
+  { name: "Strawberry Iced Tea", price: "$3.95", description: "" },
+  { name: "Mango Iced Tea", price: "$3.95", description: "" },
+  { name: "Soft Drinks", price: "$2.50", description: "Coke, Diet Coke, Sprite, Ginger Ale" },
+];
+
+const WARM_ITEMS = [
+  { name: "Jasmine Tea", price: "$2.00", description: "" },
+  { name: "Japanese Green Tea", price: "$2.00", description: "" },
+  { name: "Wine Corking Fee", price: "$3.00", description: "" },
+];
+
+const DESSERT_ITEMS = [
+  { name: "Fried Banana with Ice Cream", price: "$5.95", description: "Tempura-fried bananas served with ice cream" },
+  { name: "Mango Rice Pudding", price: "$5.95", description: "Sticky rice with fresh mango and mixed nuts" },
+  { name: "Premium Ice Cream", price: "$4.95", description: "Red bean, green tea, french vanilla" },
+  { name: "Mini Sugar Donuts (6)", price: "$4.95", description: "Fried soft buns tossed in sugar" },
+  { name: "Tempura Fried Cheesecake", price: "$6.25", description: "" },
+];
+
+const toAccordionItems = (items: { name: string; price: string; description: string }[]) =>
+  items.map((i) => ({ name: i.name, description: i.description, priceDisplay: i.price }));
+
 export default function MainMenu() {
   return (
     <div className="main-menu-page">
-      <Section className="reveal-block-slide">
-        <FeaturedMenuSection
+
+      {/* Desktop/tablet — full section-by-section layout, unchanged. Hidden on mobile (see CSS). */}
+      <div className="main-menu-desktop-lists">
+        <Section className="reveal-block-slide">
+          <FeaturedMenuSection
+            title="Appetizers"
+            image={AppImage}
+            imageAlt="Signature appetizer spread"
+            badge="Chef's Selection"
+            featuredTitle="Signature Starters"
+            featuredDescription="Experience a curated assortment of our finest appetizers, perfect for sharing and awakening the palate."
+            featuredItems={APPETIZERS_FEATURED}
+            items={APPETIZERS_ITEMS}
+          />
+        </Section>
+
+        <Section className="reveal-block-slide">
+          <FeaturedMenuSection
+            className="soups-salads-section"
+            title="Soups & Salads"
+            image={SoupImage}
+            imageAlt="Soups and salads selection"
+            badge="Chef's Selection"
+            featuredTitle="Comforting Classics"
+            featuredDescription="Warm broths and crisp, fresh salads — traditional favorites made to balance and complement any meal."
+            featuredItems={SOUPS_SALADS_FEATURED}
+            items={SOUPS_SALADS_ITEMS}
+          />
+        </Section>
+
+        <Section className="reveal-block-fade">
+          <Divider iconUrl={goldLeaf} iconAlt="gold leaf icon" thickness="2px" lineWidth="600px" />
+        </Section>
+
+        <Section className="reveal-block-slide">
+          <div className="grill-kitchen-wrapper">
+            <h2 className="grill-title">From The Grill & Kitchen</h2>
+            <div className="grill-kitchen">
+              <MenuOptions title="Meat" menu_items={MEAT_ITEMS} />
+              <MenuOptions title="Seafood" className="seafood-options" groups={SEAFOOD_GROUPS} />
+            </div>
+          </div>
+        </Section>
+
+        <Section className="reveal-block-fade">
+          <Divider iconUrl={waveIcon} iconAlt="wave icon" thickness="2px" lineWidth="600px" />
+        </Section>
+
+        <Section className="reveal-block-slide">
+          <div className="sushi-sashimi">
+            <img src={SquareSushi} className="sushi-sashimi-image" alt="Fresh sushi and sashimi selection" />
+            <div className="sushi-sashimi-content">
+              <h2 className="sushi-sashimi-header">Sushi & Sashimi</h2>
+              <p className="sushi-sashimi-description">Sourced daily, expertly prepared. Served a la carte (2 pieces per order) or as chef's selection</p>
+              <div className="menu-sushi-sashimi-options">
+                <MenuOptions title="Donburi & Una-jyu" menu_items={DONBURI_ITEMS} />
+                <MenuOptions title="Sushi & Sashimi" menu_items={SUSHI_SASHIMI_ITEMS} />
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        <Section className="reveal-block-fade">
+          <Divider iconUrl={noodleIcon} iconAlt="noodle-icon" thickness="2px" lineWidth="600px" />
+        </Section>
+
+        <Section className='reveal-block-slide'>
+          <div className="noodles-vegetarian-wrapper">
+            <h2 className="noodles-vegetarian-title">Noodles & Vegetarian</h2>
+            <div className="noodles-vegetarian">
+              <MenuOptions title="Noodles & Fried Rice" menu_items={NOODLES_ITEMS} />
+              <MenuOptions title="Vegetarian" menu_items={VEGETARIAN_ITEMS} />
+            </div>
+          </div>
+        </Section>
+
+        <Section className='reveal-block-fade'>
+          <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
+        </Section>
+
+        <Section className="reveal-block-slide">
+          <div className="teriyaki-card">
+            <img src={forkKnifeIcon} className="teriyaki-card-icon" alt="" />
+            <h2 className="teriyaki-card-title">Teriyaki & Tempura</h2>
+            <p className="teriyaki-card-subtitle">
+              Grilled and glazed, or golden and crisp — a taste of both traditions
+            </p>
+            <MenuOptions title="" className="teriyaki-card-options" menu_items={TERIYAKI_TEMPURA_ITEMS} />
+          </div>
+        </Section>
+
+
+        <Section className='reveal-block-fade'>
+          <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
+        </Section>
+
+        <Section className="reveal-block-slide">
+          <DrinksDesserts
+            coldTitle="Cold Refreshments"
+            coldIcon={snowflakeIcon}
+            coldBgIcon={waterDropIcon}
+            coldItems={COLD_ITEMS}
+            warmTitle="Hot Beverages"
+            warmIcon={teacupBlackIcon}
+            warmBgIcon={cupIcon}
+            warmItems={WARM_ITEMS}
+            dessertTitle="Desserts"
+            dessertIcon={dessertIcon}
+            dessertItems={DESSERT_ITEMS}
+            image={SquareSushi}
+            imageAlt=""
+          />
+        </Section>
+      </div>
+
+      {/* Mobile — same real data, collapsed into accordions. Two subcategories
+          (Appetizers, Soups & Salads) carry a real photo; the rest are left
+          without one since no distinct photos exist for them yet — the
+          optional `image` prop is ready whenever they do. Hidden above the
+          breakpoint (see CSS). */}
+      <div className="main-menu-mobile-lists">
+        <RollAccordion
           title="Appetizers"
+          defaultOpen
           image={AppImage}
           imageAlt="Signature appetizer spread"
-          badge="Chef's Selection"
-          featuredTitle="Signature Starters"
-          featuredDescription="Experience a curated assortment of our finest appetizers, perfect for sharing and awakening the palate."
-          featuredItems={[
-            { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
-            { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
-            { name: "Summer Roll", price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
-            { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
-          ]}
-          items={[
-            { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
-            { name: "Shumai", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)" },
-            { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "TODO" },
-            { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
-            { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
-            { name: "Fried Calamari", price: "$9.95", description: "TODO" },
-            { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
-            { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
-            { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
-            { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
-            { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
-          ]}
+          items={toAccordionItems([...APPETIZERS_FEATURED, ...APPETIZERS_ITEMS])}
         />
-      </Section>
-
-      <Section className="reveal-block-slide">
-        <FeaturedMenuSection
-          className="soups-salads-section"
+        <RollAccordion
           title="Soups & Salads"
           image={SoupImage}
           imageAlt="Soups and salads selection"
-          badge="Chef's Selection"
-          featuredTitle="Comforting Classics"
-          featuredDescription="Warm broths and crisp, fresh salads — traditional favorites made to balance and complement any meal."
-          featuredItems={[
-            { name: "Miso Soup", price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
-            { name: "Egg Drop Soup", price: "$3.95", description: "TODO" },
-            { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
-            { name: "Seaweed Salad", price: "$5.95", description: "TODO" },
-          ]}
-          items={[
-            { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "TODO" },
-            { name: "Hot and Sour Soup", price: "$4.95", description: "TODO" },
-            { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "TODO" },
-            { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "TODO" },
-            { name: "California Style Salad", price: "$6.95", description: "TODO" },
-            { name: "Sushi Bar Salad", price: "$6.95", description: "TODO" },
-            { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
-            { name: "Baby Octopus Salad", price: "$7.95", description: "TODO" },
-            { name: "Marinated Calamari Salad", price: "$7.95", description: "TODO" },
-          ]}
+          items={toAccordionItems([...SOUPS_SALADS_FEATURED, ...SOUPS_SALADS_ITEMS])}
         />
-      </Section>
+        <RollAccordion title="Meat" items={toAccordionItems(MEAT_ITEMS)} />
+        <RollAccordion title="Seafood" items={toAccordionItems(SEAFOOD_ITEMS)} />
+        <RollAccordion title="Donburi & Una-jyu" items={toAccordionItems(DONBURI_ITEMS)} />
+        <RollAccordion title="Sushi & Sashimi" items={toAccordionItems(SUSHI_SASHIMI_ITEMS)} />
+        <RollAccordion title="Noodles & Fried Rice" items={toAccordionItems(NOODLES_ITEMS)} />
+        <RollAccordion title="Vegetarian" items={toAccordionItems(VEGETARIAN_ITEMS)} />
+        <RollAccordion title="Teriyaki & Tempura" items={toAccordionItems(TERIYAKI_TEMPURA_ITEMS)} />
+        <RollAccordion title="Cold Refreshments" items={toAccordionItems(COLD_ITEMS)} />
+        <RollAccordion title="Hot Beverages" items={toAccordionItems(WARM_ITEMS)} />
+        <RollAccordion title="Desserts" items={toAccordionItems(DESSERT_ITEMS)} />
+      </div>
 
-      <Section className="reveal-block-fade">
-        <Divider iconUrl={goldLeaf} iconAlt="gold leaf icon" thickness="2px" lineWidth="600px"/>
-      </Section>
-
-      <Section className="reveal-block-slide">
-        <div className="grill-kitchen-wrapper">
-          <h2 className="grill-title">From The Grill & Kitchen</h2>
-          <div className="grill-kitchen">
-            <MenuOptions
-              title="Meat"
-              menu_items={[
-                { name: "Honey Sesame Chicken", price: "$14.95", description: "" },
-                { name: "Thai Curry Chicken", price: "$15.95", description: "" },
-                { name: "General Tso's Chicken", price: "$14.95", description: "" },
-                { name: "Orange Chicken", price: "$14.95", description: "" },
-                { name: "Mongolian Beef", price: "$17.95", description: "" },
-                { name: "Beef and Brocolli", price: "$17.95", description: "" },
-                { name: "Chicken and Brocolli", price: "$14.95", description: "" },
-                { name: "Chicken and String Beans", price: "$14.95", description: "" },
-                { name: "Chicken and Mixed Vegetables", price: "$14.95", description: "" },
-                { name: "Fried Tonkatsu", price: "$14.95", description: "Breaded pork loin with special savory sauce" },
-              ]}
-            />
-            <MenuOptions
-              title="Seafood"
-              className="seafood-options"
-              groups={[
-                {
-                  subheading: "Shared Favorites",
-                  layout: "full",
-                  items: [
-                    { name: "Green Leaf Pasta", price: "$19.95", description: "Shrimp, scallops, and baby bok choy over spinach noodles" },
-                    { name: "Crispy Jumbo Shrimp", price: "$18.95", description: "Served with honey sesame" },
-                    { name: "Seafood Combo", price: "$19.95", description: "Served in thai curry sauce" },
-                    { name: "Pecan Crusted Salmon Filet", price: "$19.95", description: "" },
-                    { name: "Grilled Salmon Filet", price: "$19.95", description: "Served with house salad" },
-                    { name: "Shrimp with Brocolli", price: "$17.95", description: "" },
-                  ],
-                },
-                {
-                  subheading: "Lunch Exclusives",
-                  layout: "half",
-                  items: [
-                    { name: "Thai Basil Shrimp", price: "$17.95", description: "" },
-                    { name: "Shrimp with String Beans", price: "$11.95", description: "" },
-                  ],
-                },
-                {
-                  subheading: "Dinner Exclusives",
-                  layout: "half",
-                  items: [
-                    { name: "Pine Nut Fish", price: "$18.95", description: "Crispy cod served with spicy thai sauce" },
-                    { name: "Baked cod", price: "$18.95", description: "Served with thai sauce" },
-                    { name: "Pineapple Shrimp", price: "$17.95", description: "Served with pineapple slices" },
-                  ],
-                },
-              ]}
-            />
-          </div>
-        </div>
-      </Section>
-
-      <Section className="reveal-block-fade">
-        <Divider iconUrl={waveIcon} iconAlt="wave icon" thickness="2px" lineWidth="600px"/>
-      </Section>
-
-      <Section className="reveal-block-slide">
-        <div className="sushi-sashimi">
-          <img src={SquareSushi} className="sushi-sashimi-image" alt="Fresh sushi and sashimi selection" />
-          <div className="sushi-sashimi-content">
-            <h2 className="sushi-sashimi-header">Sushi & Sashimi</h2>
-            <p className="sushi-sashimi-description">Sourced daily, expertly prepared. Served a la carte (2 pieces per order) or as chef's selection</p>
-            <div className="menu-sushi-sashimi-options">
-              <MenuOptions
-                title="Donburi & Una-jyu"
-                menu_items={[
-                  { name: "Tekka Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh tuna" },
-                  { name: "Salmon Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh salmon" },
-                  { name: "Chirashi Don", price: "$20.95", description: "Bowl of seasoned rice with assorted raw fish" },
-                  { name: "Una-jyu", price: "$20.95", description: "Broiled fresh water eel with special sauce over rice" },
-                ]}
-              />
-              <MenuOptions
-                title="Sushi & Sashimi"
-                menu_items={[
-                  { name: "Sushi Deluxe", price: "$20.95", description: "TODO" },
-                  { name: "Sashimi Deluxe", price: "$24.95", description: "TODO" },
-                  { name: "Sushi Boat", price: "$59.95", description: "TODO" },
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section className="reveal-block-fade">
-        <Divider iconUrl={noodleIcon} iconAlt="noodle-icon" thickness="2px" lineWidth="600px" />
-      </Section>
-
-      <Section className='reveal-block-slide'>
-        <div className="noodles-vegetarian-wrapper">
-          <h2 className="noodles-vegetarian-title">Noodles & Vegetarian</h2>
-          <div className="noodles-vegetarian">
-            <MenuOptions
-              title="Noodles & Fried Rice"
-              menu_items={[
-                { name: "Japanese Pan Noodle", price: "$18.95", description: "Chicken, shrimp, and vegetables" },
-                { name: "Pad Thai", price: "$14.95", description: "Chicken or shrimp" },
-                { name: "Singapore Rice Noodes", price: "$14.95", description: "Chicken or shrimp" },
-                { name: "Yaki Udon Noodes", price: "$14.95", description: "Chicken or shrimp" },
-                { name: "Drunken Noodle", price: "$15.95", description: "Chicken or shrimp" },
-                { name: "Japanese Fried Rice", price: "$13.95", description: "Chicken or shrimp" },
-                { name: "Roasted Pork Fried Rice", price: "$13.95", description: "Pork and vegetables" },
-                { name: "Nabe Yaki Udon Soup", price: "$14.95", description: "Pork and vegetables" },
-                { name: "Lo Mein", price: "$14.95", description: "Chicken, pork, or shrimp" },
-                { name: "Slimming Noodle Soup", price: "$14.95", description: "Rice noodles, white chicken meat, shrimp, and vegetables in home-made miso broth" },
-              ]}
-            />
-            <MenuOptions
-              title="Vegetarian"
-              menu_items={[
-                { name: "Szechuan String Bean", price: "$13.95", description: "" },
-                { name: "Tofu Phad Thai", price: "$13.95", description: "" },
-                { name: "Veggie Pad Thai", price: "$13.95", description: "" },
-                { name: "Singapore Rice Noode", price: "$13.95", description: "" },
-                { name: "Sauteed Mixed Vegetables", price: "$13.95", description: "" },
-                { name: "Crispy Eggplant", price: "$13.95", description: "Comes with sesame sauce" },
-              ]}
-            />
-          </div>
-        </div>
-      </Section>
-
-      <Section className='reveal-block-fade'>
-        <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
-
-      </Section>
-
-      <Section className="reveal-block-slide">
-        <div className="teriyaki-card">
-          <img src={forkKnifeIcon} className="teriyaki-card-icon" alt="" />
-          <h2 className="teriyaki-card-title">Teriyaki & Tempura</h2>
-          <p className="teriyaki-card-subtitle">
-            Grilled and glazed, or golden and crisp — a taste of both traditions
-          </p>
-          <MenuOptions
-            title=""
-            className="teriyaki-card-options"
-            menu_items={[
-              { name: "Chicken Teriyaki", price: "$14.95", description: "" },
-              { name: "Salmon Teriyaki", price: "$19.95", description: "" },
-              { name: "Steak Teryaki", price: "$24.95", description: "" },
-              { name: "Chicken Tempura", price: "$14.95", description: "" },
-              { name: "Shrimp Tempura", price: "$17.95", description: "" },
-              { name: "Seafood Tempura", price: "$19.95", description: "" },
-              { name: "Vegetable Tempura", price: "$13.95", description: "" },
-            ]}
-          />
-        </div>
-      </Section>
-
-
-      <Section className='reveal-block-fade'>
-        <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
-      </Section>
-
-      <Section className="reveal-block-slide">
-        <DrinksDesserts
-          coldTitle="Cold Refreshments"
-          coldIcon={snowflakeIcon}
-          coldBgIcon={waterDropIcon}
-          coldItems={[
-            { name: "Mineral Water", price: "$3.95", description: "" },
-            { name: "Iced Tea", price: "$2.00", description: "" },
-            { name: "Japanese Marble Soda", price: "$3.95", description: "" },
-            { name: "Strawberry Iced Tea", price: "$3.95", description: "" },
-            { name: "Mango Iced Tea", price: "$3.95", description: "" },
-            { name: "Soft Drinks", price: "$2.50", description: "Coke, Diet Coke, Sprite, Ginger Ale" },
-          ]}
-          warmTitle="Hot Beverages"
-          warmIcon={teacupBlackIcon}
-          warmBgIcon={cupIcon}
-          warmItems={[
-            { name: "Jasmine Tea", price: "$2.00", description: "" },
-            { name: "Japanese Green Tea", price: "$2.00", description: "" },
-            { name: "Wine Corking Fee", price: "$3.00", description: "" },
-          ]}
-          dessertTitle="Desserts"
-          dessertIcon={dessertIcon}
-          dessertItems={[
-            { name: "Fried Banana with Ice Cream", price: "$5.95", description: "Tempura-fried bananas served with ice cream" },
-            { name: "Mango Rice Pudding", price: "$5.95", description: "Sticky rice with fresh mango and mixed nuts" },
-            { name: "Premium Ice Cream", price: "$4.95", description: "Red bean, green tea, french vanilla" },
-            { name: "Mini Sugar Donuts (6)", price: "$4.95", description: "Fried soft buns tossed in sugar" },
-            { name: "Tempura Fried Cheesecake", price: "$6.25", description: "" },
-          ]}
-          image={SquareSushi}
-          imageAlt=""
-        />
-      </Section>
     </div>
   );
 }

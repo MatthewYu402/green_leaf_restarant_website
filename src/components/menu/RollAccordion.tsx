@@ -12,6 +12,8 @@ interface RollAccordionProps {
   items: AccordionItem[];
   defaultOpen?: boolean;
   previewCount?: number;
+  image?: string;
+  imageAlt?: string;
 }
 
 export default function RollAccordion({
@@ -19,6 +21,8 @@ export default function RollAccordion({
   items,
   defaultOpen = false,
   previewCount = 3,
+  image,
+  imageAlt = "",
 }: RollAccordionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [showAll, setShowAll] = useState(false);
@@ -40,32 +44,33 @@ export default function RollAccordion({
         <ChevronIcon />
       </button>
 
-      {/* Height-animated via CSS grid-template-rows (0fr -> 1fr), not measured
-          in JS — deliberately avoiding the class of bug we hit with the old
-          carousel's ResizeObserver-based measurement. */}
-      <div className="roll-accordion-body-wrapper">
-        <div className="roll-accordion-body">
-          {visibleItems.map((item) => (
-            <div className="roll-accordion-item" key={item.name}>
-              <div className="roll-accordion-item-header">
-                <h4 className="roll-accordion-item-name">{item.name}</h4>
-                <span className="roll-accordion-item-price">{item.priceDisplay}</span>
-              </div>
-              {item.description && (
-                <p className="roll-accordion-item-description">{item.description}</p>
-              )}
+      {/* Height-animated via max-height + overflow:hidden — unlike the
+          grid-template-rows(0fr/1fr) technique used before, this clips
+          to a true 0px at rest regardless of image content inside. */}
+      <div className="roll-accordion-body">
+        {image && (
+          <img src={image} alt={imageAlt} className="roll-accordion-image" />
+        )}
+        {visibleItems.map((item) => (
+          <div className="roll-accordion-item" key={item.name}>
+            <div className="roll-accordion-item-header">
+              <h4 className="roll-accordion-item-name">{item.name}</h4>
+              <span className="roll-accordion-item-price">{item.priceDisplay}</span>
             </div>
-          ))}
-          {remaining > 0 && (
-            <button
-              type="button"
-              className="roll-accordion-more"
-              onClick={() => setShowAll(true)}
-            >
-              + {remaining} more options
-            </button>
-          )}
-        </div>
+            {item.description && (
+              <p className="roll-accordion-item-description">{item.description}</p>
+            )}
+          </div>
+        ))}
+        {remaining > 0 && (
+          <button
+            type="button"
+            className="roll-accordion-more"
+            onClick={() => setShowAll(true)}
+          >
+            + {remaining} more options
+          </button>
+        )}
       </div>
     </div>
   );

@@ -526,6 +526,23 @@
 }
   
 
+@media (max-width: 1024px) {
+  .main-menu-page {
+    margin-inline: var(--mobile-page-margin);
+  }
+
+  .main-menu-desktop-lists {
+    display: none;
+  }
+
+  .main-menu-mobile-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0px;
+  }
+}
+
 @media (max-width: 1450px) {
   .apps-soups-salads .item-list {
     display: flex;
