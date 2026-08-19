@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './RollAccordion.css';
+import ItemPhotoTrigger from '../shared/ItemPhotoTrigger';
 
 export interface AccordionItem {
   name: string;
   description?: string;
   priceDisplay: string;
+  image?: string;
 }
 
 export interface AccordionGroup {
@@ -15,7 +17,7 @@ export interface AccordionGroup {
 interface RollAccordionProps {
   title: string;
   items?: AccordionItem[];
-  groups?: AccordionGroup[]; // use instead of `items` when subcategories need distinct labels (e.g. Seafood's Lunch/Dinner Exclusives)
+  groups?: AccordionGroup[];
   defaultOpen?: boolean;
   previewCount?: number;
   image?: string;
@@ -94,7 +96,10 @@ function AccordionItemRow({ item }: { item: AccordionItem }) {
   return (
     <div className="roll-accordion-item">
       <div className="roll-accordion-item-header">
-        <h4 className="roll-accordion-item-name">{item.name}</h4>
+        <span className="roll-accordion-item-name-group">
+          <h4 className="roll-accordion-item-name">{item.name}</h4>
+          {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
+        </span>
         <span className="roll-accordion-item-price">{item.priceDisplay}</span>
       </div>
       {item.description && (

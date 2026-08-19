@@ -8,17 +8,18 @@ interface MenuItemData {
   description: string;
   price: string;
   pieces?: number;
+  image?: string;
 }
 
 interface MenuItemGroup {
   subheading?: string;
-  layout?: "full" | "half";   // new — explicit, not inferred
+  layout?: "full" | "half";
   items: MenuItemData[];
 }
 
 interface MenuOptionsProps {
   title: string;
-  note?: string;   // NEW
+  note?: string;
   menu_items?: MenuItemData[];
   groups?: MenuItemGroup[];
   className?: string;
@@ -41,8 +42,8 @@ export default function MenuOptions({ title, note, menu_items, groups, className
               <h3 className="menu-options-subheading">{group.subheading}</h3>
             )}
             <div className="item-list">
-              {group.items.map((item) => (
-                <MenuItem key={item.name} {...item} />
+              {group.items.map((item, j) => (
+                <MenuItem key={j} {...item} />
               ))}
             </div>
           </div>

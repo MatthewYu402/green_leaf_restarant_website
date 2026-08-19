@@ -1,9 +1,11 @@
 import './SpecialtyRolls.css'
+import ItemPhotoTrigger from '../shared/ItemPhotoTrigger';
 
 interface RollData {
   name: string;
   description: string;
   price: string;
+  image?: string;
 }
 
 interface SpecialtyRollsProps {
@@ -25,10 +27,13 @@ export default function SpecialtyRolls({ title, subtitle, image, imageAlt = "", 
         <h2 className="specialty-rolls-title">{title}</h2>
         {subtitle && <p className="specialty-rolls-subtitle">{subtitle}</p>}
         <div className="specialty-rolls-list">
-          {items.map((item) => (
-            <div className="specialty-roll-item" key={item.name}>
+          {items.map((item, i) => (
+            <div className="specialty-roll-item" key={i}>
               <div className="specialty-roll-item-header">
-                <h3 className="specialty-roll-name">{item.name}</h3>
+                <span className="specialty-roll-name-group">
+                  <h3 className="specialty-roll-name">{item.name}</h3>
+                  {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
+                </span>
                 <span className="specialty-roll-price">{item.price}</span>
               </div>
               {item.description && (

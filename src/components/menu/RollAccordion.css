@@ -156,3 +156,10 @@
 .roll-accordion-group .roll-accordion-item:first-child {
   border-top: none;
 }
+
+.roll-accordion-item-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}

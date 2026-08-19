@@ -76,3 +76,10 @@
 .anniversary-rolls-grid--3col {
   grid-template-columns: repeat(3, 1fr);
 }
+
+.anniversary-roll-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}

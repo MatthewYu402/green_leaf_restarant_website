@@ -1,10 +1,12 @@
 import './NigiriSashimi.css'
+import ItemPhotoTrigger from '../shared/ItemPhotoTrigger';
 
 interface NigiriSashimiItem {
   name: string;
   fillingNote?: string;
   nigiriPrice: string;
   sashimiPrice: string;
+  image?: string;
 }
 
 interface NigiriSashimiProps {
@@ -20,10 +22,11 @@ export default function NigiriSashimi({ title, note, items, columns = 3 }: Nigir
       <h2 className="nigiri-sashimi-title">{title}</h2>
       <p className="nigiri-sashimi-note">{note}</p>
       <div className={`nigiri-sashimi-grid nigiri-sashimi-grid--${columns}col`}>
-        {items.map((item) => (
-          <div className="nigiri-sashimi-card" key={item.name}>
+        {items.map((item, i) => (
+          <div className="nigiri-sashimi-card" key={i}>
             <div className="nigiri-sashimi-card-header">
               <h3 className="nigiri-sashimi-name">
+                {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
                 {item.name}
                 {item.fillingNote && <span className="nigiri-sashimi-filling"> ({item.fillingNote})</span>}
               </h3>

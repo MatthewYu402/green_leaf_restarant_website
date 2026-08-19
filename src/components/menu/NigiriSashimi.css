@@ -77,3 +77,15 @@
   opacity: 0.5;
   font-weight: normal;
 }
+
+.menu-item-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  /* lets a long title still truncate/wrap properly inside a flex row */
+}
+
+.nigiri-sashimi-name .item-photo-trigger {
+  margin-right: 4px;
+}

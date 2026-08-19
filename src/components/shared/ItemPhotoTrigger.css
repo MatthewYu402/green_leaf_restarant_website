@@ -3,10 +3,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
   padding: 0;
-  margin-left: 6px;
   background: none;
   border: none;
   color: var(--gold-dark);

@@ -24,10 +24,14 @@ import AppImage from "@/assets/images/Apps.jpg";
 import SoupImage from "@/assets/images/soups.jpg"
 import SushiAndSashimi from "@/assets/images/sushi-and-sashimi.jpg";
 
+// Appetizer Images
+import SummerRoll from '@/assets/images/appetizers/summer-roll.jpg'
+import FriedCalamari from '@/assets/images/appetizers/fried-calamari.webp'
+
 const APPETIZERS_FEATURED = [
   { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
   { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
-  { name: "Summer Roll", price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
+  { name: "Summer Roll", image: SummerRoll, price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
   { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
 ];
 
@@ -37,7 +41,7 @@ const APPETIZERS_ITEMS = [
   { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "TODO" },
   { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
   { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
-  { name: "Fried Calamari", price: "$9.95", description: "TODO" },
+  { name: "Fried Calamari", image: FriedCalamari, price: "$9.95", description: "TODO" },
   { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
   { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
   { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
@@ -176,8 +180,8 @@ const DESSERT_ITEMS = [
   { name: "Tempura Fried Cheesecake", price: "$6.25", description: "" },
 ];
 
-const toAccordionItems = (items: { name: string; price: string; description: string }[]) =>
-  items.map((i) => ({ name: i.name, description: i.description, priceDisplay: i.price }));
+const toAccordionItems = (items: { name: string; price: string; description: string; image?: string }[]) =>
+  items.map((i) => ({ name: i.name, description: i.description, priceDisplay: i.price, image: i.image }));
 
 const toAccordionGroups = (
   groups: { subheading: string; items: { name: string; price: string; description: string }[] }[]

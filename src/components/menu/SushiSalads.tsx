@@ -1,9 +1,11 @@
 import './SushiSalads.css'
+import ItemPhotoTrigger from '../shared/ItemPhotoTrigger';
 
 interface SaladData {
   name: string;
   description: string;
   price: string;
+  image?: string;
 }
 
 interface SushiSaladsProps {
@@ -25,10 +27,13 @@ export default function SushiSalads({ title, subtitle, image, imageAlt = "", ite
         <h2 className="sushi-salads-title">{title}</h2>
         {subtitle && <p className="sushi-salads-subtitle">{subtitle}</p>}
         <div className="sushi-salads-grid">
-          {items.map((item) => (
-            <div className="sushi-salad-item" key={item.name}>
+          {items.map((item, i) => (
+            <div className="sushi-salad-item" key={i}>
               <div className="sushi-salad-item-header">
-                <h3 className="sushi-salad-name">{item.name}</h3>
+                <span className="sushi-salad-name-group">
+                  <h3 className="sushi-salad-name">{item.name}</h3>
+                  {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
+                </span>
                 <span className="sushi-salad-price">{item.price}</span>
               </div>
               {item.description && (

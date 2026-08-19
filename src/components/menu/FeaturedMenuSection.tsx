@@ -5,6 +5,7 @@ interface MenuItemData {
   name: string;
   price: string;
   description: string;
+  image?: string;
 }
 
 interface FeaturedMenuSectionProps {

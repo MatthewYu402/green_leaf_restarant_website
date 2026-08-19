@@ -8,6 +8,7 @@ interface MenuItemData {
   description: string;
   price: string;
   pieces?: number;
+  image?: string;
 }
 
 interface MenuItemGroup {

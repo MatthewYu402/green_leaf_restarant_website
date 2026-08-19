@@ -77,3 +77,11 @@
   white-space: nowrap;
   flex: 0 0 auto;
 }
+
+.menu-item-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  /* lets a long title still truncate/wrap properly inside a flex row */
+}

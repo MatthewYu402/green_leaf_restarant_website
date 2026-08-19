@@ -79,3 +79,10 @@
   line-height: 1.5;
   margin: 4px 0 0;
 }
+
+.sushi-salad-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
