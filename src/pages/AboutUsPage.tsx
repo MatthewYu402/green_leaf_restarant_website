@@ -16,7 +16,7 @@ import phoneIcon from '@/assets/icons/reservation.svg'
 // Images
 // TODO: Replace with real photography
 import HeroImage from '@/assets/images/square-sushi.png'
-import FamilyImage from '@/assets/images/square-sushi.png'
+import FamilyImage from '@/assets/images/green-leaf-front.webp'
 import GalleryImage1 from '@/assets/images/square-sushi.png'
 import GalleryImage2 from '@/assets/images/sunday-regulars.webp'
 import GalleryImage3 from '@/assets/images/square-sushi.png'
@@ -48,7 +48,7 @@ export default function AboutUsPage() {
           />
           <div className="about-hero-overlay">
             <h1 className="about-hero-title">Our Legacy</h1>
-            <p className="about-hero-subtitle">A sanctuary for authentic Asian flavors and community connection</p>
+            <p className="about-hero-subtitle">Authentic Asian flavors and community connection</p>
           </div>
         </div>
       </Section>
@@ -60,7 +60,7 @@ export default function AboutUsPage() {
       <Section className="reveal-block-slide">
         <div className="about-story">
           <div className="about-story-text">
-            <h2 className="about-story-title">A Family Sanctuary</h2>
+            <h2 className="about-story-title">A Local Business</h2>
             <p className="about-story-paragraph">
               For over 20 years, Green Leaf has become more than a local restaurant. It has
               been a hub rooted in the heart of the neighborhood. We are a

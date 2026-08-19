@@ -109,6 +109,7 @@
   font-size: 14px;
   color: var(--gray-medium);
   line-height: 1.4;
+  text-align: left;
 }
 
 .roll-accordion-more {
@@ -130,4 +131,28 @@
 .roll-accordion-more:hover {
   color: var(--gold-dark);
   text-decoration: underline;
+}
+
+.roll-accordion-group {
+  margin-bottom: 16px;
+}
+
+.roll-accordion-group:last-child {
+  margin-bottom: 0;
+}
+
+.roll-accordion-subheading {
+  font-family: var(--libre);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gray-div);
+}
+
+.roll-accordion-group .roll-accordion-item:first-child {
+  border-top: none;
 }

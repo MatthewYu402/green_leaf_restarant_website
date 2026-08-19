@@ -7,9 +7,15 @@ export interface AccordionItem {
   priceDisplay: string;
 }
 
+export interface AccordionGroup {
+  subheading: string;
+  items: AccordionItem[];
+}
+
 interface RollAccordionProps {
   title: string;
-  items: AccordionItem[];
+  items?: AccordionItem[];
+  groups?: AccordionGroup[]; // use instead of `items` when subcategories need distinct labels (e.g. Seafood's Lunch/Dinner Exclusives)
   defaultOpen?: boolean;
   previewCount?: number;
   image?: string;
@@ -19,6 +25,7 @@ interface RollAccordionProps {
 export default function RollAccordion({
   title,
   items,
+  groups,
   defaultOpen = false,
   previewCount = 3,
   image,
@@ -27,8 +34,12 @@ export default function RollAccordion({
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [showAll, setShowAll] = useState(false);
 
-  const visibleItems = showAll ? items : items.slice(0, previewCount);
-  const remaining = items.length - visibleItems.length;
+  const totalCount = groups
+    ? groups.reduce((sum, g) => sum + g.items.length, 0)
+    : (items?.length ?? 0);
+
+  const visibleItems = !groups && items ? (showAll ? items : items.slice(0, previewCount)) : [];
+  const remaining = !groups && items ? items.length - visibleItems.length : 0;
 
   return (
     <div className={`roll-accordion ${isOpen ? 'open' : ''}`}>
@@ -39,39 +50,56 @@ export default function RollAccordion({
         aria-expanded={isOpen}
       >
         <span className="roll-accordion-title">
-          {title} <span className="roll-accordion-count">({items.length})</span>
+          {title} <span className="roll-accordion-count">({totalCount})</span>
         </span>
         <ChevronIcon />
       </button>
 
-      {/* Height-animated via max-height + overflow:hidden — unlike the
-          grid-template-rows(0fr/1fr) technique used before, this clips
-          to a true 0px at rest regardless of image content inside. */}
       <div className="roll-accordion-body">
         {image && (
           <img src={image} alt={imageAlt} className="roll-accordion-image" />
         )}
-        {visibleItems.map((item) => (
-          <div className="roll-accordion-item" key={item.name}>
-            <div className="roll-accordion-item-header">
-              <h4 className="roll-accordion-item-name">{item.name}</h4>
-              <span className="roll-accordion-item-price">{item.priceDisplay}</span>
+
+        {groups ? (
+          groups.map((group) => (
+            <div className="roll-accordion-group" key={group.subheading}>
+              <h5 className="roll-accordion-subheading">{group.subheading}</h5>
+              {group.items.map((item, i) => (
+                <AccordionItemRow item={item} key={i} />
+              ))}
             </div>
-            {item.description && (
-              <p className="roll-accordion-item-description">{item.description}</p>
+          ))
+        ) : (
+          <>
+            {visibleItems.map((item, i) => (
+              <AccordionItemRow item={item} key={i} />
+            ))}
+            {remaining > 0 && (
+              <button
+                type="button"
+                className="roll-accordion-more"
+                onClick={() => setShowAll(true)}
+              >
+                + {remaining} more options
+              </button>
             )}
-          </div>
-        ))}
-        {remaining > 0 && (
-          <button
-            type="button"
-            className="roll-accordion-more"
-            onClick={() => setShowAll(true)}
-          >
-            + {remaining} more options
-          </button>
+          </>
         )}
       </div>
+    </div>
+  );
+}
+
+function AccordionItemRow({ item }: { item: AccordionItem }) {
+  return (
+    <div className="roll-accordion-item">
+      <div className="roll-accordion-item-header">
+        <h4 className="roll-accordion-item-name">{item.name}</h4>
+        <span className="roll-accordion-item-price">{item.priceDisplay}</span>
+      </div>
+      {item.description && (
+        <p className="roll-accordion-item-description">{item.description}</p>
+      )}
     </div>
   );
 }

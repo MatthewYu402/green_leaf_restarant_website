@@ -174,7 +174,7 @@ export default function SushiMenu() {
           <div className="special-feature-left">
             <h4 className="special-feature-title">Special Feature</h4>
             <h2>20th Year Anniversary Roll</h2>
-            <p className="special-feature-description">A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced japaleno. </p>
+            <p className="special-feature-description">A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced japaleňo. </p>
             <span className="divider-line"></span>
             <p className="special-feature-price">$14.95</p>
           </div>
@@ -183,6 +183,8 @@ export default function SushiMenu() {
           </div>
         </div>
       </Section>
+
+      <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
 
       {/* Mobile-only — sits between the Special Feature and the accordions.
           Goes through all 20 rolls eventually; only 2 have real photos so far. */}
@@ -269,8 +271,7 @@ export default function SushiMenu() {
       {/* Mobile — same real data, collapsed into accordions. Hidden above the breakpoint (see CSS). */}
       <div className="sushi-menu-mobile-lists">
         <RollAccordion
-          title="20th Anniversary Rolls"
-          defaultOpen
+          title="Anniversary Rolls"
           items={ANNIVERSARY_ROLLS.map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price }))}
         />
         <RollAccordion

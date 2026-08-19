@@ -8,7 +8,7 @@ import BottomNav from "./BottomNav";
 
 // Images
 // TODO: placeholder — swap for a real sushi platter photo
-import sushiHeaderImage from '@/assets/images/square-sushi.png';
+import sushiHeaderImage from '@/assets/images/sushi-platter-3.jpg';
 
 const MENU_ROUTES = ['/menu', '/sushi'];
 
@@ -22,7 +22,8 @@ interface PageHeaderContent {
 const PAGE_HEADERS: Record<string, PageHeaderContent> = {
   '/menu': {
     title: 'Our Menu',
-    subtitle: 'Experience the harmony of Japanese techniques and fresh seasonal ingredients',
+    subtitle: 'Inspired by tradition, crafted with care, and served with flavor.',
+    intro: "Experience the rich flavors of Asian cuisine, bringing together fresh seasonal ingredients"
   },
   '/sushi': {
     title: 'Our Sushi',

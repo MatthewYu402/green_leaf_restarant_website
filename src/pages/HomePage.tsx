@@ -2,7 +2,8 @@ import './HomePage.css';
 import { useEffect } from 'react';
 
 // Icons
-import circleIcon from '@/assets/icons/circle.svg';
+import flowerIcon from '@/assets/icons/flower-icon.svg'
+import leafIcon from '@/assets/icons/gold-leaf.svg'
 
 // Components
 import Divider from '../components/shared/Divider';
@@ -126,11 +127,11 @@ export default function Home() {
       </div>
 
       <SignatureSection />
-      <Divider iconUrl={circleIcon} className="home-mobile-divider" />
+      <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
       <BeyondTheMenu />
-      <Divider iconUrl={circleIcon} className="home-mobile-divider" />
+      <Divider iconUrl={leafIcon} className="home-mobile-divider" />
       <StoryTeaser />
-      <Divider iconUrl={circleIcon} className="home-mobile-divider" />
+      <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
       <PeekInside />
     </>
   );

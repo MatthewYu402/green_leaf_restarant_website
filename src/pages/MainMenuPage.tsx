@@ -22,7 +22,7 @@ import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 // Images
 import AppImage from "@/assets/images/Apps.jpg";
 import SoupImage from "@/assets/images/soups.jpg"
-import SquareSushi from "@/assets/images/square-sushi.png";
+import SushiAndSashimi from "@/assets/images/sushi-and-sashimi.jpg";
 
 const APPETIZERS_FEATURED = [
   { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
@@ -38,7 +38,6 @@ const APPETIZERS_ITEMS = [
   { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
   { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
   { name: "Fried Calamari", price: "$9.95", description: "TODO" },
-  { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
   { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
   { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
   { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
@@ -103,12 +102,11 @@ const SEAFOOD_GROUPS = [
     layout: "half" as const,
     items: [
       { name: "Pine Nut Fish", price: "$18.95", description: "Crispy cod served with spicy thai sauce" },
-      { name: "Baked cod", price: "$18.95", description: "Served with thai sauce" },
+      { name: "Baked Cod", price: "$18.95", description: "Served with thai sauce" },
       { name: "Pineapple Shrimp", price: "$17.95", description: "Served with pineapple slices" },
     ],
   },
 ];
-const SEAFOOD_ITEMS = SEAFOOD_GROUPS.flatMap((g) => g.items);
 
 const DONBURI_ITEMS = [
   { name: "Tekka Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh tuna" },
@@ -181,6 +179,14 @@ const DESSERT_ITEMS = [
 const toAccordionItems = (items: { name: string; price: string; description: string }[]) =>
   items.map((i) => ({ name: i.name, description: i.description, priceDisplay: i.price }));
 
+const toAccordionGroups = (
+  groups: { subheading: string; items: { name: string; price: string; description: string }[] }[]
+) =>
+  groups.map((g) => ({
+    subheading: g.subheading,
+    items: toAccordionItems(g.items),
+  }));
+
 export default function MainMenu() {
   return (
     <div className="main-menu-page">
@@ -234,7 +240,7 @@ export default function MainMenu() {
 
         <Section className="reveal-block-slide">
           <div className="sushi-sashimi">
-            <img src={SquareSushi} className="sushi-sashimi-image" alt="Fresh sushi and sashimi selection" />
+            <img src={SushiAndSashimi} className="sushi-sashimi-image" alt="Fresh sushi and sashimi selection" />
             <div className="sushi-sashimi-content">
               <h2 className="sushi-sashimi-header">Sushi & Sashimi</h2>
               <p className="sushi-sashimi-description">Sourced daily, expertly prepared. Served a la carte (2 pieces per order) or as chef's selection</p>
@@ -293,7 +299,7 @@ export default function MainMenu() {
             dessertTitle="Desserts"
             dessertIcon={dessertIcon}
             dessertItems={DESSERT_ITEMS}
-            image={SquareSushi}
+            image={SushiAndSashimi}
             imageAlt=""
           />
         </Section>
@@ -307,7 +313,6 @@ export default function MainMenu() {
       <div className="main-menu-mobile-lists">
         <RollAccordion
           title="Appetizers"
-          defaultOpen
           image={AppImage}
           imageAlt="Signature appetizer spread"
           items={toAccordionItems([...APPETIZERS_FEATURED, ...APPETIZERS_ITEMS])}
@@ -319,7 +324,7 @@ export default function MainMenu() {
           items={toAccordionItems([...SOUPS_SALADS_FEATURED, ...SOUPS_SALADS_ITEMS])}
         />
         <RollAccordion title="Meat" items={toAccordionItems(MEAT_ITEMS)} />
-        <RollAccordion title="Seafood" items={toAccordionItems(SEAFOOD_ITEMS)} />
+        <RollAccordion title="Seafood" groups={toAccordionGroups(SEAFOOD_GROUPS)} />
         <RollAccordion title="Donburi & Una-jyu" items={toAccordionItems(DONBURI_ITEMS)} />
         <RollAccordion title="Sushi & Sashimi" items={toAccordionItems(SUSHI_SASHIMI_ITEMS)} />
         <RollAccordion title="Noodles & Fried Rice" items={toAccordionItems(NOODLES_ITEMS)} />
