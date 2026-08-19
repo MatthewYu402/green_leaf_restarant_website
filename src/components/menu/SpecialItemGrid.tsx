@@ -17,8 +17,8 @@ interface SpecialItemGridProps {
 export default function SpecialItemGrid({ items, className = "" }: SpecialItemGridProps) {
   return (
     <div className={`special-item-grid ${className}`.trim()}>
-      {items.map((item) => (
-        <SpecialItem key={item.id} {...item} />
+      {items.map((item, i) => (
+        <SpecialItem key={i} {...item} />
       ))}
     </div>
   );

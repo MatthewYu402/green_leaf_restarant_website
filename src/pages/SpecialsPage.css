@@ -122,13 +122,16 @@
    ============================================================ */
 .chef-feature-mobile-wrapper,
 .dinner-mobile-wrapper,
-.lunch-mobile {
+.lunch-mobile,
+.specials-mobile-divider {
   display: none;
 }
 
 @media (max-width: 1024px) {
   .specials-page {
-    margin-inline: var(--mobile-page-margin);
+    margin-inline: var(--mobile-page-margin);  .specials-mobile-divider {
+    display: flex;
+  }
   }
 
   .specials-title {
@@ -142,6 +145,10 @@
 
   .specials-page .divider {
     margin: 32px 0;
+  }
+
+  .specials-mobile-divider {
+    display: flex;
   }
 
   /* --- Chef's Feature (top of page) --- */
@@ -291,7 +298,12 @@
   }
 
   .maki-specials-mobile-list .special-item-name{
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  .maki-specials-mobile-list .special-item-price{
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .maki-specials-mobile-list .special-item:last-child {
@@ -354,12 +366,12 @@
 
   .dinner-specials-grid-mobile .special-item-name {
     color: var(--text-white);
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .dinner-specials-grid-mobile .special-item-description {
     color: var(--offwhite);
-    font-size: 12px;
+    font-size: 14px;
     order: 1;
   }
 
@@ -368,6 +380,6 @@
     margin-left: 0;
     order: 2;
     margin-top: 4px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }

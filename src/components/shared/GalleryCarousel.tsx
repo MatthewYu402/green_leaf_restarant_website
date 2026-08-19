@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './GalleryCarousel.css';
+import { useLightbox } from './Lightbox';
 
 interface CarouselImage {
   src: string;
@@ -17,6 +18,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
   const [active, setActive] = useState(0);
   const count = images.length;
   const activeDescription = images[active]?.description;
+  const openLightbox = useLightbox();
 
   useEffect(() => {
     const track = trackRef.current;
@@ -24,11 +26,6 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
 
     let rafId = 0;
 
-    // Deterministic, synchronous "closest slide to viewport center" check —
-    // recomputed from live geometry on every scroll event, rather than
-    // relying on IntersectionObserver's threshold-crossing callbacks (which
-    // can land one step behind after a fast desktop scroll-snap settle,
-    // since the browser is free to batch/delay when it checks).
     const updateActive = () => {
       const trackRect = track.getBoundingClientRect();
       const viewportCenter = trackRect.left + trackRect.width / 2;
@@ -55,7 +52,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
       rafId = requestAnimationFrame(updateActive);
     };
 
-    updateActive(); // correct initial state on mount, before any scrolling happens
+    updateActive();
     track.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
 
@@ -94,11 +91,17 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
         <div className="gallery-carousel-track" ref={trackRef}>
           {images.map((image, i) => (
             <div
-              key={image.src}
+              key={i}
               ref={(el) => { slideRefs.current[i] = el; }}
               data-index={i}
               className={`gallery-carousel-slide ${i === active ? 'active' : ''}`}
-              onClick={() => scrollToIndex(i)}
+              onClick={() => {
+                if (i === active) {
+                  openLightbox(image.src, image.alt);
+                } else {
+                  scrollToIndex(i);
+                }
+              }}
             >
               <img src={image.src} alt={image.alt ?? ''} className="gallery-carousel-image" />
             </div>

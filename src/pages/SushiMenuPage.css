@@ -45,6 +45,12 @@
   border-radius: 4px;
 }
 
+.special-feature-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold-dark);
+}
+
 .special-feature-left h2 {
   font-size: 32px;
   font-weight: 600;
