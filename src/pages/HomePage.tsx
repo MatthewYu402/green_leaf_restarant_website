@@ -1,5 +1,6 @@
 import './HomePage.css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 // Icons
 import flowerIcon from '@/assets/icons/flower-icon.svg'
@@ -113,7 +114,7 @@ export default function Home() {
             <p className="sub-heading">
               Twenty-one years of dedication to precision, creativity, and the finest<br /> ingredients
             </p>
-            <button className="menu-btn">View Menu</button>
+            <Link to="/menu" className="menu-btn">View Menu</Link>
           </div>
         </div>
       </div>

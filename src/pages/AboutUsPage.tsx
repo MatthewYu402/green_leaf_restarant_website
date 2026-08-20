@@ -14,8 +14,6 @@ import diamondIcon from '@/assets/icons/diamond.svg'
 import phoneIcon from '@/assets/icons/reservation.svg'
 
 // Images
-// TODO: Replace with real photography
-import HeroImage from '@/assets/images/square-sushi.png'
 import FamilyImage from '@/assets/images/green-leaf-front.webp'
 import GalleryImage1 from '@/assets/images/square-sushi.png'
 import GalleryImage2 from '@/assets/images/sunday-regulars.webp'
@@ -38,25 +36,6 @@ export default function AboutUsPage() {
 
   return (
     <div className="about-page">
-      <Section className="reveal-block-fade">
-        <div className="about-hero">
-          <img
-            src={HeroImage}
-            className="about-hero-image"
-            alt="Green Leaf Sushi dining room"
-            onClick={() => openLightbox(HeroImage, "Green Leaf Sushi dining room")}
-          />
-          <div className="about-hero-overlay">
-            <h1 className="about-hero-title">Our Legacy</h1>
-            <p className="about-hero-subtitle">Authentic Asian flavors and community connection</p>
-          </div>
-        </div>
-      </Section>
-
-      <Section className='reveal-block-fade'>
-        <Divider iconUrl={diamondIcon} lineWidth="700px" thickness="2px" />
-      </Section>
-
       <Section className="reveal-block-slide">
         <div className="about-story">
           <div className="about-story-text">

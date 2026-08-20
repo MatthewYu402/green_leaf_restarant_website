@@ -20,51 +20,59 @@ import waterDropIcon from "@/assets/icons/water-drop-icon.svg";
 import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 
 // Images
-import AppImage from "@/assets/images/Apps.jpg";
+import AppetizersImage from "@/assets/images/appetizers/appetizers.jpg";
 import SoupImage from "@/assets/images/soups.jpg"
 import SushiAndSashimi from "@/assets/images/sushi-and-sashimi.jpg";
 
 // Appetizer Images
 import SummerRoll from '@/assets/images/appetizers/summer-roll.jpg'
 import FriedCalamari from '@/assets/images/appetizers/fried-calamari.webp'
+import GreenLeafDumplings from '@/assets/images/appetizers/green-leaf-dumplings.jpg'
+import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
+import ScallionPancakeStringBean from '@/assets/images/appetizers/scallion-pancake-string-bean.jpg'
+import OceanGardenRoll from '@/assets/images/appetizers/ocean-garden-roll.jpg'
+import CrispyWontons from '@/assets/images/appetizers/crispy-wontons.jpg'
+
+// Soup Images
+import MisoSoup from '@/assets/images/soups-salads/miso-soup.jpg'
 
 const APPETIZERS_FEATURED = [
-  { name: "Green Leaf Dumplings", price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
+  { name: "Green Leaf Dumplings", image: GreenLeafDumplings, price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
   { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
   { name: "Summer Roll", image: SummerRoll, price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
-  { name: "Crispy Wonton", price: "$5.95", description: "Cream cheese with crab meat" },
+  { name: "Crispy Wonton", image: CrispyWontons, price: "$5.95", description: "Fried wontons filled with cream cheese with crab meat" },
 ];
 
 const APPETIZERS_ITEMS = [
   { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
   { name: "Shumai", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)" },
-  { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "TODO" },
+  { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "" },
   { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
-  { name: "Tuna Tartare", price: "$10.95", description: "TODO" },
-  { name: "Fried Calamari", image: FriedCalamari, price: "$9.95", description: "TODO" },
-  { name: "Scallion Pancake and String Bean", price: "$8.50", description: "TODO" },
-  { name: "Ocean Garden Roll", price: "$12.95", description: "Mixed greens with crispy spicy crabmeat in rice paper wrap" },
+  { name: "Tuna Tartare", price: "$10.95", description: "Marinated tuna and avocado with special sauce" },
+  { name: "Fried Calamari", image: FriedCalamari, price: "$9.95", description: "Deep fried squid topped with sauteed onion and chives" },
+  { name: "Scallion Pancake and String Bean", image: ScallionPancakeStringBean, price: "$8.50", description: "Savory stir-fried green beans wrapped in cripsy scallion pancake" },
+  { name: "Ocean Garden Roll", image: OceanGardenRoll, price: "$12.95", description: "Crispy spicy crabmeat with mixed greens in rice paper wrap" },
   { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
   { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
 ];
 
 const SOUPS_SALADS_FEATURED = [
-  { name: "Miso Soup", price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
-  { name: "Egg Drop Soup", price: "$3.95", description: "TODO" },
+  { name: "Miso Soup", image: MisoSoup, price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
+  { name: "Egg Drop Soup", price: "$3.95", description: "" },
   { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
-  { name: "Seaweed Salad", price: "$5.95", description: "TODO" },
+  { name: "Seaweed Salad", price: "$5.95", description: "" },
 ];
 
 const SOUPS_SALADS_ITEMS = [
-  { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "TODO" },
-  { name: "Hot and Sour Soup", price: "$4.95", description: "TODO" },
-  { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "TODO" },
-  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "TODO" },
-  { name: "California Style Salad", price: "$6.95", description: "TODO" },
-  { name: "Sushi Bar Salad", price: "$6.95", description: "TODO" },
+  { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "Chicken dumpling in savory chicken broth" },
+  { name: "Hot and Sour Soup", price: "$4.95", description: "" },
+  { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "" },
+  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce" },
+  { name: "California Style Salad", price: "$6.95", description: "crabstick avocado cucumber spicy mayo" },
+  { name: "Sushi Bar Salad", price: "$6.95", description: "Seawyonaise eed salad cucumber crabstick crunchy tempura flakes spicy ma" },
   { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
-  { name: "Baby Octopus Salad", price: "$7.95", description: "TODO" },
-  { name: "Marinated Calamari Salad", price: "$7.95", description: "TODO" },
+  { name: "Baby Octopus Salad", image: BabyOctopusSalad, price: "$7.95", description: "Seaweed salad topped with marinated baby octopus" },
+  { name: "Marinated Calamari Salad", price: "$7.95", description: "" },
 ];
 
 const MEAT_ITEMS = [
@@ -86,10 +94,10 @@ const SEAFOOD_GROUPS = [
     layout: "full" as const,
     items: [
       { name: "Green Leaf Pasta", price: "$19.95", description: "Shrimp, scallops, and baby bok choy over spinach noodles" },
-      { name: "Crispy Jumbo Shrimp", price: "$18.95", description: "Served with honey sesame" },
-      { name: "Seafood Combo", price: "$19.95", description: "Served in thai curry sauce" },
+      { name: "Crispy Jumbo Shrimp", price: "$18.95", description: "Tempura-fried jumbo shrimp served with honey sesame sauce" },
+      { name: "Seafood Combo", price: "$19.95", description: "Scallop and shrimp stir-fried with bell pepper, tomato and onion, served in a thai curry sauce, " },
       { name: "Pecan Crusted Salmon Filet", price: "$19.95", description: "" },
-      { name: "Grilled Salmon Filet", price: "$19.95", description: "Served with house salad" },
+      { name: "Grilled Salmon Filet", price: "$19.95", description: "Fresh grilled salmon filet, served with a house salad" },
       { name: "Shrimp with Brocolli", price: "$17.95", description: "" },
     ],
   },
@@ -120,9 +128,9 @@ const DONBURI_ITEMS = [
 ];
 
 const SUSHI_SASHIMI_ITEMS = [
-  { name: "Sushi Deluxe", price: "$20.95", description: "TODO" },
-  { name: "Sashimi Deluxe", price: "$24.95", description: "TODO" },
-  { name: "Sushi Boat", price: "$59.95", description: "TODO" },
+  { name: "Sushi Deluxe", price: "$20.95", description: "8 piece sushi (chef's choice) and a tuna roll" },
+  { name: "Sashimi Deluxe", price: "$24.95", description: "15 piece sashimi (chef's choice)" },
+  { name: "Sushi Boat", price: "$59.95", description: "15 pieces sashimi (chef's choice), 5 piece nigiri (chef's choice), california roll, and spicy tuna roll." },
 ];
 
 const NOODLES_ITEMS = [
@@ -144,7 +152,7 @@ const VEGETARIAN_ITEMS = [
   { name: "Veggie Pad Thai", price: "$13.95", description: "" },
   { name: "Singapore Rice Noode", price: "$13.95", description: "" },
   { name: "Sauteed Mixed Vegetables", price: "$13.95", description: "" },
-  { name: "Crispy Eggplant", price: "$13.95", description: "Comes with sesame sauce" },
+  { name: "Crispy Eggplant", price: "$13.95", description: "Tempura fried eggplant with honey sesame sauce" },
 ];
 
 const TERIYAKI_TEMPURA_ITEMS = [
@@ -200,7 +208,7 @@ export default function MainMenu() {
         <Section className="reveal-block-slide">
           <FeaturedMenuSection
             title="Appetizers"
-            image={AppImage}
+            image={AppetizersImage}
             imageAlt="Signature appetizer spread"
             badge="Chef's Selection"
             featuredTitle="Signature Starters"
@@ -317,7 +325,7 @@ export default function MainMenu() {
       <div className="main-menu-mobile-lists">
         <RollAccordion
           title="Appetizers"
-          image={AppImage}
+          image={AppetizersImage}
           imageAlt="Signature appetizer spread"
           items={toAccordionItems([...APPETIZERS_FEATURED, ...APPETIZERS_ITEMS])}
         />

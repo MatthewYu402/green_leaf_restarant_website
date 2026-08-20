@@ -81,6 +81,7 @@
   padding: 12px 48px;
   border: 1px solid var(--gold-border);
   border-radius: 2px;
+  text-decoration: none;
   color: var(--text-white);
   background-color: var(--green-dark);
   font-family: var(--sans);
