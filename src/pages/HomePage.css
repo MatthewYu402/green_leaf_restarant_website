@@ -97,6 +97,11 @@
   transform: scale(1.05);
 }
 
+.home-content {
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -162,6 +167,12 @@
     text-align: center;
     line-height: 1.5;
     margin: 0;
+  }
+
+  .home-content {
+    padding: 0;
+    /* mobile already handles its own inset per-section (hero-mobile padding, 
+       signature-section's own mobile margin, etc.) — don't double it up */
   }
 
   .divider.home-mobile-divider {

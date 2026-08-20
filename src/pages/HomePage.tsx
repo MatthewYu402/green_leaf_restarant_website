@@ -127,13 +127,15 @@ export default function Home() {
         </p>
       </div>
 
-      <SignatureSection />
-      <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
-      <BeyondTheMenu />
-      <Divider iconUrl={leafIcon} className="home-mobile-divider" />
-      <StoryTeaser />
-      <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
-      <PeekInside />
+      <div className="home-content">
+        <SignatureSection />
+        <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
+        <BeyondTheMenu />
+        <Divider iconUrl={leafIcon} className="home-mobile-divider" />
+        <StoryTeaser />
+        <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
+        <PeekInside />
+      </div>
     </>
   );
 }

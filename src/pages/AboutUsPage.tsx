@@ -155,9 +155,10 @@ export default function AboutUsPage() {
               <div className="about-holiday-hours">
                 <h4 className="about-holiday-title">Holiday Hours</h4>
                 {[
-                  { name: "Thanksgiving Day", status: "closed" as const },
-                  { name: "Christmas Day", status: "open" as const, note: "12:00 PM - 6:00 PM" },
+                  { name: "Super Bowl Sunday", status: "closed" as const },
                   { name: "Fourth of July", status: "closed" as const },
+                  { name: "Thanksgiving Day", status: "closed" as const },
+                  { name: "Christmas Day", status: "open" as const, note: "12:00 PM - 9:30 PM" },
                 ].map((holiday) => (
                   <div className="about-holiday-row" key={holiday.name}>
                     <span className="about-holiday-name">{holiday.name}</span>
