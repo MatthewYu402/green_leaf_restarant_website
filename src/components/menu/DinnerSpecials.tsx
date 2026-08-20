@@ -8,7 +8,7 @@ import forkKnifeIcon from '@/assets/icons/fork-knife-icon.svg';
 
 // Images
 // TODO: Replace with real chef's special photo
-import ChefSpecialImage from '@/assets/images/square-sushi.png';
+import ChefSpecialImage from '@/assets/images/sushi-roll-1.jpg';
 
 export { ChefSpecialImage };
 

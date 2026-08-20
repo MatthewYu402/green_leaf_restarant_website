@@ -26,9 +26,11 @@ export default function NigiriSashimi({ title, note, items, columns = 3 }: Nigir
           <div className="nigiri-sashimi-card" key={i}>
             <div className="nigiri-sashimi-card-header">
               <h3 className="nigiri-sashimi-name">
-                {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
-                {item.name}
-                {item.fillingNote && <span className="nigiri-sashimi-filling"> ({item.fillingNote})</span>}
+                <span className="nigiri-sashimi-name-group">
+                  {item.name}
+                  {item.fillingNote && <span className="nigiri-sashimi-filling"> ({item.fillingNote})</span>}
+                  {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
+                </span>
               </h3>
             </div>
             <div className="nigiri-sashimi-prices">

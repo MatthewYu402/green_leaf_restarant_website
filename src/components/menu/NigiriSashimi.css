@@ -89,3 +89,9 @@
 .nigiri-sashimi-name .item-photo-trigger {
   margin-right: 4px;
 }
+
+.nigiri-sashimi-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

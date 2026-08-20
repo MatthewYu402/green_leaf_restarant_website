@@ -24,7 +24,6 @@
   font-weight: normal;
 }
 
-
 .special-feature {
   display: flex;
   flex-direction: row;
@@ -80,6 +79,22 @@
   max-width: 600px;
   background-color: var(--gold-accent);
   border: none;
+}
+
+.anniversary-carousel-mobile {
+  display: block;
+  margin-top: 80px;
+}
+
+.anniversary-carousel-mobile-label {
+  color: var(--gold-dark);
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 16px;
 }
 
 .twenty-year-roll {

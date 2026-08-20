@@ -8,7 +8,7 @@ import BottomNav from "./BottomNav";
 
 // Images
 // TODO: placeholder — swap for a real sushi platter photo
-import sushiHeaderImage from '@/assets/images/sushi-platter-3.jpg';
+import sushiHeaderImage from '@/assets/images/sushi-platters/sushi-platter-3.jpg';
 
 const MENU_ROUTES = ['/menu', '/sushi'];
 

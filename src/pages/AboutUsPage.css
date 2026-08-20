@@ -169,7 +169,8 @@
   padding: 16px;
   background: linear-gradient(to top, rgba(27, 48, 34, 0.9), rgba(27, 48, 34, 0));
   color: var(--gold-light);
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 800;
   text-align: left;
 }
 

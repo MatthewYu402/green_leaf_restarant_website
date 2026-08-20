@@ -7,6 +7,7 @@
   width: 75%;
   margin: 0 auto 24px;
   display: flex;
+  text-align: left;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;

@@ -7,7 +7,7 @@ import circleIcon from "@/assets/icons/circle.svg";
 import forkKnifeIcon from "@/assets/icons/fork-knife-icon.svg";
 
 // Images
-import FillerImage from '@/assets/images/square-sushi.png';
+import FillerImage from '@/assets/images/sushi-roll-1.jpg'
 
 // Components
 import Divider from "../components/shared/Divider";

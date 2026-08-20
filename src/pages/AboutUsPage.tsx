@@ -15,17 +15,17 @@ import phoneIcon from '@/assets/icons/reservation.svg'
 
 // Images
 import FamilyImage from '@/assets/images/green-leaf-front.webp'
-import GalleryImage1 from '@/assets/images/square-sushi.png'
-import GalleryImage2 from '@/assets/images/sunday-regulars.webp'
-import GalleryImage3 from '@/assets/images/square-sushi.png'
-import GalleryImage4 from '@/assets/images/new-year.jpeg'
-import GalleryImage5 from '@/assets/images/about-us-birthday.webp'
-import GalleryImage6 from '@/assets/images/square-sushi.png'
+import GalleryImage1 from '@/assets/images/about-us-gallery/new-years.jpg'
+import GalleryImage2 from '@/assets/images/about-us-gallery/sunday-regulars.webp'
+import GalleryImage3 from '@/assets/images/about-us-gallery/neigborhood.jpg'
+import GalleryImage4 from '@/assets/images//about-us-gallery/chinese-new-year.jpeg'
+import GalleryImage5 from '@/assets/images/about-us-gallery/about-us-birthday.webp'
+import GalleryImage6 from '@/assets/images/about-us-gallery/about-us-birthday.webp'
 
 const GALLERY_ITEMS = [
-  { img: GalleryImage1, caption: "Anniversary celebration" },
+  { img: GalleryImage1, caption: "New Year Celebrations" },
   { img: GalleryImage2, caption: "Sunday regulars" },
-  { img: GalleryImage3, caption: "Chef's table event" },
+  { img: GalleryImage3, caption: "Neighborhood" },
   { img: GalleryImage4, caption: "Chinese New year" },
   { img: GalleryImage5, caption: "Birthday dinner" },
   { img: GalleryImage6, caption: "Behind the counter" },

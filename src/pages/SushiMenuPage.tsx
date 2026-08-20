@@ -34,12 +34,16 @@ import MatthewRoll from '@/assets/images/sushi-special-rolls/matt-roll.jpg'
 import HajiRoll from '@/assets/images/sushi-special-rolls/haji-roll.webp'
 import BakedScallopRoll from '@/assets/images/sushi-special-rolls/baked-scallop-roll.webp'
 import PeggyTwoRoll from '@/assets/images/sushi-special-rolls/peggy-two-roll.jpg'
-import RedDragonRoll from '@/assets/images/sushi-special-rolls/red-dragon-roll.jpg'
 import SushiSisterRoll from '@/assets/images/sushi-special-rolls/sushi-sisiter-roll.jpg'
 import UnforgetableRoll from '@/assets/images/sushi-special-rolls/unforgetable-roll.jpg'
 import DiamondMikeRoll from '@/assets/images/sushi-special-rolls/diamond-mike-roll.jpg'
 import GardenRoll from '@/assets/images/sushi-special-rolls/garden-roll.jpg'
 import SonAndLawRoll from '@/assets/images/sushi-special-rolls/son-in-law-roll.jpg'
+import PenthouseRoll from '@/assets/images/sushi-special-rolls/penthouse-roll.webp'
+
+// Sashimi and Nigiri Images
+import ScallopNigiri from '@/assets/images/nigiri-sashimi/scallop-nigiri.jpg'
+import SalmonRoe from '@/assets/images/nigiri-sashimi/salmon-roe-roll.png'
 
 // Sushi Salad Images
 import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
@@ -102,13 +106,13 @@ const SUSHISPECIALROLLS:RollItem[] = [
   { name: "Raven", description: "Spicy yellowtail, topped with cripsy black rice and spicy tuna on top", price: "$14.95" },
   { name: "F-Ken", description: "Crab stick and cream cheese tempura style, topped with spicy tuna", price: "$14.95" },
   { name: "Godfather", description: "Shrimp tempura, old bay crabmeat, seaweed salad and avocado wrapped in yellow soy seaweed", price: "$14.95" },
-  { name: "Penthouse (Mitchell Brown's Creation)", description: "Shrimp tempura, cilantro, avocado, and tuna, finished with lime", price: "$14.95" },
+  { name: "Penthouse (Mitchell Brown's Creation)", image: PenthouseRoll, description: "Shrimp tempura, cilantro, avocado, and tuna, finished with lime", price: "$14.95" },
   { name: "Angel", description: "Spicy yellowtail, topped with seaweed salad and spicy tuna", price: "$14.95" },
   { name: "Sweet Heart", description: "Spicy tuna, avocado, and tuna shaped as a heart", price: "$15.95" },
   { name: "Mac Daddy", description: "Fried soft-shell crab, cream cheese, topped with spicy lobster", price: "$16.95" },
   { name: "Hurricane", description: "Crabstick, mango, and apple, topped with spicy tuna and tempura flakes", price: "$14.95" },
   { name: "AJ", description: "Tempura california roll topped with grilled crabmeat on top", price: "$14.95" },
-  { name: "Haji", image: HajiRoll, description: "Shrimp tempura, topped with crispy spicy crab meat and crabstick", price: "$14.95" },
+  { name: "Haji (The Hajimihalis Family)", image: HajiRoll, description: "Shrimp tempura, topped with crispy spicy crab meat and crabstick", price: "$14.95" },
   { name: "Baked Scallop", image: BakedScallopRoll, description: "California roll topped with spicy scallop", price: "$14.95" },
   { name: "Sushi Sister", image: SushiSisterRoll, description: "Salmon and cucumber topped with tuna, avocado, mango, and spicy sauce", price: "$14.95" },
   { name: "Diamond Mike (Michael Shield's Creation)", image: DiamondMikeRoll, description: "Crabstick and spicy salmon, topped with salmon, eel, avocado, and tempura flakes", price: "$14.95" },
@@ -121,7 +125,7 @@ const SUSHISPECIALROLLS:RollItem[] = [
   { name: "Phoenix", description: "Chicken tempura topped with eel and avocado", price: "$14.95" },
   { name: "Pretty In Red", description: "Lump Crabmeat and avocado, topped with tempura flakes, tuna, and spicy sauce", price: "$14.95" },
   { name: "Pine Nut Fish Roll", description: "Tempura cod with spicy sauce", price: "$9.95" },
-  { name: "Red Dragon", image: RedDragonRoll,description: "Shrimp Tempura topped with spicy tuna", price: "$14.95" },
+  { name: "Red Dragon", description: "Shrimp Tempura topped with spicy tuna", price: "$14.95" },
   { name: "Spicy Lobster", description: "Crabstick topped with spicy lobster", price: "$15.50" },
   { name: "Teryaki Salmon", description: "Grilled Salmon teryaki sauce", price: "$8.95" },
   { name: "Tokyo", description: "Spicy tuna topped with tuna, salmon, and yellowtail with spicy sauce", price: "$14.95" },
@@ -163,7 +167,7 @@ const NIGIRI_SASHIMI: NigiriItem[] = [
   { name: "Tuna", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "White Tuna", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "Salmon", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Salmon Roe", fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$5.95" },
+  { name: "Salmon Roe", image: SalmonRoe, fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$5.95" },
   { name: "Smoked Salmon", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "Crab Stick", fillingNote: "", nigiriPrice: "$4.95", sashimiPrice: "$5.95" },
   { name: "Lobster", fillingNote: "", nigiriPrice: "$8.95", sashimiPrice: "$10.95" },
@@ -173,7 +177,7 @@ const NIGIRI_SASHIMI: NigiriItem[] = [
   { name: "Freshwater Eel", fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$7.95" },
   { name: "Octopus", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "Red Snapper", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Scallop", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
+  { name: "Scallop", image: ScallopNigiri, fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "Squid", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "Surf Clam", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
   { name: "Ebi Shrimp", fillingNote: "Cooked", nigiriPrice: "$5.95", sashimiPrice: "$6.95" },

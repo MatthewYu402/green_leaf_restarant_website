@@ -1,5 +1,5 @@
 .gallery-carousel-wrapper {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   --carousel-slide-width: 60%;
 }
