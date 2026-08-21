@@ -9,6 +9,7 @@ import forkKnifeIcon from "@/assets/icons/fork-knife-icon.svg";
 // Images
 import FillerImage from '@/assets/images/sushi-roll-1.jpg'
 
+
 // Components
 import Divider from "../components/shared/Divider";
 import SpecialItemGrid from '../components/menu/SpecialItemGrid';
@@ -64,13 +65,12 @@ export default function Specials() {
             <div className="chef-feature-mobile-footer">
               <span className="chef-feature-mobile-price">{CHEF_SPECIAL.price}</span>
               {/* Decorative for now — no ordering system exists yet to link to */}
-              <button type="button" className="chef-feature-mobile-cta">Order Now</button>
             </div>
           </div>
         </div>
       </Section>
 
-      <Section className='reveal-block-fade'>
+      <Section className='reveal-block-slide'>
         <Divider iconUrl={appleIcon} iconAlt="leaf" lineWidth='500px' />
       </Section>
 

@@ -21,7 +21,7 @@ import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 
 // Images
 import AppetizersImage from "@/assets/images/appetizers/appetizers.jpg";
-import SoupImage from "@/assets/images/soups.jpg"
+import SoupImage from "@/assets/images/soups-and-salad.png"
 import SushiAndSashimi from "@/assets/images/sushi-and-sashimi.jpg";
 
 // Appetizer Images

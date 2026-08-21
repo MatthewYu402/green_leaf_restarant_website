@@ -3,7 +3,8 @@ import './SushiMenuPage.css'
 // Icons
 import flowerIcon from "@/assets/icons/flower-icon.svg"
 import circleIcon from "@/assets/icons/circle.svg"
-
+import goldLeafIcon from "@/assets/icons/gold-leaf.svg"
+import appleIcon from "@/assets/icons/apple-icon.svg"
 // Images
 
 
@@ -44,6 +45,9 @@ import DiamondMikeRoll from '@/assets/images/sushi-special-rolls/diamond-mike-ro
 import GardenRoll from '@/assets/images/sushi-special-rolls/garden-roll.jpg'
 import SonAndLawRoll from '@/assets/images/sushi-special-rolls/son-in-law-roll.jpg'
 import PenthouseRoll from '@/assets/images/sushi-special-rolls/penthouse-roll.webp'
+import RavenRoll from '@/assets/images/sushi-special-rolls/raven-roll.jpg'
+import ImperialCrabRoll from '@/assets/images/sushi-special-rolls/imperial-crab-roll.jpg'
+import BaltimoreRoll from '@/assets/images/sushi-special-rolls/baltimore-roll.jpg'
 
 // Sashimi and Nigiri Images
 import ScallopNigiri from '@/assets/images/nigiri-sashimi/scallop-nigiri.jpg'
@@ -107,7 +111,7 @@ const SUSHISPECIALROLLS:RollItem[] = [
   { name: "Esther", description: "Salmon and avocado, topped with spicy tuna and tempura flakes", price: "$14.95" },
   { name: "Matthew", image: MatthewRoll, description: "Salmon, crab stick, topped with avocado, spicy yellowtail and tempura flakes", price: "$14.95" },
   { name: "Ginger", description: "Spicy tuna, salmon skin topped with salmon and fish roe", price: "$14.95" },
-  { name: "Raven", description: "Spicy yellowtail, topped with cripsy black rice and spicy tuna on top", price: "$14.95" },
+  { name: "Raven", image: RavenRoll, description: "Spicy yellowtail, topped with cripsy black rice and spicy tuna on top", price: "$14.95" },
   { name: "F-Ken", description: "Crab stick and cream cheese tempura style, topped with spicy tuna", price: "$14.95" },
   { name: "Godfather", description: "Shrimp tempura, old bay crabmeat, seaweed salad and avocado wrapped in yellow soy seaweed", price: "$14.95" },
   { name: "Penthouse (Mitchell Brown's Creation)", image: PenthouseRoll, description: "Shrimp tempura, cilantro, avocado, and tuna, finished with lime", price: "$14.95" },
@@ -121,7 +125,7 @@ const SUSHISPECIALROLLS:RollItem[] = [
   { name: "Sushi Sister", image: SushiSisterRoll, description: "Salmon and cucumber topped with tuna, avocado, mango, and spicy sauce", price: "$14.95" },
   { name: "Diamond Mike (Michael Shield's Creation)", image: DiamondMikeRoll, description: "Crabstick and spicy salmon, topped with salmon, eel, avocado, and tempura flakes", price: "$14.95" },
   { name: "Unforgettable", image: UnforgetableRoll, description: "Spicy tuna, topped with eel and avocado", price: "$14.95" },
-  { name: "Baltimore", description: "Soft-shell crab topped with spicy crabmeat", price: "$15.95" },
+  { name: "Baltimore", image: BaltimoreRoll, description: "Soft-shell crab topped with spicy crabmeat", price: "$15.95" },
   { name: "Son-In-Law Mango", image: SonAndLawRoll, description: "Shrimp tempura, topped with cripsy spicy tuna and mango", price: "$14.95" },
   { name: "Garden", image: GardenRoll, description: "Tempura sweet potato and yellow radish, topped with avocado", price: "$8.95" },
   { name: "Crunchy Roll", description: "Lump crabmeat, avocado, and shimp, topped with fish roe and tempura flakes wrapped in soy paper", price: "$14.95" },
@@ -135,7 +139,7 @@ const SUSHISPECIALROLLS:RollItem[] = [
   { name: "Tokyo", description: "Spicy tuna topped with tuna, salmon, and yellowtail with spicy sauce", price: "$14.95" },
   { name: "TNT Roll", description: "Spicy Lobster topped with tuna and tempura flakes", price: "$15.50" },
   { name: "Two to Tango", description: "Shrimp tempura topped with fresh shrimp and avocado", price: "$14.95" },
-  { name: "Imperial Crab", description: "Crabstick and avocado topped with salmon and spicy grilled crabmeat", price: "$14.95" },
+  { name: "Imperial Crab", image: ImperialCrabRoll, description: "Crabstick and avocado topped with salmon and spicy grilled crabmeat", price: "$14.95" },
 ];
 
 const MAKI_ROLLS: RollItem[] = [
@@ -259,7 +263,7 @@ export default function SushiMenu() {
           />
         </Section>
 
-        <Divider iconUrl={circleIcon} lineWidth='600px' thickness='2px' />
+        <Divider iconUrl={goldLeafIcon} lineWidth='600px' thickness='2px' />
 
         <Section className='reveal-block-slide'>
           <SushiRolls
@@ -285,7 +289,7 @@ export default function SushiMenu() {
           />
         </Section>
 
-        <Divider iconUrl={circleIcon} lineWidth='600px' thickness='2px' />
+        <Divider iconUrl={appleIcon} lineWidth='600px' thickness='2px' />
 
         <Section className='reveal-block-slide'>
           <NigiriSashimi

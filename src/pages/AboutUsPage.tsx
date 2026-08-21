@@ -11,6 +11,7 @@ import { useLightbox } from '@/components/shared/Lightbox'
 import mapPinIcon from '@/assets/icons/pin.svg'
 import clockIcon from '@/assets/icons/clock.svg'
 import diamondIcon from '@/assets/icons/diamond.svg'
+import circleIcon from '@/assets/icons/circle.svg'
 import phoneIcon from '@/assets/icons/reservation.svg'
 
 // Images
@@ -103,6 +104,8 @@ export default function AboutUsPage() {
           </div>
         </div>
       </Section>
+
+      <Divider iconUrl={circleIcon} className="home-mobile-divider" />
 
       <Section className="reveal-block-slide">
         <div className="about-join">

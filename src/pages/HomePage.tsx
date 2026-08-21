@@ -1,5 +1,5 @@
 import './HomePage.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 // Icons
@@ -14,6 +14,8 @@ import StoryTeaser from '../components/sections/StoryTeaser';
 import PeekInside from '../components/sections/PeekInside';
 
 export default function Home() {
+  const [showScrollHint, setShowScrollHint] = useState(true);
+
   {/* Smooth scroll-to-next-section, only forward into unvisited sections.
       Disabled at/under 1024px — full-viewport snap-per-section doesn't work
       once mobile needs to fit more content into less space. Re-evaluated on
@@ -103,6 +105,52 @@ export default function Home() {
     };
   }, []);
 
+  // Bottom-of-page scroll hint — visible while there's more content past
+  // the last real section. Disabled on mobile. Once hidden (reached the
+  // bottom), stays hidden permanently for this page load — scrolling back
+  // up does not bring it back; only a refresh resets it.
+  useEffect(() => {
+    const scrollContainer = document.getElementById('root');
+    if (!scrollContainer) return;
+
+    const mobileQuery = window.matchMedia('(max-width: 1024px)');
+    let permanentlyHidden = false;
+
+    // Roughly the footer's height — hides the hint once the last real
+    // section (PeekInside) is fully in view, rather than waiting until
+    // the true bottom of the page (footer included) is reached.
+    const BOTTOM_BUFFER = 400;
+
+    const checkScrollPosition = () => {
+      if (permanentlyHidden) return;
+
+      if (mobileQuery.matches) {
+        setShowScrollHint(false);
+        permanentlyHidden = true;
+        return;
+      }
+
+      const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
+      const distanceFromBottom = scrollHeight - (scrollTop + clientHeight);
+
+      if (distanceFromBottom <= BOTTOM_BUFFER) {
+        setShowScrollHint(false);
+        permanentlyHidden = true;
+      }
+    };
+
+    checkScrollPosition();
+    scrollContainer.addEventListener('scroll', checkScrollPosition, { passive: true });
+    mobileQuery.addEventListener('change', checkScrollPosition);
+    window.addEventListener('resize', checkScrollPosition);
+
+    return () => {
+      scrollContainer.removeEventListener('scroll', checkScrollPosition);
+      mobileQuery.removeEventListener('change', checkScrollPosition);
+      window.removeEventListener('resize', checkScrollPosition);
+    };
+  }, []);
+
   return (
     <>
       {/* Desktop/tablet — full-viewport photo hero. Hidden at the mobile breakpoint. */}
@@ -118,6 +166,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <button
+        type="button"
+        className={`scroll-hint ${showScrollHint ? '' : 'scroll-hint--hidden'}`}
+        onClick={() => {
+          const scrollContainer = document.getElementById('root');
+          if (!scrollContainer) return;
+          scrollContainer.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+        }}
+        aria-label="Scroll down"
+      >
+        <svg viewBox="0 0 24 24" className="scroll-hint-arrow" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
 
       {/* Mobile-only — plain text welcome block, no photo. Hidden above the breakpoint. */}
       <div className="hero-mobile">
