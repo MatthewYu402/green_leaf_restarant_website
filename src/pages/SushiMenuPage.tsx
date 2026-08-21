@@ -56,6 +56,13 @@ import SalmonRoe from '@/assets/images/nigiri-sashimi/salmon-roe-roll.png'
 // Sushi Salad Images
 import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
 
+// Platter Images
+import SushiPlatter1 from '@/assets/images/sushi-platters/sushi-platter-1.jpg'
+import SushiPlatter2 from '@/assets/images/sushi-platters/sushi-platter-2.jpg'
+import SushiPlatter3 from '@/assets/images/sushi-platters/sushi-platter-3.jpg'
+import SushiPlatter4 from '@/assets/images/sushi-platters/sushi-platter-4.jpg'
+import SushiPlatter5 from '@/assets/images/sushi-platters/sushi-platter-5.jpg'
+
 interface RollItem {
   name: string;
   description: string;
@@ -195,21 +202,6 @@ const NIGIRI_SASHIMI: NigiriItem[] = [
   { name: "Uni", fillingNote: "Market Price", nigiriPrice: "M.P", sashimiPrice: "M.P" },
 ];
 
-const SPECIALTY_ROLLS: RollItem[] = [
-  { name: "Crunchy Roll", description: "Lump crabmeat, avocado, and shimp, topped with fish roe and tempura flakes wrapped in soy paper", price: "$14.95" },
-  { name: "Futomaki", description: "Crabstick, egg, avocado, and vegetables", price: "$13.95" },
-  { name: "Phoenix", description: "Chicken tempura topped with eel and avocado", price: "$14.95" },
-  { name: "Pretty In Red", description: "Lump Crabmeat and avocado, topped with tempura flakes, tuna, and spicy sauce", price: "$14.95" },
-  { name: "Pine Nut Fish Roll", description: "Tempura cod with spicy sauce", price: "$9.95" },
-  { name: "Red Dragon", description: "Shrimp Tempura topped with spicy tuna", price: "$14.95" },
-  { name: "Spicy Lobster", description: "Crabstick topped with spicy lobster", price: "$15.50" },
-  { name: "Teryaki Salmon", description: "Grilled Salmon teryaki sauce", price: "$8.95" },
-  { name: "Tokyo", description: "Spicy tuna topped with tuna, salmon, and yellowtail with spicy sauce", price: "$14.95" },
-  { name: "TNT Roll", description: "Spicy Lobster topped with tuna and tempura flakes", price: "$15.50" },
-  { name: "Two to Tango", description: "Shrimp tempura topped with fresh shrimp and avocado", price: "$14.95" },
-  { name: "Imperial Crab", description: "Crabstick and avocado topped with salmon and spicy grilled crabmeat", price: "$14.95" },
-];
-
 const SUSHI_SALADS: RollItem[] = [
   { name: "Sushi Bar Salad", description: "", price: "$6.95" },
   { name: "Seaweed Salad", description: "", price: "$5.95" },
@@ -220,6 +212,15 @@ const SUSHI_SALADS: RollItem[] = [
   { name: "Baby Octopus Salad", description: "", price: "$7.95" },
   { name: "California Fruit Roll", description: "", price: "$6.95" },
 ];
+
+const SUSHI_PLATTERS = [
+  { src: SushiPlatter1, alt: "Sushi platter" },
+  { src: SushiPlatter2, alt: "Sushi platter" },
+  { src: SushiPlatter3, alt: "Sushi platter" },
+  { src: SushiPlatter4, alt: "Sushi platter" },
+  { src: SushiPlatter5, alt: "Sushi platter" },
+];
+// TODO: replace each entry with a real platter photo once available
 
 export default function SushiMenu() {
   return (
@@ -320,7 +321,7 @@ export default function SushiMenu() {
           items={ANNIVERSARY_ROLLS.map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
         />
         <RollAccordion
-          title="Namesake Rolls"
+          title="Sushi Special Rolls"
           items={SUSHISPECIALROLLS
           .map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
         />
@@ -338,14 +339,21 @@ export default function SushiMenu() {
           }))}
         />
         <RollAccordion
-          title="Specialty Rolls"
-          items={SPECIALTY_ROLLS.map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
-        />
-        <RollAccordion
           title="Sushi Salads"
           items={SUSHI_SALADS.map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
         />
       </div>
+
+      {/* Sushi Platters gallery — mirrors Home's PeekInside carousel */}
+      <Section className="reveal-block-slide">
+        <div className="sushi-platters">
+          <div className="sushi-platters-header">
+            <h2 className="sushi-platters-title">Sushi Platters</h2>
+            <p className="sushi-platters-subtitle">Perfect for sharing, parties, and celebrations</p>
+          </div>
+          <GalleryCarousel images={SUSHI_PLATTERS} />
+        </div>
+      </Section>
 
     </div>
   );

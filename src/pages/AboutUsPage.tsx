@@ -111,11 +111,12 @@ export default function AboutUsPage() {
         <div className="about-join">
           <h2 className="about-join-title">Join Our Table</h2>
           <div className="about-join-cards">
-            <div className="about-info-card">
+            <div className="about-info-card" id="visit-us">
               <div className="about-info-card-header">
                 <img src={mapPinIcon} className="about-info-icon" alt="" />
                 <h3 className="about-info-card-title">Visit Us</h3>
               </div>
+              ...
               <p className="about-info-line">11313 York Road<br />Hunt Valley, MD 21030</p>
               <p className="about-info-line">(410) 771-0030</p>
               <a href="tel:4107710030" className="about-info-cta">

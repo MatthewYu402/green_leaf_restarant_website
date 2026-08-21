@@ -172,6 +172,47 @@
   flex-direction: row-reverse;
 }
 
+/* Sushi Platters */
+.sushi-platters {
+  max-width: 1700px;
+  margin: 80px auto 0;
+}
+
+.sushi-platters-header {
+  text-align: center;
+  margin: 0 auto 24px;
+}
+
+.sushi-platters-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 32px;
+  color: var(--text-dark);
+  margin: 0 0 4px;
+}
+
+.sushi-platters-subtitle {
+  color: var(--gold-dark);
+  font-size: 16px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .sushi-platters {
+    margin-top: 48px;
+  }
+
+  .sushi-platters-header {
+    padding: 0 var(--mobile-page-margin);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+  }
+
+  .sushi-platters-title {
+    font-size: 22px;
+  }
+}
+
 
 @keyframes fadeIn {
   from {

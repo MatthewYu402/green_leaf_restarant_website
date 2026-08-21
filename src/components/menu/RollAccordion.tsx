@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './RollAccordion.css';
 import ItemPhotoTrigger from '../shared/ItemPhotoTrigger';
 
@@ -35,6 +35,8 @@ export default function RollAccordion({
 }: RollAccordionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [showAll, setShowAll] = useState(false);
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const [maxHeight, setMaxHeight] = useState(0);
 
   const totalCount = groups
     ? groups.reduce((sum, g) => sum + g.items.length, 0)
@@ -43,12 +45,33 @@ export default function RollAccordion({
   const visibleItems = !groups && items ? (showAll ? items : items.slice(0, previewCount)) : [];
   const remaining = !groups && items ? items.length - visibleItems.length : 0;
 
+  // Measures the body's real content height instead of relying on a fixed
+  // cap — a hardcoded max-height clips accordions with many items (e.g.
+  // 30+ special rolls) once their real content exceeds that number.
+  useEffect(() => {
+    if (isOpen && bodyRef.current) {
+      setMaxHeight(bodyRef.current.scrollHeight);
+    } else {
+      setMaxHeight(0);
+    }
+  }, [isOpen, showAll, items, groups]);
+
   return (
     <div className={`roll-accordion ${isOpen ? 'open' : ''}`}>
       <button
         type="button"
         className="roll-accordion-header"
-        onClick={() => setIsOpen((open) => !open)}
+        onClick={() => {
+          setIsOpen((open) => {
+            const next = !open;
+            if (!next) {
+              // Closing — reset the "+N more" expansion so reopening starts
+              // back at the preview, not still fully expanded.
+              setShowAll(false);
+            }
+            return next;
+          });
+        }}
         aria-expanded={isOpen}
       >
         <span className="roll-accordion-title">
@@ -57,7 +80,7 @@ export default function RollAccordion({
         <ChevronIcon />
       </button>
 
-      <div className="roll-accordion-body">
+      <div className="roll-accordion-body" ref={bodyRef} style={{ maxHeight }}>
         {image && (
           <img src={image} alt={imageAlt} className="roll-accordion-image" />
         )}

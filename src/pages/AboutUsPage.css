@@ -336,6 +336,10 @@
   background-color: var(--gray-div);
 }
 
+#visit-us {
+  scroll-margin-top: 100px;
+}
+
 /* ============================================================
    MOBILE — single column throughout, carousel replaces the grid
    ============================================================ */

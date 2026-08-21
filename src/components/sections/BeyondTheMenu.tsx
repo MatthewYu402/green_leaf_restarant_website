@@ -7,6 +7,7 @@ import Section from '../shared/Section'
 import cateringIcon from '@/assets/icons/catering.svg'
 import reservationsIcon from '@/assets/icons/reservation.svg'
 import byobIcon from '@/assets/icons/byob.svg'
+import takeoutIcon from '@/assets/icons/takeout-box-icon.svg'
 
 const OFFERINGS = [
   {
@@ -24,6 +25,13 @@ const OFFERINGS = [
     title: "BYOB",
     description: "Bring your favorite pairing. We offer a modest corking fee so you can enjoy the perfect sip with our craft.",
   },
+  {
+    icon: takeoutIcon,
+    title: "Takeout",
+    description: "Call ahead and we'll have your order ready for pickup.",
+    phone: "4107710030",
+    phoneDisplay: "(410) 771-0030",
+  },
 ];
 
 export default function BeyondTheMenu() {
@@ -37,7 +45,18 @@ export default function BeyondTheMenu() {
             <div className="beyond-menu-card" key={item.title}>
               <img src={item.icon} className="beyond-menu-icon" alt="" />
               <h3 className="beyond-menu-card-title">{item.title}</h3>
-              <p className="beyond-menu-card-description">{item.description}</p> 
+              <p className="beyond-menu-card-description">{item.description}</p>
+              {item.phone ? (
+                <a href={`tel:${item.phone}`} className="beyond-menu-card-cta beyond-menu-card-cta--link">
+                  Call {item.phoneDisplay}
+                </a>
+              ) : (
+                <span className="beyond-menu-card-cta">
+                  {item.title === "Catering" && "Inquire →"}
+                  {item.title === "Reservations" && "Book Now →"}
+                  {item.title === "BYOB" && "Details →"}
+                </span>
+              )}
             </div>
           ))}
         </div>

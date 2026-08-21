@@ -46,7 +46,7 @@ export default function Specials() {
 
       {/* Mobile-only — divider between the page title and Chef's Feature */}
       <Section className="reveal-block-fade specials-mobile-divider">
-        <Divider iconUrl={circleIcon} iconAlt="" lineWidth="500px" />
+        <Divider iconUrl={appleIcon} iconAlt="" lineWidth="500px" />
       </Section>
 
       {/* Mobile-only — Chef's Feature pulled to the top of the page.
@@ -71,7 +71,7 @@ export default function Specials() {
       </Section>
 
       <Section className='reveal-block-slide'>
-        <Divider iconUrl={appleIcon} iconAlt="leaf" lineWidth='500px' />
+        <Divider iconUrl={circleIcon} iconAlt="leaf" lineWidth='500px' />
       </Section>
 
 

@@ -7,6 +7,8 @@ import Home from './pages/HomePage';
 import SushiMenu from './pages/SushiMenuPage';
 import MainMenu from './pages/MainMenuPage';
 import AboutUsPage from './pages/AboutUsPage';
+import CareersPage from './pages/CareersPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 // Components
 import { LightboxProvider } from './components/shared/Lightbox';
@@ -48,6 +50,8 @@ function App() {
           <Route path="/sushi" element={<SushiMenu />} />
           <Route path="/specials" element={<Specials />} />
           <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
         <Footer />
     </LightboxProvider>

@@ -52,9 +52,7 @@
 }
 
 .roll-accordion.open .roll-accordion-body {
-  max-height: 2000px;
-  /* generous cap — real content is always well under this */
-  padding: 0 20px 20px;
+  padding: 0 20px 28px;
 }
 
 .roll-accordion-image {
@@ -115,8 +113,8 @@
 .roll-accordion-more {
   display: block;
   width: 100%;
-  margin: 12px 0 0;
-  padding: 0;
+  margin: 16px 0 0;
+  padding: 10px 0 4px;
   background: none;
   border: none;
   text-align: center;
