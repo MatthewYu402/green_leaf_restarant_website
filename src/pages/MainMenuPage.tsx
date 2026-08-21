@@ -38,6 +38,7 @@ import MisoSoup from '@/assets/images/soups-salads/miso-soup.jpg'
 
 const APPETIZERS_FEATURED = [
   { name: "Green Leaf Dumplings", image: GreenLeafDumplings, price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
+  { name: "Scallion Pancake and String Bean", image: ScallionPancakeStringBean, price: "$8.50", description: "Savory stir-fried green beans wrapped in cripsy scallion pancake" },
   { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
   { name: "Summer Roll", image: SummerRoll, price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
   { name: "Crispy Wonton", image: CrispyWontons, price: "$5.95", description: "Fried wontons filled with cream cheese with crab meat" },
@@ -50,7 +51,6 @@ const APPETIZERS_ITEMS = [
   { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
   { name: "Tuna Tartare", price: "$10.95", description: "Marinated tuna and avocado with special sauce" },
   { name: "Fried Calamari", image: FriedCalamari, price: "$9.95", description: "Deep fried squid topped with sauteed onion and chives" },
-  { name: "Scallion Pancake and String Bean", image: ScallionPancakeStringBean, price: "$8.50", description: "Savory stir-fried green beans wrapped in cripsy scallion pancake" },
   { name: "Ocean Garden Roll", image: OceanGardenRoll, price: "$12.95", description: "Crispy spicy crabmeat with mixed greens in rice paper wrap" },
   { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
   { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
@@ -58,18 +58,18 @@ const APPETIZERS_ITEMS = [
 
 const SOUPS_SALADS_FEATURED = [
   { name: "Miso Soup", image: MisoSoup, price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
-  { name: "Egg Drop Soup", price: "$3.95", description: "" },
-  { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
+  { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "Chicken dumpling in savory chicken broth" },
+  { name: "Sushi Bar Salad", price: "$6.95", description: "Seaweed salad base with cucumber and crabstick topped spicy mayonaise and tempura flakes" },
+  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce" },
   { name: "Seaweed Salad", price: "$5.95", description: "" },
 ];
 
 const SOUPS_SALADS_ITEMS = [
-  { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "Chicken dumpling in savory chicken broth" },
   { name: "Hot and Sour Soup", price: "$4.95", description: "" },
   { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "" },
-  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce" },
-  { name: "California Style Salad", price: "$6.95", description: "crabstick avocado cucumber spicy mayo" },
-  { name: "Sushi Bar Salad", price: "$6.95", description: "Seawyonaise eed salad cucumber crabstick crunchy tempura flakes spicy ma" },
+  { name: "Egg Drop Soup", price: "$3.95", description: "" },
+  { name: "California Style Salad", price: "$6.95", description: "Crabstick avocado cucumber spicy mayo" },
+  { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
   { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
   { name: "Baby Octopus Salad", image: BabyOctopusSalad, price: "$7.95", description: "Seaweed salad topped with marinated baby octopus" },
   { name: "Marinated Calamari Salad", price: "$7.95", description: "" },

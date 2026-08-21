@@ -71,12 +71,6 @@ export default function DrinksDesserts({
             {warmItems.map((item) => <DrinkRow item={item} key={item.name} />)}
           </div>
         </div>
-      </div>
-
-      <div className="drinks-desserts-column">
-        <div className="drinks-photo-wrap">
-          <img src={image} alt={imageAlt} className="drinks-photo" />
-        </div>
 
         <div className="drinks-card drinks-card--dessert">
           <img src={dessertBgIcon} className="drinks-card-bg-icon" alt="" />
@@ -89,6 +83,12 @@ export default function DrinksDesserts({
           <div className="drinks-card-grid drinks-card-grid--1col">
             {dessertItems.map((item) => <DrinkRow item={item} key={item.name} />)}
           </div>
+        </div>
+      </div>
+
+      <div className="drinks-desserts-column">
+        <div className="drinks-photo-wrap">
+          <img src={image} alt={imageAlt} className="drinks-photo" />
         </div>
       </div>
     </div>
