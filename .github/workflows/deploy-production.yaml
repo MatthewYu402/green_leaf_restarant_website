@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -27,18 +28,21 @@ jobs:
         run: npm run build
 
       # web.config is required for React Router to work on IIS (Windows
-      # Hosting). Keep the real copy checked into the repo (e.g. in
-      # /public) so Vite copies it into dist/ automatically during build.
-      # This step is a safety net in case it's ever missing from the build.
+      # Hosting). Keep the real copy in /public so Vite copies it into
+      # dist/ automatically during build. This step is a safety net in
+      # case it's ever missing from the build output.
       - name: Ensure web.config is present in build output
         run: cp web.config dist/web.config
 
       - name: Deploy to GoDaddy via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.your-domain-placeholder.com
-          username: your-ftp-username-placeholder
+          server: ${{ secrets.GODADDY_FTP_SERVER }}
+          username: ${{ secrets.GODADDY_FTP_USERNAME }}
           password: ${{ secrets.GODADDY_FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./dist/
-          server-dir: ./httpdocs/
+          # This FTP account's home directory is already /httpdocs, so we
+          # upload to its root — NOT ./httpdocs/, which would try to
+          # create a nested httpdocs/httpdocs/ folder that doesn't exist.
+          server-dir: ./

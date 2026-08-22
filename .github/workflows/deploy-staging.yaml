@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - staging
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -32,12 +33,13 @@ jobs:
       - name: Deploy to GoDaddy staging via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.your-domain-placeholder.com
-          username: your-ftp-username-placeholder
-          password: ${{ secrets.GODADDY_FTP_PASSWORD }}
+          server: ${{ secrets.GODADDY_STAGING_FTP_SERVER }}
+          username: ${{ secrets.GODADDY_STAGING_FTP_USERNAME }}
+          password: ${{ secrets.GODADDY_STAGING_FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./dist/
-          # Points at a separate subdomain's document root in Plesk
-          # (e.g. staging.your-domain-placeholder.com), NOT httpdocs —
-          # keeps this completely separate from the live site.
-          server-dir: ./staging.your-domain-placeholder.com/
+          # This should be a separate FTP account scoped to the staging
+          # subdomain's own document root (create it in Plesk once the
+          # staging.yourdomain.com subdomain exists) — keeps it fully
+          # isolated from the production /httpdocs account above.
+          server-dir: ./
