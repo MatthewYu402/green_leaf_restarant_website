@@ -1,0 +1,44 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy to GoDaddy (httpdocs)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # web.config is required for React Router to work on IIS (Windows
+      # Hosting). Keep the real copy checked into the repo (e.g. in
+      # /public) so Vite copies it into dist/ automatically during build.
+      # This step is a safety net in case it's ever missing from the build.
+      - name: Ensure web.config is present in build output
+        run: cp web.config dist/web.config
+
+      - name: Deploy to GoDaddy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.your-domain-placeholder.com
+          username: your-ftp-username-placeholder
+          password: ${{ secrets.GODADDY_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ./httpdocs/
