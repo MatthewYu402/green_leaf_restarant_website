@@ -21,15 +21,15 @@ import GalleryImage2 from '@/assets/images/about-us-gallery/sunday-regulars.webp
 import GalleryImage3 from '@/assets/images/about-us-gallery/neigborhood.jpg'
 import GalleryImage4 from '@/assets/images//about-us-gallery/chinese-new-year.jpeg'
 import GalleryImage5 from '@/assets/images/about-us-gallery/about-us-birthday.webp'
-import GalleryImage6 from '@/assets/images/about-us-gallery/about-us-birthday.webp'
+import GalleryImage6 from '@/assets/images/about-us-gallery/anniversary-celebrations.jpg'
 
 const GALLERY_ITEMS = [
   { img: GalleryImage1, caption: "New Year Celebrations" },
-  { img: GalleryImage2, caption: "Sunday regulars" },
+  { img: GalleryImage2, caption: "Sunday Regulars" },
   { img: GalleryImage3, caption: "Neighborhood" },
   { img: GalleryImage4, caption: "Chinese New year" },
-  { img: GalleryImage5, caption: "Birthday dinner" },
-  { img: GalleryImage6, caption: "Behind the counter" },
+  { img: GalleryImage5, caption: "Birthday Dinner" },
+  { img: GalleryImage6, caption: "Anniversary Celebrations" },
 ];
 
 export default function AboutUsPage() {
@@ -116,7 +116,6 @@ export default function AboutUsPage() {
                 <img src={mapPinIcon} className="about-info-icon" alt="" />
                 <h3 className="about-info-card-title">Visit Us</h3>
               </div>
-              ...
               <p className="about-info-line">11313 York Road<br />Hunt Valley, MD 21030</p>
               <p className="about-info-line">(410) 771-0030</p>
               <a href="tel:4107710030" className="about-info-cta">

@@ -160,7 +160,7 @@ export default function Home() {
           <div className="main-body">
             <h1 className="home-title">Modern Fusion Sushi & Asian Cuisine</h1>
             <p className="sub-heading">
-              Twenty-one years of dedication to precision, creativity, and the finest<br /> ingredients
+              Twenty years of dedication to precision, creativity, and the finest<br /> ingredients
             </p>
             <Link to="/menu" className="menu-btn">View Menu</Link>
           </div>

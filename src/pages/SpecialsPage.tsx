@@ -25,8 +25,8 @@ const MAKI_SPECIALS = [
   { id: "L4", name: "Tuna Roll and California Roll", price: "$10.25", description: "" },
   { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.25", description: "" },
   { id: "L6", name: "Two California Rolls", price: "$10.25", description: "" },
-  { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$10.25", description: "" },
-  { id: "L8", name: "Sashimi Special (Chef's Choice)", price: "$10.25", description: "" },
+  { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$13.25", description: "" },
+  { id: "L8", name: "Sashimi Special (Chef's Choice)", price: "$15.95", description: "" },
 ];
 
 const BENTO_BOXES = [
@@ -45,7 +45,7 @@ export default function Specials() {
       </Section>
 
       {/* Mobile-only — divider between the page title and Chef's Feature */}
-      <Section className="reveal-block-fade specials-mobile-divider">
+      <Section className="reveal-block-slide specials-mobile-divider">
         <Divider iconUrl={appleIcon} iconAlt="" lineWidth="500px" />
       </Section>
 
@@ -85,7 +85,6 @@ export default function Specials() {
         <div className="lunch-maki-bento-row">
           <div className="lunch-maki-column">
             <h4 className="lunch-maki-title">Lunch Maki Specials</h4>
-            <p className="lunch-maki-note">*Served with traditional miso soup. No substitutions</p>
             <SpecialItemGrid items={MAKI_SPECIALS} />
           </div>
 
@@ -93,7 +92,6 @@ export default function Specials() {
             name="Featured Bento Boxes"
             url={FillerImage}
             className="featured-bento-category"
-            note="*Served with white rice and miso soup. No substitutions"
             menu_items={BENTO_BOXES}
           />
         </div>

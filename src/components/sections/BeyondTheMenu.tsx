@@ -46,16 +46,10 @@ export default function BeyondTheMenu() {
               <img src={item.icon} className="beyond-menu-icon" alt="" />
               <h3 className="beyond-menu-card-title">{item.title}</h3>
               <p className="beyond-menu-card-description">{item.description}</p>
-              {item.phone ? (
+              {item.phone && (
                 <a href={`tel:${item.phone}`} className="beyond-menu-card-cta beyond-menu-card-cta--link">
                   Call {item.phoneDisplay}
                 </a>
-              ) : (
-                <span className="beyond-menu-card-cta">
-                  {item.title === "Catering" && "Inquire →"}
-                  {item.title === "Reservations" && "Book Now →"}
-                  {item.title === "BYOB" && "Details →"}
-                </span>
               )}
             </div>
           ))}

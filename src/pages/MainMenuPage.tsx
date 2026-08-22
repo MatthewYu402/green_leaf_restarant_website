@@ -35,24 +35,25 @@ import CrispyWontons from '@/assets/images/appetizers/crispy-wontons.jpg'
 
 // Soup Images
 import MisoSoup from '@/assets/images/soups-salads/miso-soup.jpg'
+import IceCream from '@/assets/images/ice-cream.png'
 
 const APPETIZERS_FEATURED = [
   { name: "Green Leaf Dumplings", image: GreenLeafDumplings, price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
   { name: "Scallion Pancake and String Bean", image: ScallionPancakeStringBean, price: "$8.50", description: "Savory stir-fried green beans wrapped in cripsy scallion pancake" },
   { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
   { name: "Summer Roll", image: SummerRoll, price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
-  { name: "Crispy Wonton", image: CrispyWontons, price: "$5.95", description: "Fried wontons filled with cream cheese with crab meat" },
+  { name: "Crispy Wonton (6)", image: CrispyWontons, price: "$5.95", description: "Fried wontons filled with cream cheese with crab meat" },
 ];
 
 const APPETIZERS_ITEMS = [
   { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
-  { name: "Shumai", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)" },
-  { name: "Japanese Vegetable Spring Roll", price: "$5.50", description: "" },
-  { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried shrimp with vegetables" },
+  { name: "Shumai (6)", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)"},
+  { name: "Japanese Vegetable Spring Roll (3)", price: "$5.50", description: "" },
+  { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried tempura style shrimp with vegetables" },
   { name: "Tuna Tartare", price: "$10.95", description: "Marinated tuna and avocado with special sauce" },
   { name: "Fried Calamari", image: FriedCalamari, price: "$9.95", description: "Deep fried squid topped with sauteed onion and chives" },
   { name: "Ocean Garden Roll", image: OceanGardenRoll, price: "$12.95", description: "Crispy spicy crabmeat with mixed greens in rice paper wrap" },
-  { name: "Yakitori", price: "$5.95", description: "Grilled chicken skewer with teriyaki sauce" },
+  { name: "Yakitori (3)", price: "$5.95", description: "Grilled chicken skewers with teriyaki sauce" },
   { name: "California Fruit Roll", price: "$6.95", description: "Mango, apple, avocado, and crabstick in rice paper wrap" },
 ];
 
@@ -68,8 +69,8 @@ const SOUPS_SALADS_ITEMS = [
   { name: "Hot and Sour Soup", price: "$4.95", description: "" },
   { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "" },
   { name: "Egg Drop Soup", price: "$3.95", description: "" },
-  { name: "California Style Salad", price: "$6.95", description: "Crabstick avocado cucumber spicy mayo" },
-  { name: "Green Salad", price: "$3.95", description: "Comes with ginger dressing" },
+  { name: "California Style Salad", price: "$6.95", description: "Crabstick, avocado, cucumber, and spicy mayo" },
+  { name: "Green Salad", price: "$3.95", description: "Served with ginger dressing" },
   { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
   { name: "Baby Octopus Salad", image: BabyOctopusSalad, price: "$7.95", description: "Seaweed salad topped with marinated baby octopus" },
   { name: "Marinated Calamari Salad", price: "$7.95", description: "" },
@@ -84,7 +85,7 @@ const MEAT_ITEMS = [
   { name: "Beef and Brocolli", price: "$17.95", description: "" },
   { name: "Chicken and Brocolli", price: "$14.95", description: "" },
   { name: "Chicken and String Beans", price: "$14.95", description: "" },
-  { name: "Chicken and Mixed Vegetables", price: "$14.95", description: "" },
+  { name: "Chicken and Mixed Vegetables", price: "$14.95", description: "Beef (+$3.00)" },
   { name: "Fried Tonkatsu", price: "$14.95", description: "Breaded pork loin with special savory sauce" },
 ];
 
@@ -94,11 +95,12 @@ const SEAFOOD_GROUPS = [
     layout: "full" as const,
     items: [
       { name: "Green Leaf Pasta", price: "$19.95", description: "Shrimp, scallops, and baby bok choy over spinach noodles" },
-      { name: "Crispy Jumbo Shrimp", price: "$18.95", description: "Tempura-fried jumbo shrimp served with honey sesame sauce" },
+      { name: "Crispy Jumbo Shrimp", price: "$17.95", description: "Tempura-fried jumbo shrimp served with honey sesame sauce" },
       { name: "Seafood Combo", price: "$19.95", description: "Scallop and shrimp stir-fried with bell pepper, tomato and onion, served in a thai curry sauce, " },
       { name: "Pecan Crusted Salmon Filet", price: "$19.95", description: "" },
       { name: "Grilled Salmon Filet", price: "$19.95", description: "Fresh grilled salmon filet, served with a house salad" },
       { name: "Shrimp with Brocolli", price: "$17.95", description: "" },
+      { name: "Shrimp with Mixed Vegetables", price: "$17.95", description: "" },
     ],
   },
   {
@@ -130,15 +132,16 @@ const DONBURI_ITEMS = [
 const SUSHI_SASHIMI_ITEMS = [
   { name: "Sushi Deluxe", price: "$20.95", description: "8 piece sushi (chef's choice) and a tuna roll" },
   { name: "Sashimi Deluxe", price: "$24.95", description: "15 piece sashimi (chef's choice)" },
-  { name: "Sushi Boat", price: "$59.95", description: "15 pieces sashimi (chef's choice), 5 piece nigiri (chef's choice), california roll, and spicy tuna roll." },
+  { name: "Sushi and Sashimi Combo", price: "$29.95", description: "" },
+  { name: "Family Boat", price: "$59.95", description: "15 pieces sashimi (chef's choice), 5 piece nigiri (chef's choice), california roll, and spicy tuna roll." },
 ];
 
 const NOODLES_ITEMS = [
   { name: "Japanese Pan Noodle", price: "$18.95", description: "Chicken, shrimp, and vegetables" },
   { name: "Pad Thai", price: "$14.95", description: "Chicken or shrimp" },
-  { name: "Singapore Rice Noodes", price: "$14.95", description: "Chicken or shrimp" },
-  { name: "Yaki Udon Noodes", price: "$14.95", description: "Chicken or shrimp" },
-  { name: "Drunken Noodle", price: "$15.95", description: "Chicken or shrimp" },
+  { name: "Singapore Rice Noodles", price: "$14.95", description: "Chicken or shrimp" },
+  { name: "Yaki Udon Noodles", price: "$14.95", description: "Chicken or shrimp" },
+  { name: "Drunken Noodles", price: "$15.95", description: "Chicken or shrimp (beef +$2.00)" },
   { name: "Japanese Fried Rice", price: "$13.95", description: "Chicken or shrimp" },
   { name: "Roasted Pork Fried Rice", price: "$13.95", description: "Pork and vegetables" },
   { name: "Nabe Yaki Udon Soup", price: "$14.95", description: "Pork and vegetables" },
@@ -150,7 +153,7 @@ const VEGETARIAN_ITEMS = [
   { name: "Szechuan String Bean", price: "$13.95", description: "" },
   { name: "Tofu Phad Thai", price: "$13.95", description: "" },
   { name: "Veggie Pad Thai", price: "$13.95", description: "" },
-  { name: "Singapore Rice Noode", price: "$13.95", description: "" },
+  { name: "Singapore Rice Noodles", price: "$13.95", description: "" },
   { name: "Sauteed Mixed Vegetables", price: "$13.95", description: "" },
   { name: "Crispy Eggplant", price: "$13.95", description: "Tempura fried eggplant with honey sesame sauce" },
 ];
@@ -311,7 +314,7 @@ export default function MainMenu() {
             dessertTitle="Desserts"
             dessertIcon={dessertIcon}
             dessertItems={DESSERT_ITEMS}
-            image={SushiAndSashimi}
+            image={IceCream}
             imageAlt=""
           />
         </Section>

@@ -7,7 +7,7 @@ import SpecialItemGrid from './SpecialItemGrid';
 import forkKnifeIcon from '@/assets/icons/fork-knife-icon.svg';
 
 // Images
-import ChefSpecialImage from '@/assets/images/sushi-roll-1.jpg';
+import ChefSpecialImage from '@/assets/images/coming-soon.png';
 import ChickenLettuceWrap from '@/assets/images/appetizers/chicken-lettuce-wrap.jpg'
 
 export { ChefSpecialImage };
@@ -16,7 +16,7 @@ export const CHEF_SPECIAL = {
   label: "Chef's Special",
   name: "Korean BBQ Beef Short Ribs",
   description:
-    "Tender, grilled bone-in beef short ribs marinated in a rich, savory-sweet glaze. Served sizzling, garnished with toasted sesame seeds and fresh scallions, accompanied by traditional banchan.",
+    "Tender, grilled bone-in beef short ribs marinated in a rich, savory-sweet glaze. Served sizzling and accompanied by a serving of rice and mixed vegetables",
   price: "$20.95",
 };
 
