@@ -6,7 +6,7 @@
 
 .bento-item {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 14px;
   background-color: var(--white);
   border: 2px solid var(--gray-border);
@@ -30,7 +30,23 @@
   flex-direction: column;
   gap: 4px;
   min-width: 0;
-  /* lets the description truncate instead of forcing the row wider */
+}
+
+.bento-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.bento-item-id {
+  flex-shrink: 0;
+  background-color: var(--green-dark);
+  color: var(--gold-light);
+  font-family: var(--libre);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .bento-item-name {
@@ -52,7 +68,10 @@
 }
 
 .bento-item-price {
+  margin-top: auto;
+  align-self: flex-end;
   font-family: var(--libre);
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
   color: var(--gold-accent);
 }

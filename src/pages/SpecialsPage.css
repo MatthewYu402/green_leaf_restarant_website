@@ -310,10 +310,6 @@
     border-bottom: none;
   }
 
-  .maki-specials-mobile-list .special-item-id {
-    display: none;
-  }
-
   /* --- Dinner --- */
   .desktop-only-dinner {
     display: none;

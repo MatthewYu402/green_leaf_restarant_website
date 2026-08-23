@@ -96,14 +96,15 @@ export default function Specials() {
           />
         </div>
 
-        {/* Mobile-only — Bento first (with the new optional-image row layout),
-            then a flattened Maki list. Hidden above the breakpoint (see CSS). */}
+        {/* Mobile-only — Maki Specials first, then Bento Boxes (with the
+            optional-image row layout), matching desktop's visual order.
+            Hidden above the breakpoint (see CSS). */}
         <div className="lunch-mobile">
-          <h5 className="lunch-mobile-label">Featured Bento Boxes</h5>
-          <BentoItemList items={BENTO_BOXES} />
-
           <h5 className="lunch-mobile-label">Lunch Maki Specials</h5>
           <SpecialItemGrid className="maki-specials-mobile-list" items={MAKI_SPECIALS} />
+
+          <h5 className="lunch-mobile-label">Featured Bento Boxes</h5>
+          <BentoItemList items={BENTO_BOXES} />
         </div>
       </Section>
 

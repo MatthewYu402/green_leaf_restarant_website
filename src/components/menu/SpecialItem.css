@@ -1,6 +1,7 @@
 .special-item {
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: 6px;
   padding: 15px;
   text-align: left;
@@ -11,11 +12,20 @@
   box-sizing: border-box;
 }
 
+.special-item-content {
+  flex: 1;
+}
+
 .special-item-header {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  gap: 10px;
+}
+
+.special-item-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
 }
 
 .special-item-id {
@@ -25,7 +35,7 @@
   font-family: var(--libre);
   font-size: 12px;
   font-weight: 600;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
 }
 
@@ -39,14 +49,11 @@
 }
 
 .special-item-price {
+  flex-shrink: 0;
   font-family: var(--libre);
   font-size: 16px;
   color: var(--gold-accent);
-  margin-left: auto;
-  /* pushes price to the far right of the row */
   white-space: nowrap;
-  /* keeps "$10.25" from breaking mid-line if space is tight */
-  flex-shrink: 0;
 }
 
 .special-item-description {

@@ -1,10 +1,11 @@
 import './BentoItemList.css'
 
 interface BentoItem {
+  id?: string;
   name: string;
   description?: string;
   price: string;
-  image?: string; // optional — renders without a thumbnail if omitted
+  image?: string;
 }
 
 interface BentoItemListProps {
@@ -20,7 +21,10 @@ export default function BentoItemList({ items }: BentoItemListProps) {
             <img src={item.image} alt="" className="bento-item-image" />
           )}
           <div className="bento-item-content">
-            <h4 className="bento-item-name">{item.name}</h4>
+            <div className="bento-item-header">
+              {item.id && <span className="bento-item-id">{item.id}</span>}
+              <h4 className="bento-item-name">{item.name}</h4>
+            </div>
             {item.description && (
               <p className="bento-item-description">{item.description}</p>
             )}

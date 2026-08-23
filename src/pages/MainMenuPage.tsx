@@ -60,15 +60,15 @@ const APPETIZERS_ITEMS = [
 const SOUPS_SALADS_FEATURED = [
   { name: "Miso Soup", image: MisoSoup, price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
   { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "Chicken dumpling in savory chicken broth" },
-  { name: "Sushi Bar Salad", price: "$6.95", description: "Seaweed salad base with cucumber and crabstick topped spicy mayonaise and tempura flakes" },
-  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce" },
-  { name: "Seaweed Salad", price: "$5.95", description: "" },
+  { name: "Hot and Sour Soup", price: "$4.95", description: "" },
+  { name: "Egg Drop Soup", price: "$3.95", description: "" },
+  { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "" },
 ];
 
 const SOUPS_SALADS_ITEMS = [
-  { name: "Hot and Sour Soup", price: "$4.95", description: "" },
-  { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "" },
-  { name: "Egg Drop Soup", price: "$3.95", description: "" },
+  { name: "Sushi Bar Salad", price: "$6.95", description: "Seaweed salad base with cucumber and crabstick topped spicy mayonaise and tempura flakes" },
+  { name: "Seaweed Salad", price: "$5.95", description: "Refreshing wakame seaweed in sweet and savory dressing" },
+  { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce" },
   { name: "California Style Salad", price: "$6.95", description: "Crabstick, avocado, cucumber, and spicy mayo" },
   { name: "Green Salad", price: "$3.95", description: "Served with ginger dressing" },
   { name: "Avocado Salad", price: "$6.95", description: "Mixed greens, cucumber, and avocado with sesame dressing" },
