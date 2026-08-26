@@ -340,6 +340,67 @@
   scroll-margin-top: 100px;
 }
 
+.about-instagram-card {
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.about-instagram-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--gold-accent);
+  margin-bottom: 4px;
+}
+
+.about-instagram-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 24px;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.about-instagram-handle {
+  color: var(--gold-accent);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+.about-instagram-description {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-instagram-cta {
+  margin-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.about-instagram-cta:hover {
+  background-color: var(--gold-border);
+  transform: scale(1.02);
+}
+
+.about-instagram-cta:visited {
+  color: var(--white);
+}
+
 /* ============================================================
    MOBILE — single column throughout, carousel replaces the grid
    ============================================================ */

@@ -18,12 +18,12 @@ const OFFERINGS = [
   {
     icon: reservationsIcon,
     title: "Reservations",
-    description: "Call ahead to secure your table for a dining room, evening dining experience, and calm dining experience.",
+    description: "Call ahead to secure your table for a quality dining experience.",
   },
   {
     icon: byobIcon,
     title: "BYOB",
-    description: "Bring your favorite pairing. We offer a modest corking fee so you can enjoy the perfect sip with our craft.",
+    description: "Bring your favorite pairing. We offer a modest corking fee so you can enjoy the perfect sip.",
   },
   {
     icon: takeoutIcon,

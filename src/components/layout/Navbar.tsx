@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
 
 // Images
@@ -77,7 +77,9 @@ export default function Navbar() {
           <span />
         </button>
 
-        <img src={restaurantLogo} className="logo" alt="Green Leaf Sushi" />
+        <Link to="/" className="logo-link" aria-label="Green Leaf Cuisine — Home">
+          <img src={restaurantLogo} className="logo" alt="Green Leaf Sushi" />
+        </Link>
 
         <ul className="nav-links">
           {navLinks.map((link) => (

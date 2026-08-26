@@ -134,6 +134,37 @@ export default function AboutUsPage() {
               </div>
             </div>
 
+            <div className="about-info-card about-instagram-card">
+              <svg
+                className="about-instagram-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                <circle cx="12" cy="13" r="3" />
+              </svg>
+
+              <h3 className="about-instagram-title">Follow Our Instagram</h3>
+              <p className="about-instagram-handle">@greenleafrest</p>
+              <p className="about-instagram-description">
+                Sneak peeks of new rolls and a look behind the scenes.
+              </p>
+
+              <a
+                href="https://www.instagram.com/greenleafrest/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="about-instagram-cta"
+              >
+                Follow Us
+              </a>
+            </div>
+
             <div className="about-info-card">
               <div className="about-info-card-header">
                 <img src={clockIcon} className="about-info-icon" alt="" />

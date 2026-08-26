@@ -1,9 +1,13 @@
+.logo-link {
+  display: block;
+  justify-self: start;
+  grid-column: 1;
+}
+
 .logo {
   width: 200px;
   height: auto;
   display: block;
-  justify-self: start;
-  grid-column: 1;
 }
 
 .navbar {
@@ -46,7 +50,8 @@
 }
 
 .navbar-floating a,
-.navbar-floating .logo {
+.navbar-floating .logo,
+.navbar-floating .logo-link {
   color: var(--text-white);
 }
 
@@ -61,7 +66,8 @@
 }
 
 .navbar-solid a,
-.navbar-solid .logo {
+.navbar-solid .logo,
+.navbar-solid .logo-link {
   color: var(--text-white);
 }
 
@@ -69,7 +75,7 @@
   color: var(--text-white);
 }
 
-.navbar a:not(.cell-num) {
+.navbar a:not(.cell-num):not(.logo-link) {
   position: relative;
   padding-bottom: 2px;
   text-decoration: none;
@@ -77,11 +83,11 @@
   transition: color 0.4s ease;
 }
 
-.navbar a:not(.cell-num):focus {
+.navbar a:not(.cell-num):not(.logo-link):focus {
   outline: none;
 }
 
-.navbar a:not(.cell-num):focus-visible {
+.navbar a:not(.cell-num):not(.logo-link):focus-visible {
   outline: 2px solid var(--gold-accent);
   outline-offset: 2px;
 }
@@ -92,7 +98,7 @@
   font-size: 18px;
 }
 
-.navbar a:not(.cell-num)::after {
+.navbar a:not(.cell-num):not(.logo-link)::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -105,10 +111,15 @@
   transition: transform 0.3s ease-out;
 }
 
-.navbar a:not(.cell-num):hover::after,
-.navbar a:not(.cell-num).active::after {
+.navbar a:not(.cell-num):not(.logo-link):hover::after,
+.navbar a:not(.cell-num):not(.logo-link).active::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.logo-link:focus-visible {
+  outline: 2px solid var(--gold-accent);
+  outline-offset: 2px;
 }
 
 .cell-num {
@@ -274,9 +285,12 @@
     display: flex;
   }
 
-  .logo {
+  .logo-link {
     grid-column: 2;
     justify-self: center;
+  }
+
+  .logo {
     height: 120px;
     width: auto;
   }
