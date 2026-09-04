@@ -26,16 +26,18 @@
 }
 
 .bento-item-content {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-width: 0;
 }
 
 .bento-item-header {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  min-width: 0;
 }
 
 .bento-item-id {
@@ -49,12 +51,22 @@
   border-radius: 4px;
 }
 
+.bento-item-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
 .bento-item-name {
   font-family: var(--libre);
   font-weight: normal;
   font-size: 16px;
   color: var(--text-dark);
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bento-item-description {
