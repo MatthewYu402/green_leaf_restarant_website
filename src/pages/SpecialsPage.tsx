@@ -8,6 +8,10 @@ import forkKnifeIcon from "@/assets/icons/fork-knife-icon.svg";
 
 // Images
 import FillerImage from '@/assets/images/sushi-roll-1.jpg'
+import L3 from "@/assets/images/specials/L3-maki.jpg"
+import L9 from "@/assets/images/specials/L9-bento.jpg"
+import L10 from "@/assets/images/specials/L10-bento.jpg"
+import L12 from "@/assets/images/specials/L12-bento.jpg"
 
 
 // Components
@@ -21,7 +25,7 @@ import Section from '../components/shared/Section';
 const MAKI_SPECIALS = [
   { id: "L1", name: "California Roll and Eel Avocado Roll", price: "$10.25", description: "" },
   { id: "L2", name: "Spicy Tuna Roll and California Roll", price: "$10.25", description: "" },
-  { id: "L3", name: "Salmon Roll and California Roll", price: "$10.25", description: "" },
+  { id: "L3", image: L3, name: "Salmon Roll and California Roll", price: "$10.25", description: "" },
   { id: "L4", name: "Tuna Roll and California Roll", price: "$10.25", description: "" },
   { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.25", description: "" },
   { id: "L6", name: "Two California Rolls", price: "$10.25", description: "" },
@@ -30,10 +34,10 @@ const MAKI_SPECIALS = [
 ];
 
 const BENTO_BOXES = [
-  { id: "L9", name: "Shrimp Tempura and California Roll", price: "$10.95", description: "" },
-  { id: "L10", name: "Chicken Teriyaki and California Roll", price: "$10.95", description: "" },
+  { id: "L9", image: L9, name: "Shrimp Tempura and California Roll", price: "$10.95", description: "" },
+  { id: "L10", image: L10, name: "Chicken Teriyaki and California Roll", price: "$10.95", description: "" },
   { id: "L11", name: "Crispy Sesame Chicken and California Roll", price: "$10.95", description: "" },
-  { id: "L12", name: "Vegetable Tempura and California Roll", price: "$10.95", description: "" },
+  { id: "L12", image: L12, name: "Vegetable Tempura and California Roll", price: "$10.95", description: "" },
 ];
 
 export default function Specials() {

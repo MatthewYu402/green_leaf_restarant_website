@@ -28,14 +28,18 @@ import SushiAndSashimi from "@/assets/images/sushi-and-sashimi.jpg";
 import SummerRoll from '@/assets/images/appetizers/summer-roll.jpg'
 import FriedCalamari from '@/assets/images/appetizers/fried-calamari.webp'
 import GreenLeafDumplings from '@/assets/images/appetizers/green-leaf-dumplings.jpg'
-import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
 import ScallionPancakeStringBean from '@/assets/images/appetizers/scallion-pancake-string-bean.jpg'
 import OceanGardenRoll from '@/assets/images/appetizers/ocean-garden-roll.jpg'
 import CrispyWontons from '@/assets/images/appetizers/crispy-wontons.jpg'
+import Shumai from '@/assets/images/appetizers/shumai.jpg'
+import AgeTofu from '@/assets/images/appetizers/age-tofu.jpg'
 
-// Soup Images
+// Soup and Salad Images
 import MisoSoup from '@/assets/images/soups-salads/miso-soup.jpg'
 import IceCream from '@/assets/images/ice-cream.png'
+import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
+import SushiBarSalad from '@/assets/images/soups-salads/sushi-bar-salad.jpg'
+import HotAndSourSoup from '@/assets/images/soups-salads/hot-and-sour-soup.jpg'
 
 const APPETIZERS_FEATURED = [
   { name: "Green Leaf Dumplings", image: GreenLeafDumplings, price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
@@ -46,8 +50,8 @@ const APPETIZERS_FEATURED = [
 ];
 
 const APPETIZERS_ITEMS = [
-  { name: "Age Tofu", price: "$4.95", description: "Fried bean cure served with tempura sauce" },
-  { name: "Shumai (6)", price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)"},
+  { name: "Age Tofu", image: AgeTofu, price: "$4.95", description: "Fried bean cure served with tempura sauce" },
+  { name: "Shumai (6)", image: Shumai, price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)"},
   { name: "Japanese Vegetable Spring Roll (3)", price: "$5.50", description: "" },
   { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried tempura style shrimp with vegetables" },
   { name: "Tuna Tartare", price: "$10.95", description: "Marinated tuna and avocado with special sauce" },
@@ -60,13 +64,13 @@ const APPETIZERS_ITEMS = [
 const SOUPS_SALADS_FEATURED = [
   { name: "Miso Soup", image: MisoSoup, price: "$2.95", description: "Miso broth with tofu, seaweed, and scallions" },
   { name: "Green Leaf Dumpling Soup", price: "$5.50", description: "Chicken dumpling in savory chicken broth" },
-  { name: "Hot and Sour Soup", price: "$4.95", description: "" },
+  { name: "Hot and Sour Soup", image: HotAndSourSoup, price: "$4.95", description: "" },
   { name: "Egg Drop Soup", price: "$3.95", description: "" },
   { name: "Chicken, Barley, and Brown Rice Soup", price: "$5.95", description: "" },
 ];
 
 const SOUPS_SALADS_ITEMS = [
-  { name: "Sushi Bar Salad", price: "$6.95", description: "Seaweed salad base with cucumber and crabstick topped spicy mayonaise and tempura flakes" },
+  { name: "Sushi Bar Salad", image: SushiBarSalad, price: "$6.95", description: "Seaweed salad base with cucumber and crabstick topped spicy mayonaise and tempura flakes" },
   { name: "Seaweed Salad", price: "$5.95", description: "Refreshing wakame seaweed in sweet and savory dressing" },
   { name: "Hawaiian Poke Salad Bowl", price: "$11.95", description: "Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce" },
   { name: "California Style Salad", price: "$6.95", description: "Crabstick, avocado, cucumber, and spicy mayo" },
