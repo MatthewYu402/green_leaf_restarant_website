@@ -226,7 +226,7 @@ export default function SushiMenu() {
             <h2>20th Year Anniversary Roll</h2>
             <p className="special-feature-description">A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced japaleňo. </p>
             <span className="divider-line"></span>
-            <p className="special-feature-price">$14.95</p>
+            <p className="special-feature-price">$15.50</p>
           </div>
           <div className="special-feature-right">
             <img className="twenty-year-roll" src={TwentyYearRoll}></img>
