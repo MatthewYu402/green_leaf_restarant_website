@@ -126,11 +126,11 @@ const DONBURI_ITEMS = [
   { name: "Tekka Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh tuna" },
   { name: "Salmon Don", price: "$20.95", description: "Bowl of seasoned rice topped with fresh salmon" },
   { name: "Chirashi Don", price: "$20.95", description: "Bowl of seasoned rice with assorted raw fish" },
-  { name: "Una-jyu", price: "$20.95", description: "Broiled fresh water eel with special sauce over rice" },
+  { name: "Una-jyu", price: "$21.95", description: "Broiled fresh water eel with special sauce over rice" },
 ];
 
 const SUSHI_SASHIMI_ITEMS = [
-  { name: "Sushi Deluxe", price: "$20.95", description: "8 piece sushi (chef's choice) and a tuna roll" },
+  { name: "Sushi Deluxe", price: "$21.95", description: "8 piece sushi (chef's choice) and a tuna roll" },
   { name: "Sashimi Deluxe", price: "$24.95", description: "15 piece sashimi (chef's choice)" },
   { name: "Sushi and Sashimi Combo", price: "$29.95", description: "" },
   { name: "Family Boat", price: "$59.95", description: "15 pieces sashimi (chef's choice), 5 piece nigiri (chef's choice), california roll, and spicy tuna roll." },
