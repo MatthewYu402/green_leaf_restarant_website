@@ -41,12 +41,17 @@ import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
 import SushiBarSalad from '@/assets/images/soups-salads/sushi-bar-salad.jpg'
 import HotAndSourSoup from '@/assets/images/soups-salads/hot-and-sour-soup.jpg'
 
+
+// Changed: 
+/**
+ * Crispy Wonton - $6.50
+ */
 const APPETIZERS_FEATURED = [
   { name: "Green Leaf Dumplings", image: GreenLeafDumplings, price: "$5.50", description: "Pan-seared chicken dumplings in spinach wrap" },
   { name: "Scallion Pancake and String Bean", image: ScallionPancakeStringBean, price: "$8.50", description: "Savory stir-fried green beans wrapped in cripsy scallion pancake" },
   { name: "Edamame", price: "$5.50", description: "Steamed soybeans with sea salt" },
   { name: "Summer Roll", image: SummerRoll, price: "$6.95", description: "Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper" },
-  { name: "Crispy Wonton (6)", image: CrispyWontons, price: "$5.95", description: "Fried wontons filled with cream cheese with crab meat" },
+  { name: "Crispy Wonton (6)", image: CrispyWontons, price: "$6.50", description: "Fried wontons filled with cream cheese with crab meat" },
 ];
 
 const APPETIZERS_ITEMS = [
@@ -93,6 +98,12 @@ const MEAT_ITEMS = [
   { name: "Fried Tonkatsu", price: "$14.95", description: "Breaded pork loin with special savory sauce" },
 ];
 
+
+/**
+ * Changes:
+ * Pecan Crusted Salmon Filet - $20.95 
+ * Grilled Slmon Filet with House Salad - $20.95
+ */
 const SEAFOOD_GROUPS = [
   {
     subheading: "Shared Favorites",
@@ -101,8 +112,8 @@ const SEAFOOD_GROUPS = [
       { name: "Green Leaf Pasta", price: "$19.95", description: "Shrimp, scallops, and baby bok choy over spinach noodles" },
       { name: "Crispy Jumbo Shrimp", price: "$17.95", description: "Tempura-fried jumbo shrimp served with honey sesame sauce" },
       { name: "Seafood Combo", price: "$19.95", description: "Scallop and shrimp stir-fried with bell pepper, tomato and onion, served in a thai curry sauce, " },
-      { name: "Pecan Crusted Salmon Filet", price: "$19.95", description: "" },
-      { name: "Grilled Salmon Filet", price: "$19.95", description: "Fresh grilled salmon filet, served with a house salad" },
+      { name: "Pecan Crusted Salmon Filet", price: "$20.95", description: "" },
+      { name: "Grilled Salmon Filet", price: "$20.95", description: "Fresh grilled salmon filet, served with a house salad" },
       { name: "Shrimp with Brocolli", price: "$17.95", description: "" },
       { name: "Shrimp with Mixed Vegetables", price: "$17.95", description: "" },
     ],
@@ -140,12 +151,19 @@ const SUSHI_SASHIMI_ITEMS = [
   { name: "Family Boat", price: "$59.95", description: "15 pieces sashimi (chef's choice), 5 piece nigiri (chef's choice), california roll, and spicy tuna roll." },
 ];
 
+/**
+ * Changes:
+ * Drunken Noodles Shrimp Or Chicken - $16.95
+ * Drukeeb Noodles w Beef - $17.95
+ */
+
 const NOODLES_ITEMS = [
   { name: "Japanese Pan Noodle", price: "$18.95", description: "Chicken, shrimp, and vegetables" },
   { name: "Pad Thai", price: "$14.95", description: "Chicken or shrimp" },
   { name: "Singapore Rice Noodles", price: "$14.95", description: "Chicken or shrimp" },
   { name: "Yaki Udon Noodles", price: "$14.95", description: "Chicken or shrimp" },
-  { name: "Drunken Noodles", price: "$15.95", description: "Chicken or shrimp (beef +$2.00)" },
+  { name: "Drunken Noodles Chicken or Shrimp", price: "$16.95", description: "Sautéed rice noodles with vegetables in a curry sauce" },
+  { name: "Drunken Noodles with Beef", price: "$17.95", description: ""},
   { name: "Japanese Fried Rice", price: "$13.95", description: "Chicken or shrimp" },
   { name: "Roasted Pork Fried Rice", price: "$13.95", description: "Pork and vegetables" },
   { name: "Nabe Yaki Udon Soup", price: "$14.95", description: "Pork and vegetables" },

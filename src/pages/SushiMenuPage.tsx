@@ -152,14 +152,25 @@ const SUSHISPECIALROLLS:RollItem[] = [
   { name: "Butter Roll", image: ButterRoll, description: "Sandwich style with spicy salmon, topped with avocado, fresh salmon, tempura flakes, and special sauce (no seaweed) ", price: "$14.95" },
 ];
 
+// 
+
+
+/*
+/**
+ * Changed:
+ * Califioria - $6.50
+ * 
+ *  
+ */
+
 const MAKI_ROLLS: RollItem[] = [
-  { name: "California Roll", description: "Crabstick, avocado, and fish roe", price: "$5.95" },
+  { name: "California Roll", description: "Crabstick, avocado, and fish roe", price: "$6.50" },
   { name: "Philadelphia Roll", description: "Smoked salmon, cream cheese, and cucumber", price: "$6.95" },
   { name: "Dragon Roll", description: "Shrimp tempura topped with eel and avocado", price: "$14.95" },
   { name: "Volcano Roll", description: "Tuna and salmon topped with torched spicy sauce", price: "$8.95" },
   { name: "Rainbow Roll", description: "Crabstick and avocado, topped with salmon, tuna, and avocado", price: "$12.95" },
-  { name: "Crazy Rock'n Roll", description: "Eel and shrimp topped with avocado", price: "$14.95" },
-  { name: "Spider Roll", description: "Soft-shell crab with cucumber and fish roe", price: "$10.95" },
+  { name: "Crazy Rock'n Roll", description: "Eel and shrimp topped with avocado", price: "$14.95" },  
+  { name: "Spider Roll", description: "Soft-shell crab with cucumber and fish roe", price: "$10.95"},
   { name: "Tuna", description: "", price: "$5.25" },
   { name: "Spicy Tuna", description: "", price: "$6.95" },
   { name: "Tuna Avocado", description: "", price: "$6.95" },
@@ -170,7 +181,7 @@ const MAKI_ROLLS: RollItem[] = [
   { name: "Lobster", description: "", price: "$11.95" },
   { name: "Lump Crabmeat Avocado", description: "", price: "$10.95" },
   { name: "Crispy Spicy Crab Roll", description: "", price: "$11.95" },
-  { name: "Salmon", description: "", price: "$5.25" },
+  { name: "Salmon", description: "", price: "6.50" },
   { name: "Salmon Avocado", description: "", price: "$6.95" },
   { name: "Spicy Salmon", description: "", price: "$6.95" },
   { name: "Shrimp Avocado", description: "", price: "$6.95" },
@@ -181,27 +192,64 @@ const MAKI_ROLLS: RollItem[] = [
   { name: "Spicy Yellowtail", description: "", price: "$7.95" },
 ];
 
+
+/**
+ * Changes:
+ * 
+ * 
+ * Nigiri:
+ * Crabstick - $5.25
+ * White Tuna - $5.75
+ * Tuna - $5.75
+ * Surf Clam - $5.75
+ * Squid - $5.75
+ * Smoked Salmon - $5.75
+ * Scallop  - $5.75
+ * Salmon - $5.75
+ * Red Snapper - $5.75
+ * Octopus - $5.75
+ * Mackeral- $5.75
+ * 
+ * Fresh Water Eel - $6.25
+ * 
+ * Sashimi: 
+ * Crabsticks - $6.50
+ * White Tuna - $7.25
+ * Tuna - $7.25
+ * Surf Clam - $7.25 
+ * Squid - $7.25
+ * Smoked Salmon - $7.25
+ * Scallop - $7.25 
+ * Salmon - $7.25
+ * Red Snapper - $7.25
+ * Octopus - $7.25
+ * Mackeral - $7.25
+ * 
+ * Ebi Shrimp - $7.25
+ * Yellowtail - $7.25
+ * 
+ */
 const NIGIRI_SASHIMI: NigiriItem[] = [
-  { name: "Tuna", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "White Tuna", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Salmon", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
+  { name: "Tuna", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "White Tuna", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Salmon", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
   { name: "Salmon Roe", image: SalmonRoe, fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$5.95" },
-  { name: "Smoked Salmon", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Crab Stick", fillingNote: "", nigiriPrice: "$4.95", sashimiPrice: "$5.95" },
+  { name: "Smoked Salmon", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Crab Stick", fillingNote: "", nigiriPrice: "$5.25", sashimiPrice: "$6.50" },
   { name: "Lobster", fillingNote: "", nigiriPrice: "$8.95", sashimiPrice: "$10.95" },
-  { name: "Mackeral", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
+  { name: "Mackeral", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
   { name: "Bean Curd", fillingNote: "", nigiriPrice: "$4.95", sashimiPrice: "$5.95" },
   { name: "Flying Fish Roe", fillingNote: "", nigiriPrice: "$4.95", sashimiPrice: "$5.50" },
-  { name: "Freshwater Eel", fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$7.95" },
-  { name: "Octopus", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Red Snapper", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Scallop", image: ScallopNigiri, fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Squid", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Surf Clam", fillingNote: "", nigiriPrice: "$5.50", sashimiPrice: "$6.95" },
-  { name: "Ebi Shrimp", fillingNote: "Cooked", nigiriPrice: "$5.95", sashimiPrice: "$6.95" },
+  { name: "Freshwater Eel", fillingNote: "", nigiriPrice: "$6.25", sashimiPrice: "$7.95" },
+  { name: "Octopus", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Red Snapper", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Scallop", image: ScallopNigiri, fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Squid", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Surf Clam", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
+  { name: "Ebi Shrimp", fillingNote: "Cooked", nigiriPrice: "$5.95", sashimiPrice: "$7.25" },
   { name: "Sweet Shrimp", fillingNote: "Raw", nigiriPrice: "$8.95", sashimiPrice: "$8.95" },
   { name: "Tamago", fillingNote: "Egg", nigiriPrice: "$4.95", sashimiPrice: "$5.95" },
-  { name: "Yellowtail", fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$6.95" },
+  { name: "Yellowtail", fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$7.25" },
   { name: "Uni", fillingNote: "Market Price", nigiriPrice: "M.P", sashimiPrice: "M.P" },
 ];
 
