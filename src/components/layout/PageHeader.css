@@ -6,6 +6,8 @@
   height: 130px;
   background: url("/src/assets/images/menu-background.svg");
   background-color: var(--green-nav);
+  background-size: cover;       /* NEW */
+  background-position: center;  /* NEW */
   z-index: 5;
   transition: height 0.35s ease;
   overflow: hidden;
@@ -16,6 +18,9 @@
   height: 260px;
   background: url("/src/assets/images/menu-background.svg");
   background-color: var(--green-nav);
+  background-size: cover;       /* NEW */
+  background-position: center;  /* NEW */
+  background-repeat: no-repeat;  /* add this */
   display: flex;
   flex-direction: column;
   align-items: center;
