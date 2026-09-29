@@ -55,7 +55,7 @@ const APPETIZERS_FEATURED = [
 ];
 
 const APPETIZERS_ITEMS = [
-  { name: "Age Tofu", image: AgeTofu, price: "$4.95", description: "Fried bean cure served with tempura sauce" },
+  { name: "Age Tofu", image: AgeTofu, price: "$5.50", description: "Fried bean cure served with tempura sauce" },
   { name: "Shumai (6)", image: Shumai, price: "$5.95", description: "Steamed Shrimp Dumplings (Japanese Style)"},
   { name: "Japanese Vegetable Spring Roll (3)", price: "$5.50", description: "" },
   { name: "Shrimp Tempura", price: "$7.95", description: "Deep-fried tempura style shrimp with vegetables" },
@@ -85,6 +85,10 @@ const SOUPS_SALADS_ITEMS = [
   { name: "Marinated Calamari Salad", price: "$7.95", description: "" },
 ];
 
+/**
+ * Changes:
+ * Added Chicken and Mixed Vegetables 
+ */
 const MEAT_ITEMS = [
   { name: "Honey Sesame Chicken", price: "$14.95", description: "" },
   { name: "Thai Curry Chicken", price: "$15.95", description: "" },
@@ -94,7 +98,8 @@ const MEAT_ITEMS = [
   { name: "Beef and Brocolli", price: "$17.95", description: "" },
   { name: "Chicken and Brocolli", price: "$14.95", description: "" },
   { name: "Chicken and String Beans", price: "$14.95", description: "" },
-  { name: "Chicken and Mixed Vegetables", price: "$14.95", description: "Beef (+$3.00)" },
+  { name: "Chicken and Mixed Vegetables", price: "$14.95", description: "" },
+  { name: "Beef and Mixed Vegetables", price: "$17.95", description: "" },
   { name: "Fried Tonkatsu", price: "$14.95", description: "Breaded pork loin with special savory sauce" },
 ];
 

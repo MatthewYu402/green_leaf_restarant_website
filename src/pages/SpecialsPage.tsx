@@ -30,8 +30,8 @@ const MAKI_SPECIALS = [
   { id: "L4", name: "Tuna Roll and California Roll", price: "$10.25", description: "" },
   { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.25", description: "" },
   { id: "L6", name: "Two California Rolls", price: "$10.25", description: "" },
-  { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$13.25", description: "" },
-  { id: "L8", name: "Sashimi Special (Chef's Choice)", price: "$15.95", description: "" },
+  { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$14.25", description: "" },
+  { id: "L8", name: "Sashimi Special (Chef's Choice)", price: "$16.95", description: "" },
 ];
 
 const BENTO_BOXES = [
