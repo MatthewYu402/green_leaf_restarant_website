@@ -390,7 +390,6 @@ export default function MainMenu() {
         <RollAccordion title="Cold Refreshments" items={toAccordionItems(COLD_ITEMS)} />
         <RollAccordion title="Hot Beverages" items={toAccordionItems(WARM_ITEMS)} />
         <RollAccordion title="Desserts" items={toAccordionItems(DESSERT_ITEMS)} />
-        <RollAccordion title="Desserts" items={toAccordionItems(DESSERT_ITEMS)} />
 
       </div>
     </div>
