@@ -7,7 +7,7 @@ import SpecialItemGrid from './SpecialItemGrid';
 import forkKnifeIcon from '@/assets/icons/fork-knife-icon.svg';
 
 // Images
-import ChefSpecialImage from '@/assets/images/coming-soon.png';
+import ChefSpecialImage from '@/assets/images/sneak-peak-images/coming-soon.png';
 import ChickenLettuceWrap from '@/assets/images/appetizers/chicken-lettuce-wrap.jpg'
 
 export { ChefSpecialImage };

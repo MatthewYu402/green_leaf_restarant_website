@@ -3,7 +3,7 @@ import { NavLink, useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
 
 // Images
-import restaurantLogo from "@/assets/images/green-leaf-logo.png";
+import restaurantLogo from "@/assets/images/logo-front/green-leaf-logo.png";
 
 const navLinks = [
   { label: 'Home', href: '/' },

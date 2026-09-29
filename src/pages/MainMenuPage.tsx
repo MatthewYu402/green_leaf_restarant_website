@@ -20,9 +20,9 @@ import waterDropIcon from "@/assets/icons/water-drop-icon.svg";
 import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 
 // Images
-import AppetizersImage from "@/assets/images/appetizers/appetizers.jpg";
-import SoupImage from "@/assets/images/soups-and-salad.png"
-import SushiAndSashimi from "@/assets/images/sushi-and-sashimi.jpg";
+import AppetizersImage from "@/assets/images/sneak-peak-images/appetizers.jpg";
+import SoupImage from "@/assets/images/sneak-peak-images/soups-and-salad.png";
+import SushiAndSashimi from "@/assets/images/sneak-peak-images/sushi-and-sashimi.jpg";
 
 // Appetizer Images
 import SummerRoll from '@/assets/images/appetizers/summer-roll.jpg'
@@ -36,7 +36,7 @@ import AgeTofu from '@/assets/images/appetizers/age-tofu.jpg'
 
 // Soup and Salad Images
 import MisoSoup from '@/assets/images/soups-salads/miso-soup.jpg'
-import IceCream from '@/assets/images/ice-cream.png'
+import IceCream from '@/assets/images/sneak-peak-images/ice-cream.png';
 import BabyOctopusSalad from '@/assets/images/soups-salads/octopus-salad.png'
 import SushiBarSalad from '@/assets/images/soups-salads/sushi-bar-salad.jpg'
 import HotAndSourSoup from '@/assets/images/soups-salads/hot-and-sour-soup.jpg'

@@ -7,7 +7,8 @@ import circleIcon from "@/assets/icons/circle.svg";
 import forkKnifeIcon from "@/assets/icons/fork-knife-icon.svg";
 
 // Images
-import FillerImage from '@/assets/images/sushi-roll-1.jpg'
+// TODO: Change Filler Image
+import FillerImage from '@/assets/images/sneak-peak-images/double-eel-roll.jpg';
 import L3 from "@/assets/images/specials/L3-maki.jpg"
 import L9 from "@/assets/images/specials/L9-bento.jpg"
 import L10 from "@/assets/images/specials/L10-bento.jpg"

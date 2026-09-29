@@ -15,7 +15,7 @@ import circleIcon from '@/assets/icons/circle.svg'
 import phoneIcon from '@/assets/icons/reservation.svg'
 
 // Images
-import FamilyImage from '@/assets/images/green-leaf-front.webp'
+import FamilyImage from '@/assets/images/logo-front/green-leaf-front.webp'
 import GalleryImage1 from '@/assets/images/about-us-gallery/new-years.jpg'
 import GalleryImage2 from '@/assets/images/about-us-gallery/sunday-regulars.webp'
 import GalleryImage3 from '@/assets/images/about-us-gallery/neigborhood.jpg'

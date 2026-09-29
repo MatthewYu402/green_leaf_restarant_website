@@ -6,7 +6,7 @@ import Section from '../shared/Section'
 
 // Images
 // TODO: replace with real photo
-import FamilyImage from '@/assets/images/green-leaf-front.webp'
+import FamilyImage from '@/assets/images/logo-front/green-leaf-front.webp';
 
 export default function StoryTeaser() {
   return (

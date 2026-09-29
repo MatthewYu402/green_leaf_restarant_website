@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   height: 130px;
-  background: url("/src/assets/images/menu-background.svg");
+  background: url("/src/assets/images/background-images/menu-background.svg");
   background-color: var(--green-nav);
   background-size: cover;       /* NEW */
   background-position: center;  /* NEW */
@@ -16,7 +16,7 @@
 
 .page-header-visual-menu {
   height: 260px;
-  background: url("/src/assets/images/menu-background.svg");
+  background: url("/src/assets/images/background-images/menu-background.svg");
   background-color: var(--green-nav);
   background-size: cover;       /* NEW */
   background-position: center;  /* NEW */
@@ -121,7 +121,7 @@
     text-align: center;
     background: transparent;
     /* fallback for routes with no mobileImage, e.g. /menu */
-    background: url("/src/assets/images/menu-background.svg");
+    background: url("/src/assets/images/background-images/menu-background.svg");
     background-color: var(--green-nav);
     background-size: cover;
     background-position: center;
