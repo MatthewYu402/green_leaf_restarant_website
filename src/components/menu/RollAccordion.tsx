@@ -3,6 +3,7 @@ import './RollAccordion.css';
 import ItemPhotoTrigger from '../shared/ItemPhotoTrigger';
 
 export interface AccordionItem {
+  id?: string;          // NEW — optional menu code, e.g. "L1"
   name: string;
   description?: string;
   priceDisplay: string;
@@ -120,6 +121,7 @@ function AccordionItemRow({ item }: { item: AccordionItem }) {
     <div className="roll-accordion-item">
       <div className="roll-accordion-item-header">
         <span className="roll-accordion-item-name-group">
+          {item.id && <span className="roll-accordion-item-id">{item.id}</span>}
           <h4 className="roll-accordion-item-name">{item.name}</h4>
           {item.image && <ItemPhotoTrigger image={item.image} alt={item.name} />}
         </span>

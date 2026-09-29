@@ -161,3 +161,24 @@
   gap: 4px;
   min-width: 0;
 }
+
+.roll-accordion-item-id {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 2px 6px;
+  border: 2px solid var(--gold-accent);
+  background: var(--green-dark);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-accent);
+  line-height: 1.4;
+}
+
+/* The subheading is the group's first child, so the first item is never
+   :first-child — this removes its top border so it doesn't double up
+   with the subheading's own bottom border */
+.roll-accordion-subheading+.roll-accordion-item {
+  border-top: none;
+}

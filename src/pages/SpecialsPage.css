@@ -4,107 +4,9 @@
   flex-shrink: 0;
 }
 
-.specials-title {
-  text-align: center;
-  font-family: var(--libre);
-  color: var(--green-dark);
-  margin: 80px 0 32px;
-  font-size: 64px;
-}
-
-.specials-intro {
-  text-align: center;
-  color: var(--green-dark);
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.lunch-section-title {
-  color: var(--text-dark);
-  font-family: var(--libre);
-  font-size: 56px;
-  font-weight: normal;
-  margin: 0 0 8px;
-}
-
-.lunch-section-subtitle {
-  color: var(--text-dark);
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  margin: 24px 0px 0px;
-}
-
-.lunch-maki-bento-row {
-  max-width: 1400px;
-  margin: 60px auto 0;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 60px;
-}
-
-.lunch-maki-column {
-  flex: 1 1 0;
-  max-width: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.lunch-maki-title {
-  margin: 0;
-  font-family: var(--libre);
-  font-size: 32px;
-  color: var(--text-dark);
-  text-align: left;
-}
-
-.lunch-maki-note {
-  margin: 0;
-  font-size: 18px;
-  color: var(--text-dark);
-  text-align: left;
-  font-style: italic;
-}
-
-.featured-bento-category {
-  flex: 1 1 0;
-  max-width: none;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--green-dark);
-  border: none;
-}
-
-.featured-bento-category .category-image {
-  height: 160px;
-  /* was inherited 250px from MenuCategory.css */
-}
-
-.featured-bento-category .menu-options {
-  max-width: none;
-  width: 100%;
-  flex: 1;
-  padding: 24px;
-  gap: 16px;
-}
-
-.featured-bento-category .menu-options-title {
-  color: var(--gold-light);
-}
-
-.featured-bento-category .menu-item-name {
-  color: var(--text-white);
-}
-
-.featured-bento-category .menu-item-price {
-  color: var(--gold-light);
-}
-
-.featured-bento-category .menu-item-description {
-  color: var(--text-white);
+/* Replaces the spacing the old "Seasonal Selections" title used to provide */
+.desktop-only-dinner {
+  padding-top: 40px;
 }
 
 /* Neutralizes Section's home-page-specific full-height/snap behavior;
@@ -117,43 +19,53 @@
 }
 
 /* ============================================================
-   MOBILE — Chef's Feature at the top, restyled Lunch, and a
-   chef-box-free Dinner grid without arrows
+   MOBILE — Evening Expressions header, Chef's Feature, then
+   the dinner grid
    ============================================================ */
+.specials-mobile-header,
 .chef-feature-mobile-wrapper,
-.dinner-mobile-wrapper,
-.lunch-mobile,
-.specials-mobile-divider {
+.dinner-mobile-wrapper {
   display: none;
 }
 
 @media (max-width: 1024px) {
   .specials-page {
-    margin-inline: var(--mobile-page-margin);  .specials-mobile-divider {
-    display: flex;
-  }
+    margin-inline: var(--mobile-page-margin);
   }
 
-  .specials-title {
-    margin: calc(var(--navbar-height-mobile) + 24px) 0 12px;
-    font-size: 32px;
-  }
-
-  .specials-intro {
-    font-size: 15px;
-  }
-
-  .specials-page .divider {
-    margin: 32px 0;
-  }
-
-  .specials-mobile-divider {
+  /* --- Header --- */
+  .specials-mobile-header {
     display: flex;
   }
 
-  /* --- Chef's Feature (top of page) --- */
+  .dinner-mobile-header {
+    width: 100%;
+    text-align: center;
+    margin: calc(var(--navbar-height-mobile) + 40px) 0 24px;
+  }
+
+  .dinner-mobile-icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto 12px;
+    opacity: 0.6;
+  }
+
+  .dinner-mobile-header .dinner-section-title {
+    font-size: 30px;
+    margin: 0 0 6px;
+  }
+
+  .dinner-mobile-header .dinner-section-subtitle {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  /* --- Chef's Feature --- */
   .chef-feature-mobile-wrapper {
     display: flex;
+    margin-bottom: 24px;
   }
 
   .chef-feature-mobile {
@@ -222,95 +134,7 @@
     font-size: 20px;
   }
 
-  .chef-feature-mobile-cta {
-    background-color: var(--gold-border);
-    color: var(--text-white);
-    border: none;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  /* --- Lunch --- */
-  .lunch-section-title {
-    font-size: 26px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--gray-div);
-  }
-
-  .lunch-section-subtitle {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 13px;
-    text-transform: none;
-    letter-spacing: normal;
-  }
-
-  .lunch-maki-bento-row {
-    display: none;
-  }
-
-  .lunch-mobile {
-    display: block;
-    margin-top: 32px;
-  }
-
-  .lunch-mobile-label {
-    color: var(--gold-dark);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    text-align: left;
-    margin: 32px 0 12px;
-  }
-
-  .lunch-mobile-label:first-child {
-    margin-top: 0;
-  }
-
-  /* Flattens the boxed/shadowed grid into a single list with dividers,
-     and hides the id badges — matches the mockup, doesn't touch the
-     underlying L1-L12 data. */
-  .maki-specials-mobile-list {
-    grid-template-columns: 1fr;
-    gap: 0;
-    background-color: var(--white);
-    border: 2px solid var(--gray-border);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
-
-  .maki-specials-mobile-list .special-item {
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    border-bottom: 1px solid var(--gray-div);
-    padding: 14px;
-  }
-
-  .maki-specials-mobile-list .special-item-header{
-    flex-direction: column;
-  }
-
-  .maki-specials-mobile-list .special-item-name{
-    font-size: 16px;
-  }
-
-  .maki-specials-mobile-list .special-item-price{
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  .maki-specials-mobile-list .special-item:last-child {
-    border-bottom: none;
-  }
-
-  /* --- Dinner --- */
+  /* --- Dinner grid --- */
   .desktop-only-dinner {
     display: none;
   }
@@ -319,29 +143,8 @@
     display: flex;
   }
 
-  .dinner-mobile {
-    width: 100%;
-    text-align: center;
-  }
-
-  .dinner-mobile-icon {
-    width: 28px;
-    height: 28px;
-    margin: 0 auto 12px;
-    opacity: 0.6;
-  }
-
-  .dinner-mobile .dinner-section-title {
-    font-size: 26px;
-    margin: 0 0 6px;
-  }
-
-  .dinner-mobile .dinner-section-subtitle {
-    font-size: 12px;
-    margin: 0 0 24px;
-  }
-
   .dinner-specials-grid-mobile {
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }

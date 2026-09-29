@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Main Menu', href: '/menu' },
   { label: 'Sushi Menu', href: '/sushi' },
-  { label: 'Specials', href: '/specials' },
+  { label: 'Dinner Specials', href: '/specials' },
   { label: 'About Us', href: '/about' },
 ];
 

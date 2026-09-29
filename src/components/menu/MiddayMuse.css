@@ -1,0 +1,82 @@
+.midday-muse {
+  margin: 40px auto 0;
+}
+
+.lunch-section-title {
+  color: var(--text-dark);
+  font-family: var(--libre);
+  font-size: 56px;
+  font-weight: normal;
+  margin: 0 0 8px;
+}
+
+.lunch-section-subtitle {
+  color: var(--text-dark);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 24px 0 0;
+}
+
+.lunch-maki-bento-row {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 60px;
+}
+
+.lunch-maki-column {
+  flex: 1 1 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lunch-maki-title {
+  margin: 0;
+  font-family: var(--libre);
+  font-size: 32px;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+.midday-muse .featured-bento-category {
+  flex: 1 1 0;
+  max-width: none;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--green-dark);
+  border: none;
+}
+
+.midday-muse .featured-bento-category .category-image {
+  height: 160px;
+}
+
+.midday-muse .featured-bento-category .menu-options {
+  max-width: none;
+  width: 100%;
+  flex: 1;
+  padding: 24px;
+  gap: 16px;
+}
+
+.midday-muse .featured-bento-category .menu-options-title {
+  color: var(--gold-light);
+}
+
+.midday-muse .featured-bento-category .menu-item-name {
+  color: var(--text-white);
+}
+
+.midday-muse .featured-bento-category .menu-item-price {
+  color: var(--gold-light);
+}
+
+.midday-muse .featured-bento-category .menu-item-description {
+  color: var(--text-white);
+}

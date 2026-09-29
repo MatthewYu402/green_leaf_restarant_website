@@ -7,6 +7,7 @@ import Section from "../components/shared/Section";
 import FeaturedMenuSection from "../components/menu/FeaturedMenuSection";
 import DrinksDesserts from "../components/menu/DrinksDesserts";
 import RollAccordion from "../components/menu/RollAccordion";
+import MiddayMuse, { MAKI_SPECIALS, BENTO_BOXES } from "../components/menu/MiddayMuse";
 
 // Icons
 import goldLeaf from "@/assets/icons/gold-leaf.svg";
@@ -218,16 +219,21 @@ const DESSERT_ITEMS = [
   { name: "Tempura Fried Cheesecake", price: "$6.25", description: "" },
 ];
 
-const toAccordionItems = (items: { name: string; price: string; description: string; image?: string }[]) =>
-  items.map((i) => ({ name: i.name, description: i.description, priceDisplay: i.price, image: i.image }));
+type SourceItem = { id?: string; name: string; price: string; description: string; image?: string };
 
-const toAccordionGroups = (
-  groups: { subheading: string; items: { name: string; price: string; description: string }[] }[]
-) =>
+const toAccordionItems = (items: SourceItem[]) =>
+  items.map((i) => ({ id: i.id, name: i.name, description: i.description, priceDisplay: i.price, image: i.image }));
+
+const toAccordionGroups = (groups: { subheading: string; items: SourceItem[] }[]) =>
   groups.map((g) => ({
     subheading: g.subheading,
     items: toAccordionItems(g.items),
   }));
+
+const LUNCH_GROUPS = [
+  { subheading: "Lunch Maki Specials", items: MAKI_SPECIALS },
+  { subheading: "Featured Bento Boxes", items: BENTO_BOXES },
+];
 
 export default function MainMenu() {
   return (
@@ -309,7 +315,15 @@ export default function MainMenu() {
         </Section>
 
         <Section className='reveal-block-fade'>
-          <Divider iconUrl={goldLeaf} iconAlt="tempura-icon" thickness="2px" lineWidth="600px" />
+          <Divider iconUrl={goldLeaf} iconAlt="" thickness="2px" lineWidth="600px" />
+        </Section>
+
+        <Section className="reveal-block-slide">
+          <MiddayMuse />
+        </Section>
+
+        <Section className='reveal-block-fade'>
+          <Divider iconUrl={goldLeaf} iconAlt="" thickness="2px" lineWidth="600px" />
         </Section>
 
         <Section className="reveal-block-slide">
@@ -370,13 +384,15 @@ export default function MainMenu() {
         <RollAccordion title="Donburi & Una-jyu" items={toAccordionItems(DONBURI_ITEMS)} />
         <RollAccordion title="Sushi & Sashimi" items={toAccordionItems(SUSHI_SASHIMI_ITEMS)} />
         <RollAccordion title="Noodles & Fried Rice" items={toAccordionItems(NOODLES_ITEMS)} />
+        <RollAccordion title="Lunch Specials" groups={toAccordionGroups(LUNCH_GROUPS)} />
         <RollAccordion title="Vegetarian" items={toAccordionItems(VEGETARIAN_ITEMS)} />
         <RollAccordion title="Teriyaki & Tempura" items={toAccordionItems(TERIYAKI_TEMPURA_ITEMS)} />
         <RollAccordion title="Cold Refreshments" items={toAccordionItems(COLD_ITEMS)} />
         <RollAccordion title="Hot Beverages" items={toAccordionItems(WARM_ITEMS)} />
         <RollAccordion title="Desserts" items={toAccordionItems(DESSERT_ITEMS)} />
-      </div>
+        <RollAccordion title="Desserts" items={toAccordionItems(DESSERT_ITEMS)} />
 
+      </div>
     </div>
   );
 }
