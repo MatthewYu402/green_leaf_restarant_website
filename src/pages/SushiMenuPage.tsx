@@ -34,6 +34,7 @@ import FourteenthYearRoll from '@/assets/images/anniversary-rolls/fourteenth-yea
 import FifteenthYearRoll from '@/assets/images/anniversary-rolls/fifteenth-year-roll.jpg'
 import SixteenthYearRoll from '@/assets/images/anniversary-rolls/sixteenth-year-roll.jpg'
 import SeventeenthYearRoll from '@/assets/images/anniversary-rolls/seventeenth-year-roll.jpg'
+import EighteenthYearRoll from '@/assets/images/anniversary-rolls/eighteenth-year-roll.jpg';
 import NineteenthYearRoll from '@/assets/images/anniversary-rolls/nineteenth-year-roll.jpg'
 import TwentyYearRoll from '@/assets/images/anniversary-rolls/twenty-year-roll.jpg'
 
@@ -85,7 +86,7 @@ const ANNIVERSARY_ROLLS:RollItem[]= [
   { name: "2nd Year", image: SecondYearRoll, description: "Spicy yellowtail topped with avocado and tuna", price: "$15.50" },
   { name: "3rd Year", image: ThirdYearRoll, description: "Fusion-style spicy tuna roll paired with tuna, calamari salad, cucumber, and seaweed salad", price: "$15.50" },
   { name: "4th Year", image: FourthYearRoll, description: "Spicy tuna, avocado, and crabmeat topped with tuna", price: "$15.50" },
-  { name: "5th Year", image: FifthYearRoll, description: "Spicy tuna and crabmear, topped with white tuna, salmon, tuna, avocado, and tempura flakes", price: "$15.50" },
+  { name: "5th Year", image: FifthYearRoll, description: "Spicy tuna and crabmeat, topped with white tuna, salmon, tuna, avocado, and tempura flakes", price: "$15.50" },
   { name: "6th Year", image: SixthYearRoll, description: "Spicy salmon and avocado, topped with fresh salmon, cream cheese, and tempura flakes", price: "$15.50" },
   { name: "7th Year", image: SeventhYearRoll, description: "Spicy tuna and salmon, topped with spicy crabmeat and scallop", price: "$15.50" },
   { name: "8th Year", image: EighthYearRoll, description: "Spicy tuna, topped with avocado and spicy salmon", price: "$15.50" },
@@ -98,7 +99,7 @@ const ANNIVERSARY_ROLLS:RollItem[]= [
   { name: "15th Year", image: FifteenthYearRoll, description: "Spicy salmon and crispy rice, topped with salmon and avocado with spicy sauce", price: "$15.50" },
   { name: "16th Year", image: SixteenthYearRoll, description: "Spicy yellowtail and crispy rice, topped with salmon, avocado, and spicy sauce", price: "$15.50" },
   { name: "17th Year", image: SeventeenthYearRoll, description: "Spicy salmon and avocado, topped with white tuna, spicy salmon, and roe", price: "$15.50" },
-  { name: "18th Year", image: EighthYearRoll, description: "Shrimp tempuram crabstick, and avocado, topped with spicy tuna and spicy sauce", price: "$15.50" },
+  { name: "18th Year", image: EighteenthYearRoll, description: "Shrimp tempura, crabstick, and avocado, topped with spicy tuna and spicy sauce", price: "$15.50" },
   { name: "19th Year", image: NineteenthYearRoll, description: "Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce", price: "$15.50" },
   { name: "20th Year", image: TwentyYearRoll, description: "Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce", price: "$15.50" },
 ];
