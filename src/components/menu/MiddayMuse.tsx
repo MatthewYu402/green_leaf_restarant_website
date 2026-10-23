@@ -14,13 +14,13 @@ import L12 from '@/assets/images/specials/L12-bento.jpg';
 import './MiddayMuse.css';
 
 export const MAKI_SPECIALS = [
-  { id: "L1", name: "California Roll and Eel Avocado Roll", price: "$10.25", description: "" },
-  { id: "L2", name: "Spicy Tuna Roll and California Roll", price: "$10.25", description: "" },
-  { id: "L3", image: L3, name: "Salmon Roll and California Roll", price: "$10.25", description: "" },
-  { id: "L4", name: "Tuna Roll and California Roll", price: "$10.25", description: "" },
-  { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.25", description: "" },
-  { id: "L6", name: "Two California Rolls", price: "$10.25", description: "" },
-  { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$14.25", description: "" },
+  { id: "L1", name: "California Roll and Eel Avocado Roll", price: "$10.50", description: "" },
+  { id: "L2", name: "Spicy Tuna Roll and California Roll", price: "$10.50", description: "" },
+  { id: "L3", image: L3, name: "Salmon Roll and California Roll", price: "$10.50", description: "" },
+  { id: "L4", name: "Tuna Roll and California Roll", price: "$10.50", description: "" },
+  { id: "L5", name: "Shrimp Avocado Roll and California Roll", price: "$10.50", description: "" },
+  { id: "L6", name: "Two California Rolls", price: "$10.50", description: "" },
+  { id: "L7", name: "Sushi Special (Chef's Choice)", price: "$14.95", description: "" },
   { id: "L8", name: "Sashimi Special (Chef's Choice)", price: "$16.95", description: "" },
 ];
 

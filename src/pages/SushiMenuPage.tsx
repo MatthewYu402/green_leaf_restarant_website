@@ -5,6 +5,8 @@ import flowerIcon from "@/assets/icons/flower-icon.svg"
 import circleIcon from "@/assets/icons/circle.svg"
 import goldLeafIcon from "@/assets/icons/gold-leaf.svg"
 import appleIcon from "@/assets/icons/apple-icon.svg"
+// Menu PDFs
+import sushiMenuPdf from "@/assets/menu_pdfs/sushi_menu.pdf"
 // Images
 
 
@@ -267,6 +269,17 @@ const SUSHI_PLATTERS = [
 export default function SushiMenu() {
   return (
     <div className="sushi-menu-page">
+
+      <div className="sushi-menu-pdf">
+        <a
+          href={sushiMenuPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="sushi-menu-pdf-btn"
+        >
+          View Sushi Menu (PDF)
+        </a>
+      </div>
 
       <Section className='reveal-block-fade'>
         <div className="special-feature">
