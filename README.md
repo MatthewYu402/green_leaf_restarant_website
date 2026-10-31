@@ -155,11 +155,11 @@ The scrollbar is a permanent dark-grey track with a light-grey thumb, using WebK
 
 ## Status and roadmap
 
-- [ ] Wire up `/dinner_specials` and `/about` routes (nav links exist, pages don't)
-- [ ] Hamburger menu and a full mobile navbar pass
-- [ ] Replace placeholder images (for example the Featured Bento Boxes filler)
-- [ ] Remove any leftover scrollbar-fade code from `App.tsx`
-- [ ] Custom domain and business email for the restaurant
+- [x] Wire up `/dinner_specials` and `/about` routes (nav links exist, pages don't)
+- [x] Hamburger menu and a full mobile navbar pass
+- [x] Replace placeholder images (for example the Featured Bento Boxes filler)
+- [x] Remove any leftover scrollbar-fade code from `App.tsx`
+- [x] Custom domain and business email for the restaurant
 
 ## Browser support
 
