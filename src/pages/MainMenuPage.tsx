@@ -20,6 +20,10 @@ import dessertIcon from "@/assets/icons/dessert-icon.svg";
 import waterDropIcon from "@/assets/icons/water-drop-icon.svg";
 import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 
+// Menu PDFs
+import lunchTakeoutMenuPdf from "@/assets/menu_pdfs/Green_Leaf_Lunch_Carryout_Menu_2026.pdf";
+import dinnerTakeoutMenuPdf from "@/assets/menu_pdfs/Green_Leaf_Dinner_Carryout_Menu_2026.pdf";
+
 // Images
 import AppetizersImage from "@/assets/images/sneak-peak-images/appetizers.jpg";
 import SoupImage from "@/assets/images/sneak-peak-images/soups-and-salad.png";
@@ -238,6 +242,25 @@ const LUNCH_GROUPS = [
 export default function MainMenu() {
   return (
     <div className="main-menu-page">
+
+      <div className="main-menu-pdf">
+        <a
+          href={lunchTakeoutMenuPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="main-menu-pdf-btn"
+        >
+          View Lunch Takeout Menu (PDF)
+        </a>
+        <a
+          href={dinnerTakeoutMenuPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="main-menu-pdf-btn"
+        >
+          View Dinner Takeout Menu (PDF)
+        </a>
+      </div>
 
       {/* Desktop/tablet — full section-by-section layout, unchanged. Hidden on mobile (see CSS). */}
       <div className="main-menu-desktop-lists">
