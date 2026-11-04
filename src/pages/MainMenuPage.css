@@ -9,6 +9,18 @@
   justify-content: center;
   gap: 48px;
   margin-top: 2rem;
+  /* Same entrance fade as the sushi menu page */
+  animation: mainMenuPdfFadeIn 0.5s ease-in-out;
+}
+
+@keyframes mainMenuPdfFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .main-menu-pdf-btn {

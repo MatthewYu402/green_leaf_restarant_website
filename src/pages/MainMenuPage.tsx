@@ -21,8 +21,8 @@ import waterDropIcon from "@/assets/icons/water-drop-icon.svg";
 import cupIcon from "@/assets/icons/hot-cup-icon.svg";
 
 // Menu PDFs
-import lunchTakeoutMenuPdf from "@/assets/menu_pdfs/Green_Leaf_Lunch_Carryout_Menu_2026.pdf";
-import dinnerTakeoutMenuPdf from "@/assets/menu_pdfs/Green_Leaf_Dinner_Carryout_Menu_2026.pdf";
+import lunchTakeoutMenuPdf from "@/assets/menu_pdfs/Lunch Carryout Menu Full 2026.pdf";
+import dinnerTakeoutMenuPdf from "@/assets/menu_pdfs/Dinner Carryout Menu Full 2026.pdf";
 
 // Images
 import AppetizersImage from "@/assets/images/sneak-peak-images/appetizers.jpg";
