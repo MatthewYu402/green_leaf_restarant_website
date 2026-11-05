@@ -184,7 +184,7 @@ export default function AboutUsPage() {
               </div>
               <div className="about-hours-row">
                 <span>Sunday</span>
-                <span>12:00 PM - 9:30 PM</span>
+                <span>3:00 PM - 9:30 PM</span>
               </div>
               <div className="about-holiday-hours">
                 <h4 className="about-holiday-title">Holiday Hours</h4>
