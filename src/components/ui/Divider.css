@@ -1,0 +1,36 @@
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 80px 0;
+}
+
+.divider__line {
+  flex: 1 1 auto;
+  height: var(--divider-thickness, 1px);
+  max-width: var(--divider-line-width, 100%);
+  background-color: var(--gold-medium);
+  border: none;
+}
+
+.divider__icon {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+
+/* Mobile-only variant: hidden above the 1024px breakpoint */
+.divider.divider--mobile-only {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .divider.divider--mobile-only {
+    display: flex;
+    padding: 0 var(--mobile-page-margin);
+    box-sizing: border-box;
+  }
+}

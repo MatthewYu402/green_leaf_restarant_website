@@ -1,401 +1,112 @@
-import './SushiMenuPage.css'
+import './SushiMenuPage.css';
+import {
+  anniversaryRolls,
+  featuredRoll,
+  makiRolls,
+  nigiriSashimi,
+  specialRolls,
+  sushiMenuDividerIcons as icons,
+  sushiMenuPdfs,
+  sushiPlatters,
+} from '@/content';
+import type { GalleryImage } from '@/types';
+import PdfLinks from '../components/ui/PdfLinks';
+import RollGrid from '../components/menu/RollGrid';
+import Section from '../components/ui/Section';
+import Divider from '../components/ui/Divider';
+import NigiriSashimiGrid from '../components/menu/NigiriSashimiGrid';
+import MenuAccordion from '../components/menu/MenuAccordion';
+import GalleryCarousel from '../components/ui/GalleryCarousel';
 
-// Icons
-import flowerIcon from "@/assets/icons/flower-icon.svg"
-import circleIcon from "@/assets/icons/circle.svg"
-import goldLeafIcon from "@/assets/icons/gold-leaf.svg"
-import appleIcon from "@/assets/icons/apple-icon.svg"
-// Menu PDFs
-import sushiMenuPdf from "@/assets/menu_pdfs/sushi_menu.pdf"
-// Images
+// Every anniversary roll that has a photo, captioned with its description.
+const anniversaryCarouselImages: GalleryImage[] = anniversaryRolls.items
+  .filter((roll) => roll.image !== undefined)
+  .map((roll) => ({ src: roll.image, alt: roll.name, description: `${roll.name} — ${roll.description}` }));
 
+// Nigiri/sashimi as plain menu items for the mobile accordion.
+const nigiriSashimiItems = nigiriSashimi.items.map((item) => ({
+  name: item.name,
+  description: item.note,
+  price: `${item.nigiriPrice} / ${item.sashimiPrice}`,
+  image: item.image,
+}));
 
-// Components
-import SushiRolls from '../components/menu/SushiRolls';
-import Section from '../components/shared/Section';
-import Divider from '../components/shared/Divider';
-import NigiriSashimi from '../components/menu/NigiriSashimi';
-import RollAccordion from '../components/menu/RollAccordion';
-import GalleryCarousel from '../components/shared/GalleryCarousel';
-
-// Anniversary Roll Images:
-import FirstYearRoll from '@/assets/images/anniversary-rolls/first-year-roll.jpg'
-import SecondYearRoll from '@/assets/images/anniversary-rolls/second-year-roll.jpg'
-import ThirdYearRoll from '@/assets/images/anniversary-rolls/third-year-roll.jpeg'
-import FourthYearRoll from '@/assets/images/anniversary-rolls/fourth-year-roll.jpg'
-import FifthYearRoll from '@/assets/images/anniversary-rolls/fifth-year-roll.jpeg'
-import SixthYearRoll from '@/assets/images/anniversary-rolls/sixth-year-roll.jpg'
-import SeventhYearRoll from '@/assets/images/anniversary-rolls/seventh-year-roll.jpg'
-import EighthYearRoll from '@/assets/images/anniversary-rolls/eighth-year-roll.jpg'
-import NinthYearRoll from '@/assets/images/anniversary-rolls/ninth-year-roll.jpg'
-import TenthYearRoll from '@/assets/images/anniversary-rolls/ten-year-roll.jpg'
-import EleventhYearRoll from '@/assets/images/anniversary-rolls/eleventh-year-roll.jpg'
-import TwelfthYearRoll from '@/assets/images/anniversary-rolls/twelfth-year-roll.jpg'
-import ThirteenthYearRoll from '@/assets/images/anniversary-rolls/thirteenth-year-roll.jpg'
-import FourteenthYearRoll from '@/assets/images/anniversary-rolls/fourteenth-year-roll.jpg'
-import FifteenthYearRoll from '@/assets/images/anniversary-rolls/fifteenth-year-roll.jpg'
-import SixteenthYearRoll from '@/assets/images/anniversary-rolls/sixteenth-year-roll.jpg'
-import SeventeenthYearRoll from '@/assets/images/anniversary-rolls/seventeenth-year-roll.jpg'
-import EighteenthYearRoll from '@/assets/images/anniversary-rolls/eighteenth-year-roll.jpg';
-import NineteenthYearRoll from '@/assets/images/anniversary-rolls/nineteenth-year-roll.jpg'
-import TwentyYearRoll from '@/assets/images/anniversary-rolls/twenty-year-roll.jpg'
-
-// Sushi Special Rolls
-import MatthewRoll from '@/assets/images/sushi-special-rolls/matt-roll.jpg'
-import HajiRoll from '@/assets/images/sushi-special-rolls/haji-roll.webp'
-import BakedScallopRoll from '@/assets/images/sushi-special-rolls/baked-scallop-roll.webp'
-import PeggyTwoRoll from '@/assets/images/sushi-special-rolls/peggy-two-roll.jpg'
-import SushiSisterRoll from '@/assets/images/sushi-special-rolls/sushi-sisiter-roll.jpg'
-import UnforgetableRoll from '@/assets/images/sushi-special-rolls/unforgetable-roll.jpg'
-import DiamondMikeRoll from '@/assets/images/sushi-special-rolls/diamond-mike-roll.jpg'
-import GardenRoll from '@/assets/images/sushi-special-rolls/garden-roll.jpg'
-import SonAndLawRoll from '@/assets/images/sushi-special-rolls/son-in-law-roll.jpg'
-import PenthouseRoll from '@/assets/images/sushi-special-rolls/penthouse-roll.webp'
-import RavenRoll from '@/assets/images/sushi-special-rolls/raven-roll.jpg'
-import ImperialCrabRoll from '@/assets/images/sushi-special-rolls/imperial-crab-roll.jpg'
-import BaltimoreRoll from '@/assets/images/sushi-special-rolls/baltimore-roll.jpg'
-import ButterRoll from '@/assets/images/sushi-special-rolls/butter-roll.jpeg'
-
-// Sashimi and Nigiri Images
-import ScallopNigiri from '@/assets/images/nigiri-sashimi/scallop-nigiri.jpg'
-import SalmonRoe from '@/assets/images/nigiri-sashimi/salmon-roe-roll.png'
-
-// Platter Images
-import SushiPlatter1 from '@/assets/images/sushi-platters/sushi-platter-6.jpg'
-import SushiPlatter2 from '@/assets/images/sushi-platters/sushi-platter-2.jpg'
-import SushiPlatter3 from '@/assets/images/sushi-platters/sushi-platter-3.jpg'
-import SushiPlatter4 from '@/assets/images/sushi-platters/sushi-platter-4.jpg'
-import SushiPlatter5 from '@/assets/images/sushi-platters/sushi-platter-5.jpg'
-import SushiPlatter6 from '@/assets/images/sushi-platters/sushi-platter-1.jpg'
-
-interface RollItem {
-  name: string;
-  description: string;
-  price: string;
-  image?: string;
-}
-
-interface NigiriItem {
-  name: string;
-  fillingNote?: string;
-  nigiriPrice: string;
-  sashimiPrice: string;
-  image?: string;
-}
-
-const ANNIVERSARY_ROLLS:RollItem[]= [
-  { name: "1st Year", image: FirstYearRoll, description: "Old Bay crabmeat and avocado, fried shrimp tempura style", price: "$15.50" },
-  { name: "2nd Year", image: SecondYearRoll, description: "Spicy yellowtail topped with avocado and tuna", price: "$15.50" },
-  { name: "3rd Year", image: ThirdYearRoll, description: "Fusion-style spicy tuna roll paired with tuna, calamari salad, cucumber, and seaweed salad", price: "$15.50" },
-  { name: "4th Year", image: FourthYearRoll, description: "Spicy tuna, avocado, and crabmeat topped with tuna", price: "$15.50" },
-  { name: "5th Year", image: FifthYearRoll, description: "Spicy tuna and crabmeat, topped with white tuna, salmon, tuna, avocado, and tempura flakes", price: "$15.50" },
-  { name: "6th Year", image: SixthYearRoll, description: "Spicy salmon and avocado, topped with fresh salmon, cream cheese, and tempura flakes", price: "$15.50" },
-  { name: "7th Year", image: SeventhYearRoll, description: "Spicy tuna and salmon, topped with spicy crabmeat and scallop", price: "$15.50" },
-  { name: "8th Year", image: EighthYearRoll, description: "Spicy tuna, topped with avocado and spicy salmon", price: "$15.50" },
-  { name: "9th Year", image: NinthYearRoll, description: "Shimp tempura and asparagus, topped with spicy yellowtail and black crispy rice", price: "$15.50" },
-  { name: "10th Year", image: TenthYearRoll, description: "Yellowtail, salmon and spicy tuna, topped with salmon, mango, and spicy sauce", price: "$15.50" },
-  { name: "11th Year", image: EleventhYearRoll, description: "Shrimp tempura topped with white tuna, jalapeno, and spicy sauce", price: "$15.50" },
-  { name: "12th Year", image: TwelfthYearRoll, description: "Crabmeat, spicy tuna, and crispy flakes inside, topped with avocado, spicy yellowtail, and jalapeno", price: "$15.50" },
-  { name: "13th Year", image: ThirteenthYearRoll, description: "Spicy salmon and avocado, topped with pepper seared tuna", price: "$15.50" },
-  { name: "14th Year", image: FourteenthYearRoll, description: "Spicy salmon and black crispy rice, topped with yellowtail and avocado", price: "$15.50" },
-  { name: "15th Year", image: FifteenthYearRoll, description: "Spicy salmon and crispy rice, topped with salmon and avocado with spicy sauce", price: "$15.50" },
-  { name: "16th Year", image: SixteenthYearRoll, description: "Spicy yellowtail and crispy rice, topped with salmon, avocado, and spicy sauce", price: "$15.50" },
-  { name: "17th Year", image: SeventeenthYearRoll, description: "Spicy salmon and avocado, topped with white tuna, spicy salmon, and roe", price: "$15.50" },
-  { name: "18th Year", image: EighteenthYearRoll, description: "Shrimp tempura, crabstick, and avocado, topped with spicy tuna and spicy sauce", price: "$15.50" },
-  { name: "19th Year", image: NineteenthYearRoll, description: "Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce", price: "$15.50" },
-  { name: "20th Year", image: TwentyYearRoll, description: "Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce", price: "$15.50" },
-];
-
-// Goes through all 20 eventually — for now, only 2 have photos to show.
-// Once more real per-roll photos exist, change .slice(0, 2) to include more
-// (or drop it entirely to show all 20).
-const ANNIVERSARY_CAROUSEL_IMAGES = ANNIVERSARY_ROLLS
-  .filter((roll): roll is typeof roll & { image: string } => roll.image !== undefined)
-  .map((roll) => ({
-    src: roll.image,
-    alt: roll.name,
-    description: `${roll.name} — ${roll.description}`,
-  }));
-
-const SUSHISPECIALROLLS:RollItem[] = [
-  { name: "Peggy", description: "Crabmeat, avocado, and tempura flakes with tuna and wasabi mirin sauce", price: "$14.95" },
-  { name: "Peggy #2", image: PeggyTwoRoll, description: "California roll topped with torched, fish roe, and rice seasoning", price: "$14.95" },
-  { name: "Esther", description: "Salmon and avocado, topped with spicy tuna and tempura flakes", price: "$14.95" },
-  { name: "Matthew", image: MatthewRoll, description: "Salmon, crab stick, topped with avocado, spicy yellowtail and tempura flakes", price: "$14.95" },
-  { name: "Ginger", description: "Spicy tuna, salmon skin topped with salmon and fish roe", price: "$14.95" },
-  { name: "Raven", image: RavenRoll, description: "Spicy yellowtail, topped with cripsy black rice and spicy tuna on top", price: "$14.95" },
-  { name: "F-Ken", description: "Crab stick and cream cheese tempura style, topped with spicy tuna", price: "$14.95" },
-  { name: "Godfather", description: "Shrimp tempura, old bay crabmeat, seaweed salad and avocado wrapped in yellow soy seaweed", price: "$14.95" },
-  { name: "Penthouse (Mitchell Brown's Creation)", image: PenthouseRoll, description: "Shrimp tempura, cilantro, avocado, and tuna, finished with lime", price: "$14.95" },
-  { name: "Angel", description: "Spicy yellowtail, topped with seaweed salad and spicy tuna", price: "$14.95" },
-  { name: "Sweet Heart", description: "Spicy tuna, avocado, and tuna shaped as a heart", price: "$15.95" },
-  { name: "Mac Daddy", description: "Fried soft-shell crab, cream cheese, topped with spicy lobster", price: "$16.95" },
-  { name: "Hurricane", description: "Crabstick, mango, and apple, topped with spicy tuna and tempura flakes", price: "$14.95" },
-  { name: "AJ", description: "Tempura california roll topped with grilled crabmeat on top", price: "$14.95" },
-  { name: "Haji (The Hajimihalis Family)", image: HajiRoll, description: "Shrimp tempura, topped with crispy spicy crab meat and crabstick", price: "$14.95" },
-  { name: "Baked Scallop", image: BakedScallopRoll, description: "California roll topped with spicy scallop", price: "$14.95" },
-  { name: "Sushi Sister", image: SushiSisterRoll, description: "Salmon and cucumber topped with tuna, avocado, mango, and spicy sauce", price: "$14.95" },
-  { name: "Diamond Mike (Michael Shield's Creation)", image: DiamondMikeRoll, description: "Crabstick and spicy salmon, topped with salmon, eel, avocado, and tempura flakes", price: "$14.95" },
-  { name: "Unforgettable", image: UnforgetableRoll, description: "Spicy tuna, topped with eel and avocado", price: "$14.95" },
-  { name: "Baltimore", image: BaltimoreRoll, description: "Soft-shell crab topped with spicy crabmeat", price: "$15.95" },
-  { name: "Son-In-Law Mango", image: SonAndLawRoll, description: "Shrimp tempura, topped with cripsy spicy tuna and mango", price: "$14.95" },
-  { name: "Garden", image: GardenRoll, description: "Tempura sweet potato and yellow radish, topped with avocado", price: "$8.95" },
-  { name: "Crunchy Roll", description: "Lump crabmeat, avocado, and shimp, topped with fish roe and tempura flakes wrapped in soy paper", price: "$14.95" },
-  { name: "Futomaki", description: "Crabstick, egg, avocado, and vegetables", price: "$13.95" },
-  { name: "Phoenix", description: "Chicken tempura topped with eel and avocado", price: "$14.95" },
-  { name: "Pretty In Red", description: "Lump Crabmeat and avocado, topped with tempura flakes, tuna, and spicy sauce", price: "$14.95" },
-  { name: "Pine Nut Fish Roll", description: "Tempura cod with spicy sauce", price: "$9.95" },
-  { name: "Red Dragon", description: "Shrimp Tempura topped with spicy tuna", price: "$14.95" },
-  { name: "Spicy Lobster", description: "Crabstick topped with spicy lobster", price: "$15.50" },
-  { name: "Teryaki Salmon", description: "Grilled Salmon teryaki sauce", price: "$8.95" },
-  { name: "Tokyo", description: "Spicy tuna topped with tuna, salmon, and yellowtail with spicy sauce", price: "$14.95" },
-  { name: "TNT Roll", description: "Spicy Lobster topped with tuna and tempura flakes", price: "$15.50" },
-  { name: "Two to Tango", description: "Shrimp tempura topped with fresh shrimp and avocado", price: "$14.95" },
-  { name: "Imperial Crab", image: ImperialCrabRoll, description: "Crabstick and avocado topped with salmon and spicy grilled crabmeat", price: "$15.50" },
-  { name: "Butter Roll", image: ButterRoll, description: "Sandwich style with spicy salmon, topped with avocado, fresh salmon, tempura flakes, and special sauce (no seaweed) ", price: "$14.95" },
-];
-
-// 
-
-
-/*
-/**
- * Changed:
- * Califioria - $6.50
- * 
- *  
- */
-
-const MAKI_ROLLS: RollItem[] = [
-  { name: "California Roll", description: "Crabstick, avocado, and fish roe", price: "$6.50" },
-  { name: "Philadelphia Roll", description: "Smoked salmon, cream cheese, and cucumber", price: "$6.95" },
-  { name: "Dragon Roll", description: "Shrimp tempura topped with eel and avocado", price: "$14.95" },
-  { name: "Volcano Roll", description: "Tuna and salmon topped with torched spicy sauce", price: "$8.95" },
-  { name: "Rainbow Roll", description: "Crabstick and avocado, topped with salmon, tuna, and avocado", price: "$12.95" },
-  { name: "Crazy Rock'n Roll", description: "Eel and shrimp topped with avocado", price: "$14.95" },  
-  { name: "Spider Roll", description: "Soft-shell crab with cucumber and fish roe", price: "$10.95"},
-  { name: "Tuna", description: "", price: "$5.25" },
-  { name: "Spicy Tuna", description: "", price: "$6.95" },
-  { name: "Tuna Avocado", description: "", price: "$6.95" },
-  { name: "Asparagas & Cucumber", description: "", price: "$4.95" },
-  { name: "Avocado Roll", description: "", price: "$4.95" },
-  { name: "Avocado & Cucumber", description: "", price: "$4.95" },
-  { name: "Eel Avocado", description: "", price: "$7.95" },
-  { name: "Lobster", description: "", price: "$11.95" },
-  { name: "Lump Crabmeat Avocado", description: "", price: "$10.95" },
-  { name: "Crispy Spicy Crab Roll", description: "", price: "$11.95" },
-  { name: "Salmon", description: "", price: "6.50" },
-  { name: "Salmon Avocado", description: "", price: "$6.95" },
-  { name: "Spicy Salmon", description: "", price: "$6.95" },
-  { name: "Shrimp Avocado", description: "", price: "$6.95" },
-  { name: "Shrimp Tempura", description: "", price: "$7.95" },
-  { name: "Vegetable", description: "", price: "$5.95" },
-  { name: "Cucumber", description: "", price: "$4.95" },
-  { name: "Yellowtail Scallion & Cucumber", description: "", price: "$7.95" },
-  { name: "Spicy Yellowtail", description: "", price: "$7.95" },
-];
-
-
-/**
- * Changes:
- * 
- * 
- * Nigiri:
- * Crabstick - $5.25
- * White Tuna - $5.75
- * Tuna - $5.75
- * Surf Clam - $5.75
- * Squid - $5.75
- * Smoked Salmon - $5.75
- * Scallop  - $5.75
- * Salmon - $5.75
- * Red Snapper - $5.75
- * Octopus - $5.75
- * Mackeral- $5.75
- * 
- * Fresh Water Eel - $6.25
- * 
- * Sashimi: 
- * Crabsticks - $6.50
- * White Tuna - $7.25
- * Tuna - $7.25
- * Surf Clam - $7.25 
- * Squid - $7.25
- * Smoked Salmon - $7.25
- * Scallop - $7.25 
- * Salmon - $7.25
- * Red Snapper - $7.25
- * Octopus - $7.25
- * Mackeral - $7.25
- * 
- * Ebi Shrimp - $7.25
- * Yellowtail - $7.25
- * 
- */
-const NIGIRI_SASHIMI: NigiriItem[] = [
-  { name: "Tuna", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "White Tuna", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Salmon", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Salmon Roe", image: SalmonRoe, fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$5.95" },
-  { name: "Smoked Salmon", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Crab Stick", fillingNote: "", nigiriPrice: "$5.25", sashimiPrice: "$6.50" },
-  { name: "Lobster", fillingNote: "", nigiriPrice: "$8.95", sashimiPrice: "$10.95" },
-  { name: "Mackeral", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Bean Curd", fillingNote: "", nigiriPrice: "$4.95", sashimiPrice: "$5.95" },
-  { name: "Flying Fish Roe", fillingNote: "", nigiriPrice: "$4.95", sashimiPrice: "$5.50" },
-  { name: "Freshwater Eel", fillingNote: "", nigiriPrice: "$6.25", sashimiPrice: "$7.95" },
-  { name: "Octopus", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Red Snapper", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Scallop", image: ScallopNigiri, fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Squid", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Surf Clam", fillingNote: "", nigiriPrice: "$5.75", sashimiPrice: "$7.25" },
-  { name: "Ebi Shrimp", fillingNote: "Cooked", nigiriPrice: "$5.95", sashimiPrice: "$7.25" },
-  { name: "Sweet Shrimp", fillingNote: "Raw", nigiriPrice: "$8.95", sashimiPrice: "$8.95" },
-  { name: "Tamago", fillingNote: "Egg", nigiriPrice: "$4.95", sashimiPrice: "$5.95" },
-  { name: "Yellowtail", fillingNote: "", nigiriPrice: "$5.95", sashimiPrice: "$7.25" },
-  { name: "Uni", fillingNote: "Market Price", nigiriPrice: "M.P", sashimiPrice: "M.P" },
-];
-
-const SUSHI_PLATTERS = [
-  { src: SushiPlatter1, alt: "Sushi platter" },
-  { src: SushiPlatter2, alt: "Sushi platter" },
-  { src: SushiPlatter3, alt: "Sushi platter" },
-  { src: SushiPlatter4, alt: "Sushi platter" },
-  { src: SushiPlatter5, alt: "Sushi platter" },
-  { src: SushiPlatter6, alt: "Sushi platter" },
-];
-// TODO: replace each entry with a real platter photo once available
-
-export default function SushiMenu() {
+export default function SushiMenuPage() {
   return (
     <div className="sushi-menu-page">
+      <PdfLinks links={sushiMenuPdfs} />
 
-      <div className="sushi-menu-pdf">
-        <a
-          href={sushiMenuPdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="sushi-menu-pdf-btn"
-        >
-          View Sushi Menu (PDF)
-        </a>
-      </div>
-
-      <Section className='reveal-block-fade'>
+      <Section reveal="fade">
         <div className="special-feature">
           <div className="special-feature-left">
-            <h4 className="special-feature-title">Special Feature</h4>
-            <h2>20th Year Anniversary Roll</h2>
-            <p className="special-feature-description">A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced japaleňo. </p>
+            <h4 className="special-feature-title">{featuredRoll.badge}</h4>
+            <h2>{featuredRoll.name}</h2>
+            <p className="special-feature-description">{featuredRoll.description}</p>
             <span className="divider-line"></span>
-            <p className="special-feature-price">$15.50</p>
+            <p className="special-feature-price">{featuredRoll.price}</p>
           </div>
           <div className="special-feature-right">
-            <img className="twenty-year-roll" src={TwentyYearRoll}></img>
+            <img className="twenty-year-roll" src={featuredRoll.image}></img>
           </div>
         </div>
       </Section>
 
-      <Divider iconUrl={flowerIcon} className="home-mobile-divider" />
+      <Divider icon={icons.flower} mobileOnly />
 
-      {/* Mobile-only — sits between the Special Feature and the accordions.
-          Goes through all 20 rolls eventually; only 2 have real photos so far. */}
-      <Section className="reveal-block-slide anniversary-carousel-mobile">
-        <h4 className="anniversary-carousel-mobile-label">A Roll for Every Year</h4>
-        <GalleryCarousel images={ANNIVERSARY_CAROUSEL_IMAGES} />
+      {/* Mobile-only — sits between the Special Feature and the accordions. */}
+      <Section reveal="slide" className="anniversary-carousel-mobile">
+        <h4 className="anniversary-carousel-mobile-label">{anniversaryRolls.carouselLabel}</h4>
+        <GalleryCarousel images={anniversaryCarouselImages} />
       </Section>
 
-      {/* Desktop/tablet — full section-by-section layout, unchanged. Hidden on mobile (see CSS). */}
+      {/* Desktop/tablet — full section-by-section layout. Hidden on mobile (see CSS). */}
       <div className="sushi-menu-desktop-lists">
-        <Section className='reveal-block-fade'>
-          <Divider iconUrl={flowerIcon} lineWidth="600px" iconAlt='flower icon' thickness='2px' />
+        <Section reveal="fade">
+          <Divider icon={icons.flower} lineWidth="600px" iconAlt="flower icon" thickness="2px" />
         </Section>
 
-        <Section className='reveal-block-slide'>
-          <SushiRolls
-            title="20th Anniversary Rolls"
-            subtitle="Celebrating two decades of culinary excellence."
-            items={ANNIVERSARY_ROLLS}
-          />
+        <Section reveal="slide">
+          <RollGrid {...anniversaryRolls} />
         </Section>
 
-        <Divider iconUrl={goldLeafIcon} lineWidth='600px' thickness='2px' />
+        <Divider icon={icons.goldLeaf} lineWidth="600px" thickness="2px" />
 
-        <Section className='reveal-block-slide'>
-          <SushiRolls
-            title="Sushi Special Rolls"
-            subtitle='Rolls named after people and places that shaped our story - friends, staff, and hometown pride.'
-            className="rolls-section--plain"
-            columns={3}
-            items={SUSHISPECIALROLLS
-            
-            }
-          />
+        <Section reveal="slide">
+          <RollGrid {...specialRolls} columns={3} plainTitle />
         </Section>
 
-        <Divider iconUrl={circleIcon} lineWidth='600px' thickness='2px' />
+        <Divider icon={icons.circle} lineWidth="600px" thickness="2px" />
 
-        <Section className='reveal-block-slide'>
-          <SushiRolls
-            title="Maki Rolls"
-            subtitle='Cut into 6 to 8 pieces'
-            className="rolls-section--plain"
-            columns={3}
-            items={MAKI_ROLLS}
-          />
+        <Section reveal="slide">
+          <RollGrid {...makiRolls} columns={3} plainTitle />
         </Section>
 
-        <Divider iconUrl={appleIcon} lineWidth='600px' thickness='2px' />
+        <Divider icon={icons.apple} lineWidth="600px" thickness="2px" />
 
-        <Section className='reveal-block-slide'>
-          <NigiriSashimi
-            title="Nigiri & Sashimi"
-            note="Nigiri (with rice) / Sashimi (without rice)"
-            columns={3}
-            items={NIGIRI_SASHIMI}
-          />
+        <Section reveal="slide">
+          <NigiriSashimiGrid {...nigiriSashimi} columns={3} />
         </Section>
 
-        <Divider iconUrl={flowerIcon} lineWidth="600px" iconAlt='flower icon' thickness='2px' />
+        <Divider icon={icons.flower} lineWidth="600px" iconAlt="flower icon" thickness="2px" />
       </div>
 
-      {/* Mobile — same real data, collapsed into accordions. Hidden above the breakpoint (see CSS). */}
+      {/* Mobile — the same data collapsed into accordions. Hidden above the breakpoint (see CSS). */}
       <div className="sushi-menu-mobile-lists">
-        <RollAccordion
-          title="20th Anniversary Rolls"
-          items={ANNIVERSARY_ROLLS.map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
-        />
-        <RollAccordion
-          title="Sushi Special Rolls"
-          items={SUSHISPECIALROLLS
-          .map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
-        />
-        <RollAccordion
-          title="Maki Rolls"
-          items={MAKI_ROLLS.map((r) => ({ name: r.name, description: r.description, priceDisplay: r.price, image: r.image }))}
-        />
-        <RollAccordion
-          title="Nigiri & Sashimi"
-          items={NIGIRI_SASHIMI.map((i) => ({
-            name: i.name,
-            description: i.fillingNote,
-            priceDisplay: `${i.nigiriPrice} / ${i.sashimiPrice}`,
-            image: i.image,
-          }))}
-        />
+        <MenuAccordion title={anniversaryRolls.title} items={anniversaryRolls.items} />
+        <MenuAccordion title={specialRolls.title} items={specialRolls.items} />
+        <MenuAccordion title={makiRolls.title} items={makiRolls.items} />
+        <MenuAccordion title={nigiriSashimi.title} items={nigiriSashimiItems} />
       </div>
 
-      {/* Sushi Platters gallery — mirrors Home's PeekInside carousel */}
-      <Section className="reveal-block-slide">
+      <Section reveal="slide">
         <div className="sushi-platters">
           <div className="sushi-platters-header">
-            <h2 className="sushi-platters-title">Sushi Platters</h2>
-            <p className="sushi-platters-subtitle">Perfect for sharing, parties, and celebrations</p>
+            <h2 className="sushi-platters-title">{sushiPlatters.title}</h2>
+            <p className="sushi-platters-subtitle">{sushiPlatters.subtitle}</p>
           </div>
-          <GalleryCarousel images={SUSHI_PLATTERS} />
+          <GalleryCarousel images={sushiPlatters.images} />
         </div>
       </Section>
-
     </div>
   );
 }

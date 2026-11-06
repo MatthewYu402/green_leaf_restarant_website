@@ -1,0 +1,184 @@
+.menu-accordion {
+  background-color: var(--offwhite);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-accordion-title {
+  font-family: var(--libre);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.menu-accordion-count {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.menu-accordion-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.menu-accordion.open .menu-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.menu-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.menu-accordion.open .menu-accordion-body {
+  padding: 0 20px 28px;
+}
+
+.menu-accordion-image {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.menu-accordion.open .menu-accordion-image {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.menu-accordion-item {
+  padding: 14px 0;
+  border-top: 1px solid var(--gray-div);
+}
+
+.menu-accordion-item:first-child {
+  border-top: none;
+}
+
+.menu-accordion-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.menu-accordion-item-name {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.menu-accordion-item-price {
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold-accent);
+  white-space: nowrap;
+}
+
+.menu-accordion-item-description {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--gray-medium);
+  line-height: 1.4;
+  text-align: left;
+}
+
+.menu-accordion-more {
+  display: block;
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 10px 0 4px;
+  background: none;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gray);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-accordion-more:hover {
+  color: var(--gold-dark);
+  text-decoration: underline;
+}
+
+.menu-accordion-group {
+  margin-bottom: 16px;
+}
+
+.menu-accordion-group:last-child {
+  margin-bottom: 0;
+}
+
+.menu-accordion-subheading {
+  font-family: var(--libre);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gray-div);
+}
+
+.menu-accordion-group .menu-accordion-item:first-child {
+  border-top: none;
+}
+
+.menu-accordion-item-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.menu-accordion-item-id {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 2px 6px;
+  border: 2px solid var(--gold-accent);
+  background: var(--green-dark);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-accent);
+  line-height: 1.4;
+}
+
+/* The subheading is the group's first child, so the first item is never
+   :first-child — this removes its top border so it doesn't double up
+   with the subheading's own bottom border */
+.menu-accordion-subheading+.menu-accordion-item {
+  border-top: none;
+}

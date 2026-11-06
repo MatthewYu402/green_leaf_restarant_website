@@ -3,12 +3,9 @@
   flex-shrink: 0;
 }
 
-.main-menu-pdf {
-  display: flex;
+.main-menu-pdf-links {
   flex-wrap: wrap;
-  justify-content: center;
   gap: 48px;
-  margin-top: 2rem;
   /* Same entrance fade as the sushi menu page */
   animation: mainMenuPdfFadeIn 0.5s ease-in-out;
 }
@@ -23,143 +20,13 @@
   }
 }
 
-.main-menu-pdf-btn {
-  position: relative;
-  padding-bottom: 2px;
-  text-decoration: none;
-  color: var(--green-dark);
-  font-family: var(--sans);
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-/* Underline that grows from the center on hover */
-.main-menu-pdf-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--gold-border);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.main-menu-pdf-btn:hover {
-  color: var(--gold-dark);
-}
-
-.main-menu-pdf-btn:hover::after {
-  transform: scaleX(1);
-}
-
 /* Pull the first section (Appetizers) up closer to the takeout menu links */
 .main-menu-desktop-lists > .section:first-child .featured-menu-section-heading {
   margin-top: 32px;
 }
 
-.soups-salads-section .featured-menu-top {
-  flex-direction: row-reverse;
-}
-
-
-
-/* ---- Scoped overrides for MenuOptions/MenuItem, this section only ---- */
-
-/* Grill & Kitchen */
-.grill-kitchen-wrapper {
-  max-width: 1700px;
-  margin: 40px auto 0;
-  padding: 48px 56px;
-  box-sizing: border-box;
-  background-color: var(--offwhite);
-  border-radius: 16px;
-  text-align: left;
-}
-
-.grill-kitchen-wrapper .menu-options {
-  gap: 0px;
-}
-
-.grill-title {
-  font-family: var(--libre);
-  font-weight: 600;
-  font-size: 36px;
-  color: var(--text-dark);
-  margin: 0 0 24px;
-}
-
-.grill-kitchen {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 60px;
-}
-
-.grill-kitchen .menu-options {
-  flex: 1 1 420px;
-  max-width: 100%;
-  width: 100%;
-  padding: 0;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.grill-kitchen .menu-options-title {
-  font-family: var(--libre);
-  font-weight: normal;
-  font-size: 28px;
-  color: var(--text-dark);
-  margin: 0 0 20px;
-  position: relative;
-  padding-bottom: 14px;
-}
-
-.grill-kitchen .menu-options-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 48px;
-  height: 2px;
-  background-color: var(--gold-medium);
-}
-
-.grill-kitchen .item-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: stretch;
-  column-gap: 28px;
-  row-gap: 20px;
-}
-
-.grill-kitchen .menu-item {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.grill-kitchen .menu-item-name {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.grill-kitchen .menu-item-price {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--gold-accent);
-}
-
-.grill-kitchen .menu-item-description {
-  font-size: 16px;
-  color: var(--gray-dark);
-}
-
-/* Seafood */
-.seafood-options .menu-options-title {
+/* Seafood column inside the Grill & Kitchen panel */
+.menu-panel .seafood-options .menu-list-title {
   font-family: var(--libre);
   font-weight: normal;
   font-size: 32px;
@@ -167,21 +34,21 @@
   margin: 0 0 20px;
 }
 
-.seafood-options .menu-groups {
+.menu-panel .seafood-options .menu-list-groups {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
 
-.seafood-options .menu-item-group--full {
+.menu-panel .seafood-options .menu-list-group--full {
   grid-column: 1 / -1;
 }
 
-.seafood-options .menu-item-group--half {
+.menu-panel .seafood-options .menu-list-group--half {
   grid-column: span 1;
 }
 
-.seafood-options .menu-options-subheading {
+.menu-panel .seafood-options .menu-list-subheading {
   font-family: var(--libre);
   font-weight: 600;
   font-size: 18px;
@@ -191,42 +58,36 @@
   border-bottom: 1px solid var(--gray-div);
 }
 
-.seafood-options .menu-item-group--full .item-list {
+.menu-panel .seafood-options .menu-list-group--full .menu-list-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 28px;
   row-gap: 20px;
 }
 
-.seafood-options .menu-item-group--half .item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.seafood-options .menu-item {
+.menu-panel .seafood-options .menu-item {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.seafood-options .menu-item-name {
+.menu-panel .seafood-options .menu-item-name {
   font-size: 18px;
   font-weight: 600;
   color: var(--text-dark);
 }
 
-.seafood-options .menu-item-price {
+.menu-panel .seafood-options .menu-item-price {
   font-size: 15px;
   font-weight: 600;
   color: var(--gold-accent);
 }
 
-.seafood-options .menu-item-description {
+.menu-panel .seafood-options .menu-item-description {
   font-size: 16px;
   color: var(--gray-dark);
 }
 
-.seafood-options .menu-item-group--half .item-list {
+.menu-panel .seafood-options .menu-list-group--half .menu-list-items {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -246,7 +107,7 @@
   align-items: stretch;
 }
 
-.sushi-sashimi .menu-options {
+.sushi-sashimi .menu-list {
   flex: 1 1 380px;
   max-width: 100%;
   width: 100%;
@@ -294,7 +155,7 @@
 }
 
 /* Each MenuOptions column (Donburi, Sushi & Sashimi) */
-.menu-sushi-sashimi-options .menu-options {
+.menu-sushi-sashimi-options .menu-list {
   flex: 1 1 260px;
   max-width: 100%;
   width: 100%;
@@ -303,13 +164,13 @@
   text-align: left;
 }
 
-.menu-sushi-sashimi-options .menu-options-title {
+.menu-sushi-sashimi-options .menu-list-title {
   color: var(--gold-light);
   font-size: 24px;
 }
 
 /* The "tree" split: 2 inner columns within each group's item list */
-.menu-sushi-sashimi-options .item-list {
+.menu-sushi-sashimi-options .menu-list-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
@@ -353,92 +214,6 @@
   font-size: 16px;
 }
 
-/* Noodles & Vegetarian */
-.noodles-vegetarian-wrapper {
-  max-width: 1700px;
-  margin: 40px auto 0;
-  padding: 48px 56px;
-  box-sizing: border-box;
-  background-color: var(--offwhite);
-  border-radius: 16px;
-  text-align: left;
-}
-
-.noodles-vegetarian-title {
-  font-family: var(--libre);
-  font-weight: 600;
-  font-size: 36px;
-  color: var(--text-dark);
-  margin: 0 0 24px;
-}
-
-.noodles-vegetarian {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 60px;
-}
-
-.noodles-vegetarian .menu-options {
-  flex: 1 1 420px;
-  max-width: 100%;
-  width: 100%;
-  padding: 0;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.noodles-vegetarian .menu-options-title {
-  font-family: var(--libre);
-  font-weight: normal;
-  font-size: 28px;
-  color: var(--text-dark);
-  margin: 0 0 20px;
-  position: relative;
-  padding-bottom: 14px;
-}
-
-.noodles-vegetarian .menu-options-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 48px;
-  height: 2px;
-  background-color: var(--gold-medium);
-}
-
-.noodles-vegetarian .item-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: stretch;
-  column-gap: 28px;
-  row-gap: 20px;
-}
-
-.noodles-vegetarian .menu-item {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.noodles-vegetarian .menu-item-name {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.noodles-vegetarian .menu-item-price {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--gold-accent);
-}
-
-.noodles-vegetarian .menu-item-description {
-  font-size: 16px;
-  color: var(--gray-dark);
-}
-
 /* Teriyaki & Tempura */
 .teriyaki-card {
   max-width: 1400px;
@@ -475,7 +250,7 @@
   line-height: 1.5;
 }
 
-.teriyaki-card-options .menu-options-title:empty {
+.teriyaki-card-options .menu-list-title:empty {
   display: none;
 }
 
@@ -485,7 +260,7 @@
   width: 100%;
 }
 
-.teriyaki-card-options .item-list {
+.teriyaki-card-options .menu-list-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 40px;
@@ -532,57 +307,6 @@
   margin-top: 4px;
 }
 
-/* Deserts and Drinks*/
-.beveraged-category .menu-groups {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-
-.beveraged-category .menu-item-group--half {
-  grid-column: span 1;
-}
-
-.beveraged-category .menu-options-subheading {
-  color: var(--gold-medium);
-  font-size: 18px;
-  margin: 0 0 12px;
-}
-
-.beveraged-category .item-list {
-  gap: 8px;
-}
-
-.deserts-drinks {
-  max-width: 1500px;
-  margin: 80px auto 0;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  gap: 40px;
-}
-
-.deserts-drinks .menu-category {
-  flex: 1 1 0;
-  /* KEY FIX: grow equally to fill the row instead of staying at intrinsic/max-width */
-  max-width: none;
-  /* removes the 600px cap for this context only */
-  width: auto;
-}
-
-.deserts-drinks .menu-options {
-  max-width: none;
-  width: 100%;
-}
-
-.deserts-drinks .menu-item {
-  max-width: none;
-  width: 100%;
-  padding-bottom: 8px;
-}
-  
-
 .main-menu-mobile-lists {
   display: none;
 }
@@ -601,21 +325,5 @@
     flex-direction: column;
     gap: 12px;
     margin: 24px 0px;
-  }
-}
-
-@media (max-width: 1450px) {
-  .apps-soups-salads .item-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-}
-
-@media (max-width: 1135px) {
-  .noodles-vegetarian .item-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
   }
 }

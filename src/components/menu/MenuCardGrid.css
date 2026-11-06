@@ -1,0 +1,14 @@
+/* SpecialItemGrid.css */
+.menu-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+.menu-card-grid {
+    gap: 16px;
+  }
+}
+

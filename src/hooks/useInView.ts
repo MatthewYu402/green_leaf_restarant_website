@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { getScrollRoot } from "@/utils/scrollRoot";
 
 export function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -8,7 +9,7 @@ export function useInView(threshold = 0.15) {
     const element = ref.current;
     if (!element) return;
 
-    const scrollRoot = document.getElementById('root');
+    const scrollRoot = getScrollRoot();
 
     const observer = new IntersectionObserver(
       ([entry]) => {
