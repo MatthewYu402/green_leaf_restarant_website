@@ -16,7 +16,7 @@ export default function PageHeader() {
   const isHome = location.pathname === '/';
   const isMenuPage = MENU_ROUTES.includes(location.pathname);
   const headerContent = pageHeaders[location.pathname];
-  const shrunk = useScrolledPast(() => 80, isMenuPage, [location.pathname]);
+  const shrunk = useScrolledPast(() => 80, isMenuPage, location.pathname);
 
   return (
     <>

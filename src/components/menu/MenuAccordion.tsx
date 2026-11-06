@@ -27,7 +27,7 @@ export default function MenuAccordion({
 }: MenuAccordionProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [showAll, setShowAll] = useState(false);
-  const bodyRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState(0);
 
   const totalCount = groups ? groups.reduce((sum, g) => sum + g.items.length, 0) : (items?.length ?? 0);
@@ -35,11 +35,11 @@ export default function MenuAccordion({
   const visibleItems = !groups && items ? (showAll ? items : items.slice(0, previewCount)) : [];
   const remaining = !groups && items ? items.length - visibleItems.length : 0;
 
-  // Measures the body's real content height instead of a fixed cap — a
-  // hardcoded max-height clips accordions with many items (e.g. 30+ rolls).
+  // Measures the real content height instead of a fixed cap — a hardcoded
+  // max-height clips accordions with many items (e.g. 30+ rolls).
   useEffect(() => {
-    if (isOpen && bodyRef.current) {
-      setMaxHeight(bodyRef.current.scrollHeight);
+    if (isOpen && contentRef.current) {
+      setMaxHeight(contentRef.current.offsetHeight);
     } else {
       setMaxHeight(0);
     }
@@ -62,30 +62,32 @@ export default function MenuAccordion({
         <ChevronIcon />
       </button>
 
-      <div className="menu-accordion-body" ref={bodyRef} style={{ maxHeight }}>
-        {image && <img src={image} alt={imageAlt} className="menu-accordion-image" />}
+      <div className="menu-accordion-body" style={{ maxHeight }}>
+        <div className="menu-accordion-content" ref={contentRef}>
+          {image && <img src={image} alt={imageAlt} className="menu-accordion-image" />}
 
-        {groups ? (
-          groups.map((group) => (
-            <div className="menu-accordion-group" key={group.subheading}>
-              <h5 className="menu-accordion-subheading">{group.subheading}</h5>
-              {group.items.map((item, i) => (
+          {groups ? (
+            groups.map((group) => (
+              <div className="menu-accordion-group" key={group.subheading}>
+                <h5 className="menu-accordion-subheading">{group.subheading}</h5>
+                {group.items.map((item, i) => (
+                  <AccordionRow item={item} key={i} />
+                ))}
+              </div>
+            ))
+          ) : (
+            <>
+              {visibleItems.map((item, i) => (
                 <AccordionRow item={item} key={i} />
               ))}
-            </div>
-          ))
-        ) : (
-          <>
-            {visibleItems.map((item, i) => (
-              <AccordionRow item={item} key={i} />
-            ))}
-            {remaining > 0 && (
-              <button type="button" className="menu-accordion-more" onClick={() => setShowAll(true)}>
-                + {remaining} more options
-              </button>
-            )}
-          </>
-        )}
+              {remaining > 0 && (
+                <button type="button" className="menu-accordion-more" onClick={() => setShowAll(true)}>
+                  + {remaining} more options
+                </button>
+              )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

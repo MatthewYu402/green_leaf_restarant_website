@@ -44,14 +44,16 @@
   transform: rotate(180deg);
 }
 
+/* Outer body clips; its max-height is set from the inner content's measured height. */
 .menu-accordion-body {
   max-height: 0;
   overflow: hidden;
-  padding: 0 20px;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s ease;
 }
 
-.menu-accordion.open .menu-accordion-body {
+/* Padding lives on a non-animating inner wrapper so the measured height is
+   always the full open height (measuring mid padding-transition came up short). */
+.menu-accordion-content {
   padding: 0 20px 28px;
 }
 

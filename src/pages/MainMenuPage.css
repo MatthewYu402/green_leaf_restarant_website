@@ -254,9 +254,9 @@
   display: none;
 }
 
+/* Keeps MenuList's default 24px padding and 600px max-width on purpose —
+   that inset is part of this card's look. */
 .teriyaki-card-options {
-  padding: 0;
-  max-width: 100%;
   width: 100%;
 }
 

@@ -254,7 +254,7 @@ export const home = {
     title: 'The 20th Year Roll',
     paragraphs: [
       'Every year, we craft a brand-new sushi roll to commemorate another year since we first opened our doors. We call them our **Anniversary Rolls** - a living archive of our journey, one roll at a time.',
-      'Crafted to commemorate our two decades of culinary experience, the 20th Year Roll comes with spicy salmon and avocado at the center, topped with smokey seared salmon, and finished with yum yum sauce, crunchy tempura batter flakes, and sliced jalepeños.',
+      'Crafted to commemorate our two decades of culinary experience, the 20th Year Roll comes with spicy salmon and avocado at the center, topped with smokey seared salmon, and finished with yum yum sauce, crunchy tempura batter flakes, and sliced jalapeños.',
     ],
     image: roll20thYear,
     imageAlt: '20th Year Roll',
@@ -311,13 +311,13 @@ export const home = {
       { src: customer9, alt: 'Behind the counter' },
       { src: customer10, alt: 'Behind the counter' },
       { src: customerParker, alt: 'Robert Parker' },
-      { src: customer11, alt: 'Rober Parker' },
-      { src: customer12, alt: 'Rober Parker' },
-      { src: customer13, alt: 'Rober Parker' },
-      { src: customer14, alt: 'Rober Parker' },
-      { src: customer15, alt: 'Rober Parker' },
-      { src: customer16, alt: 'Rober Parker' },
-      { src: customer17, alt: 'Rober Parker' },
+      { src: customer11, alt: 'Robert Parker' },
+      { src: customer12, alt: 'Robert Parker' },
+      { src: customer13, alt: 'Robert Parker' },
+      { src: customer14, alt: 'Robert Parker' },
+      { src: customer15, alt: 'Robert Parker' },
+      { src: customer16, alt: 'Robert Parker' },
+      { src: customer17, alt: 'Robert Parker' },
     ] satisfies GalleryImage[],
   },
   dividerIcons: { flower: flowerIcon, leaf: goldLeafIcon },
@@ -345,13 +345,13 @@ export const appetizers = {
   featuredDescription: 'Experience a curated assortment of our finest appetizers, perfect for sharing and awakening the palate.',
   featured: [
     { name: 'Green Leaf Dumplings', image: greenLeafDumplingsPhoto, price: '$5.50', description: 'Pan-seared chicken dumplings in spinach wrap' },
-    { name: 'Scallion Pancake and String Bean', image: scallionPancakePhoto, price: '$8.50', description: 'Savory stir-fried green beans wrapped in cripsy scallion pancake' },
+    { name: 'Scallion Pancake and String Bean', image: scallionPancakePhoto, price: '$8.50', description: 'Savory stir-fried green beans wrapped in crispy scallion pancake' },
     { name: 'Edamame', price: '$5.50', description: 'Steamed soybeans with sea salt' },
     { name: 'Summer Roll', image: summerRollPhoto, price: '$6.95', description: 'Shrimp, lettuce, carrot, crabstick, and rice noodle in rice paper' },
     { name: 'Crispy Wonton (6)', image: crispyWontonsPhoto, price: '$6.50', description: 'Fried wontons filled with cream cheese with crab meat' },
   ] satisfies MenuItem[],
   items: [
-    { name: 'Age Tofu', image: ageTofuPhoto, price: '$5.50', description: 'Fried bean cure served with tempura sauce' },
+    { name: 'Age Tofu', image: ageTofuPhoto, price: '$5.50', description: 'Fried bean curd served with tempura sauce' },
     { name: 'Shumai (6)', image: shumaiPhoto, price: '$5.95', description: 'Steamed Shrimp Dumplings (Japanese Style)' },
     { name: 'Japanese Vegetable Spring Roll (3)', price: '$5.50' },
     { name: 'Shrimp Tempura', price: '$7.95', description: 'Deep-fried tempura style shrimp with vegetables' },
@@ -378,7 +378,7 @@ export const soupsAndSalads = {
     { name: 'Chicken, Barley, and Brown Rice Soup', price: '$5.95' },
   ] satisfies MenuItem[],
   items: [
-    { name: 'Sushi Bar Salad', image: sushiBarSaladPhoto, price: '$6.95', description: 'Seaweed salad base with cucumber and crabstick topped spicy mayonaise and tempura flakes' },
+    { name: 'Sushi Bar Salad', image: sushiBarSaladPhoto, price: '$6.95', description: 'Seaweed salad base with cucumber and crabstick topped spicy mayonnaise and tempura flakes' },
     { name: 'Seaweed Salad', price: '$5.95', description: 'Refreshing wakame seaweed in sweet and savory dressing' },
     { name: 'Hawaiian Poke Salad Bowl', price: '$11.95', description: 'Seaweed salad and mixed greens topped with tuna, salmon, avocado, cucumber, and poke sauce' },
     { name: 'California Style Salad', price: '$6.95', description: 'Crabstick, avocado, cucumber, and spicy mayo' },
@@ -401,8 +401,8 @@ export const meat = {
     { name: "General Tso's Chicken", price: '$14.95' },
     { name: 'Orange Chicken', price: '$14.95' },
     { name: 'Mongolian Beef', price: '$17.95' },
-    { name: 'Beef and Brocolli', price: '$17.95' },
-    { name: 'Chicken and Brocolli', price: '$14.95' },
+    { name: 'Beef and Broccoli', price: '$17.95' },
+    { name: 'Chicken and Broccoli', price: '$14.95' },
     { name: 'Chicken and String Beans', price: '$14.95' },
     { name: 'Chicken and Mixed Vegetables', price: '$14.95' },
     { name: 'Beef and Mixed Vegetables', price: '$17.95' },
@@ -413,7 +413,7 @@ export const meat = {
 /**
  * Changes:
  * Pecan Crusted Salmon Filet - $20.95
- * Grilled Slmon Filet with House Salad - $20.95
+ * Grilled Salmon Filet with House Salad - $20.95
  */
 export const seafood = {
   title: 'Seafood',
@@ -427,7 +427,7 @@ export const seafood = {
         { name: 'Seafood Combo', price: '$19.95', description: 'Scallop and shrimp stir-fried with bell pepper, tomato and onion, served in a thai curry sauce, ' },
         { name: 'Pecan Crusted Salmon Filet', price: '$20.95' },
         { name: 'Grilled Salmon Filet', price: '$20.95', description: 'Fresh grilled salmon filet, served with a house salad' },
-        { name: 'Shrimp with Brocolli', price: '$17.95' },
+        { name: 'Shrimp with Broccoli', price: '$17.95' },
         { name: 'Shrimp with Mixed Vegetables', price: '$17.95' },
       ],
     },
@@ -483,7 +483,7 @@ export const noodlesAndVegetarian = { title: 'Noodles & Vegetarian' };
 /**
  * Changes:
  * Drunken Noodles Shrimp Or Chicken - $16.95
- * Drukeeb Noodles w Beef - $17.95
+ * Drunken Noodles w Beef - $17.95
  */
 export const noodles = {
   title: 'Noodles & Fried Rice',
@@ -506,7 +506,7 @@ export const vegetarian = {
   title: 'Vegetarian',
   items: [
     { name: 'Szechuan String Bean', price: '$13.95' },
-    { name: 'Tofu Phad Thai', price: '$13.95' },
+    { name: 'Tofu Pad Thai', price: '$13.95' },
     { name: 'Veggie Pad Thai', price: '$13.95' },
     { name: 'Singapore Rice Noodles', price: '$13.95' },
     { name: 'Sauteed Mixed Vegetables', price: '$13.95' },
@@ -552,7 +552,7 @@ export const teriyakiAndTempura = {
   items: [
     { name: 'Chicken Teriyaki', price: '$14.95' },
     { name: 'Salmon Teriyaki', price: '$19.95' },
-    { name: 'Steak Teryaki', price: '$24.95' },
+    { name: 'Steak Teriyaki', price: '$24.95' },
     { name: 'Chicken Tempura', price: '$14.95' },
     { name: 'Shrimp Tempura', price: '$17.95' },
     { name: 'Seafood Tempura', price: '$19.95' },
@@ -615,7 +615,7 @@ export const sushiMenuPdfs: PdfLink[] = [{ label: 'View Sushi Menu (PDF)', href:
 export const featuredRoll = {
   badge: 'Special Feature',
   name: '20th Year Anniversary Roll',
-  description: 'A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced japaleňo. ',
+  description: 'A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced jalapeño. ',
   price: '$15.50',
   image: roll20thYear,
 };
@@ -633,7 +633,7 @@ export const anniversaryRolls = {
     { name: '6th Year', image: roll6thYear, description: 'Spicy salmon and avocado, topped with fresh salmon, cream cheese, and tempura flakes', price: '$15.50' },
     { name: '7th Year', image: roll7thYear, description: 'Spicy tuna and salmon, topped with spicy crabmeat and scallop', price: '$15.50' },
     { name: '8th Year', image: roll8thYear, description: 'Spicy tuna, topped with avocado and spicy salmon', price: '$15.50' },
-    { name: '9th Year', image: roll9thYear, description: 'Shimp tempura and asparagus, topped with spicy yellowtail and black crispy rice', price: '$15.50' },
+    { name: '9th Year', image: roll9thYear, description: 'Shrimp tempura and asparagus, topped with spicy yellowtail and black crispy rice', price: '$15.50' },
     { name: '10th Year', image: roll10thYear, description: 'Yellowtail, salmon and spicy tuna, topped with salmon, mango, and spicy sauce', price: '$15.50' },
     { name: '11th Year', image: roll11thYear, description: 'Shrimp tempura topped with white tuna, jalapeno, and spicy sauce', price: '$15.50' },
     { name: '12th Year', image: roll12thYear, description: 'Crabmeat, spicy tuna, and crispy flakes inside, topped with avocado, spicy yellowtail, and jalapeno', price: '$15.50' },
@@ -657,7 +657,7 @@ export const specialRolls = {
     { name: 'Esther', description: 'Salmon and avocado, topped with spicy tuna and tempura flakes', price: '$14.95' },
     { name: 'Matthew', image: matthewRollPhoto, description: 'Salmon, crab stick, topped with avocado, spicy yellowtail and tempura flakes', price: '$14.95' },
     { name: 'Ginger', description: 'Spicy tuna, salmon skin topped with salmon and fish roe', price: '$14.95' },
-    { name: 'Raven', image: ravenRollPhoto, description: 'Spicy yellowtail, topped with cripsy black rice and spicy tuna on top', price: '$14.95' },
+    { name: 'Raven', image: ravenRollPhoto, description: 'Spicy yellowtail, topped with crispy black rice and spicy tuna on top', price: '$14.95' },
     { name: 'F-Ken', description: 'Crab stick and cream cheese tempura style, topped with spicy tuna', price: '$14.95' },
     { name: 'Godfather', description: 'Shrimp tempura, old bay crabmeat, seaweed salad and avocado wrapped in yellow soy seaweed', price: '$14.95' },
     { name: "Penthouse (Mitchell Brown's Creation)", image: penthouseRollPhoto, description: 'Shrimp tempura, cilantro, avocado, and tuna, finished with lime', price: '$14.95' },
@@ -672,16 +672,16 @@ export const specialRolls = {
     { name: "Diamond Mike (Michael Shield's Creation)", image: diamondMikeRollPhoto, description: 'Crabstick and spicy salmon, topped with salmon, eel, avocado, and tempura flakes', price: '$14.95' },
     { name: 'Unforgettable', image: unforgettableRollPhoto, description: 'Spicy tuna, topped with eel and avocado', price: '$14.95' },
     { name: 'Baltimore', image: baltimoreRollPhoto, description: 'Soft-shell crab topped with spicy crabmeat', price: '$15.95' },
-    { name: 'Son-In-Law Mango', image: sonInLawRollPhoto, description: 'Shrimp tempura, topped with cripsy spicy tuna and mango', price: '$14.95' },
+    { name: 'Son-In-Law Mango', image: sonInLawRollPhoto, description: 'Shrimp tempura, topped with crispy spicy tuna and mango', price: '$14.95' },
     { name: 'Garden', image: gardenRollPhoto, description: 'Tempura sweet potato and yellow radish, topped with avocado', price: '$8.95' },
-    { name: 'Crunchy Roll', description: 'Lump crabmeat, avocado, and shimp, topped with fish roe and tempura flakes wrapped in soy paper', price: '$14.95' },
+    { name: 'Crunchy Roll', description: 'Lump crabmeat, avocado, and shrimp, topped with fish roe and tempura flakes wrapped in soy paper', price: '$14.95' },
     { name: 'Futomaki', description: 'Crabstick, egg, avocado, and vegetables', price: '$13.95' },
     { name: 'Phoenix', description: 'Chicken tempura topped with eel and avocado', price: '$14.95' },
     { name: 'Pretty In Red', description: 'Lump Crabmeat and avocado, topped with tempura flakes, tuna, and spicy sauce', price: '$14.95' },
     { name: 'Pine Nut Fish Roll', description: 'Tempura cod with spicy sauce', price: '$9.95' },
     { name: 'Red Dragon', description: 'Shrimp Tempura topped with spicy tuna', price: '$14.95' },
     { name: 'Spicy Lobster', description: 'Crabstick topped with spicy lobster', price: '$15.50' },
-    { name: 'Teryaki Salmon', description: 'Grilled Salmon teryaki sauce', price: '$8.95' },
+    { name: 'Teriyaki Salmon', description: 'Grilled Salmon teriyaki sauce', price: '$8.95' },
     { name: 'Tokyo', description: 'Spicy tuna topped with tuna, salmon, and yellowtail with spicy sauce', price: '$14.95' },
     { name: 'TNT Roll', description: 'Spicy Lobster topped with tuna and tempura flakes', price: '$15.50' },
     { name: 'Two to Tango', description: 'Shrimp tempura topped with fresh shrimp and avocado', price: '$14.95' },
@@ -692,7 +692,7 @@ export const specialRolls = {
 
 /**
  * Changed:
- * Califioria - $6.50
+ * California - $6.50
  */
 export const makiRolls = {
   title: 'Maki Rolls',
@@ -708,14 +708,14 @@ export const makiRolls = {
     { name: 'Tuna', price: '$5.25' },
     { name: 'Spicy Tuna', price: '$6.95' },
     { name: 'Tuna Avocado', price: '$6.95' },
-    { name: 'Asparagas & Cucumber', price: '$4.95' },
+    { name: 'Asparagus & Cucumber', price: '$4.95' },
     { name: 'Avocado Roll', price: '$4.95' },
     { name: 'Avocado & Cucumber', price: '$4.95' },
     { name: 'Eel Avocado', price: '$7.95' },
     { name: 'Lobster', price: '$11.95' },
     { name: 'Lump Crabmeat Avocado', price: '$10.95' },
     { name: 'Crispy Spicy Crab Roll', price: '$11.95' },
-    { name: 'Salmon', price: '6.50' },
+    { name: 'Salmon', price: '$6.50' },
     { name: 'Salmon Avocado', price: '$6.95' },
     { name: 'Spicy Salmon', price: '$6.95' },
     { name: 'Shrimp Avocado', price: '$6.95' },
@@ -741,7 +741,7 @@ export const makiRolls = {
  * Salmon - $5.75
  * Red Snapper - $5.75
  * Octopus - $5.75
- * Mackeral- $5.75
+ * Mackerel- $5.75
  *
  * Fresh Water Eel - $6.25
  *
@@ -756,7 +756,7 @@ export const makiRolls = {
  * Salmon - $7.25
  * Red Snapper - $7.25
  * Octopus - $7.25
- * Mackeral - $7.25
+ * Mackerel - $7.25
  *
  * Ebi Shrimp - $7.25
  * Yellowtail - $7.25
@@ -772,7 +772,7 @@ export const nigiriSashimi = {
     { name: 'Smoked Salmon', nigiriPrice: '$5.75', sashimiPrice: '$7.25' },
     { name: 'Crab Stick', nigiriPrice: '$5.25', sashimiPrice: '$6.50' },
     { name: 'Lobster', nigiriPrice: '$8.95', sashimiPrice: '$10.95' },
-    { name: 'Mackeral', nigiriPrice: '$5.75', sashimiPrice: '$7.25' },
+    { name: 'Mackerel', nigiriPrice: '$5.75', sashimiPrice: '$7.25' },
     { name: 'Bean Curd', nigiriPrice: '$4.95', sashimiPrice: '$5.95' },
     { name: 'Flying Fish Roe', nigiriPrice: '$4.95', sashimiPrice: '$5.50' },
     { name: 'Freshwater Eel', nigiriPrice: '$6.25', sashimiPrice: '$7.95' },
@@ -861,7 +861,7 @@ export const about = {
       { src: aboutNewYears, alt: 'New Year Celebrations' },
       { src: aboutSundayRegulars, alt: 'Sunday Regulars' },
       { src: aboutNeighborhood, alt: 'Neighborhood' },
-      { src: aboutChineseNewYear, alt: 'Chinese New year' },
+      { src: aboutChineseNewYear, alt: 'Chinese New Year' },
       { src: aboutBirthday, alt: 'Birthday Dinner' },
       { src: aboutAnniversary, alt: 'Anniversary Celebrations' },
     ] satisfies GalleryImage[],
