@@ -35,6 +35,10 @@
   gap: 24px;
 }
 
+.featured-menu-section--image-right .featured-menu-top {
+  flex-direction: row-reverse;
+}
+
 .featured-menu-image-wrap {
   position: relative;
   flex: 1 1 45%;

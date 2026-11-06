@@ -1,0 +1,25 @@
+.photo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--gold-dark);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.photo-button:hover {
+  color: var(--gold-accent);
+  transform: scale(1.15);
+}
+
+.photo-button svg {
+  width: 100%;
+  height: 100%;
+}

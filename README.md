@@ -34,67 +34,77 @@ npm run preview   # preview the production build locally
 
 ```
 src/
-  assets/
-    icons/                  # SVG icons used in dividers and section headers
-    images/                 # photos, grouped by menu area
-      appetizers/
-      soups-salads/
-      specials/
-      sneak-peak-images/    # hero/section images for menu categories
-  components/
-    ScrollToTop.tsx         # resets #root scroll to the top on every route change
-    layout/
-      Navbar.tsx            # floating pill on Home, solid bar elsewhere
-      PageHeader.tsx        # fixed header visual + in-flow spacer for non-home pages
-    menu/
-      MenuItem.tsx          # name / price / description / optional pieces row
-      MenuOptions.tsx       # title + divider + list of MenuItems (flat or grouped)
-      MenuCategory.tsx      # optional image + MenuOptions in a card
-      FeaturedMenuSection.tsx
-      DrinksDesserts.tsx
-      MiddayMuse.tsx        # lunch specials (L1-L12), desktop layout
-      SpecialItemGrid.tsx   # card grid for numbered specials
-      BentoItemList.tsx
-      DinnerSpecials.tsx    # Chef's Special + dinner grid (exports shared data)
-      RollAccordion.tsx     # mobile accordion; supports groups and item ID badges
-    sections/
-      SignatureSection.tsx  # home page signature roll section
-      DailySpecials.tsx     # home page section
-    shared/
-      Section.tsx           # fade/slide-in-on-scroll wrapper
-      Divider.tsx           # icon divider with flanking lines
-      ItemPhotoTrigger.tsx  # photo preview trigger for menu items
-  hooks/
-    useInView.ts            # IntersectionObserver hook, triggers once
-  pages/
-    Home.tsx
-    MainMenuPage.tsx
-    SushiMenu.tsx
-    SpecialsPage.tsx
-  App.tsx                   # routes, ScrollToTop, PageHeader
-  main.tsx                  # BrowserRouter wrapper
+  content.ts                # ALL site content: menus, prices, photos, copy, hours, contact info
+  types.ts                  # MenuItem, MenuGroup, NigiriItem, GalleryImage, PdfLink
+  App.tsx                   # routes + site chrome (header, footer, lightbox)
+  main.tsx                  # BrowserRouter wrapper, font imports
   index.css                 # :root design tokens, global resets, scrollbar styling
+  assets/                   # icons, images (grouped by menu area), menu PDFs
+  components/
+    layout/                 # site chrome
+      Navbar.tsx            # floating on Home, solid elsewhere; mobile drawer
+      PageHeader.tsx        # Navbar + per-route banner + BottomNav
+      BottomNav.tsx         # mobile tab bar (icons in NavIcons.tsx)
+      Footer.tsx
+      ScrollToTop.tsx       # resets #root scroll on every route change
+    ui/                     # generic building blocks, no content
+      Section.tsx           # reveal-on-scroll wrapper (reveal="slide" | "fade")
+      Divider.tsx           # gold rule with an optional icon
+      GalleryCarousel.tsx   # swipeable photo strip
+      Lightbox.tsx          # full-screen photo viewer (provider + useLightbox)
+      PhotoButton.tsx       # camera icon next to a menu item that has a photo
+      PdfLinks.tsx          # "View … Menu (PDF)" links
+      RichText.tsx          # renders **bold** and \n from content strings
+    menu/                   # menu displays — all take content as props
+      MenuList.tsx          # titled list of rows (flat or grouped)
+      MenuCard.tsx          # bordered card for one item; MenuCardGrid.tsx lays them out
+      MenuAccordion.tsx     # mobile tap-to-expand category
+      MenuPanel.tsx         # off-white panel holding side-by-side MenuLists
+      FeaturedMenuSection.tsx  # big photo + featured cards + grid
+      RollGrid.tsx          # roll cards with pill prices (Sushi page)
+      NigiriSashimiGrid.tsx # nigiri / sashimi dual-price cards
+      DrinksDesserts.tsx    # cold / hot / dessert cards beside a photo
+      LunchSpecials.tsx     # maki cards + bento card
+      DinnerSpecials.tsx    # Chef's Special banner + card grid
+    home/                   # Home page sections
+      SignatureSection.tsx, BeyondTheMenu.tsx, StoryTeaser.tsx, PeekInside.tsx
+  hooks/
+    useInView.ts            # IntersectionObserver rooted on #root, fires once
+    useScrolledPast.ts      # "has #root scrolled past N px?" (navbar, header shrink)
+    useScrollLock.ts        # freezes #root while an overlay is open
+    useScrollHint.ts        # Home's bottom "scroll down" arrow
+    useSectionSnapScroll.ts # Home's glide-to-next-section on wheel
+    useScrollbarFade.ts
+  utils/
+    scrollRoot.ts           # getScrollRoot() — the #root scroll container
+  pages/                    # one file per route; wire content.ts into components
 ```
 
 Each component has a matching `.css` file next to it.
+
+## Editing content
+
+Everything a visitor reads or sees lives in `src/content.ts`: every menu item and price, photos, section titles, hours, phone, address, and page copy. To change a price, add a roll, swap a photo, or update hours, edit only that file. Components never hard-code content.
+
+- Add an item: add an object to the right `items` array, e.g. `{ name: 'Tokyo', price: '$14.95', description: '…' }`. `description`, `image`, and `id` (an "L1"-style badge) are optional.
+- Add a photo to an item: import the image at the top of `content.ts` and set `image:`. A camera button appears automatically.
+- Desktop and mobile layouts read the same arrays, so they stay in sync.
 
 ## Key files
 
 | File | Why it matters |
 | --- | --- |
+| `src/content.ts` | All content. Start here for any text, price, or photo change. |
 | `src/index.css` | All design tokens (`:root` variables), the `#root` scroll container, and the scrollbar styling. |
-| `src/App.tsx` | Route definitions and the global `ScrollToTop` and `PageHeader`. |
-| `src/components/layout/PageHeader.tsx` | `MENU_ROUTES` and `PAGE_HEADERS` control which routes get the tall header and which get a title. |
-| `src/pages/MainMenuPage.tsx` | Holds the menu data and renders both the desktop layout and the mobile accordions from the same arrays. |
-| `src/pages/Home.tsx` | Navbar scroll-style toggle and the scroll-to-section animation. |
-| `src/components/menu/MiddayMuse.tsx` | Lunch specials data (`MAKI_SPECIALS`, `BENTO_BOXES`), exported and reused by the mobile accordion. |
-| `src/components/menu/DinnerSpecials.tsx` | Exports `CHEF_SPECIAL`, `ChefSpecialImage`, and `DINNER_GRID_ITEMS`, reused on the mobile Specials layout. |
+| `src/App.tsx` | Route definitions. Its import order also sets global CSS order (see gotchas). |
+| `src/components/layout/PageHeader.tsx` | `MENU_ROUTES` controls which routes get the tall, shrinking header; titles come from `pageHeaders` in `content.ts`. |
+| `src/pages/MainMenuPage.css` | Per-section restyling of `MenuList` (Seafood, Sushi & Sashimi, Teriyaki). |
 
 ## Architecture notes
 
 ### `#root` is the scroll container
 
-`#root` has `height: 100svh; overflow-y: scroll`, so it scrolls, not `window` or `<html>`. All scroll logic uses `document.getElementById('root')`.
+`#root` has `height: 100svh; overflow-y: scroll`, so it scrolls, not `window` or `<html>`. All scroll logic goes through `getScrollRoot()` in `src/utils/scrollRoot.ts`.
 
 ### PageHeader: fixed visual plus in-flow spacer
 
@@ -103,31 +113,25 @@ On non-home pages, `PageHeader` renders two elements:
 1. `.page-header-visual` is `position: fixed` behind the navbar. It holds the background image and title text, and shrinks on scroll on menu pages.
 2. `.page-header-spacer` is an in-flow element of the same height that reserves space so page content starts below the header. It needs `flex-shrink: 0`, because `#root` is a flex column and an empty child would otherwise collapse to zero height.
 
-To add a menu page, add its path to `MENU_ROUTES`. To give it a title and subtitle, add it to `PAGE_HEADERS`. Keys must match the route paths in `App.tsx` exactly.
+To add a menu page, add its path to `MENU_ROUTES`. To give it a title and subtitle, add it to `pageHeaders` in `content.ts`. Keys must match the route paths in `App.tsx` exactly.
 
 ### Menu components
 
-```
-MenuCategory (optional image, wraps MenuOptions)
-  └── MenuOptions (title, divider, list or groups)
-        └── MenuItem x N
-```
-
-`MenuItem` and `MenuOptions` are generic. Each section on the main menu restyles them through scoped overrides in `MainMenuPage.css` instead of adding variants to the components.
+`MenuList`, `MenuCard`, and `MenuAccordion` are generic and take `MenuItem[]`. Each section on the main menu restyles them through a parent class (`MenuPanel.css`, `MainMenuPage.css`) instead of adding variants to the components.
 
 ### Desktop and mobile layouts
 
-Most menu pages render separate desktop and mobile trees and switch between them at `max-width: 1024px`. Both are built from the same data arrays, so content stays in sync. On the main menu, `toAccordionItems` and `toAccordionGroups` convert menu data into the shape `RollAccordion` expects, including an optional `id` that renders as an L1-L12 style badge.
+Most menu pages render separate desktop and mobile trees and switch between them at `max-width: 1024px`. Both are built from the same `content.ts` arrays, so content stays in sync.
 
 ### Scroll animations
 
 - `useInView` uses an `IntersectionObserver` rooted on `#root`, fires once, and then stays visible.
-- `Section` wraps content and applies reveal classes such as `reveal-block-slide` and `reveal-block-fade`.
-- Home's scroll-to-section animation uses `requestAnimationFrame` and cancels it on unmount. Without that cleanup, navigating away mid-animation overrides `ScrollToTop`.
+- `Section` wraps content and applies `reveal-block-slide` / `reveal-block-fade` via its `reveal` prop.
+- Home's scroll-to-section animation (`useSectionSnapScroll`) uses `requestAnimationFrame` and cancels it on unmount. Without that cleanup, navigating away mid-animation overrides `ScrollToTop`.
 
 ### Imports
 
-The `@` alias maps to `src/` (configured in `vite.config.ts` and `tsconfig.json`), so assets are imported like `@/assets/icons/gold-leaf.svg`. Components still use relative paths.
+The `@` alias maps to `src/` (configured in `vite.config.ts` and `tsconfig.json`), so assets are imported like `@/assets/icons/gold-leaf.svg`.
 
 ## Design system
 
@@ -151,7 +155,8 @@ The scrollbar is a permanent dark-grey track with a light-grey thumb, using WebK
 - A `margin` shorthand after `margin-top` in the same rule overwrites it.
 - Elements that inherit text color only work by coincidence. Set `color` explicitly on components reused across pages with different backgrounds.
 - Any `requestAnimationFrame` loop started in an effect must be cancelled in the effect's cleanup.
-- Route strings are hard-coded in several places (`App.tsx`, `Navbar.tsx`, `PageHeader.tsx`). Typos fail silently, so keep them in sync.
+- Route strings live in `App.tsx` and in `content.ts` (`navLinks`, `bottomNavTabs`, `pageHeaders`, button links). Typos fail silently, so keep them in sync.
+- CSS is global, and bundle order follows import order: each component imports its own `.css` first, and page CSS loads before the component CSS it overrides. Ties between equally specific selectors go to whichever file loads later, so reordering imports can change the look.
 
 ## Status and roadmap
 

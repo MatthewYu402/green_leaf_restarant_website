@@ -9,54 +9,6 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.sushi-menu-heading {
-  color: var(--text-dark);
-  font-weight: 700;
-}
-
-.sushi-menu-subheading {
-  color: var(--text-dark);
-  font-weight: normal;
-}
-
-.sushi-menu-pdf {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.sushi-menu-pdf-btn {
-  position: relative;
-  padding-bottom: 2px;
-  text-decoration: none;
-  color: var(--green-dark);
-  font-family: var(--sans);
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-/* Underline that grows from the center on hover */
-.sushi-menu-pdf-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--gold-border);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.sushi-menu-pdf-btn:hover {
-  color: var(--gold-dark);
-}
-
-.sushi-menu-pdf-btn:hover::after {
-  transform: scaleX(1);
-}
-
 .special-feature-description {
   font-size: 20px;
   font-weight: normal;
@@ -146,68 +98,6 @@
 
 .sushi-menu-page .divider {
   margin: 80px 0;
-}
-
-.flower-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.sushi-rolls-row {
-  max-width: 1700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  gap: 40px;
-}
-
-.sushi-rolls-row .menu-category {
-  flex: 1 1 0;
-  max-width: none;
-  width: auto;
-}
-
-.sushi-rolls-row .menu-options {
-  max-width: none;
-  width: 100%;
-}
-
-.sushi-rolls-row .menu-options-title {
-  text-align: left;
-  font-size: 28px;
-}
-
-.sushi-rolls-row .item-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: stretch;
-  column-gap: 32px;
-  row-gap: 24px;
-}
-
-.sushi-rolls-row .menu-item {
-  display: flex;
-  flex-direction: column;
-  min-height: 100px;
-  /* rough floor so very short items don't look collapsed */
-}
-
-.rolls-section--plain {
-  background: none;
-  padding: 0;
-  max-width: 1700px;
-}
-
-.rolls-section--plain .anniversary-rolls-title {
-  color: var(--text-dark);
-  font-size: 32px;
-}
-
-.specialty-rolls-section.specialty-rolls-section--reversed {
-  flex-direction: row-reverse;
 }
 
 /* Sushi Platters */

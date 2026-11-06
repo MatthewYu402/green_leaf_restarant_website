@@ -1,0 +1,91 @@
+.roll-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--offwhite);
+  border-radius: 16px;
+  padding: 48px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.roll-section-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 32px;
+  color: var(--gold-accent);
+  margin: 0 0 8px;
+}
+
+.roll-section-subtitle {
+  color: var(--green-dark);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 32px;
+}
+
+.roll-section-grid {
+  display: grid;
+  gap: 20px;
+  text-align: left;
+}
+
+.roll-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+.roll-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.roll-card-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.roll-card-price {
+  flex-shrink: 0;
+  background-color: var(--gold-light);
+  color: var(--gold-dark);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 2px 12px;
+  border-radius: 20px;
+}
+
+.roll-card-description {
+  color: var(--gray-dark);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.roll-section-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.roll-section-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.roll-card-name-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Dark section title instead of gold (every roll section but Anniversary Rolls) */
+.roll-section--plain-title .roll-section-title {
+  color: var(--text-dark);
+  font-size: 32px;
+}

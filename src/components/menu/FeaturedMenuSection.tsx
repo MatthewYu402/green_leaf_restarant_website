@@ -1,38 +1,37 @@
-import './FeaturedMenuSection.css'
-import SpecialItem from './SpecialItem'
-
-interface MenuItemData {
-  name: string;
-  price: string;
-  description: string;
-  image?: string;
-}
+import './FeaturedMenuSection.css';
+import type { MenuItem } from '@/types';
+import MenuCard from './MenuCard';
 
 interface FeaturedMenuSectionProps {
   title: string;
   image: string;
   imageAlt?: string;
+  /** Pill shown on the photo, e.g. "Chef's Selection". */
   badge: string;
   featuredTitle: string;
   featuredDescription: string;
-  featuredItems: MenuItemData[];
-  items: MenuItemData[];
-  className?: string;
+  /** Cards stacked beside the photo. */
+  featured: MenuItem[];
+  /** Cards in the grid below the photo. */
+  items: MenuItem[];
+  /** Puts the photo on the right instead of the left. */
+  imageRight?: boolean;
 }
 
+/** A headed section: large captioned photo beside featured items, then a grid of the rest. */
 export default function FeaturedMenuSection({
   title,
   image,
-  imageAlt = "",
+  imageAlt = '',
   badge,
   featuredTitle,
   featuredDescription,
-  featuredItems,
+  featured,
   items,
-  className = "",
+  imageRight = false,
 }: FeaturedMenuSectionProps) {
   return (
-    <div className={`featured-menu-section ${className}`.trim()}>
+    <div className={imageRight ? 'featured-menu-section featured-menu-section--image-right' : 'featured-menu-section'}>
       <div className="featured-menu-section-heading">
         <h2 className="featured-menu-section-title">{title}</h2>
         <span className="featured-menu-section-divider"></span>
@@ -49,15 +48,15 @@ export default function FeaturedMenuSection({
         </div>
 
         <div className="featured-menu-featured-items">
-          {featuredItems.map((item) => (
-            <SpecialItem key={item.name} {...item} />
+          {featured.map((item) => (
+            <MenuCard key={item.name} {...item} />
           ))}
         </div>
       </div>
 
       <div className="featured-menu-grid">
         {items.map((item) => (
-          <SpecialItem key={item.name} {...item} />
+          <MenuCard key={item.name} {...item} />
         ))}
       </div>
     </div>

@@ -1,0 +1,102 @@
+/* Off-white panel holding side-by-side MenuLists
+   (Main Menu: "From The Grill & Kitchen", "Noodles & Vegetarian") */
+.menu-panel {
+  max-width: 1700px;
+  margin: 40px auto 0;
+  padding: 48px 56px;
+  box-sizing: border-box;
+  background-color: var(--offwhite);
+  border-radius: 16px;
+  text-align: left;
+}
+
+.menu-panel-title {
+  font-family: var(--libre);
+  font-weight: 600;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin: 0 0 24px;
+}
+
+.menu-panel-columns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+}
+
+.menu-panel-columns .menu-list {
+  flex: 1 1 420px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.menu-panel-columns .menu-list-title {
+  font-family: var(--libre);
+  font-weight: normal;
+  font-size: 28px;
+  color: var(--text-dark);
+  margin: 0 0 20px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+/* Short gold underline beneath each column title */
+.menu-panel-columns .menu-list-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 2px;
+  background-color: var(--gold-medium);
+}
+
+.menu-panel-columns .menu-list-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  column-gap: 28px;
+  row-gap: 20px;
+}
+
+.menu-panel-columns .menu-item {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.menu-panel-columns .menu-item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.menu-panel-columns .menu-item-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold-accent);
+}
+
+.menu-panel-columns .menu-item-description {
+  font-size: 16px;
+  color: var(--gray-dark);
+}
+
+/* ---- Variants ---- */
+
+.menu-panel--tight .menu-list {
+  gap: 0px;
+}
+
+/* Single-column item lists below 1135px */
+@media (max-width: 1135px) {
+  .menu-panel--stack-early .menu-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

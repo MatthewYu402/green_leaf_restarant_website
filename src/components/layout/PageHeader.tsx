@@ -1,59 +1,22 @@
-import './PageHeader.css'
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-
-// Components
-import Navbar from "./Navbar";
-import BottomNav from "./BottomNav";
-
-// Images
-// TODO: placeholder — swap for a real sushi platter photo
-import sushiHeaderImage from '@/assets/images/sushi-platters/sushi-platter-3.jpg';
+import './PageHeader.css';
+import { useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
+import BottomNav from './BottomNav';
+import { pageHeaders } from '@/content';
+import { useScrolledPast } from '@/hooks/useScrolledPast';
 
 const MENU_ROUTES = ['/menu', '/sushi'];
 
-interface PageHeaderContent {
-  title: string;
-  subtitle: string;
-  intro?: string;        // optional longer paragraph, shown in-flow below the mobile header image
-  mobileImage?: string;  // optional photo background for the mobile header — falls back to solid green
-}
-
-const PAGE_HEADERS: Record<string, PageHeaderContent> = {
-  '/menu': {
-    title: 'Our Menu',
-    subtitle: 'Inspired by tradition, crafted with care, and served with flavor.',
-    intro: "Experience the rich flavors of Asian cuisine, bringing together fresh seasonal ingredients"
-  },
-  '/sushi': {
-    title: 'Our Sushi',
-    subtitle: 'Crafted with precision, served with passion.',
-    intro: "Experience our meticulously curated variety of sushi items, ranging from our twenty-year legacy Anniversary Rolls to delicately sliced Nigiri and vibrant Sushi Salads.",
-    mobileImage: sushiHeaderImage,
-  },
-};
-
+/**
+ * Navbar + per-route page banner + mobile bottom nav. Banner text comes from
+ * `pageHeaders` in content.ts; on the menu pages the banner shrinks on scroll.
+ */
 export default function PageHeader() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const isMenuPage = MENU_ROUTES.includes(location.pathname);
-  const headerContent = PAGE_HEADERS[location.pathname];
-  const [shrunk, setShrunk] = useState(false);
-
-  useEffect(() => {
-    if (!isMenuPage) return;
-
-    const scrollContainer = document.getElementById('root');
-    if (!scrollContainer) return;
-
-    const handleScroll = () => {
-      setShrunk(scrollContainer.scrollTop > 80);
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, [location.pathname, isMenuPage]);
+  const headerContent = pageHeaders[location.pathname];
+  const shrunk = useScrolledPast(() => 80, isMenuPage, location.pathname);
 
   return (
     <>

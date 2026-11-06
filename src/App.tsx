@@ -1,65 +1,40 @@
-import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Pages
-import Home from './pages/HomePage';
-import SushiMenu from './pages/SushiMenuPage';
-import MainMenu from './pages/MainMenuPage';
+// NOTE: import order here sets the order of the bundled CSS, which decides
+// ties between equally-specific selectors. Don't reorder casually.
+import HomePage from './pages/HomePage';
+import SushiMenuPage from './pages/SushiMenuPage';
+import MainMenuPage from './pages/MainMenuPage';
 import AboutUsPage from './pages/AboutUsPage';
 import CareersPage from './pages/CareersPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ContactPage from './pages/ContactPage';
-
-// Components
-import { LightboxProvider } from './components/shared/Lightbox';
+import { LightboxProvider } from './components/ui/Lightbox';
 import PageHeader from './components/layout/PageHeader';
-import ScrollToTop from './components/ScrollTopTop';
-import Specials from './pages/SpecialsPage';
+import ScrollToTop from './components/layout/ScrollToTop';
+import SpecialsPage from './pages/SpecialsPage';
 import Footer from './components/layout/Footer';
+import { useScrollbarFade } from './hooks/useScrollbarFade';
 
-function App() {
-  {/* Scrollbar fade — global, applies on every page */ }
-  useEffect(() => {
-    let scrollTimeout: ReturnType<typeof setTimeout>;
-
-    const handleScroll = () => {
-      scrollContainer?.classList.add('scrolling'); // was document.documentElement
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        scrollContainer?.classList.remove('scrolling'); // was document.documentElement
-      }, 1000);
-    };
-
-    const scrollContainer = document.getElementById('root');
-    scrollContainer?.addEventListener('scroll', handleScroll);
-
-    return () => {
-      scrollContainer?.removeEventListener('scroll', handleScroll);
-      clearTimeout(scrollTimeout);
-    };
-  }, []);
+export default function App() {
+  useScrollbarFade();
 
   return (
-    <>
     <LightboxProvider>
-        <ScrollToTop />
-        <PageHeader />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<MainMenu />} />
-          <Route path="/sushi" element={<SushiMenu />} />
-          <Route path="/specials" element={<Specials />} />
-          <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        </Routes>
-        <Footer />
+      <ScrollToTop />
+      <PageHeader />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/menu" element={<MainMenuPage />} />
+        <Route path="/sushi" element={<SushiMenuPage />} />
+        <Route path="/specials" element={<SpecialsPage />} />
+        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      </Routes>
+      <Footer />
     </LightboxProvider>
-      
-    </>
   );
 }
-
-export default App;

@@ -1,63 +1,26 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
+import { business, navbar, navLinks } from '@/content';
+import { useScrolledPast } from '@/hooks/useScrolledPast';
+import { useScrollLock } from '@/hooks/useScrollLock';
 
-// Images
-import restaurantLogo from "@/assets/images/logo-front/green-leaf-logo.png";
-
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Main Menu', href: '/menu' },
-  { label: 'Sushi Menu', href: '/sushi' },
-  { label: 'Dinner Specials', href: '/specials' },
-  { label: 'About Us', href: '/about' },
-];
-
+/** Top bar: hamburger (mobile), logo, page links, and a call button. Floats over the Home hero. */
 export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === '/';
-  const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // Floating -> scrolled swap on Home, based on scroll past the hero.
-  // Moved here from HomePage.tsx (was manual DOM classList mutation) so it's
-  // ordinary React state that lives with the rest of the navbar's own state,
-  // and resets automatically on route change via the isHome dependency.
-  useEffect(() => {
-    if (!isHome) {
-      setScrolled(false);
-      return;
-    }
-
-    const scrollContainer = document.getElementById('root');
-    if (!scrollContainer) return;
-
-    const heroHeight = window.innerHeight;
-
-    const handleScroll = () => {
-      setScrolled(scrollContainer.scrollTop > heroHeight * 0.8);
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, [isHome]);
+  // Home only: floating (transparent) navbar turns solid once scrolled past most of the hero.
+  const scrolled = useScrolledPast(() => window.innerHeight * 0.8, isHome);
 
   // Close the drawer on every route change.
   useEffect(() => {
     setDrawerOpen(false);
   }, [location.pathname]);
 
-  // Lock the scroll container while the drawer is open, so the page behind
-  // the full-screen drawer can't scroll underneath it.
-  useEffect(() => {
-    const scrollContainer = document.getElementById('root');
-    if (!scrollContainer) return;
-    scrollContainer.style.overflowY = drawerOpen ? 'hidden' : 'scroll';
-    return () => {
-      scrollContainer.style.overflowY = 'scroll';
-    };
-  }, [drawerOpen]);
+  // The page behind the full-screen drawer can't scroll underneath it.
+  useScrollLock(drawerOpen);
 
   return (
     <>
@@ -78,7 +41,7 @@ export default function Navbar() {
         </button>
 
         <Link to="/" className="logo-link" aria-label="Green Leaf Cuisine — Home">
-          <img src={restaurantLogo} className="logo" alt="Green Leaf Sushi" />
+          <img src={business.logo} className="logo" alt={business.name} />
         </Link>
 
         <ul className="nav-links">
@@ -94,9 +57,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a className="cell-num" href="tel:4107710030">
-          <span className="cell-num-full">Call to Reserve</span>
-          <span className="cell-num-short">Call</span>
+        <a className="cell-num" href={`tel:${business.phone.tel}`}>
+          <span className="cell-num-full">{navbar.callFull}</span>
+          <span className="cell-num-short">{navbar.callShort}</span>
         </a>
       </nav>
 
