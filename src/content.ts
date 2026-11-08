@@ -95,6 +95,7 @@ import roll17thYear from '@/assets/images/anniversary-rolls/seventeenth-year-rol
 import roll18thYear from '@/assets/images/anniversary-rolls/eighteenth-year-roll.jpg';
 import roll19thYear from '@/assets/images/anniversary-rolls/nineteenth-year-roll.jpg';
 import roll20thYear from '@/assets/images/anniversary-rolls/twenty-year-roll.jpg';
+import roll21stYear from '@/assets/images/anniversary-rolls/twenty-first-year-roll.jpg';
 
 // ---- Sushi special rolls ---------------------------------------------------
 import bakedScallopRollPhoto from '@/assets/images/sushi-special-rolls/baked-scallop-roll.webp';
@@ -251,13 +252,13 @@ export const home = {
   },
   signature: {
     eyebrow: 'Our Signature Creations',
-    title: 'The 20th Year Roll',
+    title: 'The 21st Year Roll',
     paragraphs: [
       'Every year, we craft a brand-new sushi roll to commemorate another year since we first opened our doors. We call them our **Anniversary Rolls** - a living archive of our journey, one roll at a time.',
-      'Crafted to commemorate our two decades of culinary experience, the 20th Year Roll comes with spicy salmon and avocado at the center, topped with smokey seared salmon, and finished with yum yum sauce, crunchy tempura batter flakes, and sliced jalapeños.',
+      'Crafted to commemorate twenty-one years of culinary experience, the 21st Year Roll starts with spicy tuna and avocado at the center, tempura-fried to a golden crunch, then topped with spicy salmon and finished with spicy sauce, roe, and fresh scallion.',
     ],
-    image: roll20thYear,
-    imageAlt: '20th Year Roll',
+    image: roll21stYear,
+    imageAlt: '21st Year Roll',
   },
   beyondTheMenu: {
     title: 'Beyond the Menu',
@@ -614,14 +615,14 @@ export const sushiMenuPdfs: PdfLink[] = [{ label: 'View Sushi Menu (PDF)', href:
 
 export const featuredRoll = {
   badge: 'Special Feature',
-  name: '20th Year Anniversary Roll',
-  description: 'A celebration of two decades of culinary excellence. Spicy salmon, avocado, topped with torched salmon. Finished with fried tempura flakes, spicy sauce, and thinly sliced jalapeño. ',
+  name: '21st Year Anniversary Roll',
+  description: 'A celebration of twenty-one years of culinary excellence. Spicy tuna and avocado, tempura-fried, then topped with spicy salmon. Finished with spicy sauce, roe, and scallion.',
   price: '$15.50',
-  image: roll20thYear,
+  image: roll21stYear,
 };
 
 export const anniversaryRolls = {
-  title: '20th Anniversary Rolls',
+  title: '21st Anniversary Rolls',
   subtitle: 'Celebrating two decades of culinary excellence.',
   carouselLabel: 'A Roll for Every Year',
   items: [
@@ -645,6 +646,7 @@ export const anniversaryRolls = {
     { name: '18th Year', image: roll18thYear, description: 'Shrimp tempura, crabstick, and avocado, topped with spicy tuna and spicy sauce', price: '$15.50' },
     { name: '19th Year', image: roll19thYear, description: 'Yellowtail, avocado, and jalapenos, topped with spicy tuna and spicy sauce', price: '$15.50' },
     { name: '20th Year', image: roll20thYear, description: 'Spicy tuna and avocado, topped with torched salmon, jalapenos, and spicy sauce', price: '$15.50' },
+    { name: '21st Year', image: roll21stYear, description: 'Spicy tuna and avocado, tempura-fried, then topped with spicy salmon, spicy sauce, roe, and scallion', price: '$15.50' },
   ] satisfies MenuItem[],
 };
 
